@@ -7,12 +7,22 @@
 @base <http://schema.bco-dmo.org/ontology/> .
 
 <http://schema.bco-dmo.org/ontology/> rdf:type owl:Ontology ;
+                                       <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
+                                       <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
                                        rdfs:comment "An application ontology for describing BCO-DMO worldview." ;
                                        rdfs:label "BCO-DMO Ontology" .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
 
 ###  http://schema.bco-dmo.org/ontology/competencyQuestion
 :competencyQuestion rdf:type owl:AnnotationProperty ;
@@ -55,6 +65,21 @@ rdf:HTML rdf:type rdfs:Datatype .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://schema.bco-dmo.org/ontology/allows
+:allows rdf:type owl:ObjectProperty ;
+        rdfs:domain :Intention ;
+        rdfs:range :Action ;
+        owl:propertyDisjointWith :prohibits ;
+        rdfs:label "allows" .
+
+
+###  http://schema.bco-dmo.org/ontology/archivedAt
+:archivedAt rdf:type owl:ObjectProperty ;
+            rdfs:domain :ArchivedDataset ;
+            rdfs:range :DataRepository ;
+            rdfs:label "archivedAt" .
+
 
 ###  http://schema.bco-dmo.org/ontology/checksum
 :checksum rdf:type owl:ObjectProperty ;
@@ -119,7 +144,7 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/ontology/fundingSource
 :fundingSource rdf:type owl:ObjectProperty ;
-               owl:inverseOf :sourceOfFunding ;
+               owl:inverseOf :isSourceOfFunding ;
                rdf:type owl:FunctionalProperty ;
                rdfs:domain :Award ;
                rdfs:range :FundingAgency ;
@@ -131,6 +156,13 @@ rdf:HTML rdf:type rdfs:Datatype .
            rdfs:domain :Event ;
            rdfs:range :CreativeWork ;
            rdfs:label "generated" .
+
+
+###  http://schema.bco-dmo.org/ontology/governs
+:governs rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isGovernedBy ;
+         rdfs:domain :Policy ;
+         rdfs:label "governs" .
 
 
 ###  http://schema.bco-dmo.org/ontology/hasAgentWithRole
@@ -244,9 +276,21 @@ rdf:HTML rdf:type rdfs:Datatype .
                 rdfs:label "isAgentRoleFor" .
 
 
+###  http://schema.bco-dmo.org/ontology/isCategorizedBy
+:isCategorizedBy rdf:type owl:ObjectProperty ;
+                 rdfs:range :Category ;
+                 rdfs:label "isCategorizedBy" .
+
+
 ###  http://schema.bco-dmo.org/ontology/isDescribedBy
 :isDescribedBy rdf:type owl:ObjectProperty ;
                rdfs:label "isDescribedBy" .
+
+
+###  http://schema.bco-dmo.org/ontology/isGovernedBy
+:isGovernedBy rdf:type owl:ObjectProperty ;
+              rdfs:range :Policy ;
+              rdfs:label "isGovernedBy" .
 
 
 ###  http://schema.bco-dmo.org/ontology/isMemberOf
@@ -266,6 +310,13 @@ rdf:HTML rdf:type rdfs:Datatype .
                  rdfs:domain :Project ;
                  rdfs:range :Program ;
                  rdfs:label "isPartOfProgram" .
+
+
+###  http://schema.bco-dmo.org/ontology/isSourceOfFunding
+:isSourceOfFunding rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Award ;
+                   rdfs:range :FundingAgency ;
+                   rdfs:label "isSourceOfFunding" .
 
 
 ###  http://schema.bco-dmo.org/ontology/license
@@ -301,8 +352,15 @@ rdf:HTML rdf:type rdfs:Datatype .
 :performedDuring rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain :AgentRole ;
-                 rdfs:range :AgentRolePhase ;
+                 rdfs:range :NamedPhase ;
                  rdfs:label "performedDuring" .
+
+
+###  http://schema.bco-dmo.org/ontology/prohibits
+:prohibits rdf:type owl:ObjectProperty ;
+           rdfs:domain :Intention ;
+           rdfs:range :Action ;
+           rdfs:label "prohibits" .
 
 
 ###  http://schema.bco-dmo.org/ontology/providedViaApplication
@@ -315,29 +373,35 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/ontology/provider
 :provider rdf:type owl:ObjectProperty ;
-          rdfs:domain :CreativeWork ;
+          owl:inverseOf :provides ;
           rdfs:range :Agent ;
           rdfs:label "provider" .
 
 
+###  http://schema.bco-dmo.org/ontology/provides
+:provides rdf:type owl:ObjectProperty ;
+          rdfs:domain :Agent ;
+          rdfs:label "provides" .
+
+
 ###  http://schema.bco-dmo.org/ontology/publisher
 :publisher rdf:type owl:ObjectProperty ;
+           owl:inverseOf :publishes ;
            rdfs:domain :CreativeWork ;
            rdfs:range :Agent ;
            rdfs:label "publisher" .
+
+
+###  http://schema.bco-dmo.org/ontology/publishes
+:publishes rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agent ;
+           rdfs:label "publishes" .
 
 
 ###  http://schema.bco-dmo.org/ontology/rdfDataType
 :rdfDataType rdf:type owl:ObjectProperty ;
              rdfs:comment "An RDF datatype such as xsd:string, xsd:anyURI or rdf:HTML" ;
              rdfs:label "rdfDataType" .
-
-
-###  http://schema.bco-dmo.org/ontology/sourceOfFunding
-:sourceOfFunding rdf:type owl:ObjectProperty ;
-                 rdfs:domain :FundingAgency ;
-                 rdfs:range :Award ;
-                 rdfs:label "sourceOfFunding" .
 
 
 ###  http://schema.bco-dmo.org/ontology/spatialCoverage
@@ -374,6 +438,7 @@ rdf:HTML rdf:type rdfs:Datatype .
                                 owl:unionOf ( :Award
                                               :CreativeWork
                                               :Event
+                                              :Policy
                                             )
                               ] ;
                   rdfs:range :TemporalEntity ;
@@ -550,9 +615,17 @@ rdf:HTML rdf:type rdfs:Datatype .
                  rdfs:label "AccessionNumber" .
 
 
+###  http://schema.bco-dmo.org/ontology/Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf :Category ;
+        rdfs:comment "A way of categorizing actions. Download, View, Cite, etc." ;
+        rdfs:label "Action" ;
+        rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Action"^^xsd:anyURI .
+
+
 ###  http://schema.bco-dmo.org/ontology/ActivityPhase
 :ActivityPhase rdf:type owl:Class ;
-               rdfs:subClassOf :AgentRolePhase ;
+               rdfs:subClassOf :NamedPhase ;
                rdfs:comment "A phase during which an activity or an event is happening. This could be a deployment event or a research project of which there is an expected start and end date." ;
                rdfs:label "ActivityPhase" .
 
@@ -565,16 +638,29 @@ rdf:HTML rdf:type rdfs:Datatype .
 ###  http://schema.bco-dmo.org/ontology/AgentRole
 :AgentRole rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isAgentRoleFor ;
+                                                        owl:someValuesFrom owl:Thing
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty :performedAtOrganization ;
                                                         owl:someValuesFrom :Organization
                                                       ]
                                                       [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :performedBy ;
+                                                        owl:someValuesFrom :Agent
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :performedDuring ;
+                                                        owl:someValuesFrom :TemporalEntity
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty :isAgentRoleFor ;
-                                                        owl:allValuesFrom owl:Thing
+                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                       ]
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :performedBy ;
-                                                        owl:allValuesFrom :Agent
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :Agent
                                                       ]
                                                     ) ;
                                  rdf:type owl:Class
@@ -598,20 +684,18 @@ WHERE {
            rdfs:label "AgentRole" .
 
 
-###  http://schema.bco-dmo.org/ontology/AgentRolePhase
-:AgentRolePhase rdf:type owl:Class ;
-                rdfs:subClassOf :Category ;
-                :ontologyQuestion "What is the best way to specify that certain AgentRoles only apply to a specific AgentRolePhase. Example: CitationRole may only apply to PublicationPhase." ;
-                rdfs:comment "In the absense of start/end dates for a role, an AgentRolePhase provides a named period of time at which the role was performed." ;
-                rdfs:label "AgentRolePhase" .
-
-
 ###  http://schema.bco-dmo.org/ontology/AnalystRole
 :AnalystRole rdf:type owl:Class ;
              rdfs:subClassOf :ResearchActivityRole ;
              :label "Analyst" ;
              :roleWeight 17 ;
              rdfs:label "AnalystRole" .
+
+
+###  http://schema.bco-dmo.org/ontology/ArchivedDataset
+:ArchivedDataset rdf:type owl:Class ;
+                 rdfs:subClassOf :Dataset ;
+                 rdfs:label "ArchivedDataset" .
 
 
 ###  http://schema.bco-dmo.org/ontology/AudioFileType
@@ -734,6 +818,15 @@ WHERE {
               rdfs:label "CodeFileType" .
 
 
+###  http://schema.bco-dmo.org/ontology/Collection
+:Collection rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasPart ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+            rdfs:label "Collection" .
+
+
 ###  http://schema.bco-dmo.org/ontology/CompressedFileType
 :CompressedFileType rdf:type owl:Class ;
                     rdfs:subClassOf :FileType ;
@@ -780,6 +873,13 @@ WHERE {
         rdfs:label "Cruise" .
 
 
+###  http://schema.bco-dmo.org/ontology/DataArchive
+:DataArchive rdf:type owl:Class ;
+             rdfs:subClassOf :DataRepository ;
+             rdfs:comment "A DataRepository that promises to long-term provide access to deposited datasets" ;
+             rdfs:label "DataArchive" .
+
+
 ###  http://schema.bco-dmo.org/ontology/DataFile
 :DataFile rdf:type owl:Class ;
           rdfs:subClassOf :FileDescriptor ;
@@ -806,6 +906,12 @@ WHERE {
                    :label "Data Publisher" ;
                    :roleWeight 40 ;
                    rdfs:label "DataPublisherRole" .
+
+
+###  http://schema.bco-dmo.org/ontology/DataRepository
+:DataRepository rdf:type owl:Class ;
+                rdfs:subClassOf :Organization ;
+                rdfs:label "DataRepository" .
 
 
 ###  http://schema.bco-dmo.org/ontology/DataType
@@ -847,6 +953,13 @@ WHERE {
                        rdfs:label "DefaultDatasetLicense" .
 
 
+###  http://schema.bco-dmo.org/ontology/DegreeOfCommitment
+:DegreeOfCommitment rdf:type owl:Class ;
+                    rdfs:subClassOf :Category ;
+                    rdfs:comment "The level to which something is binding. Example: Car rental, Handshake, Marriage vow." ;
+                    rdfs:label "DegreeOfCommitment" .
+
+
 ###  http://schema.bco-dmo.org/ontology/Deployment
 :Deployment rdf:type owl:Class ;
             rdfs:subClassOf :ResearchActivity ;
@@ -867,9 +980,35 @@ WHERE {
                  rdfs:label "DigitalDocument" .
 
 
+###  http://schema.bco-dmo.org/ontology/Embargo
+:Embargo rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasPart ;
+                                                      owl:someValuesFrom :Restriction
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :governs ;
+                                                      owl:allValuesFrom :CreativeWork
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :temporalCoverage ;
+                                                      owl:allValuesFrom :TemporalEntity
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :Policy ;
+         rdfs:comment "A prohibition to access some aspect of a CreativeWork" ;
+         rdfs:label "Embargo" .
+
+
 ###  http://schema.bco-dmo.org/ontology/EntryPoint
 :EntryPoint rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :allows ;
+                                                         owl:someValuesFrom :Action
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
                                                          owl:onProperty :httpMethod ;
                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                          owl:onClass :HttpMethod
@@ -928,6 +1067,14 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/FundingAgency
 :FundingAgency rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Organization
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isSourceOfFunding ;
+                                                            owl:someValuesFrom :Award
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :Organization ;
                rdfs:label "FundingAgency" .
 
@@ -944,6 +1091,26 @@ WHERE {
           rdfs:subClassOf :Place ;
           rdfs:comment "A place defined by some spatial reference system (SRS) along with some explicit represenation of a well-defined space in that SRS." ;
           rdfs:label "GeoShape" .
+
+
+###  http://schema.bco-dmo.org/ontology/Goal
+:Goal rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Intention
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :isCategorizedBy ;
+                                                   owl:someValuesFrom :DegreeOfCommitment
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :isCategorizedBy ;
+                                                   owl:hasValue :DegreeOfCommitment_Aspiration
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Intention ;
+      rdfs:comment "A measurable, intention that can be evaluated on whether the Intention was achieved." ;
+      rdfs:label "Goal" ;
+      rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Goal" .
 
 
 ###  http://schema.bco-dmo.org/ontology/GuestRole
@@ -1044,6 +1211,13 @@ WHERE {
                rdfs:label "ImageFileType" .
 
 
+###  http://schema.bco-dmo.org/ontology/Intention
+:Intention rdf:type owl:Class ;
+           rdfs:comment "Goal, desire, aspiration. This is the \"teleologic\" aspect of the system that indicates things are done with a purpose." ;
+           rdfs:label "Intention" ;
+           rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Intention"^^xsd:anyURI .
+
+
 ###  http://schema.bco-dmo.org/ontology/LeadAward
 :LeadAward rdf:type owl:Class ;
            rdfs:subClassOf :Award ;
@@ -1090,6 +1264,14 @@ WHERE {
               rdfs:label "MetadataFile" .
 
 
+###  http://schema.bco-dmo.org/ontology/NamedPhase
+:NamedPhase rdf:type owl:Class ;
+            rdfs:subClassOf :TemporalEntity ;
+            :ontologyQuestion "What is the best way to specify that certain AgentRoles only apply to a specific NamedPhase. Example: CitationRole may only apply to PublicationPhase." ;
+            rdfs:comment "In the absense of start/end dates for a role, an NamedPhase provides a named period of time." ;
+            rdfs:label "NamedPhase" .
+
+
 ###  http://schema.bco-dmo.org/ontology/NumericValue
 :NumericValue rdf:type owl:Class ;
               rdfs:subClassOf :DataType ;
@@ -1099,10 +1281,6 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/Organization
 :Organization rdf:type owl:Class ;
-              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                    owl:onProperty :sourceOfFunding ;
-                                    owl:someValuesFrom :Award
-                                  ] ;
               rdfs:subClassOf :Agent ;
               owl:disjointWith :Person ;
               rdfs:label "Organization" .
@@ -1122,6 +1300,26 @@ WHERE {
                 rdfs:label "OriginatorRole" .
 
 
+###  http://schema.bco-dmo.org/ontology/Permission
+:Permission rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Intention
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :allows ;
+                                                         owl:allValuesFrom :Action
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :allows ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass :Action
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Intention ;
+            rdfs:label "Permission" ;
+            rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Permission"^^xsd:anyURI .
+
+
 ###  http://schema.bco-dmo.org/ontology/Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
@@ -1131,6 +1329,26 @@ WHERE {
 ###  http://schema.bco-dmo.org/ontology/Place
 :Place rdf:type owl:Class ;
        rdfs:label "Place" .
+
+
+###  http://schema.bco-dmo.org/ontology/Policy
+:Policy rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPart ;
+                                                     owl:allValuesFrom :Intention
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPart ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :Intention
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Collection ;
+        rdfs:comment "A collection of Intentions" ;
+        rdfs:label "Policy" .
 
 
 ###  http://schema.bco-dmo.org/ontology/PrimaryDataFile
@@ -1175,7 +1393,7 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/PublicationPhase
 :PublicationPhase rdf:type owl:Class ;
-                  rdfs:subClassOf :AgentRolePhase ;
+                  rdfs:subClassOf :NamedPhase ;
                   rdfs:comment "The phase during which the subject of an AgentRole is being published. The subject is typically a CreativeWork." ;
                   rdfs:label "PublicationPhase" .
 
@@ -1188,9 +1406,28 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/ReferenceImage
 :ReferenceImage rdf:type owl:Class ;
-                rdfs:subClassOf :FileDescriptor ;
-                rdfs:comment "An image that crystallizes the thing." ;
+                rdfs:subClassOf :DigitalDocument ;
+                rdfs:comment "An image that offers a representation of the Thing." ;
                 rdfs:label "ReferenceImage" .
+
+
+###  http://schema.bco-dmo.org/ontology/Requirement
+:Requirement rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Intention
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isCategorizedBy ;
+                                                          owl:someValuesFrom :DegreeOfCommitment
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isCategorizedBy ;
+                                                          owl:hasValue :DegreeOfCommitment_Obligation
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Intention ;
+             rdfs:comment "A documented need." ;
+             rdfs:label "Requirement" .
 
 
 ###  http://schema.bco-dmo.org/ontology/ResearchActivity
@@ -1231,6 +1468,25 @@ WHERE {
                rdfs:subClassOf :ActivityPhase ;
                rdfs:comment "The phase during which the subject of an AgentRole is being collected, assembled, analyzed, and prepared for archival (pre-publication)." ;
                rdfs:label "ResearchPhase" .
+
+
+###  http://schema.bco-dmo.org/ontology/Restriction
+:Restriction rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Intention
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :prohibits ;
+                                                          owl:allValuesFrom :Action
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :prohibits ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass :Action
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Intention ;
+             rdfs:label "Restriction" .
 
 
 ###  http://schema.bco-dmo.org/ontology/ScientistRole
@@ -1289,11 +1545,6 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/TemporalEntity
 :TemporalEntity rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty :hasTimeStamp ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass :TemporalInstant
-                                    ] ;
                 rdfs:label "TemporalEntity" .
 
 
@@ -1370,9 +1621,53 @@ WHERE {
                 rdfs:subClassOf :FileType .
 
 
+###  http://schema.bco-dmo.org/ontology/WorkPlan
+:WorkPlan rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasPart ;
+                                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( :Goal
+                                                                                          :Requirement
+                                                                                        )
+                                                                          ]
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasPart ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( :Goal
+                                                                                   :Requirement
+                                                                                 )
+                                                                   ]
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Collection ;
+          rdfs:comment "A collection of goals and/or requirements" ;
+          rdfs:label "WorkPlan" .
+
+
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://schema.bco-dmo.org/ontology/Action_Download
+:Action_Download rdf:type owl:NamedIndividual ,
+                          :Action ;
+                 :label "Download" ;
+                 rdfs:label "Action: Download" ;
+                 rdfs:seeAlso "https://schema.org/DownloadAction"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/Action_View
+:Action_View rdf:type owl:NamedIndividual ,
+                      :Action ;
+             :label "View" ;
+             rdfs:label "Action: View" ;
+             rdfs:seeAlso "https://schema.org/ViewAction"^^xsd:anyURI .
+
 
 ###  http://schema.bco-dmo.org/ontology/DataType_Date
 :DataType_Date rdf:type owl:NamedIndividual ,
@@ -1637,6 +1932,20 @@ WHERE {
                                                   :TimeSeriesDatasetParameterType ;
                                          :label "Time Series Discrete" ;
                                          rdfs:label "Dataset Parameter Type: Time Series Discrete" .
+
+
+###  http://schema.bco-dmo.org/ontology/DegreeOfCommitment_Aspiration
+:DegreeOfCommitment_Aspiration rdf:type owl:NamedIndividual ,
+                                        :DegreeOfCommitment ;
+                               :label "Aspiration" ;
+                               rdfs:label "Degree of Commitment: Aspiration" .
+
+
+###  http://schema.bco-dmo.org/ontology/DegreeOfCommitment_Obligation
+:DegreeOfCommitment_Obligation rdf:type owl:NamedIndividual ,
+                                        :DegreeOfCommitment ;
+                               :label "Obligation" ;
+                               rdfs:label "Degree of Commitment: Obligation" .
 
 
 ###  http://schema.bco-dmo.org/ontology/FileType_AudioMPEG
@@ -2168,6 +2477,14 @@ Example: 1902.02776 generates a URL to 'https://arxiv.org/abs/1902.02776' and is
                               rdfs:comment "WGS84 specifies latitude, longitude coordinate order" ;
                               rdfs:label "Spatial Reference System: WGS84" ;
                               rdfs:seeAlso "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/TemporalEntity_UnknownLengthOfTime
+:TemporalEntity_UnknownLengthOfTime rdf:type owl:NamedIndividual ,
+                                             :TemporalEntity ;
+                                    :label "Unknown Length Of Time" ;
+                                    rdfs:comment "When a temporal entity is required but it is currently unknown. Can be used when a Restriction or Permission is needed (like in a Policy) but the time frame has yet to be determined." ;
+                                    rdfs:label "Temporal Entity: Unknown Length Of Time" .
 
 
 ###  http://schema.bco-dmo.org/ontology/File_Type:_FASTA
