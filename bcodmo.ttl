@@ -43,6 +43,11 @@
        rdfs:domain owl:Thing .
 
 
+###  http://schema.bco-dmo.org/ontology/modelingExample
+:modelingExample rdf:type owl:AnnotationProperty ;
+                 rdfs:label "modelingExample" .
+
+
 ###  http://schema.bco-dmo.org/ontology/ontologyQuestion
 :ontologyQuestion rdf:type owl:AnnotationProperty ;
                   rdfs:comment "Use Case: SoftwareApplication interpreting DataType" ;
@@ -76,9 +81,17 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/ontology/archivedAt
 :archivedAt rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :provider ;
             rdfs:domain :ArchivedDataset ;
             rdfs:range :DataRepository ;
             rdfs:label "archivedAt" .
+
+
+###  http://schema.bco-dmo.org/ontology/archives
+:archives rdf:type owl:ObjectProperty ;
+          rdfs:domain :CreativeWork ;
+          rdfs:range :CreativeWork ;
+          rdfs:label "archives" .
 
 
 ###  http://schema.bco-dmo.org/ontology/checksum
@@ -187,7 +200,7 @@ rdf:HTML rdf:type rdfs:Datatype .
 :hasBeginning rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :TemporalEntity ;
+              rdfs:domain :TemporalExtent ;
               rdfs:range :TemporalInstant ;
               rdfs:label "hasBeginning" .
 
@@ -196,7 +209,7 @@ rdf:HTML rdf:type rdfs:Datatype .
 :hasEnd rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf owl:topObjectProperty ;
         rdf:type owl:FunctionalProperty ;
-        rdfs:domain :TemporalEntity ;
+        rdfs:domain :TemporalExtent ;
         rdfs:range :TemporalInstant ;
         rdfs:label "hasEnd" .
 
@@ -236,7 +249,7 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/ontology/hasTimeStamp
 :hasTimeStamp rdf:type owl:ObjectProperty ;
-              rdfs:domain :TemporalEntity ;
+              rdfs:domain :TemporalExtent ;
               rdfs:range :TemporalInstant ;
               rdfs:label "hasTimeStamp" .
 
@@ -412,7 +425,7 @@ rdf:HTML rdf:type rdfs:Datatype .
                                              :Event
                                            )
                              ] ;
-                 rdfs:range :Place ;
+                 rdfs:range :GeospatialExtent ;
                  rdfs:label "spatialCoverage" .
 
 
@@ -441,7 +454,7 @@ rdf:HTML rdf:type rdfs:Datatype .
                                               :Policy
                                             )
                               ] ;
-                  rdfs:range :TemporalEntity ;
+                  rdfs:range :TemporalExtent ;
                   rdfs:label "temporalCoverage" .
 
 
@@ -620,14 +633,7 @@ rdf:HTML rdf:type rdfs:Datatype .
         rdfs:subClassOf :Category ;
         rdfs:comment "A way of categorizing actions. Download, View, Cite, etc." ;
         rdfs:label "Action" ;
-        rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Action"^^xsd:anyURI .
-
-
-###  http://schema.bco-dmo.org/ontology/ActivityPhase
-:ActivityPhase rdf:type owl:Class ;
-               rdfs:subClassOf :NamedPhase ;
-               rdfs:comment "A phase during which an activity or an event is happening. This could be a deployment event or a research project of which there is an expected start and end date." ;
-               rdfs:label "ActivityPhase" .
+        rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Behavior"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/Agent
@@ -642,16 +648,12 @@ rdf:HTML rdf:type rdfs:Datatype .
                                                         owl:someValuesFrom owl:Thing
                                                       ]
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :performedAtOrganization ;
-                                                        owl:someValuesFrom :Organization
-                                                      ]
-                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty :performedBy ;
                                                         owl:someValuesFrom :Agent
                                                       ]
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :performedDuring ;
-                                                        owl:someValuesFrom :TemporalEntity
+                                                        owl:someValuesFrom :TemporalExtent
                                                       ]
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :isAgentRoleFor ;
@@ -696,6 +698,44 @@ WHERE {
 :ArchivedDataset rdf:type owl:Class ;
                  rdfs:subClassOf :Dataset ;
                  rdfs:label "ArchivedDataset" .
+
+
+###  http://schema.bco-dmo.org/ontology/ArchiverRole
+:ArchiverRole rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isAgentRoleFor ;
+                                                           owl:someValuesFrom :ArchivedDataset
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :performedBy ;
+                                                           owl:someValuesFrom :DataRepository
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :performedDuring ;
+                                                           owl:hasValue :NamedPhase_PublicationPhase
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isAgentRoleFor ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass :ArchivedDataset
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :AgentRole ;
+              :label "Archiver" ;
+              :modelingExample """:dataset-01 a :Dataset .
+:archived-dataset-01 a :ArchivedDataset ;
+  :archives :dataset-01 .
+:bcodmo a :Organization .
+:whoas a :Organization .
+
+:role a ArchiverRole ;
+  :isAgentRoleFor :archived-dataset-01 ;
+  :performedBy :whoas ;
+  :performedDuring :NamedPhase_PublicationPhase ;
+  :onBehalfOf :bcodmo .""" ;
+              rdfs:label "ArchiverRole" .
 
 
 ###  http://schema.bco-dmo.org/ontology/AudioFileType
@@ -754,7 +794,8 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/Category
 :Category rdf:type owl:Class ;
-          rdfs:label "Category" .
+          rdfs:label "Category" ;
+          rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Category"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/ChiefScientistRole
@@ -781,7 +822,7 @@ WHERE {
                                                          ]
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty :performedDuring ;
-                                                           owl:allValuesFrom :PublicationPhase
+                                                           owl:hasValue :NamedPhase_PublicationPhase
                                                          ]
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty :sequence ;
@@ -824,7 +865,8 @@ WHERE {
                                   owl:onProperty :hasPart ;
                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
                                 ] ;
-            rdfs:label "Collection" .
+            rdfs:label "Collection" ;
+            rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Collection"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/CompressedFileType
@@ -873,13 +915,6 @@ WHERE {
         rdfs:label "Cruise" .
 
 
-###  http://schema.bco-dmo.org/ontology/DataArchive
-:DataArchive rdf:type owl:Class ;
-             rdfs:subClassOf :DataRepository ;
-             rdfs:comment "A DataRepository that promises to long-term provide access to deposited datasets" ;
-             rdfs:label "DataArchive" .
-
-
 ###  http://schema.bco-dmo.org/ontology/DataFile
 :DataFile rdf:type owl:Class ;
           rdfs:subClassOf :FileDescriptor ;
@@ -910,6 +945,19 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/DataRepository
 :DataRepository rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Organization
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :provides ;
+                                                             owl:someValuesFrom :Dataset
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :provides ;
+                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :Dataset
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
                 rdfs:subClassOf :Organization ;
                 rdfs:label "DataRepository" .
 
@@ -957,7 +1005,8 @@ WHERE {
 :DegreeOfCommitment rdf:type owl:Class ;
                     rdfs:subClassOf :Category ;
                     rdfs:comment "The level to which something is binding. Example: Car rental, Handshake, Marriage vow." ;
-                    rdfs:label "DegreeOfCommitment" .
+                    rdfs:label "DegreeOfCommitment" ;
+                    rdfs:seeAlso "https://ontologies.semanticarts.com/gist/DegreeOfCommitment"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/Deployment
@@ -992,7 +1041,7 @@ WHERE {
                                                     ]
                                                     [ rdf:type owl:Restriction ;
                                                       owl:onProperty :temporalCoverage ;
-                                                      owl:allValuesFrom :TemporalEntity
+                                                      owl:allValuesFrom :TemporalExtent
                                                     ]
                                                   ) ;
                                rdf:type owl:Class
@@ -1033,7 +1082,8 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/Event
 :Event rdf:type owl:Class ;
-       rdfs:label "Event" .
+       rdfs:label "Event" ;
+       rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Event"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/FileDescriptor
@@ -1081,16 +1131,22 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/GeoLocation
 :GeoLocation rdf:type owl:Class ;
-             rdfs:subClassOf :Place ;
+             rdfs:subClassOf :GeospatialExtent ;
              rdfs:comment "A region or set of regions defined in descriptive text" ;
              rdfs:label "GeoLocation" .
 
 
 ###  http://schema.bco-dmo.org/ontology/GeoShape
 :GeoShape rdf:type owl:Class ;
-          rdfs:subClassOf :Place ;
+          rdfs:subClassOf :GeospatialExtent ;
           rdfs:comment "A place defined by some spatial reference system (SRS) along with some explicit represenation of a well-defined space in that SRS." ;
           rdfs:label "GeoShape" .
+
+
+###  http://schema.bco-dmo.org/ontology/GeospatialExtent
+:GeospatialExtent rdf:type owl:Class ;
+                  rdfs:label "GeospatialExtent" ;
+                  rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Place"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/Goal
@@ -1266,8 +1322,7 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/NamedPhase
 :NamedPhase rdf:type owl:Class ;
-            rdfs:subClassOf :TemporalEntity ;
-            :ontologyQuestion "What is the best way to specify that certain AgentRoles only apply to a specific NamedPhase. Example: CitationRole may only apply to PublicationPhase." ;
+            rdfs:subClassOf :TemporalExtent ;
             rdfs:comment "In the absense of start/end dates for a role, an NamedPhase provides a named period of time." ;
             rdfs:label "NamedPhase" .
 
@@ -1324,11 +1379,6 @@ WHERE {
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
         rdfs:label "Person" .
-
-
-###  http://schema.bco-dmo.org/ontology/Place
-:Place rdf:type owl:Class ;
-       rdfs:label "Place" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Policy
@@ -1391,13 +1441,6 @@ WHERE {
          rdfs:label "Project" .
 
 
-###  http://schema.bco-dmo.org/ontology/PublicationPhase
-:PublicationPhase rdf:type owl:Class ;
-                  rdfs:subClassOf :NamedPhase ;
-                  rdfs:comment "The phase during which the subject of an AgentRole is being published. The subject is typically a CreativeWork." ;
-                  rdfs:label "PublicationPhase" .
-
-
 ###  http://schema.bco-dmo.org/ontology/RasterDatasetParameterType
 :RasterDatasetParameterType rdf:type owl:Class ;
                             rdfs:subClassOf :DatasetParameterType ;
@@ -1452,7 +1495,7 @@ WHERE {
                                                                  ]
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty :performedDuring ;
-                                                                   owl:allValuesFrom :ResearchPhase
+                                                                   owl:hasValue :NamedPhase_ResearchPhase
                                                                  ]
                                                                ) ;
                                             rdf:type owl:Class
@@ -1461,13 +1504,6 @@ WHERE {
                       :isAbstractRole "true"^^xsd:boolean ;
                       rdfs:comment "An AgentRole related to conducting research - dataset collection, analysis, assembly, management, etc." ;
                       rdfs:label "ResearchActivityRole" .
-
-
-###  http://schema.bco-dmo.org/ontology/ResearchPhase
-:ResearchPhase rdf:type owl:Class ;
-               rdfs:subClassOf :ActivityPhase ;
-               rdfs:comment "The phase during which the subject of an AgentRole is being collected, assembled, analyzed, and prepared for archival (pre-publication)." ;
-               rdfs:label "ResearchPhase" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Restriction
@@ -1543,9 +1579,9 @@ WHERE {
                 rdfs:label "TechnicianRole" .
 
 
-###  http://schema.bco-dmo.org/ontology/TemporalEntity
-:TemporalEntity rdf:type owl:Class ;
-                rdfs:label "TemporalEntity" .
+###  http://schema.bco-dmo.org/ontology/TemporalExtent
+:TemporalExtent rdf:type owl:Class ;
+                rdfs:label "TemporalExtent" .
 
 
 ###  http://schema.bco-dmo.org/ontology/TemporalInstant
@@ -1555,7 +1591,7 @@ WHERE {
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass :TemporalInstant
                                      ] ;
-                 rdfs:subClassOf :TemporalEntity ;
+                 rdfs:subClassOf :TemporalExtent ;
                  rdfs:label "TemporalInstant" .
 
 
@@ -1574,7 +1610,7 @@ WHERE {
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf :TemporalEntity ;
+                  rdfs:subClassOf :TemporalExtent ;
                   rdfs:label "TemporalInterval" .
 
 
@@ -2461,6 +2497,20 @@ Example: 1902.02776 generates a URL to 'https://arxiv.org/abs/1902.02776' and is
                  rdfs:seeAlso "https://licenses.opendefinition.org/licenses/CC0-1.0.json"^^xsd:anyURI .
 
 
+###  http://schema.bco-dmo.org/ontology/NamedPhase_PublicationPhase
+:NamedPhase_PublicationPhase rdf:type owl:NamedIndividual ,
+                                      :NamedPhase ;
+                             :label "Publication Phase" ;
+                             rdfs:label "Named Phase: Publication Phase" .
+
+
+###  http://schema.bco-dmo.org/ontology/NamedPhase_ResearchPhase
+:NamedPhase_ResearchPhase rdf:type owl:NamedIndividual ,
+                                   :NamedPhase ;
+                          :label "Research Phase" ;
+                          rdfs:label "Named Phase: Research Phase" .
+
+
 ###  http://schema.bco-dmo.org/ontology/SpatialReferenceSystem_CRS84
 :SpatialReferenceSystem_CRS84 rdf:type owl:NamedIndividual ,
                                        :SpatialReferenceSystem ;
@@ -2479,9 +2529,9 @@ Example: 1902.02776 generates a URL to 'https://arxiv.org/abs/1902.02776' and is
                               rdfs:seeAlso "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"^^xsd:anyURI .
 
 
-###  http://schema.bco-dmo.org/ontology/TemporalEntity_UnknownLengthOfTime
-:TemporalEntity_UnknownLengthOfTime rdf:type owl:NamedIndividual ,
-                                             :TemporalEntity ;
+###  http://schema.bco-dmo.org/ontology/TemporalExtent_UnknownLengthOfTime
+:TemporalExtent_UnknownLengthOfTime rdf:type owl:NamedIndividual ,
+                                             :TemporalExtent ;
                                     :label "Unknown Length Of Time" ;
                                     rdfs:comment "When a temporal entity is required but it is currently unknown. Can be used when a Restriction or Permission is needed (like in a Policy) but the time frame has yet to be determined." ;
                                     rdfs:label "Temporal Entity: Unknown Length Of Time" .
