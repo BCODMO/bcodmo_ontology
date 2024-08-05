@@ -369,6 +369,12 @@ rdf:HTML rdf:type rdfs:Datatype .
                  rdfs:label "performedDuring" .
 
 
+###  http://schema.bco-dmo.org/ontology/precedes
+:precedes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :succeeds ;
+          rdfs:label "precedes" .
+
+
 ###  http://schema.bco-dmo.org/ontology/prohibits
 :prohibits rdf:type owl:ObjectProperty ;
            rdfs:domain :Intention ;
@@ -435,6 +441,11 @@ rdf:HTML rdf:type rdfs:Datatype .
                  rdfs:range :DatasetParameter ;
                  rdfs:comment "A specific parameter in some Dataset." ;
                  rdfs:label "storesValuesFor" .
+
+
+###  http://schema.bco-dmo.org/ontology/succeeds
+:succeeds rdf:type owl:ObjectProperty ;
+          rdfs:label "succeeds" .
 
 
 ###  http://schema.bco-dmo.org/ontology/target
@@ -1433,6 +1444,32 @@ WHERE {
 :Program rdf:type owl:Class ;
          rdfs:subClassOf :ResearchActivity ;
          rdfs:label "Program" .
+
+
+###  http://schema.bco-dmo.org/ontology/ProgramManagerRole
+:ProgramManagerRole rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :isAgentRoleFor ;
+                                                                 owl:someValuesFrom :Award
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :performedBy ;
+                                                                 owl:someValuesFrom :Person
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :performedDuring ;
+                                                                 owl:hasValue :NamedPhase_FundingPhase
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :isAgentRoleFor ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass :Award
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :AgentRole ;
+                    rdfs:label "ProgramManagerRole" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Project
@@ -2495,6 +2532,13 @@ Example: 1902.02776 generates a URL to 'https://arxiv.org/abs/1902.02776' and is
                  :label "Creative Commons Zero (No Copyright)" ;
                  rdfs:label "License: Creative Commons Zero (No Copyright)" ;
                  rdfs:seeAlso "https://licenses.opendefinition.org/licenses/CC0-1.0.json"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/NamedPhase_FundingPhase
+:NamedPhase_FundingPhase rdf:type owl:NamedIndividual ,
+                                  :NamedPhase ;
+                         :label "Funding Phase" ;
+                         rdfs:label "Named Phase: Funding Phase" .
 
 
 ###  http://schema.bco-dmo.org/ontology/NamedPhase_PublicationPhase
