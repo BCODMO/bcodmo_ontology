@@ -9,7 +9,15 @@
 <http://schema.bco-dmo.org/ontology/> rdf:type owl:Ontology ;
                                        <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
                                        <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-                                       rdfs:comment "An application ontology for describing BCO-DMO worldview." ;
+                                       rdfs:comment "An application ontology for describing BCO-DMO worldview." ,
+                                                    """To Do:
+
+* Related Resource Relationships
+* Award
+* Dataset
+* Deployment
+* Instrument
+* Parameter""" ;
                                        rdfs:label "BCO-DMO Ontology" .
 
 #################################################################
@@ -128,6 +136,15 @@ rdf:HTML rdf:type rdfs:Datatype .
                       rdfs:domain :DatasetParameter ;
                       rdfs:range :DatasetParameterType ;
                       rdfs:label "datasetParameterType" .
+
+
+###  http://schema.bco-dmo.org/ontology/deployedOnPlatform
+:deployedOnPlatform rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :inDeployment ;
+                    rdfs:domain :Deployment ;
+                    rdfs:range :Platform ;
+                    rdfs:label "deployedOnPlatform" ;
+                    rdfs:seeAlso "http://www.w3.org/ns/ssn/deployedOnPlatform"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/describes
@@ -274,6 +291,14 @@ rdf:HTML rdf:type rdfs:Datatype .
                   rdfs:range :IdentifierScheme ;
                   rdfs:comment "identifierScheme" ;
                   rdfs:label "identifierScheme" .
+
+
+###  http://schema.bco-dmo.org/ontology/inDeployment
+:inDeployment rdf:type owl:ObjectProperty ;
+              rdfs:domain :Platform ;
+              rdfs:range :Deployment ;
+              rdfs:label "inDeployment" ;
+              rdfs:seeAlso "http://www.w3.org/ns/ssn/inDeployment"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/inherits
@@ -632,6 +657,18 @@ rdf:HTML rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
+###  http://schema.bco-dmo.org/ontology/AUV
+:AUV rdf:type owl:Class ;
+     rdfs:subClassOf :UnmannedSubmersible ;
+     rdfs:label "AUV" .
+
+
+###  http://schema.bco-dmo.org/ontology/AbstractPlatform
+:AbstractPlatform rdf:type owl:Class ;
+                  rdfs:subClassOf :Platform ;
+                  rdfs:label "AbstractPlatform" .
+
+
 ###  http://schema.bco-dmo.org/ontology/AccessionNumber
 :AccessionNumber rdf:type owl:Class ;
                  rdfs:subClassOf :IdentifierScheme ;
@@ -697,6 +734,12 @@ WHERE {
            rdfs:label "AgentRole" .
 
 
+###  http://schema.bco-dmo.org/ontology/Aircraft
+:Aircraft rdf:type owl:Class ;
+          rdfs:subClassOf :AtmosphericPlatform ;
+          rdfs:label "Aircraft" .
+
+
 ###  http://schema.bco-dmo.org/ontology/AnalystRole
 :AnalystRole rdf:type owl:Class ;
              rdfs:subClassOf :ResearchActivityRole ;
@@ -747,6 +790,12 @@ WHERE {
   :performedDuring :NamedPhase_PublicationPhase ;
   :onBehalfOf :bcodmo .""" ;
               rdfs:label "ArchiverRole" .
+
+
+###  http://schema.bco-dmo.org/ontology/AtmosphericPlatform
+:AtmosphericPlatform rdf:type owl:Class ;
+                     rdfs:subClassOf :Platform ;
+                     rdfs:label "AtmosphericPlatform" .
 
 
 ###  http://schema.bco-dmo.org/ontology/AudioFileType
@@ -922,7 +971,19 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/Cruise
 :Cruise rdf:type owl:Class ;
-        rdfs:subClassOf :Deployment ;
+        rdfs:subClassOf [ owl:intersectionOf ( :Deployment
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :deployedOnPlatform ;
+                                                 owl:allValuesFrom :Vessel
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :deployedOnPlatform ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Vessel
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
         rdfs:label "Cruise" .
 
 
@@ -1022,7 +1083,14 @@ WHERE {
 
 ###  http://schema.bco-dmo.org/ontology/Deployment
 :Deployment rdf:type owl:Class ;
-            rdfs:subClassOf :ResearchActivity ;
+            rdfs:subClassOf [ owl:intersectionOf ( :ResearchActivity
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :deployedOnPlatform ;
+                                                     owl:allValuesFrom :Platform
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
             rdfs:label "Deployment" .
 
 
@@ -1038,6 +1106,13 @@ WHERE {
                  rdfs:subClassOf :CreativeWork ;
                  owl:disjointWith :FileDescriptor ;
                  rdfs:label "DigitalDocument" .
+
+
+###  http://schema.bco-dmo.org/ontology/Dock
+:Dock rdf:type owl:Class ;
+      rdfs:subClassOf :GeoLocation ,
+                      :Shoreside ;
+      rdfs:label "Dock" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Embargo
@@ -1126,6 +1201,12 @@ WHERE {
           rdfs:label "FileType" .
 
 
+###  http://schema.bco-dmo.org/ontology/Float
+:Float rdf:type owl:Class ;
+       rdfs:subClassOf :SeaPlatform ;
+       rdfs:label "Float" .
+
+
 ###  http://schema.bco-dmo.org/ontology/FundingAgency
 :FundingAgency rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :Organization
@@ -1158,6 +1239,12 @@ WHERE {
 :GeospatialExtent rdf:type owl:Class ;
                   rdfs:label "GeospatialExtent" ;
                   rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Place"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/Glider
+:Glider rdf:type owl:Class ;
+        rdfs:subClassOf :SeaPlatform ;
+        rdfs:label "Glider" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Goal
@@ -1278,11 +1365,41 @@ WHERE {
                rdfs:label "ImageFileType" .
 
 
+###  http://schema.bco-dmo.org/ontology/Instrument
+:Instrument rdf:type owl:Class ;
+            rdfs:label "Instrument" .
+
+
 ###  http://schema.bco-dmo.org/ontology/Intention
 :Intention rdf:type owl:Class ;
            rdfs:comment "Goal, desire, aspiration. This is the \"teleologic\" aspect of the system that indicates things are done with a purpose." ;
            rdfs:label "Intention" ;
            rdfs:seeAlso "https://ontologies.semanticarts.com/gist/Intention"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/Island
+:Island rdf:type owl:Class ;
+        rdfs:subClassOf :GeoLocation ,
+                        :LandBasedPlatform ;
+        rdfs:label "Island" .
+
+
+###  http://schema.bco-dmo.org/ontology/Laboratory
+:Laboratory rdf:type owl:Class ;
+            rdfs:subClassOf :AbstractPlatform ;
+            rdfs:label "Laboratory" .
+
+
+###  http://schema.bco-dmo.org/ontology/LandBasedPlatform
+:LandBasedPlatform rdf:type owl:Class ;
+                   rdfs:subClassOf :Platform ;
+                   rdfs:label "LandBasedPlatform" .
+
+
+###  http://schema.bco-dmo.org/ontology/LargeVessel
+:LargeVessel rdf:type owl:Class ;
+             rdfs:subClassOf :Vessel ;
+             rdfs:label "LargeVessel" .
 
 
 ###  http://schema.bco-dmo.org/ontology/LeadAward
@@ -1319,6 +1436,18 @@ WHERE {
       rdfs:label "Logo" .
 
 
+###  http://schema.bco-dmo.org/ontology/MannedSubmarine
+:MannedSubmarine rdf:type owl:Class ;
+                 rdfs:subClassOf :MannedSubmersible ;
+                 rdfs:label "MannedSubmarine" .
+
+
+###  http://schema.bco-dmo.org/ontology/MannedSubmersible
+:MannedSubmersible rdf:type owl:Class ;
+                   rdfs:subClassOf :Submersible ;
+                   rdfs:label "MannedSubmersible" .
+
+
 ###  http://schema.bco-dmo.org/ontology/MapServerDatasetParameterType
 :MapServerDatasetParameterType rdf:type owl:Class ;
                                rdfs:subClassOf :DatasetParameterType ;
@@ -1329,6 +1458,18 @@ WHERE {
 :MetadataFile rdf:type owl:Class ;
               rdfs:subClassOf :FileDescriptor ;
               rdfs:label "MetadataFile" .
+
+
+###  http://schema.bco-dmo.org/ontology/Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :AbstractPlatform ;
+       rdfs:label "Model" .
+
+
+###  http://schema.bco-dmo.org/ontology/Mooring
+:Mooring rdf:type owl:Class ;
+         rdfs:subClassOf :SeaPlatform ;
+         rdfs:label "Mooring" .
 
 
 ###  http://schema.bco-dmo.org/ontology/NamedPhase
@@ -1366,6 +1507,11 @@ WHERE {
                 rdfs:label "OriginatorRole" .
 
 
+###  http://schema.bco-dmo.org/ontology/Parameter
+:Parameter rdf:type owl:Class ;
+           rdfs:label "Parameter" .
+
+
 ###  http://schema.bco-dmo.org/ontology/Permission
 :Permission rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :Intention
@@ -1390,6 +1536,18 @@ WHERE {
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
         rdfs:label "Person" .
+
+
+###  http://schema.bco-dmo.org/ontology/Platform
+:Platform rdf:type owl:Class ;
+          rdfs:subClassOf :Category ;
+          rdfs:label "Platform" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle
+:PlatformTitle rdf:type owl:Class ;
+               rdfs:subClassOf :Category ;
+               rdfs:label "PlatformTitle" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Policy
@@ -1478,6 +1636,12 @@ WHERE {
          rdfs:label "Project" .
 
 
+###  http://schema.bco-dmo.org/ontology/ROV
+:ROV rdf:type owl:Class ;
+     rdfs:subClassOf :UnmannedSubmersible ;
+     rdfs:label "ROV" .
+
+
 ###  http://schema.bco-dmo.org/ontology/RasterDatasetParameterType
 :RasterDatasetParameterType rdf:type owl:Class ;
                             rdfs:subClassOf :DatasetParameterType ;
@@ -1562,6 +1726,12 @@ WHERE {
              rdfs:label "Restriction" .
 
 
+###  http://schema.bco-dmo.org/ontology/Satellite
+:Satellite rdf:type owl:Class ;
+           rdfs:subClassOf :AtmosphericPlatform ;
+           rdfs:label "Satellite" .
+
+
 ###  http://schema.bco-dmo.org/ontology/ScientistRole
 :ScientistRole rdf:type owl:Class ;
                rdfs:subClassOf :ResearchActivityRole ;
@@ -1570,10 +1740,29 @@ WHERE {
                rdfs:label "ScientistRole" .
 
 
+###  http://schema.bco-dmo.org/ontology/SeaPlatform
+:SeaPlatform rdf:type owl:Class ;
+             rdfs:subClassOf :Platform ;
+             rdfs:label "SeaPlatform" .
+
+
+###  http://schema.bco-dmo.org/ontology/Shoreside
+:Shoreside rdf:type owl:Class ;
+           rdfs:subClassOf :GeoLocation ,
+                           :LandBasedPlatform ;
+           rdfs:label "Shoreside" .
+
+
 ###  http://schema.bco-dmo.org/ontology/SmallLogo
 :SmallLogo rdf:type owl:Class ;
            rdfs:subClassOf :Logo ;
            rdfs:label "SmallLogo" .
+
+
+###  http://schema.bco-dmo.org/ontology/SmallVessel
+:SmallVessel rdf:type owl:Class ;
+             rdfs:subClassOf :Vessel ;
+             rdfs:label "SmallVessel" .
 
 
 ###  http://schema.bco-dmo.org/ontology/SoftwareApplication
@@ -1588,6 +1777,12 @@ WHERE {
                         rdfs:label "SpatialReferenceSystem" .
 
 
+###  http://schema.bco-dmo.org/ontology/StationaryVessel
+:StationaryVessel rdf:type owl:Class ;
+                  rdfs:subClassOf :Vessel ;
+                  rdfs:label "StationaryVessel" .
+
+
 ###  http://schema.bco-dmo.org/ontology/StudentRole
 :StudentRole rdf:type owl:Class ;
              rdfs:subClassOf :ResearchActivityRole ;
@@ -1596,10 +1791,22 @@ WHERE {
              rdfs:label "StudentRole" .
 
 
+###  http://schema.bco-dmo.org/ontology/Submersible
+:Submersible rdf:type owl:Class ;
+             rdfs:subClassOf :SeaPlatform ;
+             rdfs:label "Submersible" .
+
+
 ###  http://schema.bco-dmo.org/ontology/SupplementalDocument
 :SupplementalDocument rdf:type owl:Class ;
                       rdfs:subClassOf :FileDescriptor ;
                       rdfs:label "SupplementalDocument" .
+
+
+###  http://schema.bco-dmo.org/ontology/Synthesis
+:Synthesis rdf:type owl:Class ;
+           rdfs:subClassOf :AbstractPlatform ;
+           rdfs:label "Synthesis" .
 
 
 ###  http://schema.bco-dmo.org/ontology/TabularFileType
@@ -1681,6 +1888,18 @@ WHERE {
       rdfs:subClassOf :IdentifierScheme ;
       rdfs:comment "A localized UUID" ;
       rdfs:label "UUID" .
+
+
+###  http://schema.bco-dmo.org/ontology/UnmannedSubmersible
+:UnmannedSubmersible rdf:type owl:Class ;
+                     rdfs:subClassOf :Submersible ;
+                     rdfs:label "UnmannedSubmersible" .
+
+
+###  http://schema.bco-dmo.org/ontology/Vessel
+:Vessel rdf:type owl:Class ;
+        rdfs:subClassOf :SeaPlatform ;
+        rdfs:label "Vessel" .
 
 
 ###  http://schema.bco-dmo.org/ontology/VideoFileType
@@ -2153,6 +2372,15 @@ WHERE {
                                   rdfs:label "File Type: MATLAB Programming Script (.m)" .
 
 
+###  http://schema.bco-dmo.org/ontology/FileType_Markdown
+:FileType_Markdown rdf:type owl:NamedIndividual ,
+                            :FileType ;
+                   :commonFileTypeExtension "md"^^xsd:token ;
+                   :mimetype "text/markdown"^^xsd:token ;
+                   :label "Markdown" ;
+                   rdfs:label "File Type: Markdown" .
+
+
 ###  http://schema.bco-dmo.org/ontology/FileType_MicrosoftAudioVideoInterleave
 :FileType_MicrosoftAudioVideoInterleave rdf:type owl:NamedIndividual ,
                                                  :VideoFileType ;
@@ -2258,6 +2486,15 @@ WHERE {
                          :mimetype "video/quicktime"^^xsd:token ;
                          :label "Quicktime Video (.mov)" ;
                          rdfs:label "File Type: Quicktime Video (.mov)" .
+
+
+###  http://schema.bco-dmo.org/ontology/FileType_RMarkdown
+:FileType_RMarkdown rdf:type owl:NamedIndividual ,
+                             :FileType ;
+                    :commonFileTypeExtension "Rmd"^^xsd:token ;
+                    :mimetype "text/markdown"^^xsd:token ;
+                    :label "R Markdown" ;
+                    rdfs:label "File Type: R Markdown" .
 
 
 ###  http://schema.bco-dmo.org/ontology/FileType_RScript
@@ -2553,6 +2790,98 @@ Example: 1902.02776 generates a URL to 'https://arxiv.org/abs/1902.02776' and is
                                    :NamedPhase ;
                           :label "Research Phase" ;
                           rdfs:label "Named Phase: Research Phase" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_ARSV
+:PlatformTitle_ARSV rdf:type owl:NamedIndividual ,
+                             :PlatformTitle ;
+                    :label "ARSV" ;
+                    rdfs:label "Platform Title: ARSV" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_AUV
+:PlatformTitle_AUV rdf:type owl:NamedIndividual ,
+                            :PlatformTitle ;
+                   :label "AUV" ;
+                   rdfs:label "Platform Title: AUV" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_BO
+:PlatformTitle_BO rdf:type owl:NamedIndividual ,
+                           :PlatformTitle ;
+                  :label "B/O" ;
+                  rdfs:label "Platform Title: B/O" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_CCGS
+:PlatformTitle_CCGS rdf:type owl:NamedIndividual ,
+                             :PlatformTitle ;
+                    :label "CCGS" ;
+                    rdfs:label "Platform Title: CCGS" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_FV
+:PlatformTitle_FV rdf:type owl:NamedIndividual ,
+                           :PlatformTitle ;
+                  :label "F/V" ;
+                  rdfs:label "Platform Title: F/V" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_Lab
+:PlatformTitle_Lab rdf:type owl:NamedIndividual ,
+                            :PlatformTitle ;
+                   :label "Lab" ;
+                   rdfs:label "Platform Title: Lab" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_NOAAShip
+:PlatformTitle_NOAAShip rdf:type owl:NamedIndividual ,
+                                 :PlatformTitle ;
+                        :label "NOAA Ship" ;
+                        rdfs:label "Platform Title: NOAA Ship" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_RRS
+:PlatformTitle_RRS rdf:type owl:NamedIndividual ,
+                            :PlatformTitle ;
+                   :label "RRS" ;
+                   rdfs:label "Platform Title: RRS" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_RV
+:PlatformTitle_RV rdf:type owl:NamedIndividual ,
+                           :PlatformTitle ;
+                  :label "R/V" ;
+                  rdfs:comment "Research Vessel" ;
+                  rdfs:label "Platform Title: R/V" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_RVIB
+:PlatformTitle_RVIB rdf:type owl:NamedIndividual ,
+                             :PlatformTitle ;
+                    :label "RVIB" ;
+                    rdfs:label "Platform Title: RVIB" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_SSV
+:PlatformTitle_SSV rdf:type owl:NamedIndividual ,
+                            :PlatformTitle ;
+                   :label "SSV" ;
+                   rdfs:label "Platform Title: SSV" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_Shoreside
+:PlatformTitle_Shoreside rdf:type owl:NamedIndividual ,
+                                  :PlatformTitle ;
+                         :label "Shoreside" ;
+                         rdfs:label "Platform Title: Shoreside" .
+
+
+###  http://schema.bco-dmo.org/ontology/PlatformTitle_USCGC
+:PlatformTitle_USCGC rdf:type owl:NamedIndividual ,
+                              :PlatformTitle ;
+                     :label "USCGC" ;
+                     rdfs:label "Platform Title: USCGC" .
 
 
 ###  http://schema.bco-dmo.org/ontology/SpatialReferenceSystem_CRS84
