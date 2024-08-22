@@ -10,14 +10,18 @@
                                        <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
                                        <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
                                        rdfs:comment "An application ontology for describing BCO-DMO worldview." ,
-                                                    """To Do:
+                                                    """TO-Do:
 
 * Related Resource Relationships
 * Award
 * Dataset
 * Deployment
 * Instrument
-* Parameter""" ;
+* Parameter
+
+REVIEW: 
+
+* Platform Titles (dupes & necessary)""" ;
                                        rdfs:label "BCO-DMO Ontology" .
 
 #################################################################
@@ -602,13 +606,17 @@ rdf:HTML rdf:type rdfs:Datatype .
                      rdfs:label "organizationSubname" .
 
 
-###  http://schema.bco-dmo.org/ontology/resolvableUrl
-:resolvableUrl rdf:type owl:DatatypeProperty ,
+###  http://schema.bco-dmo.org/ontology/resolvableURL
+:resolvableURL rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain :EntryPoint ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :EntryPoint
+                                           :Identifier
+                                         )
+                           ] ;
                rdfs:range xsd:anyURI ;
                rdfs:comment "A URL at which some Thing may be resolved, or downloaded." ;
-               rdfs:label "resolvableUrl" .
+               rdfs:label "resolvableURL" .
 
 
 ###  http://schema.bco-dmo.org/ontology/sequence
@@ -1154,7 +1162,7 @@ WHERE {
                                                          owl:onDataRange xsd:token
                                                        ]
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :resolvableUrl ;
+                                                         owl:onProperty :resolvableURL ;
                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                          owl:onDataRange xsd:anyURI
                                                        ]
@@ -1164,6 +1172,12 @@ WHERE {
             rdfs:comment "An entry point, within some Web-based protocol." ;
             rdfs:label "EntryPoint" ;
             rdfs:seeAlso "https://schema.org/EntryPoint" .
+
+
+###  http://schema.bco-dmo.org/ontology/EntryPointGroup
+:EntryPointGroup rdf:type owl:Class ;
+                 rdfs:subClassOf :OrderedCollection ;
+                 rdfs:label "EntryPointGroup" .
 
 
 ###  http://schema.bco-dmo.org/ontology/Event
@@ -1484,6 +1498,53 @@ WHERE {
               rdfs:subClassOf :DataType ;
               rdfs:comment "Numeric values of some kind" ;
               rdfs:label "NumericValue" .
+
+
+###  http://schema.bco-dmo.org/ontology/OrderedCollection
+:OrderedCollection rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasMember ;
+                                                                owl:allValuesFrom :OrderedCollectionMember
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Collection ;
+                   rdfs:label "OrderedCollection" ;
+                   rdfs:seeAlso "https://ontologies.semanticarts.com/gist/OrderedCollection"^^xsd:anyURI .
+
+
+###  http://schema.bco-dmo.org/ontology/OrderedCollectionMember
+:OrderedCollectionMember rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :precedes ;
+                                                                                      owl:someValuesFrom :OrderedCollectionMember
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :succeeds ;
+                                                                                      owl:someValuesFrom :OrderedCollectionMember
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :sequence ;
+                                                                                      owl:someValuesFrom xsd:integer
+                                                                                    ]
+                                                                                  )
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :isMemberOf ;
+                                                                      owl:allValuesFrom :OrderedCollection
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :isMemberOf ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:label "OrderedCollectionMember" ;
+                         rdfs:seeAlso "https://ontologies.semanticarts.com/gist/OrderedMember"^^xsd:anyURI .
 
 
 ###  http://schema.bco-dmo.org/ontology/Organization
@@ -2238,6 +2299,27 @@ WHERE {
                                         :DegreeOfCommitment ;
                                :label "Obligation" ;
                                rdfs:label "Degree of Commitment: Obligation" .
+
+
+###  http://schema.bco-dmo.org/ontology/EntryPointGroup_DatasetActions
+:EntryPointGroup_DatasetActions rdf:type owl:NamedIndividual ,
+                                         :EntryPointGroup ;
+                                :label "" ;
+                                rdfs:label "Entry Point Group: Dataset Actions" .
+
+
+###  http://schema.bco-dmo.org/ontology/EntryPointGroup_DatasetERDDAP
+:EntryPointGroup_DatasetERDDAP rdf:type owl:NamedIndividual ,
+                                        :EntryPointGroup ;
+                               :label "ERDDAP" ;
+                               rdfs:label "Entry Point Group: Dataset ERDDAP" .
+
+
+###  http://schema.bco-dmo.org/ontology/EntryPointGroup_DatasetMetadata
+:EntryPointGroup_DatasetMetadata rdf:type owl:NamedIndividual ,
+                                          :EntryPointGroup ;
+                                 :label "Metadata" ;
+                                 rdfs:label "Entry Point Group: Dataset Metadata" .
 
 
 ###  http://schema.bco-dmo.org/ontology/FileType_AudioMPEG
