@@ -1,0 +1,136 @@
+@prefix : <urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe> .
+
+<urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://schema.bco-dmo.org/bcodmo/browseGraphic
+<http://schema.bco-dmo.org/bcodmo/browseGraphic> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                 rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
+                                                 rdfs:range <http://schema.bco-dmo.org/bcodmo/ImageFile> ;
+                                                 rdfs:comment "An image file representing a Thing. Typically this image communicates what the Thing is."^^xsd:string ;
+                                                 rdfs:label "browseGraphic" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/currentState
+<http://schema.bco-dmo.org/bcodmo/currentState> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
+                                                rdfs:range skos:Concept ;
+                                                rdfs:comment "The current status of a Dataset."^^xsd:string ;
+                                                rdfs:label "currentState" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/dataFile
+<http://schema.bco-dmo.org/bcodmo/dataFile> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
+                                            rdfs:range <http://schema.bco-dmo.org/bcodmo/DataFile> ;
+                                            rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
+                                            rdfs:label "dataFile" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasAgentWithRole
+<http://schema.bco-dmo.org/bcodmo/hasAgentWithRole> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                    rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ,
+                                                                owl:Thing ;
+                                                    rdfs:range <http://schema.bco-dmo.org/bcodmo/Role> ;
+                                                    rdfs:comment "has Agent With Role"^^xsd:string ;
+                                                    rdfs:label "hasAgentWithRole" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://schema.bco-dmo.org/bcodmo/abstract
+<http://schema.bco-dmo.org/bcodmo/abstract> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
+                                            rdfs:range rdf:langString ;
+                                            rdfs:comment "A short, concise description that helps data consumers understand what the dataset contains for observations and how they were collected."^^xsd:string ;
+                                            rdfs:label "abstract" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/currentStateComment
+<http://schema.bco-dmo.org/bcodmo/currentStateComment> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                       rdf:type owl:FunctionalProperty ;
+                                                       rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:comment "A private description about why the dataset has the current state."^^xsd:string ;
+                                                       rdfs:label "currentStateComment" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/label
+<http://schema.bco-dmo.org/bcodmo/label> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                         rdf:type owl:FunctionalProperty ;
+                                         rdfs:domain owl:Thing ;
+                                         rdfs:range rdfs:Literal ;
+                                         rdfs:comment "This is the primary BCO-DMO-specific name/label/title for some owl:Thing"^^xsd:string ;
+                                         rdfs:label "label" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/resolvableUrl
+<http://schema.bco-dmo.org/bcodmo/resolvableUrl> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain <http://schema.bco-dmo.org/bcodmo/File> ;
+                                                 rdfs:range xsd:anyURI ;
+                                                 rdfs:comment "A URL that can resolved over HTTP protocol."^^xsd:string ;
+                                                 rdfs:label "resolvableUrl" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.bco-dmo.org/bcodmo/DataFile
+<http://schema.bco-dmo.org/bcodmo/DataFile> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://schema.bco-dmo.org/bcodmo/File> ;
+                                            rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
+                                            rdfs:label "DatasetFile"^^xsd:string .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Dataset
+<http://schema.bco-dmo.org/bcodmo/Dataset> rdf:type owl:Class ;
+                                           rdfs:comment "A collection of observations surrounding a specific research theme typically funded by an Award and driven by a specific scientific objective like a Project."^^xsd:string ;
+                                           rdfs:label "Dataset" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/File
+<http://schema.bco-dmo.org/bcodmo/File> rdf:type owl:Class ;
+                                        rdfs:comment "Represents a digital object"^^xsd:string ;
+                                        rdfs:label "File" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ImageFile
+<http://schema.bco-dmo.org/bcodmo/ImageFile> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://schema.bco-dmo.org/bcodmo/File> ;
+                                             rdfs:comment "Represents an image file."^^xsd:string ;
+                                             rdfs:label "ImageFile" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Role
+<http://schema.bco-dmo.org/bcodmo/Role> rdf:type owl:Class ;
+                                        rdfs:label "Role" .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             rdfs:label "Concept" .
+
+
+###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
