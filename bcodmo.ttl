@@ -35,7 +35,7 @@
 <http://schema.bco-dmo.org/bcodmo/dataFile> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf owl:topObjectProperty ;
                                             rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                            rdfs:range <http://schema.bco-dmo.org/bcodmo/DataFile> ;
+                                            rdfs:range <http://schema.bco-dmo.org/bcodmo/DatasetFile> ;
                                             rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
                                             rdfs:label "dataFile" .
 
@@ -97,8 +97,8 @@
 #    Classes
 #################################################################
 
-###  http://schema.bco-dmo.org/bcodmo/DataFile
-<http://schema.bco-dmo.org/bcodmo/DataFile> rdf:type owl:Class ;
+###  http://schema.bco-dmo.org/bcodmo/DatasetFile
+<http://schema.bco-dmo.org/bcodmo/DatasetFile> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://schema.bco-dmo.org/bcodmo/File> ;
                                             rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
                                             rdfs:label "DatasetFile"^^xsd:string .
