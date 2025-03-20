@@ -1,53 +1,102 @@
-@prefix : <urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe#> .
+@prefix : <http://schema.bco-dmo.org/bcodmo/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@base <urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@base <http://schema.bco-dmo.org/bcodmo/> .
 
-<urn:webprotege:ontology:ace7e1f4-d410-479d-b33f-242e4e2d7ffe> rdf:type owl:Ontology .
+<http://schema.bco-dmo.org/bcodmo> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#deprecated
+owl:deprecated rdfs:domain :Dataset .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+rdf:HTML rdf:type rdfs:Datatype .
+
 
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  http://schema.bco-dmo.org/bcodmo/browseGraphic
-<http://schema.bco-dmo.org/bcodmo/browseGraphic> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf owl:topObjectProperty ;
-                                                 rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                                 rdfs:range <http://schema.bco-dmo.org/bcodmo/ImageFile> ;
-                                                 rdfs:comment "An image file representing a Thing. Typically this image communicates what the Thing is."^^xsd:string ;
-                                                 rdfs:label "browseGraphic" .
+:browseGraphic rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Dataset ;
+               rdfs:range :ImageFile ;
+               rdfs:comment "An image file representing a Thing. Typically this image communicates what the Thing is." ;
+               rdfs:label "browseGraphic" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/currentState
-<http://schema.bco-dmo.org/bcodmo/currentState> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf owl:topObjectProperty ;
-                                                rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                                rdfs:range skos:Concept ;
-                                                rdfs:comment "The current status of a Dataset."^^xsd:string ;
-                                                rdfs:label "currentState" .
+:currentState rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Dataset ;
+              rdfs:range skos:Concept ;
+              rdfs:comment "The current status of a Dataset." ;
+              rdfs:label "currentState" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/dataFile
-<http://schema.bco-dmo.org/bcodmo/dataFile> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf owl:topObjectProperty ;
-                                            rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                            rdfs:range <http://schema.bco-dmo.org/bcodmo/DatasetFile> ;
-                                            rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
-                                            rdfs:label "dataFile" .
+:dataFile rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Dataset ;
+          rdfs:range :DatasetFile ;
+          rdfs:comment "A file containing data that stores observations for a Dataset." ;
+          rdfs:label "dataFile" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/datasetType
+:datasetType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Dataset ;
+             rdfs:range skos:Concept ;
+             rdfs:comment "Represents the type of a Dataset" ;
+             rdfs:label "datasetType" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/fromInstrument
+:fromInstrument rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Dataset ;
+                rdfs:range :Instrument ;
+                rdfs:comment "Represents the Instrument from which the Dataset was generated." ;
+                rdfs:label "fromInstrument" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/hasAgentWithRole
-<http://schema.bco-dmo.org/bcodmo/hasAgentWithRole> rdf:type owl:ObjectProperty ;
-                                                    rdfs:subPropertyOf owl:topObjectProperty ;
-                                                    rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ,
-                                                                owl:Thing ;
-                                                    rdfs:range <http://schema.bco-dmo.org/bcodmo/Role> ;
-                                                    rdfs:comment "has Agent With Role"^^xsd:string ;
-                                                    rdfs:label "hasAgentWithRole" .
+:hasAgentWithRole rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Dataset
+                                              owl:Thing
+                                            )
+                              ] ;
+                  rdfs:range :Role ;
+                  rdfs:comment "has Agent With Role" ;
+                  rdfs:label "hasAgentWithRole" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasAward
+:hasAward rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Dataset ;
+          rdfs:range :Award ;
+          rdfs:comment "Represents the Award associated with the Dataset" ;
+          rdfs:label "hasAward" .
 
 
 #################################################################
@@ -55,82 +104,249 @@
 #################################################################
 
 ###  http://schema.bco-dmo.org/bcodmo/abstract
-<http://schema.bco-dmo.org/bcodmo/abstract> rdf:type owl:DatatypeProperty ;
-                                            rdfs:subPropertyOf owl:topDataProperty ;
-                                            rdf:type owl:FunctionalProperty ;
-                                            rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                            rdfs:range rdf:langString ;
-                                            rdfs:comment "A short, concise description that helps data consumers understand what the dataset contains for observations and how they were collected."^^xsd:string ;
-                                            rdfs:label "abstract" .
+:abstract rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Dataset ;
+          rdfs:range rdf:langString ;
+          rdfs:comment "A short, concise description that helps data consumers understand what the dataset contains for observations and how they were collected." ;
+          rdfs:label "abstract" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/currentStateComment
-<http://schema.bco-dmo.org/bcodmo/currentStateComment> rdf:type owl:DatatypeProperty ;
-                                                       rdfs:subPropertyOf owl:topDataProperty ;
-                                                       rdf:type owl:FunctionalProperty ;
-                                                       rdfs:domain <http://schema.bco-dmo.org/bcodmo/Dataset> ;
-                                                       rdfs:range xsd:string ;
-                                                       rdfs:comment "A private description about why the dataset has the current state."^^xsd:string ;
-                                                       rdfs:label "currentStateComment" .
+:currentStateComment rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain :Dataset ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "A private description about why the dataset has the current state." ;
+                     rdfs:label "currentStateComment" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/datasetTitle
+:datasetTitle rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Dataset ;
+              rdfs:range rdf:langString ;
+              rdfs:comment "The title of the dataset" ;
+              rdfs:label "datasetTitle" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/deprecated
+:deprecated rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Something that is Deprecated" ;
+            rdfs:label "deprecated" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/embargoDataUrl
+:embargoDataUrl rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Dataset ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "A hidden JGOFS URL to the Data that should be made public upon release" ;
+                rdfs:label "embargoDataUrl" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasAcquistionDescription
+:hasAcquistionDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :Dataset ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( rdf:HTML
+                                                     rdf:langString
+                                                   )
+                                     ] ;
+                          rdfs:label "Represents the Acquisition Description" ,
+                                     "hasAcquistionDescription" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/label
-<http://schema.bco-dmo.org/bcodmo/label> rdf:type owl:DatatypeProperty ;
-                                         rdfs:subPropertyOf owl:topDataProperty ;
-                                         rdf:type owl:FunctionalProperty ;
-                                         rdfs:domain owl:Thing ;
-                                         rdfs:range rdfs:Literal ;
-                                         rdfs:comment "This is the primary BCO-DMO-specific name/label/title for some owl:Thing"^^xsd:string ;
-                                         rdfs:label "label" .
+:label rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain owl:Thing ;
+       rdfs:range rdfs:Literal ;
+       rdfs:comment "This is the primary BCO-DMO-specific name/label/title for some owl:Thing" ;
+       rdfs:label "label" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/resolvableUrl
-<http://schema.bco-dmo.org/bcodmo/resolvableUrl> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:subPropertyOf owl:topDataProperty ;
-                                                 rdfs:domain <http://schema.bco-dmo.org/bcodmo/File> ;
-                                                 rdfs:range xsd:anyURI ;
-                                                 rdfs:comment "A URL that can resolved over HTTP protocol."^^xsd:string ;
-                                                 rdfs:label "resolvableUrl" .
+:resolvableUrl rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :File ;
+               rdfs:range xsd:anyURI ;
+               rdfs:comment "A URL that can resolved over HTTP protocol." ;
+               rdfs:label "resolvableUrl" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://schema.bco-dmo.org/bcodmo/DatasetFile
-<http://schema.bco-dmo.org/bcodmo/DatasetFile> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://schema.bco-dmo.org/bcodmo/File> ;
-                                            rdfs:comment "A file containing data that stores observations for a Dataset."^^xsd:string ;
-                                            rdfs:label "DatasetFile"^^xsd:string .
+###  http://schema.bco-dmo.org/bcodmo/AnalystRole
+:AnalystRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Award
+:Award rdf:type owl:Class ;
+       rdfs:comment "Award funding a Project and Dataset" ;
+       rdfs:label "Award" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/BcoDmoDataManagerRole
+:BcoDmoDataManagerRole rdf:type owl:Class ;
+                       rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/CaptainRole
+:CaptainRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ChiefScientistRole
+:ChiefScientistRole rdf:type owl:Class ;
+                    rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Co-ChiefScientistRole
+:Co-ChiefScientistRole rdf:type owl:Class ;
+                       rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Co-PrincipalInvestigatorRole
+:Co-PrincipalInvestigatorRole rdf:type owl:Class ;
+                              rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ContactRole
+:ContactRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/CuratorRole
+:CuratorRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role ;
+             rdfs:comment "Curator Role" ;
+             rdfs:label "CuratorRole" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/DataManagerRole
+:DataManagerRole rdf:type owl:Class ;
+                 rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/DataPublisherRole
+:DataPublisherRole rdf:type owl:Class ;
+                   rdfs:subClassOf :Role .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/Dataset
-<http://schema.bco-dmo.org/bcodmo/Dataset> rdf:type owl:Class ;
-                                           rdfs:comment "A collection of observations surrounding a specific research theme typically funded by an Award and driven by a specific scientific objective like a Project."^^xsd:string ;
-                                           rdfs:label "Dataset" .
+:Dataset rdf:type owl:Class ;
+         rdfs:comment "A collection of observations surrounding a specific research theme typically funded by an Award and driven by a specific scientific objective like a Project." ;
+         rdfs:label "Dataset" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/DatasetFile
+:DatasetFile rdf:type owl:Class ;
+             rdfs:subClassOf :File ;
+             rdfs:comment "A file containing data that stores observations for a Dataset." ;
+             rdfs:label "DatasetFile" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/File
-<http://schema.bco-dmo.org/bcodmo/File> rdf:type owl:Class ;
-                                        rdfs:comment "Represents a digital object"^^xsd:string ;
-                                        rdfs:label "File" .
+:File rdf:type owl:Class ;
+      rdfs:comment "Represents a digital object" ;
+      rdfs:label "File" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/GuestRole
+:GuestRole rdf:type owl:Class ;
+           rdfs:subClassOf :Role .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/ImageFile
-<http://schema.bco-dmo.org/bcodmo/ImageFile> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://schema.bco-dmo.org/bcodmo/File> ;
-                                             rdfs:comment "Represents an image file."^^xsd:string ;
-                                             rdfs:label "ImageFile" .
+:ImageFile rdf:type owl:Class ;
+           rdfs:subClassOf :File ;
+           rdfs:comment "Represents an image file." ;
+           rdfs:label "ImageFile" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Instrument
+:Instrument rdf:type owl:Class ;
+            rdfs:comment "An Instrument" ;
+            rdfs:label "Instrument" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/InternationalCollaboratorRole
+:InternationalCollaboratorRole rdf:type owl:Class ;
+                               rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/LeadPrincipalInvestigatorRole
+:LeadPrincipalInvestigatorRole rdf:type owl:Class ;
+                               rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/NSFAward
+:NSFAward rdf:type owl:Class ;
+          rdfs:subClassOf :Award .
+
+
+###  http://schema.bco-dmo.org/bcodmo/OriginatorRole
+:OriginatorRole rdf:type owl:Class ;
+                rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/PrincipalInvestigatorRole
+:PrincipalInvestigatorRole rdf:type owl:Class ;
+                           rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ProgramManagerRole
+:ProgramManagerRole rdf:type owl:Class ;
+                    rdfs:subClassOf :Role ;
+                    rdfs:comment "Program Manager Role" ;
+                    rdfs:label "ProgramManagerRole" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ProjectCoordinatorRole
+:ProjectCoordinatorRole rdf:type owl:Class ;
+                        rdfs:subClassOf :Role ;
+                        rdfs:comment "Project Coordinator Role" ;
+                        rdfs:label "ProjectCoordinatorRole" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/Role
-<http://schema.bco-dmo.org/bcodmo/Role> rdf:type owl:Class ;
-                                        rdfs:label "Role" .
+:Role rdf:type owl:Class ;
+      rdfs:label "Role" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ScientistRole
+:ScientistRole rdf:type owl:Class ;
+               rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/StudentRole
+:StudentRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/TechnicianRole
+:TechnicianRole rdf:type owl:Class ;
+                rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/UnknownRole
+:UnknownRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class ;
-             rdfs:label "Concept" .
+skos:Concept rdf:type owl:Class .
 
 
-###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
