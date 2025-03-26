@@ -99,6 +99,20 @@ rdf:HTML rdf:type rdfs:Datatype .
           rdfs:label "hasAward" .
 
 
+###  http://schema.bco-dmo.org/bcodmo/isArchivedBy
+:isArchivedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Dataset ;
+              rdfs:range :ArchiveRecord ;
+              rdfs:label "isArchivedBy" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/relatedWork
+:relatedWork rdf:type owl:ObjectProperty ;
+              rdfs:domain :CreativeWork ;
+              rdfs:range :CreativeWork ;
+             rdfs:label "relatedWork" .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -163,6 +177,33 @@ rdf:HTML rdf:type rdfs:Datatype .
                                      "hasAcquistionDescription" .
 
 
+###  http://schema.bco-dmo.org/bcodmo/hasBriefDescription
+:hasBriefDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasDataManagementProcessing
+:hasDataManagementProcessing rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:label "hasDataManagementProcessing" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasLocation
+:hasLocation rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:label "hasLocation" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasProblemDescription
+:hasProblemDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.bco-dmo.org/bcodmo/hasProcessingDescription
+:hasProcessingDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty .
+
+
 ###  http://schema.bco-dmo.org/bcodmo/label
 :label rdf:type owl:DatatypeProperty ;
        rdfs:subPropertyOf owl:topDataProperty ;
@@ -188,13 +229,26 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/bcodmo/AnalystRole
 :AnalystRole rdf:type owl:Class ;
-             rdfs:subClassOf :Role .
+             rdfs:subClassOf :Role ;
+             rdfs:label "AnalystRole" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/ArchiveRecord
+:ArchiveRecord rdf:type owl:Class ;
+               rdfs:subClassOf :CreativeWork ;
+               rdfs:label "ArchiveRecord" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/Award
 :Award rdf:type owl:Class ;
        rdfs:comment "Award funding a Project and Dataset" ;
        rdfs:label "Award" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/BCODMOIdentifier
+:BCODMOIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf :Identifier ;
+                  rdfs:label "BCODMOIdentifier" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/BcoDmoDataManagerRole
@@ -227,11 +281,22 @@ rdf:HTML rdf:type rdfs:Datatype .
              rdfs:subClassOf :Role .
 
 
+###  http://schema.bco-dmo.org/bcodmo/CreativeWork
+:CreativeWork rdf:type owl:Class ;
+              rdfs:label "CreativeWork" .
+
+
 ###  http://schema.bco-dmo.org/bcodmo/CuratorRole
 :CuratorRole rdf:type owl:Class ;
              rdfs:subClassOf :Role ;
              rdfs:comment "Curator Role" ;
              rdfs:label "CuratorRole" .
+
+
+###  http://schema.bco-dmo.org/bcodmo/DOIRecord
+:DOIRecord rdf:type owl:Class ;
+           rdfs:subClassOf :ArchiveRecord ;
+           rdfs:label "DOIRecord" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/DataManagerRole
@@ -246,6 +311,7 @@ rdf:HTML rdf:type rdfs:Datatype .
 
 ###  http://schema.bco-dmo.org/bcodmo/Dataset
 :Dataset rdf:type owl:Class ;
+         rdfs:subClassOf :CreativeWork ;
          rdfs:comment "A collection of observations surrounding a specific research theme typically funded by an Award and driven by a specific scientific objective like a Project." ;
          rdfs:label "Dataset" .
 
@@ -266,6 +332,11 @@ rdf:HTML rdf:type rdfs:Datatype .
 ###  http://schema.bco-dmo.org/bcodmo/GuestRole
 :GuestRole rdf:type owl:Class ;
            rdfs:subClassOf :Role .
+
+
+###  http://schema.bco-dmo.org/bcodmo/Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:label "Identifier" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/ImageFile
@@ -294,6 +365,12 @@ rdf:HTML rdf:type rdfs:Datatype .
 ###  http://schema.bco-dmo.org/bcodmo/NSFAward
 :NSFAward rdf:type owl:Class ;
           rdfs:subClassOf :Award .
+
+
+###  http://schema.bco-dmo.org/bcodmo/NationalArchiveRecord
+:NationalArchiveRecord rdf:type owl:Class ;
+                       rdfs:subClassOf :ArchiveRecord ;
+                       rdfs:label "NationalArchiveRecord" .
 
 
 ###  http://schema.bco-dmo.org/bcodmo/OriginatorRole
