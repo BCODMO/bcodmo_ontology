@@ -1,0 +1,73 @@
+@prefix bcodmo: <https://schema.bco-dmo.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:bcodmo:metadata-completeness-score:result:123>
+  a bcodmo:CreativeWorkTestSuiteScore ;
+  bcodmo:forTestSuite <urn:bcodmo:metadata-completeness-score:test-suite:456> ;
+  bcodmo:forExpectationScore [
+    a bcodmo:ExpectationScore ;
+    bcodmo:isPassing true ;
+    bcodmo:scoreValue "100"^^xsd:float ;
+    bcodmo:forExpectation <urn:bcodmo:metadata-completeness-score:test-suite-expectation:789>
+  ] ;
+  bcodmo:scoreForCreativeWork <urn:bcodmo:submission:An4pNkjRBBECNpkP:dataset:123> ;
+  bcodmo:totalScore "100"^^xsd:float .
+
+<urn:bcodmo:metadata-completeness-score:test-suite:456>
+  a bcodmo:TestSuite ;
+  bcodmo:label "BCO-DMO Minimal Dataset Metadata" ;
+  bcodmo:requires <urn:bcodmo:metadata-completeness-score:test-suite-expectation:789> ;
+  bcodmo:validatedWithCode [ bcodmo:description "Something to idnetify how to execute the test suite" ] ;
+  bcodmo:versionID "0.1.0"^^xsd:token .
+
+<urn:bcodmo:metadata-completeness-score:test-suite-expectation:789>
+  a bcodmo:TestSuiteExpectation ;
+  bcodmo:characteristicValue 10 ;
+  bcodmo:expectsPropertyCharacteristic <urn:bcodmo:metadata-completeness-score:characteristic:greater-than-x-words> ;
+  bcodmo:label "Title must be at least 10 words." ;
+  bcodmo:ofProperty <urn:bcodmo:dataset-property:title> .
+
+<urn:bcodmo:submission:An4pNkjRBBECNpkP:dataset:xxxx>
+  a bcodmo:AbbreviatedDataset ;
+  bcodmo:abbreviates <urn:bcodmo:submission:An4pNkjRBBECNpkP> ;
+  bcodmo:fromSoftware <urn:bcodmo:applications:submit.bco-dmo.org> ;
+  bcodmo:hasPropertyValue [
+    a bcodmo:PropertyValue ;
+    bcodmo:isInstanceOf <urn:bcodmo:dataset-property:title> ;
+    bcodmo:value "This is the title of this particular dataset blah blah blah."^^xsd:string
+  ] ;
+  bcodmo:hasPropertyValue [
+    a bcodmo:PropertyValue ;
+    bcodmo:isInstanceOf <urn:bcodmo:dataset-property:project> ;
+    bcodmo:value "This is the project name blah blah blah."^^xsd:string
+  ] .
+
+<urn:bcodmo:metadata-completeness-score:characteristic:greater-than-x-words>
+  a bcodmo:Characteristic ;
+  bcodmo:label "Greater than {x} words." .
+
+<urn:bcodmo:dataset-property:title>
+  a <https://schema.bco-dmo.org/DatasetProperty> ;
+  bcodmo:propertyPath "bcodmo:title" .
+
+<urn:bcodmo:dataset-property:project>
+  a <https://schema.bco-dmo.org/DatasetProperty> ;
+  bcodmo:propertyPath "bcodmo:hasProject/bcodmo:title" .
+
+# See: https://private.bco-dmo.org/?class=http%3A%2F%2Fschema.bco-dmo.org%2FSubmissionStatus_SubmissionAccepted
+<bcodmo:SubmissionStatus_SubmissionAccepted>
+  a bcodmo:ApplicationStatus ;
+  bcodmo:label "Submission Accepted" .
+
+<bcodmo:SubmissionStatus_UnderReview>
+  a bcodmo:ApplicationStatus ;
+  bcodmo:label "Under Review" .
+
+<urn:bcodmo:applications:submit.bco-dmo.org>
+  a bcodmo:SoftwareApplication ;
+  bcodmo:affordsState <bcodmo:SubmissionStatus_SubmissionAccepted>, <bcodmo:SubmissionStatus_UnderReview> ;
+  bcodmo:hasWorkflowRule [
+    a bcodmo:SoftwareApplicationTestSuiteRule ;
+    bcodmo:forState <bcodmo:SubmissionStatus_SubmissionAccepted> ;
+    bcodmo:forTestSuite <urn:bcodmo:metadata-completeness-score:test-suite:456>
+  ] .
