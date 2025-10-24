@@ -28,10 +28,6 @@ owl:deprecated rdfs:domain :Dataset .
 rdf:HTML rdf:type rdfs:Datatype .
 
 
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
 #################################################################
 #    Object Properties
 #################################################################
