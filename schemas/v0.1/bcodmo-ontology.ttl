@@ -1,0 +1,1590 @@
+@prefix : <https://schema.bco-dmo.org/v0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix bcodmo: <https://schema.bco-dmo.org/v0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://schema.bco-dmo.org/v0.1/> .
+
+<https://schema.bco-dmo.org/v0.1/> rdf:type owl:Ontology ;
+                                    owl:versionIRI <https://schema.bco-dmo.org/v0.1/> ;
+                                    rdfs:comment "Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." ;
+                                    rdfs:label "BCO-DMO Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+rdf:HTML rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2006/time#hasBeginning
+time:hasBeginning rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty bcodmo:hasBeginning .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+time:hasEnd rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty bcodmo:hasEnd .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+prov:wasAttributedTo rdf:type owl:ObjectProperty ;
+                     rdfs:domain bcodmo:DOIStatus ;
+                     rdfs:range bcodmo:Person ;
+                     rdfs:comment "The person who set/attributed this DOI status (from PROV-O)." ;
+                     rdfs:label "wasAttributedTo" .
+
+
+###  https://schema.bco-dmo.org/v0.1/affiliation
+bcodmo:affiliation rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:Person ;
+                   rdfs:range bcodmo:Affiliation ;
+                   rdfs:comment "The primary institutional affiliation of a person." ;
+                   rdfs:label "affiliation" .
+
+
+###  https://schema.bco-dmo.org/v0.1/author
+bcodmo:author rdf:type owl:ObjectProperty ;
+              rdfs:domain bcodmo:CreativeWork ;
+              rdfs:range bcodmo:AgentRole ;
+              rdfs:comment "An ordered list of authors associated with the dataset (via AgentRole)." ;
+              rdfs:label "author" .
+
+
+###  https://schema.bco-dmo.org/v0.1/checksum
+bcodmo:checksum rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bcodmo:identifier ;
+                rdfs:domain bcodmo:File ;
+                rdfs:range bcodmo:CryptographicHash ;
+                rdfs:comment "A cryptographic hash for verifying file integrity." ;
+                rdfs:label "checksum" .
+
+
+###  https://schema.bco-dmo.org/v0.1/conformsTo
+bcodmo:conformsTo rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DOIDataset ;
+                  rdfs:range bcodmo:MetadataProfile ;
+                  rdfs:comment "The metadata profile specification to which this datapackage conforms." ;
+                  rdfs:label "conformsTo" .
+
+
+###  https://schema.bco-dmo.org/v0.1/contributor
+bcodmo:contributor rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:CreativeWork ;
+                   rdfs:range bcodmo:AgentRole ;
+                   rdfs:comment "An ordered list of contributors associated with the dataset (via AgentRole)." ;
+                   rdfs:label "contributor" .
+
+
+###  https://schema.bco-dmo.org/v0.1/createdDate
+bcodmo:createdDate rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:DOIDataset ;
+                   rdfs:range bcodmo:TemporalInstant ;
+                   rdfs:comment "The date on which this datapackage record was created." ;
+                   rdfs:label "createdDate" .
+
+
+###  https://schema.bco-dmo.org/v0.1/currentState
+bcodmo:currentState rdf:type owl:ObjectProperty ;
+                    rdfs:domain bcodmo:DOIDataset ;
+                    rdfs:range bcodmo:CurrentState ;
+                    rdfs:comment "The editorial/curation state of the dataset." ;
+                    rdfs:label "currentState" .
+
+
+###  https://schema.bco-dmo.org/v0.1/dataFile
+bcodmo:dataFile rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range bcodmo:DataFile ;
+                rdfs:comment "A primary or supplemental data file distributed with this dataset package." ;
+                rdfs:label "dataFile" .
+
+
+###  https://schema.bco-dmo.org/v0.1/dataType
+bcodmo:dataType rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DatasetParameter ;
+                rdfs:range bcodmo:Datatype ;
+                rdfs:comment "The data type of a dataset parameter." ;
+                rdfs:label "dataType" .
+
+
+###  https://schema.bco-dmo.org/v0.1/datasetType
+bcodmo:datasetType rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:DOIDataset ;
+                   rdfs:range bcodmo:DatasetType ;
+                   rdfs:comment "A category or type classification for this dataset." ;
+                   rdfs:label "datasetType" .
+
+
+###  https://schema.bco-dmo.org/v0.1/describesFile
+bcodmo:describesFile rdf:type owl:ObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( bcodmo:DataFile
+                                                 bcodmo:MetadataFile
+                                                 bcodmo:SupplementalDocument
+                                               )
+                                 ] ;
+                     rdfs:range bcodmo:File ;
+                     rdfs:comment "Links a file record to the File object describing its physical properties." ;
+                     rdfs:label "describesFile" .
+
+
+###  https://schema.bco-dmo.org/v0.1/fileType
+bcodmo:fileType rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:File ;
+                rdfs:range bcodmo:FileType ;
+                rdfs:comment "The format type of this file." ;
+                rdfs:label "fileType" .
+
+
+###  https://schema.bco-dmo.org/v0.1/forDataset
+bcodmo:forDataset rdf:type owl:ObjectProperty ;
+                  rdfs:range bcodmo:Dataset ;
+                  rdfs:comment "Links to a dataset." ;
+                  rdfs:label "forDataset" .
+
+
+###  https://schema.bco-dmo.org/v0.1/fromDeployment
+bcodmo:fromDeployment rdf:type owl:ObjectProperty ;
+                      rdfs:domain bcodmo:DatasetDeployment ;
+                      rdfs:range bcodmo:Deployment ;
+                      rdfs:comment "Links a deployment and a dataset." ;
+                      rdfs:label "fromDeployment" .
+
+
+###  https://schema.bco-dmo.org/v0.1/fromInstrument
+bcodmo:fromInstrument rdf:type owl:ObjectProperty ;
+                      rdfs:domain bcodmo:DOIDataset ;
+                      rdfs:range bcodmo:DatasetInstrument ;
+                      rdfs:comment "Links a dataset to the instruments used to collect the data." ;
+                      rdfs:label "fromInstrument" .
+
+
+###  https://schema.bco-dmo.org/v0.1/fundedBy
+bcodmo:fundedBy rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range bcodmo:Organization ;
+                rdfs:comment "A funding organisation that supported the work resulting in this dataset." ;
+                rdfs:label "fundedBy" .
+
+
+###  https://schema.bco-dmo.org/v0.1/geometry
+bcodmo:geometry rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:GeographicalLocation ;
+                rdfs:range bcodmo:Geometry ;
+                rdfs:comment "One or more geometries (centroid, bounding box) describing a geographical location." ;
+                rdfs:label "geometry" .
+
+
+###  https://schema.bco-dmo.org/v0.1/governedBy
+bcodmo:governedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DOIDataset ;
+                  rdfs:range bcodmo:Policy ;
+                  rdfs:comment "A policy (e.g. embargo) that governs access to this dataset." ;
+                  rdfs:label "governedBy" .
+
+
+###  https://schema.bco-dmo.org/v0.1/grantedAward
+bcodmo:grantedAward rdf:type owl:ObjectProperty ;
+                    rdfs:domain bcodmo:FundingAgency ;
+                    rdfs:range bcodmo:Award ;
+                    rdfs:comment "An award (grant) issued by this funding organisation." ;
+                    rdfs:label "grantedAward" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasAgentWithRole
+bcodmo:hasAgentWithRole rdf:type owl:ObjectProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( bcodmo:Dataset
+                                                    bcodmo:Deployment
+                                                    bcodmo:ResearchActivity
+                                                  )
+                                    ] ;
+                        rdfs:range bcodmo:AgentRole ;
+                        rdfs:comment "Associates an agent with a qualified role on a dataset or deployment." ;
+                        rdfs:label "hasAgentWithRole" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasBeginning
+bcodmo:hasBeginning rdf:type owl:ObjectProperty ;
+                    rdfs:domain bcodmo:TemporalInterval ;
+                    rdfs:range bcodmo:TemporalInstant ;
+                    rdfs:comment "The start of a temporal interval." ;
+                    rdfs:label "hasBeginning" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasEnd
+bcodmo:hasEnd rdf:type owl:ObjectProperty ;
+              rdfs:domain bcodmo:TemporalInterval ;
+              rdfs:range bcodmo:TemporalInstant ;
+              rdfs:comment "The end of a temporal interval." ;
+              rdfs:label "hasEnd" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasProgram
+bcodmo:hasProgram rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DOIDataset ;
+                  rdfs:range bcodmo:Program ;
+                  rdfs:comment "Associates a dataset with a scientific program." ;
+                  rdfs:label "hasProgram" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasProject
+bcodmo:hasProject rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DOIDataset ;
+                  rdfs:range bcodmo:Project ;
+                  rdfs:comment "Associates a dataset with a scientific project." ;
+                  rdfs:label "hasProject" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasSynonym
+bcodmo:hasSynonym rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:Deployment ;
+                  rdfs:range bcodmo:Synonym ;
+                  rdfs:comment "An alternative name used for a deployment." ;
+                  rdfs:label "hasSynonym" .
+
+
+###  https://schema.bco-dmo.org/v0.1/identifier
+bcodmo:identifier rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( bcodmo:Affiliation
+                                              bcodmo:DOIDataset
+                                              bcodmo:DataFile
+                                              bcodmo:Deployment
+                                              bcodmo:Organization
+                                              bcodmo:Person
+                                            )
+                              ] ;
+                  rdfs:range bcodmo:Identifier ;
+                  rdfs:comment "An identifier assigned to a resource." ;
+                  rdfs:label "identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/identifierScheme
+bcodmo:identifierScheme rdf:type owl:ObjectProperty ;
+                        rdfs:domain bcodmo:Identifier ;
+                        rdfs:range bcodmo:IdentifierScheme ;
+                        rdfs:comment "The scheme (authority) that defines the identifier." ;
+                        rdfs:label "identifierScheme" .
+
+
+###  https://schema.bco-dmo.org/v0.1/inGroup
+bcodmo:inGroup rdf:type owl:ObjectProperty ;
+               rdfs:domain bcodmo:ResourceRelation ;
+               rdfs:range bcodmo:ResourceRelationGroup ;
+               rdfs:comment "The group/category to which a resource relation type belongs." ;
+               rdfs:label "inGroup" .
+
+
+###  https://schema.bco-dmo.org/v0.1/isTypeOf
+bcodmo:isTypeOf rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( bcodmo:DatasetInstrument
+                                            bcodmo:DatasetParameter
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( bcodmo:Instrument
+                                           bcodmo:Parameter
+                                         )
+                           ] ;
+                rdfs:comment "Links a dataset-level parameter or instrument instance to its master (community vocabulary) definition." ;
+                rdfs:label "isTypeOf" .
+
+
+###  https://schema.bco-dmo.org/v0.1/issuedDate
+bcodmo:issuedDate rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DOIDataset ;
+                  rdfs:range bcodmo:TemporalInstant ;
+                  rdfs:comment "The date on which the DOI was issued for this dataset." ;
+                  rdfs:label "issuedDate" .
+
+
+###  https://schema.bco-dmo.org/v0.1/keywords
+bcodmo:keywords rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range bcodmo:Keyword ;
+                rdfs:comment "Subject keywords associated with this dataset." ;
+                rdfs:label "keywords" .
+
+
+###  https://schema.bco-dmo.org/v0.1/language
+bcodmo:language rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range bcodmo:Language ;
+                rdfs:comment "The natural language used in the dataset metadata." ;
+                rdfs:label "language" .
+
+
+###  https://schema.bco-dmo.org/v0.1/license
+bcodmo:license rdf:type owl:ObjectProperty ;
+               rdfs:domain bcodmo:DOIDataset ;
+               rdfs:range bcodmo:License ;
+               rdfs:comment "The data license applied to this dataset." ;
+               rdfs:label "license" .
+
+
+###  https://schema.bco-dmo.org/v0.1/matches
+bcodmo:matches rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( bcodmo:Instrument
+                                           bcodmo:Parameter
+                                           bcodmo:ResourceRelation
+                                         )
+                           ] ;
+               rdfs:comment "Aligns a BCO-DMO vocabulary term with an equivalent term from an external community vocabulary (e.g. SeaDataNet, NERC, Crossref, DataCite)." ;
+               rdfs:label "matches" .
+
+
+###  https://schema.bco-dmo.org/v0.1/metadataFile
+bcodmo:metadataFile rdf:type owl:ObjectProperty ;
+                    rdfs:domain bcodmo:DOIDataset ;
+                    rdfs:range bcodmo:MetadataFile ;
+                    rdfs:comment "A metadata file (ISO XML, description PDF) bundled in the dataset package." ;
+                    rdfs:label "metadataFile" .
+
+
+###  https://schema.bco-dmo.org/v0.1/obsoletes
+bcodmo:obsoletes rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain bcodmo:DOIDataset ;
+                 rdfs:range bcodmo:DOIDataset ;
+                 rdfs:comment "A previous version of this dataset that is superseded by the current one." ;
+                 rdfs:label "obsoletes" .
+
+
+###  https://schema.bco-dmo.org/v0.1/onPlatform
+bcodmo:onPlatform rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:Deployment ;
+                  rdfs:range bcodmo:Platform ;
+                  rdfs:comment "The platform (vessel, buoy, etc.) on which a deployment took place." ;
+                  rdfs:label "onPlatform" .
+
+
+###  https://schema.bco-dmo.org/v0.1/performedAt
+bcodmo:performedAt rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:AgentRole ;
+                   rdfs:range bcodmo:Affiliation ;
+                   rdfs:comment "The institutional affiliation at which the role was performed." ;
+                   rdfs:label "performedAt" .
+
+
+###  https://schema.bco-dmo.org/v0.1/performedBy
+bcodmo:performedBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain bcodmo:AgentRole ;
+                   rdfs:range bcodmo:Agent ;
+                   rdfs:comment "The person who performed or holds this role." ;
+                   rdfs:label "performedBy" .
+
+
+###  https://schema.bco-dmo.org/v0.1/platformTitle
+bcodmo:platformTitle rdf:type owl:ObjectProperty ;
+                     rdfs:domain bcodmo:Platform ;
+                     rdfs:range bcodmo:PlatformTitle ;
+                     rdfs:comment "The official or common title of the platform." ;
+                     rdfs:label "platformTitle" .
+
+
+###  https://schema.bco-dmo.org/v0.1/platformType
+bcodmo:platformType rdf:type owl:ObjectProperty ;
+                    rdfs:domain bcodmo:Platform ;
+                    rdfs:range bcodmo:PlatformType ;
+                    rdfs:comment "The type/category of the platform." ;
+                    rdfs:label "platformType" .
+
+
+###  https://schema.bco-dmo.org/v0.1/programManager
+bcodmo:programManager rdf:type owl:ObjectProperty ;
+                      rdfs:domain bcodmo:Award ;
+                      rdfs:range bcodmo:Person ;
+                      rdfs:comment "The program manager at the funding agency responsible for this award." ;
+                      rdfs:label "programManager" .
+
+
+###  https://schema.bco-dmo.org/v0.1/provider
+bcodmo:provider rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range bcodmo:Organization ;
+                rdfs:comment "The service provider that hosts/distributes the dataset." ;
+                rdfs:label "provider" .
+
+
+###  https://schema.bco-dmo.org/v0.1/publishedDate
+bcodmo:publishedDate rdf:type owl:ObjectProperty ;
+                     rdfs:domain bcodmo:DOIDataset ;
+                     rdfs:range bcodmo:TemporalInstant ;
+                     rdfs:comment "The date on which this dataset version was published." ;
+                     rdfs:label "publishedDate" .
+
+
+###  https://schema.bco-dmo.org/v0.1/publisher
+bcodmo:publisher rdf:type owl:ObjectProperty ;
+                 rdfs:domain bcodmo:DOIDataset ;
+                 rdfs:range bcodmo:Organization ;
+                 rdfs:comment "The organisation responsible for publishing this dataset (BCO-DMO)." ;
+                 rdfs:label "publisher" .
+
+
+###  https://schema.bco-dmo.org/v0.1/relations
+bcodmo:relations rdf:type owl:ObjectProperty ;
+                 rdfs:domain bcodmo:DOIDataset ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( bcodmo:Dataset
+                                            bcodmo:Publication
+                                          )
+                            ] ;
+                 rdfs:comment "Related publications or datasets associated with this dataset." ;
+                 rdfs:label "relations" .
+
+
+###  https://schema.bco-dmo.org/v0.1/relationship
+bcodmo:relationship rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( bcodmo:Dataset
+                                                bcodmo:Publication
+                                              )
+                                ] ;
+                    rdfs:range bcodmo:ResourceRelation ;
+                    rdfs:comment "A controlled-vocabulary relation type between two resources." ;
+                    rdfs:label "relationship" .
+
+
+###  https://schema.bco-dmo.org/v0.1/resolution
+bcodmo:resolution rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( bcodmo:TemporalInstant
+                                              bcodmo:TemporalInterval
+                                            )
+                              ] ;
+                  rdfs:comment "The temporal resolution of a temporal extent (e.g. time:unitDay)." ;
+                  rdfs:label "resolution" .
+
+
+###  https://schema.bco-dmo.org/v0.1/role
+bcodmo:role rdf:type owl:ObjectProperty ;
+            rdfs:domain bcodmo:AgentRole ;
+            rdfs:range bcodmo:Role ;
+            rdfs:comment "The role type performed by the agent." ;
+            rdfs:label "role" .
+
+
+###  https://schema.bco-dmo.org/v0.1/spatialExtent
+bcodmo:spatialExtent rdf:type owl:ObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( bcodmo:DOIDataset
+                                                 bcodmo:Deployment
+                                                 bcodmo:Program
+                                                 bcodmo:Project
+                                               )
+                                 ] ;
+                     rdfs:range bcodmo:GeographicalLocation ;
+                     rdfs:comment "The spatial coverage of the dataset, deployment, project, or program." ;
+                     rdfs:label "spatialExtent" .
+
+
+###  https://schema.bco-dmo.org/v0.1/status
+bcodmo:status rdf:type owl:ObjectProperty ;
+              rdfs:domain bcodmo:CreativeWork ;
+              rdfs:range bcodmo:DOIStatus ;
+              rdfs:comment "The current DOI lifecycle status of the dataset package." ;
+              rdfs:label "status" .
+
+
+###  https://schema.bco-dmo.org/v0.1/storesValuesFor
+bcodmo:storesValuesFor rdf:type owl:ObjectProperty ;
+                       rdfs:domain bcodmo:DOIDataset ;
+                       rdfs:range bcodmo:DatasetParameter ;
+                       rdfs:comment "Links a dataset to the parameters whose values it records." ;
+                       rdfs:label "storesValuesFor" .
+
+
+###  https://schema.bco-dmo.org/v0.1/supplementalDocument
+bcodmo:supplementalDocument rdf:type owl:ObjectProperty ;
+                            rdfs:domain bcodmo:DOIDataset ;
+                            rdfs:range bcodmo:SupplementalDocument ;
+                            rdfs:comment "A supplemental document distributed with this dataset package." ;
+                            rdfs:label "supplementalDocument" .
+
+
+###  https://schema.bco-dmo.org/v0.1/target
+bcodmo:target rdf:type owl:ObjectProperty ;
+              rdfs:domain bcodmo:Policy ;
+              rdfs:range bcodmo:DOIDataset ;
+              rdfs:comment "The resource to which this policy applies." ;
+              rdfs:label "target" .
+
+
+###  https://schema.bco-dmo.org/v0.1/temporalExtent
+bcodmo:temporalExtent rdf:type owl:ObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( bcodmo:DOIDataset
+                                                  bcodmo:Deployment
+                                                )
+                                  ] ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( bcodmo:TemporalInstant
+                                                 bcodmo:TemporalInterval
+                                               )
+                                 ] ;
+                      rdfs:comment "The temporal coverage of the dataset or deployment." ;
+                      rdfs:label "temporalExtent" .
+
+
+###  https://schema.bco-dmo.org/v0.1/units
+bcodmo:units rdf:type owl:ObjectProperty ;
+             rdfs:domain bcodmo:DatasetParameter ;
+             rdfs:range bcodmo:UnitOfMeasure ;
+             rdfs:comment "The unit of measure for a dataset parameter." ;
+             rdfs:label "units" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.bco-dmo.org/v0.1/abbreviation
+bcodmo:abbreviation rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "A short abbreviation for a scheme, language, or licence." ;
+                    rdfs:label "abbreviation" .
+
+
+###  https://schema.bco-dmo.org/v0.1/abstract
+bcodmo:abstract rdf:type owl:DatatypeProperty ;
+                rdfs:domain bcodmo:DOIDataset ;
+                rdfs:range xsd:string ;
+                rdfs:comment "A plain-text abstract describing the dataset." ;
+                rdfs:label "abstract" .
+
+
+###  https://schema.bco-dmo.org/v0.1/acquisitionDescription
+bcodmo:acquisitionDescription rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( bcodmo:DOIDataset
+                                                          bcodmo:Deployment
+                                                        )
+                                          ] ;
+                              rdfs:range rdf:HTML ;
+                              rdfs:comment "An HTML description of data acquisition methods." ;
+                              rdfs:label "acquisitionDescription" .
+
+
+###  https://schema.bco-dmo.org/v0.1/acronym
+bcodmo:acronym rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:token ;
+               rdfs:comment "An acronym or abbreviation for an organisation, affiliation, project, or program." ;
+               rdfs:label "acronym" .
+
+
+###  https://schema.bco-dmo.org/v0.1/affiliationName
+bcodmo:affiliationName rdf:type owl:DatatypeProperty ;
+                       rdfs:domain bcodmo:Affiliation ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "The primary name of the affiliated institution." ;
+                       rdfs:label "affiliationName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/affiliationSubName
+bcodmo:affiliationSubName rdf:type owl:DatatypeProperty ;
+                          rdfs:domain bcodmo:Affiliation ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "A sub-unit or department name within an affiliated institution." ;
+                          rdfs:label "affiliationSubName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/bibliographicCitation
+bcodmo:bibliographicCitation rdf:type owl:DatatypeProperty ;
+                             rdfs:domain [ rdf:type owl:Class ;
+                                           owl:unionOf ( bcodmo:Dataset
+                                                         bcodmo:Publication
+                                                       )
+                                         ] ;
+                             rdfs:range rdf:HTML ;
+                             rdfs:comment "The full bibliographic citation for a related publication or dataset." ;
+                             rdfs:label "bibliographicCitation" .
+
+
+###  https://schema.bco-dmo.org/v0.1/bytesize
+bcodmo:bytesize rdf:type owl:DatatypeProperty ;
+                rdfs:domain bcodmo:File ;
+                rdfs:range xsd:long ;
+                rdfs:comment "The size of the file in bytes." ;
+                rdfs:label "bytesize" .
+
+
+###  https://schema.bco-dmo.org/v0.1/dataManagementProcessingDescription
+bcodmo:dataManagementProcessingDescription rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain bcodmo:DOIDataset ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "A description of data management and processing applied by BCO-DMO." ;
+                                           rdfs:label "dataManagementProcessingDescription" .
+
+
+###  https://schema.bco-dmo.org/v0.1/description
+bcodmo:description rdf:type owl:DatatypeProperty ;
+                   rdfs:range rdf:HTML ;
+                   rdfs:comment "An HTML description of a resource." ;
+                   rdfs:label "description" .
+
+
+###  https://schema.bco-dmo.org/v0.1/eastBoundary
+bcodmo:eastBoundary rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bcodmo:BoundingBoxGeometry ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "The eastern longitude boundary of a bounding box (decimal degrees)." ;
+                    rdfs:label "eastBoundary" .
+
+
+###  https://schema.bco-dmo.org/v0.1/encoding
+bcodmo:encoding rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The character encoding of a file (e.g. utf-8)." ;
+                rdfs:label "encoding" .
+
+
+###  https://schema.bco-dmo.org/v0.1/expirationDate
+bcodmo:expirationDate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain bcodmo:EmbargoPolicy ;
+                      rdfs:range xsd:date ;
+                      rdfs:comment "The date on which an embargo expires and the dataset becomes publicly accessible." ;
+                      rdfs:label "expirationDate" .
+
+
+###  https://schema.bco-dmo.org/v0.1/externalWebsite
+bcodmo:externalWebsite rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( bcodmo:Program
+                                                   bcodmo:Project
+                                                 )
+                                   ] ;
+                       rdfs:range xsd:anyURI ;
+                       rdfs:comment "The external project or program website URL." ;
+                       rdfs:label "externalWebsite" .
+
+
+###  https://schema.bco-dmo.org/v0.1/familyName
+bcodmo:familyName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain bcodmo:Person ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The family (last) name of a person." ;
+                  rdfs:label "familyName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/filename
+bcodmo:filename rdf:type owl:DatatypeProperty ;
+                rdfs:domain bcodmo:File ;
+                rdfs:range xsd:token ;
+                rdfs:comment "The file name including extension." ;
+                rdfs:label "filename" .
+
+
+###  https://schema.bco-dmo.org/v0.1/givenName
+bcodmo:givenName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain bcodmo:Person ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The given (first) name of a person." ;
+                 rdfs:label "givenName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/hasReportURL
+bcodmo:hasReportURL rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bcodmo:Deployment ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:comment "A URL linking to the cruise/deployment report." ;
+                    rdfs:label "hasReportURL" .
+
+
+###  https://schema.bco-dmo.org/v0.1/identifierValue
+bcodmo:identifierValue rdf:type owl:DatatypeProperty ;
+                       rdfs:domain bcodmo:Identifier ;
+                       rdfs:range xsd:token ;
+                       rdfs:comment "The raw identifier string value (e.g. the DOI suffix, the ROR ID)." ;
+                       rdfs:label "identifierValue" .
+
+
+###  https://schema.bco-dmo.org/v0.1/isPrimaryDataFile
+bcodmo:isPrimaryDataFile rdf:type owl:DatatypeProperty ;
+                         rdfs:domain bcodmo:DataFile ;
+                         rdfs:range xsd:boolean ;
+                         rdfs:comment "Indicates whether this is the primary data file of a dataset (true/false)." ;
+                         rdfs:label "isPrimaryDataFile" .
+
+
+###  https://schema.bco-dmo.org/v0.1/label
+bcodmo:label rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string ;
+             rdfs:comment "A human-readable label for any BCO-DMO resource." ;
+             rdfs:label "label" .
+
+
+###  https://schema.bco-dmo.org/v0.1/middleName
+bcodmo:middleName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain bcodmo:Person ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The middle name or initial of a person." ;
+                  rdfs:label "middleName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/mimeType
+bcodmo:mimeType rdf:type owl:DatatypeProperty ;
+                rdfs:domain bcodmo:FileType ;
+                rdfs:range xsd:token ;
+                rdfs:comment "The MIME type associated with a file type." ;
+                rdfs:label "mimeType" .
+
+
+###  https://schema.bco-dmo.org/v0.1/name
+bcodmo:name rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string ;
+            rdfs:comment "A name property (used on Language and similar small vocabulary resources)." ;
+            rdfs:label "name" .
+
+
+###  https://schema.bco-dmo.org/v0.1/northBoundary
+bcodmo:northBoundary rdf:type owl:DatatypeProperty ;
+                     rdfs:domain bcodmo:BoundingBoxGeometry ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "The northern latitude boundary of a bounding box (decimal degrees)." ;
+                     rdfs:label "northBoundary" .
+
+
+###  https://schema.bco-dmo.org/v0.1/officialName
+bcodmo:officialName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bcodmo:Parameter ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "The official name for a master parameter." ;
+                    rdfs:label "officialName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/problemDescription
+bcodmo:problemDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain bcodmo:DOIDataset ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "A description of known problems or caveats with the dataset." ;
+                          rdfs:label "problemDescription" .
+
+
+###  https://schema.bco-dmo.org/v0.1/processingDescription
+bcodmo:processingDescription rdf:type owl:DatatypeProperty ;
+                             rdfs:domain [ rdf:type owl:Class ;
+                                           owl:unionOf ( bcodmo:DOIDataset
+                                                         bcodmo:Deployment
+                                                       )
+                                         ] ;
+                             rdfs:range rdf:HTML ;
+                             rdfs:comment "An HTML description of data processing steps." ;
+                             rdfs:label "processingDescription" .
+
+
+###  https://schema.bco-dmo.org/v0.1/resolvableUrl
+bcodmo:resolvableUrl rdf:type owl:DatatypeProperty ;
+                     rdfs:domain bcodmo:Identifier ;
+                     rdfs:range xsd:anyURI ;
+                     rdfs:comment "A resolvable URL that dereferences the identifier." ;
+                     rdfs:label "resolvableUrl" .
+
+
+###  https://schema.bco-dmo.org/v0.1/shortDescription
+bcodmo:shortDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:domain bcodmo:DOIDataset ;
+                        rdfs:range rdf:HTML ;
+                        rdfs:comment "A brief HTML description of the dataset." ;
+                        rdfs:label "shortDescription" .
+
+
+###  https://schema.bco-dmo.org/v0.1/shortName
+bcodmo:shortName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain bcodmo:Parameter ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "A short name for a master parameter." ;
+                 rdfs:label "shortName" .
+
+
+###  https://schema.bco-dmo.org/v0.1/southBoundary
+bcodmo:southBoundary rdf:type owl:DatatypeProperty ;
+                     rdfs:domain bcodmo:BoundingBoxGeometry ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "The southern latitude boundary of a bounding box (decimal degrees)." ;
+                     rdfs:label "southBoundary" .
+
+
+###  https://schema.bco-dmo.org/v0.1/title
+bcodmo:title rdf:type owl:DatatypeProperty ;
+             rdfs:domain bcodmo:DOIDataset ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The full title of the dataset." ;
+             rdfs:label "title" .
+
+
+###  https://schema.bco-dmo.org/v0.1/url
+bcodmo:url rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:anyURI ;
+           rdfs:comment "A URL for a resource, such as its landing page." ;
+           rdfs:label "url" .
+
+
+###  https://schema.bco-dmo.org/v0.1/valueFormat
+bcodmo:valueFormat rdf:type owl:DatatypeProperty ;
+                   rdfs:domain bcodmo:DatasetParameter ;
+                   rdfs:range xsd:token ;
+                   rdfs:comment "The format string used to encode parameter values in the data file." ;
+                   rdfs:label "valueFormat" .
+
+
+###  https://schema.bco-dmo.org/v0.1/version
+bcodmo:version rdf:type owl:DatatypeProperty ;
+               rdfs:domain bcodmo:DOIDataset ;
+               rdfs:range xsd:token ;
+               rdfs:comment "The version label of the dataset (numeric or numeric + single lowercase letter)." ;
+               rdfs:label "version" .
+
+
+###  https://schema.bco-dmo.org/v0.1/westBoundary
+bcodmo:westBoundary rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bcodmo:BoundingBoxGeometry ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "The western longitude boundary of a bounding box (decimal degrees)." ;
+                    rdfs:label "westBoundary" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2006/time#Instant
+time:Instant rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Interval
+time:Interval rdf:type owl:Class .
+
+
+###  https://schema.bco-dmo.org/v0.1/Affiliation
+bcodmo:Affiliation rdf:type owl:Class ;
+                   rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Organization
+                                                          [ rdf:type owl:Class ;
+                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty [ owl:inverseOf bcodmo:affiliation
+                                                                                           ] ;
+                                                                            owl:someValuesFrom bcodmo:Person
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty [ owl:inverseOf bcodmo:performedAt
+                                                                                           ] ;
+                                                                            owl:someValuesFrom bcodmo:AgentRole
+                                                                          ]
+                                                                        )
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+                   rdfs:comment "An institutional affiliation of a person (university, research institute, etc.)." ;
+                   rdfs:label "Affiliation" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Agent
+bcodmo:Agent rdf:type owl:Class ;
+             rdfs:comment "An entity (person or organisation) that can perform roles." ;
+             rdfs:label "Agent" .
+
+
+###  https://schema.bco-dmo.org/v0.1/AgentRole
+bcodmo:AgentRole rdf:type owl:Class ;
+                 rdfs:comment "A qualified association that links an Agent to a role and optionally an affiliation context." ;
+                 rdfs:label "Agent Role" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Award
+bcodmo:Award rdf:type owl:Class ;
+             rdfs:comment "A funding award (grant) from a funder that supports data collection." ;
+             rdfs:label "Award" .
+
+
+###  https://schema.bco-dmo.org/v0.1/BCODMOIdentifier
+bcodmo:BCODMOIdentifier rdf:type owl:Class ;
+                        rdfs:subClassOf bcodmo:Identifier ;
+                        rdfs:comment "An internal BCO-DMO identifier (version 2 scheme)." ;
+                        rdfs:label "BCO-DMO Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry
+bcodmo:BoundingBoxGeometry rdf:type owl:Class ;
+                           rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Geometry
+                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty bcodmo:eastBoundary ;
+                                                                                           owl:someValuesFrom xsd:float
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty bcodmo:northBoundary ;
+                                                                                           owl:someValuesFrom xsd:float
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty bcodmo:southBoundary ;
+                                                                                           owl:someValuesFrom xsd:float
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty bcodmo:westBoundary ;
+                                                                                           owl:someValuesFrom xsd:float
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                           rdfs:comment "An axis-aligned bounding box geometry defined by west/south/east/north boundaries." ;
+                           rdfs:label "Bounding Box Geometry" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Category
+bcodmo:Category rdf:type owl:Class ;
+                rdfs:comment "A set of taxonomy" ;
+                rdfs:label "Category" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CentroidGeometry
+bcodmo:CentroidGeometry rdf:type owl:Class ;
+                        rdfs:subClassOf bcodmo:Geometry ;
+                        rdfs:comment "A point geometry representing the centroid of a spatial extent." ;
+                        rdfs:label "Centroid Geometry" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CreativeWork
+bcodmo:CreativeWork rdf:type owl:Class ;
+                    rdfs:comment "Any work that can be created by some Agent" ;
+                    rdfs:label "Creative Work" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CreativeWorkStatus
+bcodmo:CreativeWorkStatus rdf:type owl:Class ;
+                          rdfs:subClassOf bcodmo:Category ;
+                          rdfs:comment "A state of for some createive work." ;
+                          rdfs:label "CreativeWorkStatus" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Cruise
+bcodmo:Cruise rdf:type owl:Class ;
+              rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Deployment
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bcodmo:onPlatform ;
+                                                       owl:someValuesFrom bcodmo:Vessel
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+              rdfs:comment "A research vessel cruise, a specialisation of Platform for vessel-type platforms." ;
+              rdfs:label "Cruise" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CryptographicHash
+bcodmo:CryptographicHash rdf:type owl:Class ;
+                         rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Identifier
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty bcodmo:identifierScheme ;
+                                                                  owl:someValuesFrom bcodmo:CryptographicHashAlgorithm
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                         rdfs:comment "A cryptographic hash (e.g. MD5) used as a file integrity checksum." ;
+                         rdfs:label "Cryptographic Hash" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm
+bcodmo:CryptographicHashAlgorithm rdf:type owl:Class ;
+                                  rdfs:subClassOf bcodmo:IdentifierScheme ;
+                                  rdfs:comment "A mathematical function that transforms any arbitrary amount of input data into a fixed-length string of characters (identifierValue), acting as a secure \"digital fingerprint\" or \"digest\"" ;
+                                  rdfs:label "Cryptographic Hash Algorithm" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CurrentState
+bcodmo:CurrentState rdf:type owl:Class ;
+                    rdfs:subClassOf bcodmo:CreativeWorkStatus ;
+                    rdfs:comment "The current editorial/curation state of a CreativeWork" ;
+                    rdfs:label "Current State" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIDataset
+bcodmo:DOIDataset rdf:type owl:Class ;
+                  rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Dataset
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty bcodmo:identifier ;
+                                                           owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty bcodmo:identifierScheme ;
+                                                                                owl:hasValue bcodmo:IdentifierScheme_DOI
+                                                                              ]
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+                  rdfs:comment "A versioned BCO-DMO dataset that has been assigned a DOI." ;
+                  rdfs:label "DOI Dataset" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIIdentifier
+bcodmo:DOIIdentifier rdf:type owl:Class ;
+                     rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Identifier
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:identifierScheme ;
+                                                              owl:hasValue bcodmo:IdentifierScheme_DOI
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                     rdfs:comment "A Digital Object Identifier." ;
+                     rdfs:label "DOI Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus
+bcodmo:DOIStatus rdf:type owl:Class ;
+                 rdfs:subClassOf bcodmo:CreativeWorkStatus ;
+                 rdfs:comment "The lifecycle status of a DOI Dataset (Draft, Reserved, Published, etc.)." ;
+                 rdfs:label "DOI Status" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DataFile
+bcodmo:DataFile rdf:type owl:Class ;
+                rdfs:subClassOf [ owl:intersectionOf ( bcodmo:FileDescriptor
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty [ owl:inverseOf bcodmo:dataFile
+                                                                        ] ;
+                                                         owl:someValuesFrom bcodmo:CreativeWork
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                rdfs:comment "A primary or supplemental data file distributed as part of a DOI dataset package." ;
+                rdfs:label "Data File" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Dataset
+bcodmo:Dataset rdf:type owl:Class ;
+               rdfs:subClassOf bcodmo:CreativeWork ;
+               rdfs:comment "A dataset which may be internal or external to BCO-DMO." ;
+               rdfs:label "Dataset" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DatasetDeployment
+bcodmo:DatasetDeployment rdf:type owl:Class ;
+                         rdfs:comment "A deployment as referenced within a specific dataset, with dataset-specific properties." ;
+                         rdfs:label "Dataset Deployment" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DatasetInstrument
+bcodmo:DatasetInstrument rdf:type owl:Class ;
+                         rdfs:comment "An instrument as referenced within a specific dataset, with dataset-specific properties." ;
+                         rdfs:label "Dataset Instrument" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DatasetParameter
+bcodmo:DatasetParameter rdf:type owl:Class ;
+                        rdfs:comment "A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format." ;
+                        rdfs:label "Dataset Parameter" .
+
+
+###  https://schema.bco-dmo.org/v0.1/DatasetType
+bcodmo:DatasetType rdf:type owl:Class ;
+                   rdfs:subClassOf bcodmo:Category ;
+                   rdfs:comment "A category describing the type of dataset (e.g. Cruise Data, Model Output)." ;
+                   rdfs:label "Dataset Type" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Datatype
+bcodmo:Datatype rdf:type owl:Class ;
+                rdfs:subClassOf bcodmo:Category ;
+                rdfs:comment "The data type of a dataset parameter column (e.g. string, integer, float)." ;
+                rdfs:label "Datatype" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Deployment
+bcodmo:Deployment rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty bcodmo:onPlatform ;
+                                    owl:someValuesFrom bcodmo:Platform
+                                  ] ;
+                  rdfs:comment "A scientific deployment (cruise, expedition, mooring deployment) during which data were collected." ;
+                  rdfs:label "Deployment" .
+
+
+###  https://schema.bco-dmo.org/v0.1/EmbargoPolicy
+bcodmo:EmbargoPolicy rdf:type owl:Class ;
+                     rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Policy
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:target ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass bcodmo:CreativeWork
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:expirationDate ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange xsd:date
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                     rdfs:comment "A policy that restricts access to a dataset until an expiration date." ;
+                     rdfs:label "Embargo Policy" .
+
+
+###  https://schema.bco-dmo.org/v0.1/File
+bcodmo:File rdf:type owl:Class ;
+            rdfs:comment "A physical file (byte stream) associated with a dataset or package." ;
+            rdfs:label "File" .
+
+
+###  https://schema.bco-dmo.org/v0.1/FileDescriptor
+bcodmo:FileDescriptor rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty bcodmo:describesFile ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass bcodmo:File
+                                      ] ;
+                      rdfs:comment "A context-specific description of a file. The context could be data, metadata or supplemental documentation." ;
+                      rdfs:label "File Descriptor" .
+
+
+###  https://schema.bco-dmo.org/v0.1/FileType
+bcodmo:FileType rdf:type owl:Class ;
+                rdfs:subClassOf bcodmo:Category ;
+                rdfs:comment "A file format type, characterised by a label and MIME type (e.g. CSV, XML, PDF)." ;
+                rdfs:label "File Type" .
+
+
+###  https://schema.bco-dmo.org/v0.1/FundingAgency
+bcodmo:FundingAgency rdf:type owl:Class ;
+                     rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Organization
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:grantedAward ;
+                                                              owl:someValuesFrom bcodmo:Award
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                     rdfs:comment "An Organization that has provided some funding award" ;
+                     rdfs:label "Funding Agency" .
+
+
+###  https://schema.bco-dmo.org/v0.1/GeographicalLocation
+bcodmo:GeographicalLocation rdf:type owl:Class ;
+                            rdfs:comment "A spatial extent or named location associated with a dataset, deployment, project, or program." ;
+                            rdfs:label "Geographical Location" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Geometry
+bcodmo:Geometry rdf:type owl:Class ;
+                rdfs:comment "An abstract spatial geometry." ;
+                rdfs:label "Geometry" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Identifier
+bcodmo:Identifier rdf:type owl:Class ;
+                  rdfs:comment "An identifier assigned to a resource by some scheme." ;
+                  rdfs:label "Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/IdentifierScheme
+bcodmo:IdentifierScheme rdf:type owl:Class ;
+                        rdfs:subClassOf bcodmo:Category ;
+                        rdfs:comment "A named scheme or authority that mints identifiers (DOI, ROR, ORCID, etc.)." ;
+                        rdfs:label "Identifier Scheme" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Instrument
+bcodmo:Instrument rdf:type owl:Class ;
+                  rdfs:subClassOf bcodmo:Category ;
+                  rdfs:comment "A master (community-level) scientific instrument definition." ;
+                  rdfs:label "Instrument" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Keyword
+bcodmo:Keyword rdf:type owl:Class ;
+               rdfs:subClassOf bcodmo:Category ;
+               rdfs:comment "A subject keyword associated with a dataset." ;
+               rdfs:label "Keyword" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Language
+bcodmo:Language rdf:type owl:Class ;
+                rdfs:subClassOf bcodmo:Category ;
+                rdfs:comment "A natural language used in the dataset metadata." ;
+                rdfs:label "Language" .
+
+
+###  https://schema.bco-dmo.org/v0.1/License
+bcodmo:License rdf:type owl:Class ;
+               rdfs:subClassOf [ owl:intersectionOf ( bcodmo:CreativeWork
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf bcodmo:license
+                                                                       ] ;
+                                                        owl:someValuesFrom bcodmo:CreativeWork
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+               rdfs:comment "A  license applied to some creative work." ;
+               rdfs:label "License" .
+
+
+###  https://schema.bco-dmo.org/v0.1/MetadataFile
+bcodmo:MetadataFile rdf:type owl:Class ;
+                    rdfs:subClassOf [ owl:intersectionOf ( bcodmo:FileDescriptor
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty [ owl:inverseOf bcodmo:metadataFile
+                                                                            ] ;
+                                                             owl:someValuesFrom bcodmo:CreativeWork
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                    rdfs:comment "A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) bundled in the DOI package." ;
+                    rdfs:label "Metadata File" .
+
+
+###  https://schema.bco-dmo.org/v0.1/MetadataProfile
+bcodmo:MetadataProfile rdf:type owl:Class ;
+                       rdfs:subClassOf bcodmo:CreativeWork ;
+                       rdfs:comment "A formal metadata profile specification to which the datapackage conforms." ;
+                       rdfs:label "Metadata Profile" .
+
+
+###  https://schema.bco-dmo.org/v0.1/ORCIDIdentifier
+bcodmo:ORCIDIdentifier rdf:type owl:Class ;
+                       rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Identifier
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty bcodmo:identifierScheme ;
+                                                                owl:hasValue bcodmo:IdentifierScheme_ROR
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                       rdfs:comment "An Open Researcher and Contributor ID" ;
+                       rdfs:label "ORCID Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Organization
+bcodmo:Organization rdf:type owl:Class ;
+                    rdfs:subClassOf bcodmo:Agent ;
+                    owl:disjointWith bcodmo:Person ;
+                    rdfs:comment "An organisational body such as a publisher, funder, or identifier authority." ;
+                    rdfs:label "Organization" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Parameter
+bcodmo:Parameter rdf:type owl:Class ;
+                 rdfs:subClassOf bcodmo:Category ;
+                 rdfs:comment "A master (community-level) scientific parameter definition." ;
+                 rdfs:label "Parameter" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Person
+bcodmo:Person rdf:type owl:Class ;
+              rdfs:subClassOf bcodmo:Agent ;
+              rdfs:comment "A human individual associated with some entity." ;
+              rdfs:label "Person" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Platform
+bcodmo:Platform rdf:type owl:Class ;
+                rdfs:comment "A platform (vessel, buoy, glider, etc.) used for data collection." ;
+                rdfs:label "Platform" .
+
+
+###  https://schema.bco-dmo.org/v0.1/PlatformTitle
+bcodmo:PlatformTitle rdf:type owl:Class ;
+                     rdfs:subClassOf bcodmo:Category ;
+                     rdfs:comment "A named title/designation for a platform (e.g. the full name of a research vessel)." ;
+                     rdfs:label "Platform Title" .
+
+
+###  https://schema.bco-dmo.org/v0.1/PlatformType
+bcodmo:PlatformType rdf:type owl:Class ;
+                    rdfs:subClassOf bcodmo:Category ;
+                    rdfs:comment "A category of platform (e.g. vessel, mooring, glider)." ;
+                    rdfs:label "Platform Type" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Policy
+bcodmo:Policy rdf:type owl:Class ;
+              rdfs:comment "An access or governance policy applied to a resource." ;
+              rdfs:label "Policy" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Program
+bcodmo:Program rdf:type owl:Class ;
+               rdfs:subClassOf bcodmo:ResearchActivity ;
+               rdfs:comment "A scientific program (typically a grouping of related projects) associated with a dataset." ;
+               rdfs:label "Program" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Project
+bcodmo:Project rdf:type owl:Class ;
+               rdfs:subClassOf bcodmo:ResearchActivity ;
+               rdfs:comment "A funded scientific project under which data were collected." ;
+               rdfs:label "Project" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Publication
+bcodmo:Publication rdf:type owl:Class ;
+                   rdfs:subClassOf bcodmo:CreativeWork ;
+                   rdfs:comment "A scholarly publication related to a dataset (journal article, report, etc.)." ;
+                   rdfs:label "Publication" .
+
+
+###  https://schema.bco-dmo.org/v0.1/RORIdentifier
+bcodmo:RORIdentifier rdf:type owl:Class ;
+                     rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Identifier
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:identifierScheme ;
+                                                              owl:hasValue bcodmo:IdentifierScheme_ROR
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                     rdfs:comment "A Research Organization Registry identifier." ;
+                     rdfs:label "ROR Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/ResearchActivity
+bcodmo:ResearchActivity rdf:type owl:Class ;
+                        rdfs:comment "An activity that enables research. The research typically produces datasets." ;
+                        rdfs:label "Research Activity" .
+
+
+###  https://schema.bco-dmo.org/v0.1/ResourceRelation
+bcodmo:ResourceRelation rdf:type owl:Class ;
+                        rdfs:subClassOf bcodmo:Category ;
+                        rdfs:comment "A controlled-vocabulary term describing the relationship between two resources (aligned to Crossref and DataCite relation types)." ;
+                        rdfs:label "Resource Relation" .
+
+
+###  https://schema.bco-dmo.org/v0.1/ResourceRelationGroup
+bcodmo:ResourceRelationGroup rdf:type owl:Class ;
+                             rdfs:subClassOf bcodmo:Category ;
+                             rdfs:comment "A grouping category for resource relation types." ;
+                             rdfs:label "Resource Relation Group" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Role
+bcodmo:Role rdf:type owl:Class ;
+            rdfs:subClassOf bcodmo:Category ;
+            rdfs:comment "A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator)." ;
+            rdfs:label "Role" .
+
+
+###  https://schema.bco-dmo.org/v0.1/SupplementalDocument
+bcodmo:SupplementalDocument rdf:type owl:Class ;
+                            rdfs:subClassOf [ owl:intersectionOf ( bcodmo:FileDescriptor
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty [ owl:inverseOf bcodmo:supplementalDocument
+                                                                                    ] ;
+                                                                     owl:someValuesFrom bcodmo:CreativeWork
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                            rdfs:comment "A supplemental (non-primary) document file associated with a dataset." ;
+                            rdfs:label "Supplemental Document" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Synonym
+bcodmo:Synonym rdf:type owl:Class ;
+               rdfs:comment "An alternative name or synonym, e.g. for a deployment." ;
+               rdfs:label "Synonym" .
+
+
+###  https://schema.bco-dmo.org/v0.1/TemporalInstant
+bcodmo:TemporalInstant rdf:type owl:Class ;
+                       rdfs:subClassOf time:Instant ;
+                       rdfs:comment "A single point in time associated with a dataset extent or event date." ;
+                       rdfs:label "Temporal Instant" .
+
+
+###  https://schema.bco-dmo.org/v0.1/TemporalInterval
+bcodmo:TemporalInterval rdf:type owl:Class ;
+                        rdfs:subClassOf time:Interval ;
+                        rdfs:comment "A time period with a beginning and an end, used to describe dataset temporal coverage." ;
+                        rdfs:label "Temporal Interval" .
+
+
+###  https://schema.bco-dmo.org/v0.1/UnitOfMeasure
+bcodmo:UnitOfMeasure rdf:type owl:Class ;
+                     rdfs:comment "A unit of measure associated with a dataset parameter." ;
+                     rdfs:label "Unit of Measure" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Vessel
+bcodmo:Vessel rdf:type owl:Class ;
+              rdfs:subClassOf [ owl:intersectionOf ( bcodmo:Platform
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bcodmo:platformType ;
+                                                       owl:hasValue bcodmo:PlatformType_Vessel
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.wikidata.org/entity/Q5188229
+<http://www.wikidata.org/entity/Q5188229> rdf:type owl:NamedIndividual ,
+                                                   bcodmo:Organization ;
+                                          bcodmo:label "Crossref" .
+
+
+###  http://www.wikidata.org/entity/Q821542
+<http://www.wikidata.org/entity/Q821542> rdf:type owl:NamedIndividual ,
+                                                  bcodmo:Organization ;
+                                         bcodmo:label "DataCite" .
+
+
+###  https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm_MD5
+bcodmo:CryptographicHashAlgorithm_MD5 rdf:type owl:NamedIndividual ,
+                                               bcodmo:IdentifierScheme ;
+                                      owl:sameAs <urn:bcodmo:taxonomy:cryptographic-hash:190> ;
+                                      bcodmo:abbreviation "md5" ;
+                                      bcodmo:label "MD5" .
+
+
+###  urn:bcodmo:taxonomy:cryptographic-hash:190
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_Draft
+bcodmo:DOIStatus_Draft rdf:type owl:NamedIndividual ,
+                                bcodmo:DOIStatus ;
+                       bcodmo:label "Draft" ;
+                       rdfs:comment "The DOI record has been created locally but not yet registered." .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_PublishFailed
+bcodmo:DOIStatus_PublishFailed rdf:type owl:NamedIndividual ,
+                                        bcodmo:DOIStatus ;
+                               bcodmo:label "Publish Failed" ;
+                               rdfs:comment "DOI metadata publication failed after initiation." .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_PublishInProgress
+bcodmo:DOIStatus_PublishInProgress rdf:type owl:NamedIndividual ,
+                                            bcodmo:DOIStatus ;
+                                   bcodmo:label "Publish in Progress" ;
+                                   rdfs:comment "DOI metadata submission to the minter is in progress." .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_PublishInitiateFailed
+bcodmo:DOIStatus_PublishInitiateFailed rdf:type owl:NamedIndividual ,
+                                                bcodmo:DOIStatus ;
+                                       bcodmo:label "Publish Initiate Failed" ;
+                                       rdfs:comment "Initiating the DOI metadata publication failed." .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_Published
+bcodmo:DOIStatus_Published rdf:type owl:NamedIndividual ,
+                                    bcodmo:DOIStatus ;
+                           bcodmo:label "Published" ;
+                           rdfs:comment "The DOI is registered and publicly resolvable (Registered with DataCite)." .
+
+
+###  https://schema.bco-dmo.org/v0.1/DOIStatus_Reserved
+bcodmo:DOIStatus_Reserved rdf:type owl:NamedIndividual ,
+                                   bcodmo:DOIStatus ;
+                          bcodmo:label "Reserved" ;
+                          rdfs:comment "The DOI has been reserved/registered as Findable with DataCite." .
+
+
+###  https://schema.bco-dmo.org/v0.1/IdentifierScheme_BCODMO_Version_2
+bcodmo:IdentifierScheme_BCODMO_Version_2 rdf:type owl:NamedIndividual ,
+                                                  bcodmo:IdentifierScheme ;
+                                         bcodmo:abbreviation "BCODMO_v2" ;
+                                         bcodmo:label "BCO-DMO Internal Identifier (Version 2)" .
+
+
+###  https://schema.bco-dmo.org/v0.1/IdentifierScheme_DOI
+bcodmo:IdentifierScheme_DOI rdf:type owl:NamedIndividual ,
+                                     bcodmo:IdentifierScheme ;
+                            bcodmo:abbreviation "DOI" ;
+                            bcodmo:label "Digital Object Identifier" .
+
+
+###  https://schema.bco-dmo.org/v0.1/IdentifierScheme_ORCID
+bcodmo:IdentifierScheme_ORCID rdf:type owl:NamedIndividual ,
+                                       bcodmo:IdentifierScheme ;
+                              bcodmo:abbreviation "ORCID" ;
+                              bcodmo:label "Open Researcher and Contributor ID" .
+
+
+###  https://schema.bco-dmo.org/v0.1/IdentifierScheme_ROR
+bcodmo:IdentifierScheme_ROR rdf:type owl:NamedIndividual ,
+                                     bcodmo:IdentifierScheme ;
+                            bcodmo:abbreviation "ROR" ;
+                            bcodmo:label "Research Organization Registry" .
+
+
+###  https://schema.bco-dmo.org/v0.1/Language_USEnglish
+bcodmo:Language_USEnglish rdf:type owl:NamedIndividual ,
+                                   bcodmo:Language ;
+                          bcodmo:abbreviation "en_US" ;
+                          bcodmo:name "U.S. English" .
+
+
+###  https://schema.bco-dmo.org/v0.1/MetadataProfile_Datapackage_DOI_V1.0
+bcodmo:MetadataProfile_Datapackage_DOI_V1.0 rdf:type owl:NamedIndividual ,
+                                                     bcodmo:MetadataProfile ;
+                                            bcodmo:label "DOI Datapackage v1.0" .
+
+
+###  https://schema.bco-dmo.org/v0.1/PlatformType_Vessel
+bcodmo:PlatformType_Vessel rdf:type owl:NamedIndividual ,
+                                    bcodmo:PlatformType ;
+                           owl:sameAs <urn:bcodmo:taxonomy:platform-type:5e47949e1cdac2a468723a159d1923d2> ;
+                           bcodmo:label "vessel" ;
+                           skos:exactMatch <http://vocab.nerc.ac.uk/collection/L06/current/31/> .
+
+
+###  urn:bcodmo:taxonomy:platform-type:5e47949e1cdac2a468723a159d1923d2
+
+###  https://www.bco-dmo.org/
+<https://www.bco-dmo.org/> rdf:type owl:NamedIndividual ,
+                                    bcodmo:Organization ;
+                           bcodmo:label "Biological and Chemical Oceanography Data Management Office (BCO-DMO)" ;
+                           bcodmo:url "https://www.bco-dmo.org/"^^xsd:anyURI ;
+                           rdfs:label "Organization: BCO-DMO" .
+
+
+###  urn:bcodmo:taxonomy:cryptographic-hash:190
+<urn:bcodmo:taxonomy:cryptographic-hash:190> rdf:type owl:NamedIndividual ;
+                                             rdfs:label "Cryptographic Has Algorithm: MD5" .
+
+
+###  urn:bcodmo:taxonomy:platform-type:5e47949e1cdac2a468723a159d1923d2
+<urn:bcodmo:taxonomy:platform-type:5e47949e1cdac2a468723a159d1923d2> rdf:type owl:NamedIndividual ;
+                                                                     rdfs:label "Platform Type: Vessel" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
