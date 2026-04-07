@@ -143,12 +143,7 @@ bcodmo:datasetType rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v0.1/describesFile
 bcodmo:describesFile rdf:type owl:ObjectProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( bcodmo:DataFile
-                                                 bcodmo:MetadataFile
-                                                 bcodmo:SupplementalDocument
-                                               )
-                                 ] ;
+                     rdfs:domain bcodmo:FileDescriptor ;
                      rdfs:range bcodmo:File ;
                      rdfs:comment "Links a file record to the File object describing its physical properties." ;
                      rdfs:label "describesFile" .
@@ -246,6 +241,15 @@ bcodmo:hasEnd rdf:type owl:ObjectProperty ;
               rdfs:label "hasEnd" .
 
 
+###  https://schema.bco-dmo.org/v0.1/hasParameter
+bcodmo:hasParameter rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty bcodmo:storesValuesFor ;
+                    rdfs:domain bcodmo:Dataset ;
+                    rdfs:range bcodmo:DatasetParameter ;
+                    rdfs:comment "A dataset collected this dataset-parameter"@en ;
+                    rdfs:label "hasParameter"@en .
+
+
 ###  https://schema.bco-dmo.org/v0.1/hasProgram
 bcodmo:hasProgram rdf:type owl:ObjectProperty ;
                   rdfs:domain bcodmo:DOIDataset ;
@@ -272,15 +276,6 @@ bcodmo:hasSynonym rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v0.1/identifier
 bcodmo:identifier rdf:type owl:ObjectProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( bcodmo:Affiliation
-                                              bcodmo:DOIDataset
-                                              bcodmo:DataFile
-                                              bcodmo:Deployment
-                                              bcodmo:Organization
-                                              bcodmo:Person
-                                            )
-                              ] ;
                   rdfs:range bcodmo:Identifier ;
                   rdfs:comment "An identifier assigned to a resource." ;
                   rdfs:label "identifier" .
@@ -518,7 +513,7 @@ bcodmo:status rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v0.1/storesValuesFor
 bcodmo:storesValuesFor rdf:type owl:ObjectProperty ;
-                       rdfs:domain bcodmo:DOIDataset ;
+                       rdfs:domain bcodmo:Dataset ;
                        rdfs:range bcodmo:DatasetParameter ;
                        rdfs:comment "Links a dataset to the parameters whose values it records." ;
                        rdfs:label "storesValuesFor" .
@@ -558,7 +553,11 @@ bcodmo:temporalExtent rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v0.1/units
 bcodmo:units rdf:type owl:ObjectProperty ;
-             rdfs:domain bcodmo:DatasetParameter ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( bcodmo:DatasetParameter
+                                         bcodmo:Parameter
+                                       )
+                         ] ;
              rdfs:range bcodmo:UnitOfMeasure ;
              rdfs:comment "The unit of measure for a dataset parameter." ;
              rdfs:label "units" .
@@ -678,11 +677,6 @@ bcodmo:expirationDate rdf:type owl:DatatypeProperty ;
 
 ###  https://schema.bco-dmo.org/v0.1/externalWebsite
 bcodmo:externalWebsite rdf:type owl:DatatypeProperty ;
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( bcodmo:Program
-                                                   bcodmo:Project
-                                                 )
-                                   ] ;
                        rdfs:range xsd:anyURI ;
                        rdfs:comment "The external project or program website URL." ;
                        rdfs:label "externalWebsite" .
@@ -1429,16 +1423,24 @@ bcodmo:Synonym rdf:type owl:Class ;
                rdfs:label "Synonym" .
 
 
+###  https://schema.bco-dmo.org/v0.1/TemporalEntity
+bcodmo:TemporalEntity rdf:type owl:Class ;
+                      rdfs:comment "A frame of reference for when something existed or occupied time — it is either a durationless point (an instant) or a thing with some extent in time (an interval)." ;
+                      rdfs:label "TemporalEntity" .
+
+
 ###  https://schema.bco-dmo.org/v0.1/TemporalInstant
 bcodmo:TemporalInstant rdf:type owl:Class ;
-                       rdfs:subClassOf time:Instant ;
+                       rdfs:subClassOf time:Instant ,
+                                       bcodmo:TemporalEntity ;
                        rdfs:comment "A single point in time associated with a dataset extent or event date." ;
                        rdfs:label "Temporal Instant" .
 
 
 ###  https://schema.bco-dmo.org/v0.1/TemporalInterval
 bcodmo:TemporalInterval rdf:type owl:Class ;
-                        rdfs:subClassOf time:Interval ;
+                        rdfs:subClassOf time:Interval ,
+                                        bcodmo:TemporalEntity ;
                         rdfs:comment "A time period with a beginning and an end, used to describe dataset temporal coverage." ;
                         rdfs:label "Temporal Interval" .
 
@@ -1479,7 +1481,7 @@ bcodmo:Vessel rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm_MD5
 bcodmo:CryptographicHashAlgorithm_MD5 rdf:type owl:NamedIndividual ,
-                                               bcodmo:IdentifierScheme ;
+                                               bcodmo:CryptographicHashAlgorithm ;
                                       owl:sameAs <urn:bcodmo:taxonomy:cryptographic-hash:190> ;
                                       bcodmo:abbreviation "md5" ;
                                       bcodmo:label "MD5" .
