@@ -73,6 +73,27 @@
     
 
 
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#object -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+    
+
+
     <!-- http://www.w3.org/2006/time#hasBeginning -->
 
 
@@ -91,25 +112,13 @@
     
 
 
-    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIStatus"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Person"/>
-        <rdfs:comment>The person who set/attributed this DOI status (from PROV-O).</rdfs:comment>
-        <rdfs:label>wasAttributedTo</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://schema.bco-dmo.org/v0.1/affiliation -->
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/affiliation">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Person"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Affiliation"/>
-        <rdfs:comment>The primary institutional affiliation of a person.</rdfs:comment>
+        <rdfs:comment>The institutional affiliation of a person.</rdfs:comment>
         <rdfs:label>affiliation</rdfs:label>
     </owl:ObjectProperty>
     
@@ -121,8 +130,19 @@
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/author">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/AgentRole"/>
-        <rdfs:comment>An ordered list of authors associated with the dataset (via AgentRole).</rdfs:comment>
+        <rdfs:comment>An author associated witha creative work. The Agent Role provides context as to how the agent contirbuted as an author to the work.</rdfs:comment>
         <rdfs:label>author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/browseGraphic -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/browseGraphic">
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Image"/>
+        <rdfs:comment>An image that is representative of some thing. This could be a logo for a project or organization. It could also be an image that represents a creative work.</rdfs:comment>
+        <rdfs:label>browseGraphic</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -144,9 +164,9 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/conformsTo">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/MetadataProfile"/>
-        <rdfs:comment>The metadata profile specification to which this datapackage conforms.</rdfs:comment>
+        <rdfs:comment>The metadata profile specification to which this dataset conforms.</rdfs:comment>
         <rdfs:label>conformsTo</rdfs:label>
     </owl:ObjectProperty>
     
@@ -158,7 +178,7 @@
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/contributor">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/AgentRole"/>
-        <rdfs:comment>An ordered list of contributors associated with the dataset (via AgentRole).</rdfs:comment>
+        <rdfs:comment>A contributor, not an author, associated with a creative work. The Agent Role provides context as to how the agent contributed to the work.</rdfs:comment>
         <rdfs:label>contributor</rdfs:label>
     </owl:ObjectProperty>
     
@@ -168,9 +188,9 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/createdDate">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/TemporalInstant"/>
-        <rdfs:comment>The date on which this datapackage record was created.</rdfs:comment>
+        <rdfs:comment>The date on which a creative work was created.</rdfs:comment>
         <rdfs:label>createdDate</rdfs:label>
     </owl:ObjectProperty>
     
@@ -180,7 +200,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/currentState">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
         <rdfs:comment>The editorial/curation state of the dataset.</rdfs:comment>
         <rdfs:label>currentState</rdfs:label>
@@ -192,10 +212,22 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/dataFile">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DataFile"/>
         <rdfs:comment>A primary or supplemental data file distributed with this dataset package.</rdfs:comment>
         <rdfs:label>dataFile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/dataManagementPlan -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/dataManagementPlan">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/ResearchActivity"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DataManagementPlan"/>
+        <rdfs:comment>A file describing a research activities plan for managing their data.</rdfs:comment>
+        <rdfs:label>dataManagementPlan</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -216,7 +248,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/datasetType">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
         <rdfs:comment>A category or type classification for this dataset.</rdfs:comment>
         <rdfs:label>datasetType</rdfs:label>
@@ -228,15 +260,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/describesFile">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DataFile"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/MetadataFile"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/SupplementalDocument"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/FileDescriptor"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/File"/>
         <rdfs:comment>Links a file record to the File object describing its physical properties.</rdfs:comment>
         <rdfs:label>describesFile</rdfs:label>
@@ -283,7 +307,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/fromInstrument">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetInstrument"/>
         <rdfs:comment>Links a dataset to the instruments used to collect the data.</rdfs:comment>
         <rdfs:label>fromInstrument</rdfs:label>
@@ -295,10 +319,26 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/fundedBy">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Organization"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/FundingAgency"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/fundedByAward"/>
+            <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/provider"/>
+        </owl:propertyChainAxiom>
         <rdfs:comment>A funding organisation that supported the work resulting in this dataset.</rdfs:comment>
         <rdfs:label>fundedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/fundedByAward -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/fundedByAward">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Award"/>
+        <rdfs:comment>the award that funded the creation, generation, etc of some creative work.</rdfs:comment>
+        <rdfs:label>fundedByAward</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -307,7 +347,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/geometry">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/GeographicalLocation"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Geometry"/>
         <rdfs:comment>One or more geometries (centroid, bounding box) describing a geographical location.</rdfs:comment>
         <rdfs:label>geometry</rdfs:label>
@@ -319,7 +358,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/governedBy">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Policy"/>
         <rdfs:comment>A policy (e.g. embargo) that governs access to this dataset.</rdfs:comment>
         <rdfs:label>governedBy</rdfs:label>
@@ -346,7 +385,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/ResearchActivity"/>
                 </owl:unionOf>
@@ -371,6 +410,30 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Deployment"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Deployment"/>
+        <rdfs:comment>A disparate deployment that coordinated in conjuction with this subject for data collection</rdfs:comment>
+        <rdfs:label>hasCoordinatedDeployment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/hasCruiseTrajectory -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasCruiseTrajectory">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Cruise"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Geometry"/>
+        <rdfs:comment>The set of ordered coordinates forming a geometry (usually MultiPoint) representing the path taken by a Cruise.</rdfs:comment>
+        <rdfs:label>hasCruiseTrajectory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/hasEnd -->
 
 
@@ -383,12 +446,53 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/hasParameter -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasParameter">
+        <owl:equivalentProperty rdf:resource="https://schema.bco-dmo.org/v0.1/storesValuesFor"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:comment xml:lang="en">A dataset collected this dataset-parameter</rdfs:comment>
+        <rdfs:label xml:lang="en">hasParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/hasParameterAttribute -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasParameterAttribute">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute"/>
+        <rdfs:comment>An attribute of a particular DatasetParameter</rdfs:comment>
+        <rdfs:label>hasParameterAttribute</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/hasParentProgram -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasParentProgram">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Project"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Program"/>
+        <rdfs:comment>The Program that enabled a Project&apos;s existence</rdfs:comment>
+        <rdfs:label>hasParentProgram</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/hasProgram -->
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasProgram">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Program"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/hasProject"/>
+            <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/hasParentProgram"/>
+        </owl:propertyChainAxiom>
         <rdfs:comment>Associates a dataset with a scientific program.</rdfs:comment>
         <rdfs:label>hasProgram</rdfs:label>
     </owl:ObjectProperty>
@@ -399,7 +503,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/hasProject">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Project"/>
         <rdfs:comment>Associates a dataset with a scientific project.</rdfs:comment>
         <rdfs:label>hasProject</rdfs:label>
@@ -423,18 +527,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/identifier">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Affiliation"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DataFile"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Organization"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Identifier"/>
         <rdfs:comment>An identifier assigned to a resource.</rdfs:comment>
         <rdfs:label>identifier</rdfs:label>
@@ -508,7 +600,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/keywords">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Keyword"/>
         <rdfs:comment>Subject keywords associated with this dataset.</rdfs:comment>
         <rdfs:label>keywords</rdfs:label>
@@ -520,7 +612,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/language">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Language"/>
         <rdfs:comment>The natural language used in the dataset metadata.</rdfs:comment>
         <rdfs:label>language</rdfs:label>
@@ -532,10 +624,22 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/license">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/License"/>
         <rdfs:comment>The data license applied to this dataset.</rdfs:comment>
         <rdfs:label>license</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/logo -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/logo">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v0.1/browseGraphic"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Logo"/>
+        <rdfs:comment>A logo for some thing</rdfs:comment>
+        <rdfs:label>logo</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -555,6 +659,7 @@
         </rdfs:domain>
         <rdfs:comment>Aligns a BCO-DMO vocabulary term with an equivalent term from an external community vocabulary (e.g. SeaDataNet, NERC, Crossref, DataCite).</rdfs:comment>
         <rdfs:label>matches</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#exactMatch"/>
     </owl:ObjectProperty>
     
 
@@ -563,10 +668,22 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/metadataFile">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/MetadataFile"/>
         <rdfs:comment>A metadata file (ISO XML, description PDF) bundled in the dataset package.</rdfs:comment>
         <rdfs:label>metadataFile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/modifiesAction -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/modifiesAction">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Policy"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Action"/>
+        <rdfs:comment>The action being modified by some Policy</rdfs:comment>
+        <rdfs:label>modifiesAction</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -601,7 +718,7 @@
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/performedAt">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/AgentRole"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Affiliation"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Organization"/>
         <rdfs:comment>The institutional affiliation at which the role was performed.</rdfs:comment>
         <rdfs:label>performedAt</rdfs:label>
     </owl:ObjectProperty>
@@ -644,6 +761,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/producedWork -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/producedWork">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/ResearchActivity"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+        <rdfs:comment>The research activity produced the research product.</rdfs:comment>
+        <rdfs:label>producedWork</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/programManager -->
 
 
@@ -660,9 +789,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/provider">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Organization"/>
-        <rdfs:comment>The service provider that hosts/distributes the dataset.</rdfs:comment>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Agent"/>
+        <rdfs:comment>The service provider that hosts/distributes the resource.</rdfs:comment>
         <rdfs:label>provider</rdfs:label>
     </owl:ObjectProperty>
     
@@ -684,9 +812,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/publisher">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Organization"/>
-        <rdfs:comment>The organisation responsible for publishing this dataset (BCO-DMO).</rdfs:comment>
+        <rdfs:comment>The organisation responsible for publishing a resource.</rdfs:comment>
         <rdfs:label>publisher</rdfs:label>
     </owl:ObjectProperty>
     
@@ -696,16 +823,9 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/relations">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Publication"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:comment>Related publications or datasets associated with this dataset.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+        <rdfs:comment>Related creative work associated with this creative work.</rdfs:comment>
         <rdfs:label>relations</rdfs:label>
     </owl:ObjectProperty>
     
@@ -715,14 +835,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/relationship">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Publication"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/ResourceRelation"/>
         <rdfs:comment>A controlled-vocabulary relation type between two resources.</rdfs:comment>
         <rdfs:label>relationship</rdfs:label>
@@ -760,6 +873,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/smallLogo -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/smallLogo">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v0.1/logo"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/Logo"/>
+        <rdfs:comment>A smaller logo of some thing</rdfs:comment>
+        <rdfs:label>smallLogo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/spatialExtent -->
 
 
@@ -767,10 +892,9 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Program"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Project"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/ResearchActivity"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -786,7 +910,7 @@
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/status">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DOIStatus"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWorkStatus"/>
         <rdfs:comment>The current DOI lifecycle status of the dataset package.</rdfs:comment>
         <rdfs:label>status</rdfs:label>
     </owl:ObjectProperty>
@@ -797,7 +921,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/storesValuesFor">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
         <rdfs:comment>Links a dataset to the parameters whose values it records.</rdfs:comment>
         <rdfs:label>storesValuesFor</rdfs:label>
@@ -809,7 +933,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/supplementalDocument">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/SupplementalDocument"/>
         <rdfs:comment>A supplemental document distributed with this dataset package.</rdfs:comment>
         <rdfs:label>supplementalDocument</rdfs:label>
@@ -822,7 +946,7 @@
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/target">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Policy"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:comment>The resource to which this policy applies.</rdfs:comment>
         <rdfs:label>target</rdfs:label>
     </owl:ObjectProperty>
@@ -836,8 +960,10 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/AgentRole"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/ResearchActivity"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -859,7 +985,14 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v0.1/units">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Parameter"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v0.1/UnitOfMeasure"/>
         <rdfs:comment>The unit of measure for a dataset parameter.</rdfs:comment>
         <rdfs:label>units</rdfs:label>
@@ -894,7 +1027,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/abstract">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>A plain-text abstract describing the dataset.</rdfs:comment>
         <rdfs:label>abstract</rdfs:label>
@@ -909,7 +1042,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
                 </owl:unionOf>
             </owl:Class>
@@ -960,14 +1093,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/bibliographicCitation">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Publication"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
         <rdfs:comment>The full bibliographic citation for a related publication or dataset.</rdfs:comment>
         <rdfs:label>bibliographicCitation</rdfs:label>
@@ -987,11 +1113,35 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/commonFileExtension -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/commonFileExtension">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/FileType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>A commonly used file extension for a particular FileType</rdfs:comment>
+        <rdfs:label>commonFileExtension</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/conversionDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/conversionDescription">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes how the values can be converted.</rdfs:comment>
+        <rdfs:label>conversionDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/dataManagementProcessingDescription -->
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/dataManagementProcessingDescription">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>A description of data management and processing applied by BCO-DMO.</rdfs:comment>
         <rdfs:label>dataManagementProcessingDescription</rdfs:label>
@@ -1003,8 +1153,8 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/description">
-        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
-        <rdfs:comment>An HTML description of a resource.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A description of a resource.</rdfs:comment>
         <rdfs:label>description</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1014,6 +1164,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/eastBoundary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The eastern longitude boundary of a bounding box (decimal degrees).</rdfs:comment>
@@ -1049,14 +1200,6 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/externalWebsite">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Program"/>
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>The external project or program website URL.</rdfs:comment>
         <rdfs:label>externalWebsite</rdfs:label>
@@ -1108,6 +1251,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>A URL linking to the cruise/deployment report.</rdfs:comment>
         <rdfs:label>hasReportURL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/honorific -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/honorific">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Honorific for a Person.</rdfs:comment>
+        <rdfs:label>honorific</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1182,10 +1337,35 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/nickname -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/nickname">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Nickname, or preferred name, of a Person</rdfs:comment>
+        <rdfs:label>nickname</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/noDataValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/noDataValue">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The value to expect in a DatasetParameter when there was no data for the given record.</rdfs:comment>
+        <rdfs:label>noDataValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/northBoundary -->
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/northBoundary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The northern latitude boundary of a bounding box (decimal degrees).</rdfs:comment>
@@ -1210,7 +1390,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/problemDescription">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>A description of known problems or caveats with the dataset.</rdfs:comment>
         <rdfs:label>problemDescription</rdfs:label>
@@ -1225,7 +1405,8 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/DatasetDeployment"/>
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Deployment"/>
                 </owl:unionOf>
             </owl:Class>
@@ -1233,6 +1414,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
         <rdfs:comment>An HTML description of data processing steps.</rdfs:comment>
         <rdfs:label>processingDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/requiresConversion -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/requiresConversion">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>The values in the dataset for this property need to be converted.</rdfs:comment>
+        <rdfs:label>requiresConversion</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1249,11 +1442,42 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/restricted -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/restricted">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Is the dataset restricted for access by the public.</rdfs:comment>
+        <rdfs:label>restricted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/roleWeight -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/roleWeight">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Sort ordering of role types</rdfs:comment>
+        <rdfs:label>roleWeight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/shortDescription -->
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/shortDescription">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Parameter"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
         <rdfs:comment>A brief HTML description of the dataset.</rdfs:comment>
         <rdfs:label>shortDescription</rdfs:label>
@@ -1277,6 +1501,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/southBoundary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The southern latitude boundary of a bounding box (decimal degrees).</rdfs:comment>
@@ -1289,7 +1514,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/title">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The full title of the dataset.</rdfs:comment>
         <rdfs:label>title</rdfs:label>
@@ -1304,6 +1529,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>A URL for a resource, such as its landing page.</rdfs:comment>
         <rdfs:label>url</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/validated -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/validated">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Has the dataset been validated by the PI.</rdfs:comment>
+        <rdfs:label>validated</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1324,7 +1561,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/version">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/DOIDataset"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
         <rdfs:comment>The version label of the dataset (numeric or numeric + single lowercase letter).</rdfs:comment>
         <rdfs:label>version</rdfs:label>
@@ -1336,6 +1573,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v0.1/westBoundary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The western longitude boundary of a bounding box (decimal degrees).</rdfs:comment>
@@ -1356,6 +1594,20 @@
     
 
 
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    
+
+
     <!-- http://www.w3.org/2006/time#Instant -->
 
 
@@ -1367,6 +1619,17 @@
 
 
     <owl:Class rdf:about="http://www.w3.org/2006/time#Interval"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Action -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Action">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Category"/>
+        <rdfs:comment>Some action that can be taken on an Entity. A Policy can restrict and allow actions</rdfs:comment>
+        <rdfs:label>Action</rdfs:label>
+    </owl:Class>
     
 
 
@@ -1411,6 +1674,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Agent">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>An entity (person or organisation) that can perform roles.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
     </owl:Class>
@@ -1421,8 +1685,34 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/AgentRole">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/performedBy"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Agent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/role"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>A qualified association that links an Agent to a role and optionally an affiliation context.</rdfs:comment>
         <rdfs:label>Agent Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/ArchiveFileType -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/ArchiveFileType">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/FileType"/>
+        <rdfs:comment>A file format  used to bundle multiple files and folders into a single file for easier storage or transfer.</rdfs:comment>
+        <rdfs:label>ArchiveFileType</rdfs:label>
     </owl:Class>
     
 
@@ -1431,6 +1721,25 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Award">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/provider"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/FundingAgency"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/fundedByAward"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A funding award (grant) from a funder that supports data collection.</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
     </owl:Class>
@@ -1489,6 +1798,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Category">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>A set of taxonomy</rdfs:comment>
         <rdfs:label>Category</rdfs:label>
     </owl:Class>
@@ -1506,10 +1816,22 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/ConsumeAction -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/ConsumeAction">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Action"/>
+        <rdfs:comment>The act of consuming an Entity.</rdfs:comment>
+        <rdfs:label>ConsumeAction</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/CreativeWork -->
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/CreativeWork">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>Any work that can be created by some Agent</rdfs:comment>
         <rdfs:label>Creative Work</rdfs:label>
     </owl:Class>
@@ -1584,7 +1906,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWorkStatus"/>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Category"/>
         <rdfs:comment>The current editorial/curation state of a CreativeWork</rdfs:comment>
         <rdfs:label>Current State</rdfs:label>
     </owl:Class>
@@ -1668,8 +1990,33 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment>A primary or supplemental data file distributed as part of a DOI dataset package.</rdfs:comment>
+        <rdfs:comment>A primary or supplemental data file distributed as part of a dataset.</rdfs:comment>
         <rdfs:label>Data File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DataManagementPlan -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DataManagementPlan">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/FileDescriptor"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/dataManagementPlan"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>A plan describing how a research activity will manage and archive data products produced.</rdfs:comment>
+        <rdfs:label>DataManagementPlan</rdfs:label>
     </owl:Class>
     
 
@@ -1685,10 +2032,58 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetAward -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DatasetAward">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/fundedByAward"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Award"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/forDataset"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>The connection between a dataset and the award the funded its generation</rdfs:comment>
+        <rdfs:label>DatasetAward</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/DatasetDeployment -->
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DatasetDeployment">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/fromDeployment"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Deployment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/forDataset"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A deployment as referenced within a specific dataset, with dataset-specific properties.</rdfs:comment>
         <rdfs:label>Dataset Deployment</rdfs:label>
     </owl:Class>
@@ -1699,6 +2094,25 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DatasetInstrument">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/isTypeOf"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Instrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/forDataset"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>An instrument as referenced within a specific dataset, with dataset-specific properties.</rdfs:comment>
         <rdfs:label>Dataset Instrument</rdfs:label>
     </owl:Class>
@@ -1709,8 +2123,38 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameter">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/isTypeOf"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Parameter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v0.1/forDataset"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Dataset"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format.</rdfs:comment>
         <rdfs:label>Dataset Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Category"/>
+        <rdfs:comment>An attribute of a dataset parameter that provides more context as to how it could be used.</rdfs:comment>
+        <rdfs:label>DatasetParameterAttribute</rdfs:label>
     </owl:Class>
     
 
@@ -1741,6 +2185,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Deployment">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/onPlatform"/>
@@ -1753,6 +2198,41 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/EntityMatch"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v0.1/Deployment"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/EmailAddress -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/EmailAddress">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierString"/>
+        <rdfs:isDefinedBy rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype_EmailAddress"/>
+        <rdfs:label>Email Address</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/EmbargoPolicy -->
 
 
@@ -1761,6 +2241,10 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Policy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/modifiesAction"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/ConsumeAction"/>
+                    </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/target"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -1780,10 +2264,59 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/EmbargoReleasePolicy -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/EmbargoReleasePolicy">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Policy"/>
+        <rdfs:comment>A policy that allows access to a FileDescriptor when its overarching Dataset is under an embargo.</rdfs:comment>
+        <rdfs:label>EmbargoReleasePolicy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Entity -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Entity">
+        <rdfs:comment>A BCO-DMO specific concept</rdfs:comment>
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/EntityMatch -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/EntityMatch">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>A link between two entities that are related in some way as defined by rdf:predicate. This entity allows for annotating details of the match.</rdfs:comment>
+        <rdfs:label>EntityMatch</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/File -->
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/File">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:comment>A physical file (byte stream) associated with a dataset or package.</rdfs:comment>
         <rdfs:label>File</rdfs:label>
     </owl:Class>
@@ -1794,6 +2327,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/FileDescriptor">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/CreativeWork"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/describesFile"/>
@@ -1843,6 +2377,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/GeographicalLocation">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>A spatial extent or named location associated with a dataset, deployment, project, or program.</rdfs:comment>
         <rdfs:label>Geographical Location</rdfs:label>
     </owl:Class>
@@ -1853,6 +2388,8 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>An abstract spatial geometry.</rdfs:comment>
         <rdfs:label>Geometry</rdfs:label>
     </owl:Class>
@@ -1863,6 +2400,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Identifier">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>An identifier assigned to a resource by some scheme.</rdfs:comment>
         <rdfs:label>Identifier</rdfs:label>
     </owl:Class>
@@ -1876,6 +2414,49 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Category"/>
         <rdfs:comment>A named scheme or authority that mints identifiers (DOI, ROR, ORCID, etc.).</rdfs:comment>
         <rdfs:label>Identifier Scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/IdentifierString -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/IdentifierString">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/String"/>
+        <rdfs:isDefinedBy rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype_Identifier"/>
+        <rdfs:label xml:lang="en">IdentifierString</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Image -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Image">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/File"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/fileType"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/ImageFileType"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>An image file.</rdfs:comment>
+        <rdfs:label>Image</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/ImageFileType -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/ImageFileType">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/FileType"/>
+        <rdfs:comment>Representative of a type of image file.</rdfs:comment>
+        <rdfs:label>ImageFileType</rdfs:label>
     </owl:Class>
     
 
@@ -1938,6 +2519,17 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/Logo -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Logo">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Image"/>
+        <rdfs:comment>An image that is representative of some thing</rdfs:comment>
+        <rdfs:label>Logo</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/MetadataFile -->
 
 
@@ -1957,7 +2549,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment>A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) bundled in the DOI package.</rdfs:comment>
+        <rdfs:comment>A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset.</rdfs:comment>
         <rdfs:label>Metadata File</rdfs:label>
     </owl:Class>
     
@@ -2033,6 +2625,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Platform">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>A platform (vessel, buoy, glider, etc.) used for data collection.</rdfs:comment>
         <rdfs:label>Platform</rdfs:label>
     </owl:Class>
@@ -2065,6 +2658,21 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Policy">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Entity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/modifiesAction"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/ConsumeAction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/target"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>An access or governance policy applied to a resource.</rdfs:comment>
         <rdfs:label>Policy</rdfs:label>
     </owl:Class>
@@ -2129,6 +2737,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/ResearchActivity">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>An activity that enables research. The research typically produces datasets.</rdfs:comment>
         <rdfs:label>Research Activity</rdfs:label>
     </owl:Class>
@@ -2161,9 +2770,31 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Role">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Category"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v0.1/Category"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v0.1/roleWeight"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator).</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/String -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/String">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <rdfs:isDefinedBy rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype_String"/>
+        <rdfs:label xml:lang="en">String</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Text"/>
     </owl:Class>
     
 
@@ -2197,8 +2828,20 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/Synonym">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>An alternative name or synonym, e.g. for a deployment.</rdfs:comment>
         <rdfs:label>Synonym</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/TemporalEntity -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/TemporalEntity">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
+        <rdfs:comment>A frame of reference for when something existed or occupied time — it is either a durationless point (an instant) or a thing with some extent in time (an interval).</rdfs:comment>
+        <rdfs:label>TemporalEntity</rdfs:label>
     </owl:Class>
     
 
@@ -2208,6 +2851,7 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/TemporalInstant">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/TemporalEntity"/>
         <rdfs:comment>A single point in time associated with a dataset extent or event date.</rdfs:comment>
         <rdfs:label>Temporal Instant</rdfs:label>
     </owl:Class>
@@ -2219,8 +2863,21 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/TemporalInterval">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/TemporalEntity"/>
         <rdfs:comment>A time period with a beginning and an end, used to describe dataset temporal coverage.</rdfs:comment>
         <rdfs:label>Temporal Interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/URL -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/URL">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierString"/>
+        <rdfs:isDefinedBy rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype_URL"/>
+        <rdfs:label xml:lang="en">URL</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/URL"/>
     </owl:Class>
     
 
@@ -2229,6 +2886,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v0.1/UnitOfMeasure">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v0.1/Entity"/>
         <rdfs:comment>A unit of measure associated with a dataset parameter.</rdfs:comment>
         <rdfs:label>Unit of Measure</rdfs:label>
     </owl:Class>
@@ -2286,11 +2944,33 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/Action_Download -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Action_Download">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ConsumeAction"/>
+        <label>Download</label>
+        <rdfs:label>Action: Download</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Action_View -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Action_View">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ConsumeAction"/>
+        <label>View</label>
+        <rdfs:label>Action: View</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm_MD5 -->
 
 
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm_MD5">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm"/>
         <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:cryptographic-hash:190"/>
         <abbreviation>md5</abbreviation>
         <label>MD5</label>
@@ -2302,6 +2982,126 @@
 
 
     <rdf:Description rdf:about="urn:bcodmo:taxonomy:cryptographic-hash:190"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-DataNotAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-DataNotAvailable">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:577"/>
+        <label>Data not available</label>
+        <rdfs:comment>The Dataset&apos;s data is not available</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Data Not Available</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:577 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:577"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-Deprecated -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-Deprecated">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:952"/>
+        <label>Deprecated</label>
+        <rdfs:comment>The Dataset is deprecated</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Deprecated</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:952 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:952"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-FinalNoUpdatesExpected -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-FinalNoUpdatesExpected">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:7"/>
+        <label>Final no updates expected</label>
+        <rdfs:comment>The Dataset is final with no updates expected</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Final no updates expected</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:7 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:7"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-FinalWithUpdatesExpected -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-FinalWithUpdatesExpected">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:9"/>
+        <label>Final with updates expected</label>
+        <rdfs:comment>The Dataset is final with updates expected</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Final with updates expected</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:9 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:9"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-PreliminaryAndInProgress -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-PreliminaryAndInProgress">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:6"/>
+        <label>Preliminary and in progress</label>
+        <rdfs:comment>The Dataset is preliminary and in progress</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Preliminary and in progress</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:6 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:6"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-UnderRevision -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/CurrentState_Dataset-UnderRevision">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/CurrentState"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:dataset-current-state:578"/>
+        <label>Under Revision</label>
+        <rdfs:comment>The Dataset is under revision</rdfs:comment>
+        <rdfs:label>Current State: Dataset - Under Revision</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:578 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:dataset-current-state:578"/>
     
 
 
@@ -2371,6 +3171,453 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryDepthVariable -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryDepthVariable">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute"/>
+        <label>Primary Depth Variable</label>
+        <rdfs:label>Dataset Parameter Attribute: Primary Depth Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryISODateTimeVariable -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryISODateTimeVariable">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute"/>
+        <label>Primary ISODateTime Variable</label>
+        <rdfs:label>Dataset Parameter Attribute: Primary ISODateTime Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryLatitudeVariable -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryLatitudeVariable">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute"/>
+        <label>Primary Latitude Variable</label>
+        <rdfs:label>Dataset Parameter Attribute: Primary Latitude Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryLongitudeVariable -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute_PrimaryLongitudeVariable">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetParameterAttribute"/>
+        <label>Primary Longitude Variable</label>
+        <rdfs:label>Dataset Parameter Attribute: Primary Longtiude Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_Code -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_Code">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Code</label>
+        <rdfs:comment>Software/code as a product of some research project</rdfs:comment>
+        <rdfs:label>Dataset Type: Code</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_CruiseReport -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_CruiseReport">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Cruise Report</label>
+        <rdfs:comment>The dataset is a cruise report</rdfs:comment>
+        <rdfs:label>Dataset Type: Cruise Report</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_CruiseResults -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_CruiseResults">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Cruise Results</label>
+        <rdfs:comment>Results from a research cruise</rdfs:comment>
+        <rdfs:label>Dataset Type: Cruise Results</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_Document -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_Document">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Document</label>
+        <rdfs:comment>The dataset is some kind of document.</rdfs:comment>
+        <rdfs:label>Dataset Type: Document</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_Experimental -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_Experimental">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Experimental</label>
+        <rdfs:comment>The dataset is experimental results.</rdfs:comment>
+        <rdfs:label>Dataset Type: Experimental</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_ModelResults -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_ModelResults">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Mode lResults</label>
+        <rdfs:comment>The dataset is the result of executing a model</rdfs:comment>
+        <rdfs:label>Dataset Type: Model Results</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_OtherFieldResults -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_OtherFieldResults">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Other Field Results</label>
+        <rdfs:comment>Results from other field work</rdfs:comment>
+        <rdfs:label>Dataset Type: Other Field Results</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/DatasetType_Synthesis -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/DatasetType_Synthesis">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/DatasetType"/>
+        <label>Synthesis</label>
+        <rdfs:comment>Results from synthesis of other works</rdfs:comment>
+        <rdfs:label>Dataset Type: Synthesis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Date -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Date">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1070"/>
+        <label>Date</label>
+        <rdfs:comment>A date.</rdfs:comment>
+        <rdfs:label>Datatype: Date</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1070 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1070"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Datetime -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Datetime">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1071"/>
+        <label>Datetime</label>
+        <rdfs:comment>A datetime.</rdfs:comment>
+        <rdfs:label>Datatype: Datetime</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1071 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1071"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_EmailAddress -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_EmailAddress">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1079"/>
+        <label>Email Address</label>
+        <rdfs:comment>An email address.</rdfs:comment>
+        <rdfs:label>Datatype: Email Address</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1079 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1079"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Float -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Float">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1076"/>
+        <label>Float</label>
+        <rdfs:comment>A floating point number.</rdfs:comment>
+        <rdfs:label>Datatype: Float</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1076 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1076"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Identifier -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Identifier">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1078"/>
+        <label>Identifier</label>
+        <rdfs:comment>A string identifier.</rdfs:comment>
+        <rdfs:label>Datatype: Identifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1078 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1078"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Integer -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Integer">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1075"/>
+        <label>Integer</label>
+        <rdfs:comment>An integer.</rdfs:comment>
+        <rdfs:label>Datatype: Integer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1075 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1075"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_String -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_String">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1077"/>
+        <label>String</label>
+        <rdfs:comment>A string.</rdfs:comment>
+        <rdfs:label>Datatype: String</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1077 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1077"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Time -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Time">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1072"/>
+        <label>Time</label>
+        <rdfs:comment>A time.</rdfs:comment>
+        <rdfs:label>Datatype: Time</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1072 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1072"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_URL -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_URL">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1080"/>
+        <label>URL</label>
+        <rdfs:comment>A universal resource locator.</rdfs:comment>
+        <rdfs:label>Datatype: URL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1080 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1080"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_Year -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_Year">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1073"/>
+        <label>Year</label>
+        <rdfs:comment>A year.</rdfs:comment>
+        <rdfs:label>Datatype: Year</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1073 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1073"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Datatype_YearMonth -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Datatype_YearMonth">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Datatype"/>
+        <owl:sameAs rdf:resource="urn:bcodmo:taxonomy:datatype:1074"/>
+        <label>Year Month</label>
+        <rdfs:comment>A year month.</rdfs:comment>
+        <rdfs:label>Datatype: Year Month</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1074 -->
+
+
+    <rdf:Description rdf:about="urn:bcodmo:taxonomy:datatype:1074"/>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_BitmapImage -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_BitmapImage">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ImageFileType"/>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">bmp</commonFileExtension>
+        <label>Bitmap Image</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/bmp</mimeType>
+        <rdfs:label>File Type: Bitmap Image</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_JPEGImage -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_JPEGImage">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ImageFileType"/>
+        <abbreviation>JPEG</abbreviation>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">jpe</commonFileExtension>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">jpeg</commonFileExtension>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">jpg</commonFileExtension>
+        <label>JPEG Image</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/jpeg</mimeType>
+        <rdfs:label>File Type: JPEG Image</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_ScalarVectorGraphics -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_ScalarVectorGraphics">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ImageFileType"/>
+        <abbreviation>SVG</abbreviation>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">svg</commonFileExtension>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">svgz</commonFileExtension>
+        <label>Scalar Vector Graphics</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/svg+xml</mimeType>
+        <rdfs:label>File Type: Scalar Vector Graphics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_TARArchive -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_TARArchive">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ArchiveFileType"/>
+        <abbreviation>TAR</abbreviation>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">tar</commonFileExtension>
+        <label>TAR Archive</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">application/x-tar</mimeType>
+        <rdfs:label>File Type: TAR Archive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_TaggedImageFileFormat -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_TaggedImageFileFormat">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ImageFileType"/>
+        <abbreviation>TIFF</abbreviation>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">tif</commonFileExtension>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">tiff</commonFileExtension>
+        <label>Tagged Image File Format</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/tiff</mimeType>
+        <rdfs:label>File Type: Tagged Image File Format</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/FileType_ZIPArchive -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/FileType_ZIPArchive">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/ArchiveFileType"/>
+        <abbreviation>ZIP</abbreviation>
+        <commonFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">zip</commonFileExtension>
+        <label>ZIP Archive</label>
+        <mimeType rdf:datatype="http://www.w3.org/2001/XMLSchema#token">application/zip</mimeType>
+        <rdfs:label>File Type: ZIP Archive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://schema.bco-dmo.org/v0.1/IdentifierScheme_BCODMO_Version_2 -->
 
 
@@ -2378,6 +3625,7 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
         <abbreviation>BCODMO_v2</abbreviation>
         <label>BCO-DMO Internal Identifier (Version 2)</label>
+        <rdfs:label>Identifier Scheme: BCO-DMO Version 2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2389,6 +3637,18 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
         <abbreviation>DOI</abbreviation>
         <label>Digital Object Identifier</label>
+        <rdfs:label>Identifier Scheme: DOI</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/IdentifierScheme_InternetArchive -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/IdentifierScheme_InternetArchive">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
+        <label>Internet Archive</label>
+        <rdfs:label>Identifier Scheme: Internet Archive</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2400,6 +3660,7 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
         <abbreviation>ORCID</abbreviation>
         <label>Open Researcher and Contributor ID</label>
+        <rdfs:label>Identifier Scheme: ORCID</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2411,6 +3672,7 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/IdentifierScheme"/>
         <abbreviation>ROR</abbreviation>
         <label>Research Organization Registry</label>
+        <rdfs:label>Identifier Scheme: ROR</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2422,6 +3684,7 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Language"/>
         <abbreviation>en_US</abbreviation>
         <name>U.S. English</name>
+        <rdfs:label>Language: US English</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2432,6 +3695,7 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/MetadataProfile_Datapackage_DOI_V1.0">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/MetadataProfile"/>
         <label>DOI Datapackage v1.0</label>
+        <rdfs:label>Metadata Profile: DOI Package v1.0</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2455,6 +3719,258 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Analyst -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Analyst">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Analyst</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</roleWeight>
+        <rdfs:label>Role: Analyst</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Author -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Author">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Author</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</roleWeight>
+        <rdfs:label>Role: Author</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_BCODMODataManager -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_BCODMODataManager">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>BCO-DMO Data Manager</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">99</roleWeight>
+        <rdfs:label>Role: BCO-DMO Data Manager</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Captain -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Captain">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Captain</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</roleWeight>
+        <rdfs:label>Role: Captain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_ChiefScientist -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_ChiefScientist">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Chief Scientist</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</roleWeight>
+        <rdfs:label>Role: Chief Scientist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_CoChiefScientist -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_CoChiefScientist">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Co-Chief Scientist</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</roleWeight>
+        <rdfs:label>Role: Co-Chief Scientist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_CoPrincipalInvestigator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_CoPrincipalInvestigator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Co-Principal Investigator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</roleWeight>
+        <rdfs:label>Role: Co-Principal Investigator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Contact -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Contact">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Contact</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</roleWeight>
+        <rdfs:label>Role: Contact</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Contributor -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Contributor">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Contributor</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</roleWeight>
+        <rdfs:label>Role: Contributor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Curator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Curator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Curator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</roleWeight>
+        <rdfs:label>Role: Curator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_DataManager -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_DataManager">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Data Manager</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</roleWeight>
+        <rdfs:label>Role: Data Manager</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_DataPublisher -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_DataPublisher">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Data Publisher</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</roleWeight>
+        <rdfs:label>Role: Data Publisher</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Guest -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Guest">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Guest</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</roleWeight>
+        <rdfs:label>Role: Guest</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_InternationalCollaborator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_InternationalCollaborator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>International Collaborator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</roleWeight>
+        <rdfs:label>Role: International Collaborator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_LeadPrincipalInvestigator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_LeadPrincipalInvestigator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Lead Principal Investigator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</roleWeight>
+        <rdfs:label>Role: Lead Principal Investigator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Originator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Originator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Originator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</roleWeight>
+        <rdfs:label>Role: Originator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_PrincipalInvestigator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_PrincipalInvestigator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Principal Investigator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</roleWeight>
+        <rdfs:label>Role: Principal Investigator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_ProjectCoordinator -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_ProjectCoordinator">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Project Coordinator</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</roleWeight>
+        <rdfs:label>Role: Project Coordinator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Scientist -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Scientist">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Scientist</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</roleWeight>
+        <rdfs:label>Role: Scientist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Student -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Student">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Student</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</roleWeight>
+        <rdfs:label>Role: Student</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v0.1/Role_Technician -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v0.1/Role_Technician">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v0.1/Role"/>
+        <label>Technician</label>
+        <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</roleWeight>
+        <rdfs:label>Role: Technician</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://www.bco-dmo.org/ -->
 
 
@@ -2467,12 +3983,131 @@
     
 
 
+    <!-- urn:bcodmo:dataset-current-state:577 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:577"/>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:578 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:578"/>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:6 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:6"/>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:7 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:7"/>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:9 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:9"/>
+    
+
+
+    <!-- urn:bcodmo:dataset-current-state:952 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:dataset-current-state:952"/>
+    
+
+
     <!-- urn:bcodmo:taxonomy:cryptographic-hash:190 -->
 
 
     <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:cryptographic-hash:190">
-        <rdfs:label>Cryptographic Has Algorithm: MD5</rdfs:label>
+        <rdfs:label>Cryptographic Hash Algorithm: MD5</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1070 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1070"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1071 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1071"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1072 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1072"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1073 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1073"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1074 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1074"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1075 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1075"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1076 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1076"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1077 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1077"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1078 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1078"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1079 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1079"/>
+    
+
+
+    <!-- urn:bcodmo:taxonomy:datatype:1080 -->
+
+
+    <owl:NamedIndividual rdf:about="urn:bcodmo:taxonomy:datatype:1080"/>
     
 
 

@@ -1,6 +1,8 @@
+# docker compose run --rm widoco
 services:
   widoco:
     image: ghcr.io/dgarijo/widoco:v1.4.25
+    platform: linux/amd64
     stdin_open: true    
     tty: true           
     volumes:
