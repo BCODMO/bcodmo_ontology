@@ -141,6 +141,7 @@
 # 
 # https://schema.bco-dmo.org/v0.1/describesFile
 <https://schema.bco-dmo.org/v0.1/describesFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/describesFile> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/describesFile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
 <https://schema.bco-dmo.org/v0.1/describesFile> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/File> .
 <https://schema.bco-dmo.org/v0.1/describesFile> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a file record to the File object describing its physical properties." .
@@ -155,13 +156,16 @@
 # 
 # https://schema.bco-dmo.org/v0.1/forDataset
 <https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
+<https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Situation> .
 <https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Dataset> .
 <https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Links to a dataset." .
 <https://schema.bco-dmo.org/v0.1/forDataset> <http://www.w3.org/2000/01/rdf-schema#label> "forDataset" .
 # 
 # https://schema.bco-dmo.org/v0.1/fromDeployment
 <https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/DatasetDeployment> .
+<https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
+<https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Dataset> .
 <https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Deployment> .
 <https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a deployment and a dataset." .
 <https://schema.bco-dmo.org/v0.1/fromDeployment> <http://www.w3.org/2000/01/rdf-schema#label> "fromDeployment" .
@@ -241,6 +245,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment
 <https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Deployment> .
 <https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Deployment> .
 <https://schema.bco-dmo.org/v0.1/hasCoordinatedDeployment> <http://www.w3.org/2000/01/rdf-schema#comment> "A disparate deployment that coordinated in conjuction with this subject for data collection" .
@@ -277,6 +282,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://schema.bco-dmo.org/v0.1/hasParentProgram
 <https://schema.bco-dmo.org/v0.1/hasParentProgram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/hasParentProgram> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/hasParentProgram> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Project> .
 <https://schema.bco-dmo.org/v0.1/hasParentProgram> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Program> .
 <https://schema.bco-dmo.org/v0.1/hasParentProgram> <http://www.w3.org/2000/01/rdf-schema#comment> "The Program that enabled a Project's existence" .
@@ -310,6 +316,12 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://schema.bco-dmo.org/v0.1/hasSynonym> <http://www.w3.org/2000/01/rdf-schema#comment> "An alternative name used for a deployment." .
 <https://schema.bco-dmo.org/v0.1/hasSynonym> <http://www.w3.org/2000/01/rdf-schema#label> "hasSynonym" .
 # 
+# https://schema.bco-dmo.org/v0.1/hasTime
+<https://schema.bco-dmo.org/v0.1/hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/TemporalEntity> .
+<https://schema.bco-dmo.org/v0.1/hasTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a temporal entity to some thing" .
+<https://schema.bco-dmo.org/v0.1/hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "hasTime" .
+# 
 # https://schema.bco-dmo.org/v0.1/identifier
 <https://schema.bco-dmo.org/v0.1/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://schema.bco-dmo.org/v0.1/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Identifier> .
@@ -330,27 +342,19 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://schema.bco-dmo.org/v0.1/inGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "The group/category to which a resource relation type belongs." .
 <https://schema.bco-dmo.org/v0.1/inGroup> <http://www.w3.org/2000/01/rdf-schema#label> "inGroup" .
 # 
+# https://schema.bco-dmo.org/v0.1/isDefinedAs
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://schema.bco-dmo.org/v0.1/isTypeOf> .
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Entity> .
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/2000/01/rdf-schema#comment> "A thing is defined to be something more specific or colloquial than this more standardized cateogrization or community term." .
+<https://schema.bco-dmo.org/v0.1/isDefinedAs> <http://www.w3.org/2000/01/rdf-schema#label> "isDefinedAs" .
+# 
 # https://schema.bco-dmo.org/v0.1/isTypeOf
 <https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
-_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DatasetParameter> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DatasetInstrument> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid12 .
-_:genid12 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Instrument> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a dataset-level parameter or instrument instance to its master (community vocabulary) definition." .
+<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Entity> .
+<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorizes some thing." .
 <https://schema.bco-dmo.org/v0.1/isTypeOf> <http://www.w3.org/2000/01/rdf-schema#label> "isTypeOf" .
 # 
 # https://schema.bco-dmo.org/v0.1/issuedDate
@@ -390,18 +394,7 @@ _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/matches
 <https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#unionOf> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResourceRelation> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Instrument> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Entity> .
 <https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/2000/01/rdf-schema#comment> "Aligns a BCO-DMO vocabulary term with an equivalent term from an external community vocabulary (e.g. SeaDataNet, NERC, Crossref, DataCite)." .
 <https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/2000/01/rdf-schema#label> "matches" .
 <https://schema.bco-dmo.org/v0.1/matches> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3.org/2004/02/skos/core#exactMatch> .
@@ -430,6 +423,7 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/onPlatform
 <https://schema.bco-dmo.org/v0.1/onPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/onPlatform> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/onPlatform> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Deployment> .
 <https://schema.bco-dmo.org/v0.1/onPlatform> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Platform> .
 <https://schema.bco-dmo.org/v0.1/onPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "The platform (vessel, buoy, etc.) on which a deployment took place." .
@@ -437,6 +431,7 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/performedAt
 <https://schema.bco-dmo.org/v0.1/performedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/performedAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/performedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/AgentRole> .
 <https://schema.bco-dmo.org/v0.1/performedAt> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Organization> .
 <https://schema.bco-dmo.org/v0.1/performedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The institutional affiliation at which the role was performed." .
@@ -444,6 +439,7 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/performedBy
 <https://schema.bco-dmo.org/v0.1/performedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/performedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/performedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/AgentRole> .
 <https://schema.bco-dmo.org/v0.1/performedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Agent> .
 <https://schema.bco-dmo.org/v0.1/performedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The person who performed or holds this role." .
@@ -465,6 +461,7 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/producedWork
 <https://schema.bco-dmo.org/v0.1/producedWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/producedWork> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
 <https://schema.bco-dmo.org/v0.1/producedWork> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
 <https://schema.bco-dmo.org/v0.1/producedWork> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
 <https://schema.bco-dmo.org/v0.1/producedWork> <http://www.w3.org/2000/01/rdf-schema#comment> "The research activity produced the research product." .
@@ -472,6 +469,7 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/programManager
 <https://schema.bco-dmo.org/v0.1/programManager> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/programManager> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 <https://schema.bco-dmo.org/v0.1/programManager> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Award> .
 <https://schema.bco-dmo.org/v0.1/programManager> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/Person> .
 <https://schema.bco-dmo.org/v0.1/programManager> <http://www.w3.org/2000/01/rdf-schema#comment> "The program manager at the funding agency responsible for this award." .
@@ -512,15 +510,15 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/resolution
 <https://schema.bco-dmo.org/v0.1/resolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/resolution> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid19 .
-_:genid19 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInterval> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInstant> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/resolution> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInterval> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInstant> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/resolution> <http://www.w3.org/2000/01/rdf-schema#comment> "The temporal resolution of a temporal extent (e.g. time:unitDay)." .
 <https://schema.bco-dmo.org/v0.1/resolution> <http://www.w3.org/2000/01/rdf-schema#label> "resolution" .
 # 
@@ -531,6 +529,12 @@ _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://schema.bco-dmo.org/v0.1/role> <http://www.w3.org/2000/01/rdf-schema#comment> "The role type performed by the agent." .
 <https://schema.bco-dmo.org/v0.1/role> <http://www.w3.org/2000/01/rdf-schema#label> "role" .
 # 
+# https://schema.bco-dmo.org/v0.1/situationInvolves
+<https://schema.bco-dmo.org/v0.1/situationInvolves> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.bco-dmo.org/v0.1/situationInvolves> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v0.1/Event> .
+<https://schema.bco-dmo.org/v0.1/situationInvolves> <http://www.w3.org/2000/01/rdf-schema#comment> "Some thing involved in a situation or event. A super property for more specific relationships in some Event." .
+<https://schema.bco-dmo.org/v0.1/situationInvolves> <http://www.w3.org/2000/01/rdf-schema#label> "situationInvolves" .
+# 
 # https://schema.bco-dmo.org/v0.1/smallLogo
 <https://schema.bco-dmo.org/v0.1/smallLogo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://schema.bco-dmo.org/v0.1/smallLogo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/logo> .
@@ -540,18 +544,18 @@ _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/spatialExtent
 <https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid22 .
-_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid25 .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/GeographicalLocation> .
 <https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/2000/01/rdf-schema#comment> "The spatial coverage of the dataset, deployment, project, or program." .
 <https://schema.bco-dmo.org/v0.1/spatialExtent> <http://www.w3.org/2000/01/rdf-schema#label> "spatialExtent" .
@@ -586,44 +590,37 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/temporalExtent
 <https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid26 .
-_:genid26 <http://www.w3.org/2002/07/owl#unionOf> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/AgentRole> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#range> _:genid31 .
-_:genid31 <http://www.w3.org/2002/07/owl#unionOf> _:genid33 .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInterval> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/TemporalInstant> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#comment> "The temporal coverage of the dataset or deployment." .
+<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v0.1/hasTime> .
+<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/AgentRole> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/TemporalEntity> .
+<https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#comment> "The temporal coverage of an agent role, dataset, deployment or research activity." .
 <https://schema.bco-dmo.org/v0.1/temporalExtent> <http://www.w3.org/2000/01/rdf-schema#label> "temporalExtent" .
 # 
 # https://schema.bco-dmo.org/v0.1/units
 <https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid34 .
-_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DatasetParameter> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DatasetParameter> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v0.1/UnitOfMeasure> .
 <https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for a dataset parameter." .
 <https://schema.bco-dmo.org/v0.1/units> <http://www.w3.org/2000/01/rdf-schema#label> "units" .
@@ -652,15 +649,15 @@ _:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/acquisitionDescription
 <https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid37 .
-_:genid37 <http://www.w3.org/2002/07/owl#unionOf> _:genid39 .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> .
 <https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "An HTML description of data acquisition methods." .
 <https://schema.bco-dmo.org/v0.1/acquisitionDescription> <http://www.w3.org/2000/01/rdf-schema#label> "acquisitionDescription" .
@@ -804,6 +801,7 @@ _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/label
 <https://schema.bco-dmo.org/v0.1/label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.bco-dmo.org/v0.1/label> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://schema.bco-dmo.org/v0.1/name> .
 <https://schema.bco-dmo.org/v0.1/label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://schema.bco-dmo.org/v0.1/label> <http://www.w3.org/2000/01/rdf-schema#comment> "A human-readable label for any BCO-DMO resource." .
 <https://schema.bco-dmo.org/v0.1/label> <http://www.w3.org/2000/01/rdf-schema#label> "label" .
@@ -825,7 +823,7 @@ _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://schema.bco-dmo.org/v0.1/name
 <https://schema.bco-dmo.org/v0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://schema.bco-dmo.org/v0.1/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://schema.bco-dmo.org/v0.1/name> <http://www.w3.org/2000/01/rdf-schema#comment> "A name property (used on Language and similar small vocabulary resources)." .
+<https://schema.bco-dmo.org/v0.1/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item. Synonymous with the label property." .
 <https://schema.bco-dmo.org/v0.1/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
 # 
 # https://schema.bco-dmo.org/v0.1/nickname
@@ -866,18 +864,15 @@ _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/processingDescription
 <https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid40 .
-_:genid40 <http://www.w3.org/2002/07/owl#unionOf> _:genid43 .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DatasetDeployment> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> .
 <https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "An HTML description of data processing steps." .
 <https://schema.bco-dmo.org/v0.1/processingDescription> <http://www.w3.org/2000/01/rdf-schema#label> "processingDescription" .
@@ -912,15 +907,15 @@ _:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/shortDescription
 <https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid44 .
-_:genid44 <http://www.w3.org/2002/07/owl#unionOf> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Parameter> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML> .
 <https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A brief HTML description of the dataset." .
 <https://schema.bco-dmo.org/v0.1/shortDescription> <http://www.w3.org/2000/01/rdf-schema#label> "shortDescription" .
@@ -1011,31 +1006,31 @@ _:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://schema.bco-dmo.org/v0.1/Affiliation
 <https://schema.bco-dmo.org/v0.1/Affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Affiliation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid47 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid56 .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid49 .
-_:genid49 <http://www.w3.org/2002/07/owl#unionOf> _:genid53 .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
-_:genid51 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/AgentRole> .
-_:genid51 <http://www.w3.org/2002/07/owl#onProperty> _:genid52 .
-_:genid52 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/performedAt> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
-_:genid54 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Person> .
-_:genid54 <http://www.w3.org/2002/07/owl#onProperty> _:genid55 .
-_:genid55 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/affiliation> .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Organization> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Affiliation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid33 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#unionOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/AgentRole> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/performedAt> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Person> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> _:genid41 .
+_:genid41 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/affiliation> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Organization> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Affiliation> <http://www.w3.org/2000/01/rdf-schema#comment> "An institutional affiliation of a person (university, research institute, etc.)." .
 <https://schema.bco-dmo.org/v0.1/Affiliation> <http://www.w3.org/2000/01/rdf-schema#label> "Affiliation" .
 # 
@@ -1047,22 +1042,31 @@ _:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # 
 # https://schema.bco-dmo.org/v0.1/AgentRole
 <https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid57 .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid57 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid60 .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid59 .
-_:genid59 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Role> .
-_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/role> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid61 .
-_:genid61 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Agent> .
-_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/performedBy> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
+<https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid43 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/hasAgentWithRole> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Role> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/role> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Agent> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/performedBy> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Situation> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/2000/01/rdf-schema#comment> "A qualified association that links an Agent to a role and optionally an affiliation context." .
 <https://schema.bco-dmo.org/v0.1/AgentRole> <http://www.w3.org/2000/01/rdf-schema#label> "Agent Role" .
 # 
@@ -1074,23 +1078,25 @@ _:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # 
 # https://schema.bco-dmo.org/v0.1/Award
 <https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
-_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid62 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid66 .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid63 .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid64 .
-_:genid64 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid64 <http://www.w3.org/2002/07/owl#onProperty> _:genid65 .
-_:genid65 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/fundedByAward> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid67 .
-_:genid67 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/FundingAgency> .
-_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/provider> .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid52 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/fundedByAward> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/FundingAgency> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/provider> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/2000/01/rdf-schema#comment> "A funding award (grant) from a funder that supports data collection." .
 <https://schema.bco-dmo.org/v0.1/Award> <http://www.w3.org/2000/01/rdf-schema#label> "Award" .
 # 
@@ -1102,41 +1108,41 @@ _:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # 
 # https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry
 <https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid68 .
-_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid68 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid79 .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid69 .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid70 .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid70 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid77 .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid75 .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid73 .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid71 .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid72 .
-_:genid72 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
-_:genid72 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/westBoundary> .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid74 .
-_:genid74 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
-_:genid74 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/southBoundary> .
-_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid76 .
-_:genid76 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
-_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/northBoundary> .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid78 .
-_:genid78 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
-_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/eastBoundary> .
-_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Geometry> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid59 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid61 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid68 .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid64 .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/westBoundary> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid65 .
+_:genid65 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/southBoundary> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/northBoundary> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid69 .
+_:genid69 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/eastBoundary> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Geometry> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "An axis-aligned bounding box geometry defined by west/south/east/north boundaries." .
 <https://schema.bco-dmo.org/v0.1/BoundingBoxGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "Bounding Box Geometry" .
 # 
@@ -1152,11 +1158,19 @@ _:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://schema.bco-dmo.org/v0.1/CentroidGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "A point geometry representing the centroid of a spatial extent." .
 <https://schema.bco-dmo.org/v0.1/CentroidGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "Centroid Geometry" .
 # 
+# https://schema.bco-dmo.org/v0.1/ComputerLanguage
+<https://schema.bco-dmo.org/v0.1/ComputerLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/ComputerLanguage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Language> .
+<https://schema.bco-dmo.org/v0.1/ComputerLanguage> <http://www.w3.org/2002/07/owl#disjointWith> <https://schema.bco-dmo.org/v0.1/NaturalLanguage> .
+<https://schema.bco-dmo.org/v0.1/ComputerLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Programming languages such as Python, Go, Rust and Java." .
+<https://schema.bco-dmo.org/v0.1/ComputerLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "ComputerLanguage" .
+# 
 # https://schema.bco-dmo.org/v0.1/ConsumeAction
 <https://schema.bco-dmo.org/v0.1/ConsumeAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://schema.bco-dmo.org/v0.1/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Action> .
 <https://schema.bco-dmo.org/v0.1/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of consuming an Entity." .
 <https://schema.bco-dmo.org/v0.1/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#label> "ConsumeAction" .
+<https://schema.bco-dmo.org/v0.1/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://schema.org/ConsumeAction" .
 # 
 # https://schema.bco-dmo.org/v0.1/CreativeWork
 <https://schema.bco-dmo.org/v0.1/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1172,35 +1186,35 @@ _:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # 
 # https://schema.bco-dmo.org/v0.1/Cruise
 <https://schema.bco-dmo.org/v0.1/Cruise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid80 .
-_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid80 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid83 .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid81 .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid82 .
-_:genid82 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Vessel> .
-_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/onPlatform> .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid71 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid73 .
+_:genid73 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Vessel> .
+_:genid73 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/onPlatform> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Cruise> <http://www.w3.org/2000/01/rdf-schema#comment> "A research vessel cruise, a specialisation of Platform for vessel-type platforms." .
 <https://schema.bco-dmo.org/v0.1/Cruise> <http://www.w3.org/2000/01/rdf-schema#label> "Cruise" .
 # 
 # https://schema.bco-dmo.org/v0.1/CryptographicHash
 <https://schema.bco-dmo.org/v0.1/CryptographicHash> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/CryptographicHash> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
-_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid84 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid87 .
-_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid86 .
-_:genid86 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm> .
-_:genid86 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
-_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
-_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/CryptographicHash> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid75 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CryptographicHashAlgorithm> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/CryptographicHash> <http://www.w3.org/2000/01/rdf-schema#comment> "A cryptographic hash (e.g. MD5) used as a file integrity checksum." .
 <https://schema.bco-dmo.org/v0.1/CryptographicHash> <http://www.w3.org/2000/01/rdf-schema#label> "Cryptographic Hash" .
 # 
@@ -1218,80 +1232,92 @@ _:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # 
 # https://schema.bco-dmo.org/v0.1/DOIDataset
 <https://schema.bco-dmo.org/v0.1/DOIDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DOIDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
-_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid88 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid92 .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid89 .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid90 .
-_:genid90 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid91 .
-_:genid91 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_DOI> .
-_:genid91 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid90 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifier> .
-_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DOIDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid79 .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid79 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid81 .
+_:genid81 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid82 .
+_:genid82 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_DOI> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifier> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DOIDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A versioned BCO-DMO dataset that has been assigned a DOI." .
 <https://schema.bco-dmo.org/v0.1/DOIDataset> <http://www.w3.org/2000/01/rdf-schema#label> "DOI Dataset" .
 # 
 # https://schema.bco-dmo.org/v0.1/DOIIdentifier
 <https://schema.bco-dmo.org/v0.1/DOIIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DOIIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
-_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid93 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid96 .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid94 .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid95 .
-_:genid95 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_DOI> .
-_:genid95 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DOIIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid84 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid86 .
+_:genid86 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_DOI> .
+_:genid86 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DOIIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A Digital Object Identifier." .
 <https://schema.bco-dmo.org/v0.1/DOIIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "DOI Identifier" .
 # 
 # https://schema.bco-dmo.org/v0.1/DOIStatus
 <https://schema.bco-dmo.org/v0.1/DOIStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DOIStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/CreativeWorkStatus> .
+<https://schema.bco-dmo.org/v0.1/DOIStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid88 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid92 .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid90 .
+_:genid90 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/DOIDataset> .
+_:genid90 <http://www.w3.org/2002/07/owl#onProperty> _:genid91 .
+_:genid91 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/status> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/CreativeWorkStatus> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DOIStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The lifecycle status of a DOI Dataset (Draft, Reserved, Published, etc.)." .
 <https://schema.bco-dmo.org/v0.1/DOIStatus> <http://www.w3.org/2000/01/rdf-schema#label> "DOI Status" .
 # 
 # https://schema.bco-dmo.org/v0.1/DataFile
 <https://schema.bco-dmo.org/v0.1/DataFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DataFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
-_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid97 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid101 .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid98 .
-_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid99 .
-_:genid99 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid99 <http://www.w3.org/2002/07/owl#onProperty> _:genid100 .
-_:genid100 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/dataFile> .
-_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DataFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid93 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid97 .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid94 .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid95 .
+_:genid95 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid95 <http://www.w3.org/2002/07/owl#onProperty> _:genid96 .
+_:genid96 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/dataFile> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DataFile> <http://www.w3.org/2000/01/rdf-schema#comment> "A primary or supplemental data file distributed as part of a dataset." .
 <https://schema.bco-dmo.org/v0.1/DataFile> <http://www.w3.org/2000/01/rdf-schema#label> "Data File" .
 # 
 # https://schema.bco-dmo.org/v0.1/DataManagementPlan
 <https://schema.bco-dmo.org/v0.1/DataManagementPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DataManagementPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
-_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid102 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid106 .
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid103 .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid104 .
-_:genid104 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid104 <http://www.w3.org/2002/07/owl#onProperty> _:genid105 .
-_:genid105 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/dataManagementPlan> .
-_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DataManagementPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid98 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid102 .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid99 .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid100 .
+_:genid100 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid100 <http://www.w3.org/2002/07/owl#onProperty> _:genid101 .
+_:genid101 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/dataManagementPlan> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DataManagementPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A plan describing how a research activity will manage and archive data products produced." .
 <https://schema.bco-dmo.org/v0.1/DataManagementPlan> <http://www.w3.org/2000/01/rdf-schema#label> "DataManagementPlan" .
 # 
@@ -1303,89 +1329,89 @@ _:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/DatasetAward
 <https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid107 .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid107 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid111 .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid108 .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid109 .
-_:genid109 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid109 <http://www.w3.org/2002/07/owl#onProperty> _:genid110 .
-_:genid110 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/forDataset> .
-_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid112 .
-_:genid112 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Award> .
-_:genid112 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fundedByAward> .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Situation> .
+<https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid103 .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid103 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid107 .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid104 .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid105 .
+_:genid105 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid105 <http://www.w3.org/2002/07/owl#onProperty> _:genid106 .
+_:genid106 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/forDataset> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid108 .
+_:genid108 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Award> .
+_:genid108 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fundedByAward> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#comment> "The connection between a dataset and the award the funded its generation" .
 <https://schema.bco-dmo.org/v0.1/DatasetAward> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetAward" .
 # 
 # https://schema.bco-dmo.org/v0.1/DatasetDeployment
 <https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid113 .
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid113 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid117 .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid114 .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid115 .
-_:genid115 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid115 <http://www.w3.org/2002/07/owl#onProperty> _:genid116 .
-_:genid116 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/forDataset> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid118 .
-_:genid118 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid118 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fromDeployment> .
-_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Situation> .
+<https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid109 .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid109 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid112 .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid111 .
+_:genid111 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid111 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fromDeployment> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid113 .
+_:genid113 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid113 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/forDataset> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#comment> "A deployment as referenced within a specific dataset, with dataset-specific properties." .
 <https://schema.bco-dmo.org/v0.1/DatasetDeployment> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Deployment" .
 # 
 # https://schema.bco-dmo.org/v0.1/DatasetInstrument
 <https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid119 .
-_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid119 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid123 .
-_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid120 .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid121 .
-_:genid121 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid121 <http://www.w3.org/2002/07/owl#onProperty> _:genid122 .
-_:genid122 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/forDataset> .
-_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid124 .
-_:genid124 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Instrument> .
-_:genid124 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/isTypeOf> .
-_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Situation> .
+<https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid114 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid114 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid117 .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid115 .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid116 .
+_:genid116 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Instrument> .
+_:genid116 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid116 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/isDefinedAs> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid118 .
+_:genid118 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid118 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/forDataset> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#comment> "An instrument as referenced within a specific dataset, with dataset-specific properties." .
 <https://schema.bco-dmo.org/v0.1/DatasetInstrument> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Instrument" .
 # 
 # https://schema.bco-dmo.org/v0.1/DatasetParameter
 <https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid125 .
-_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid125 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid129 .
-_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid126 .
-_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid127 .
-_:genid127 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
-_:genid127 <http://www.w3.org/2002/07/owl#onProperty> _:genid128 .
-_:genid128 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/forDataset> .
-_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid130 .
-_:genid130 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Parameter> .
-_:genid130 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/isTypeOf> .
-_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Situation> .
+<https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid119 .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid119 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid122 .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid120 .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid121 .
+_:genid121 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Parameter> .
+_:genid121 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid121 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/isDefinedAs> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid123 .
+_:genid123 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid123 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid123 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/forDataset> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format." .
 <https://schema.bco-dmo.org/v0.1/DatasetParameter> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Parameter" .
 # 
@@ -1397,47 +1423,84 @@ _:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/DatasetType
 <https://schema.bco-dmo.org/v0.1/DatasetType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DatasetType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/DatasetType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid124 .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid124 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid128 .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid125 .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid126 .
+_:genid126 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Dataset> .
+_:genid126 <http://www.w3.org/2002/07/owl#onProperty> _:genid127 .
+_:genid127 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/datasetType> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/DatasetType> <http://www.w3.org/2000/01/rdf-schema#comment> "A category describing the type of dataset (e.g. Cruise Data, Model Output)." .
 <https://schema.bco-dmo.org/v0.1/DatasetType> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Type" .
 # 
 # https://schema.bco-dmo.org/v0.1/Datatype
 <https://schema.bco-dmo.org/v0.1/Datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid129 .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid129 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid133 .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid130 .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid131 .
+_:genid131 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/DatasetParameter> .
+_:genid131 <http://www.w3.org/2002/07/owl#onProperty> _:genid132 .
+_:genid132 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/dataType> .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Datatype> <http://www.w3.org/2000/01/rdf-schema#comment> "The data type of a dataset parameter column (e.g. string, integer, float)." .
 <https://schema.bco-dmo.org/v0.1/Datatype> <http://www.w3.org/2000/01/rdf-schema#label> "Datatype" .
 # 
+# https://schema.bco-dmo.org/v0.1/DefinedType
+<https://schema.bco-dmo.org/v0.1/DefinedType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/DefinedType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/DefinedType> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of something" .
+<https://schema.bco-dmo.org/v0.1/DefinedType> <http://www.w3.org/2000/01/rdf-schema#label> "DefinedType" .
+# 
 # https://schema.bco-dmo.org/v0.1/Deployment
 <https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid131 .
-_:genid131 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Platform> .
-_:genid131 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/onPlatform> .
-_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid134 .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid134 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid137 .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid135 .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid136 .
+_:genid136 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Platform> .
+_:genid136 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/onPlatform> .
+_:genid136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Event> .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/2000/01/rdf-schema#comment> "A scientific deployment (cruise, expedition, mooring deployment) during which data were collected." .
 <https://schema.bco-dmo.org/v0.1/Deployment> <http://www.w3.org/2000/01/rdf-schema#label> "Deployment" .
 # 
 # https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch
 <https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid132 .
-_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid132 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid137 .
-_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid135 .
-_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid133 .
-_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid134 .
-_:genid134 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Deployment> .
-_:genid134 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid134 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
-_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid136 .
-_:genid136 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid136 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
-_:genid136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/EntityMatch> .
-_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/DeploymentEntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid138 .
+_:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid138 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid143 .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid141 .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid139 .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid140 .
+_:genid140 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Deployment> .
+_:genid140 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid140 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid142 .
+_:genid142 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid142 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
+_:genid142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/EntityMatch> .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # https://schema.bco-dmo.org/v0.1/EmailAddress
 <https://schema.bco-dmo.org/v0.1/EmailAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1447,32 +1510,32 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/EmbargoPolicy
 <https://schema.bco-dmo.org/v0.1/EmbargoPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/EmbargoPolicy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid138 .
-_:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid138 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid145 .
-_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid143 .
-_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid141 .
-_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid139 .
-_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid140 .
-_:genid140 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#date> .
-_:genid140 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid140 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/expirationDate> .
-_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid142 .
-_:genid142 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid142 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid142 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/target> .
-_:genid142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid144 .
-_:genid144 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ConsumeAction> .
-_:genid144 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/modifiesAction> .
-_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Policy> .
+<https://schema.bco-dmo.org/v0.1/EmbargoPolicy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid144 .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid144 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid151 .
+_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid149 .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid147 .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid145 .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid146 .
+_:genid146 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#date> .
+_:genid146 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid146 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/expirationDate> .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid148 .
+_:genid148 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid148 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid148 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/target> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid150 .
+_:genid150 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ConsumeAction> .
+_:genid150 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/modifiesAction> .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Policy> .
+_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/EmbargoPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "A policy that restricts access to a dataset until an expiration date." .
 <https://schema.bco-dmo.org/v0.1/EmbargoPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Embargo Policy" .
 # 
@@ -1489,28 +1552,45 @@ _:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/EntityMatch
 <https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
-<https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid146 .
-_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid146 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid151 .
-_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid149 .
-_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid147 .
-_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid148 .
-_:genid148 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Entity> .
-_:genid148 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid148 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
-_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid150 .
-_:genid150 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid150 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
-_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
-_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
+<https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid152 .
+_:genid152 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid152 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid157 .
+_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid155 .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid153 .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid154 .
+_:genid154 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid154 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid154 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
+_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid156 .
+_:genid156 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid156 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
+_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Situation> .
+_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#comment> "A link between two entities that are related in some way as defined by rdf:predicate. This entity allows for annotating details of the match." .
 <https://schema.bco-dmo.org/v0.1/EntityMatch> <http://www.w3.org/2000/01/rdf-schema#label> "EntityMatch" .
+# 
+# https://schema.bco-dmo.org/v0.1/Event
+<https://schema.bco-dmo.org/v0.1/Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid158 .
+_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid158 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid161 .
+_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid159 .
+_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid160 .
+_:genid160 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/TemporalEntity> .
+_:genid160 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/hasTime> .
+_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Situation> .
+_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Event> <http://www.w3.org/2000/01/rdf-schema#comment> "A dynamic situation in which something unique or impotant happened." .
+<https://schema.bco-dmo.org/v0.1/Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
 # 
 # https://schema.bco-dmo.org/v0.1/File
 <https://schema.bco-dmo.org/v0.1/File> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1520,35 +1600,54 @@ _:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/FileDescriptor
 <https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-<https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid152 .
-_:genid152 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/File> .
-_:genid152 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid152 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/describesFile> .
-_:genid152 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid162 .
+_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid162 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid165 .
+_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid163 .
+_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid164 .
+_:genid164 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/File> .
+_:genid164 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid164 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/describesFile> .
+_:genid164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Situation> .
+_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> "A context-specific description of a file. The context could be data, metadata or supplemental documentation." .
 <https://schema.bco-dmo.org/v0.1/FileDescriptor> <http://www.w3.org/2000/01/rdf-schema#label> "File Descriptor" .
 # 
 # https://schema.bco-dmo.org/v0.1/FileType
 <https://schema.bco-dmo.org/v0.1/FileType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/FileType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/FileType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid166 .
+_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid166 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid170 .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid167 .
+_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid168 .
+_:genid168 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/File> .
+_:genid168 <http://www.w3.org/2002/07/owl#onProperty> _:genid169 .
+_:genid169 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/fileType> .
+_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/FileType> <http://www.w3.org/2000/01/rdf-schema#comment> "A file format type, characterised by a label and MIME type (e.g. CSV, XML, PDF)." .
 <https://schema.bco-dmo.org/v0.1/FileType> <http://www.w3.org/2000/01/rdf-schema#label> "File Type" .
 # 
 # https://schema.bco-dmo.org/v0.1/FundingAgency
 <https://schema.bco-dmo.org/v0.1/FundingAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid153 .
-_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid153 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid156 .
-_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid154 .
-_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid155 .
-_:genid155 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Award> .
-_:genid155 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/grantedAward> .
-_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Organization> .
-_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid171 .
+_:genid171 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid171 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid174 .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid172 .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid173 .
+_:genid173 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Award> .
+_:genid173 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/grantedAward> .
+_:genid173 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Organization> .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#comment> "An Organization that has provided some funding award" .
 <https://schema.bco-dmo.org/v0.1/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#label> "Funding Agency" .
 # 
@@ -1585,18 +1684,18 @@ _:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/Image
 <https://schema.bco-dmo.org/v0.1/Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid157 .
-_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid157 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid160 .
-_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid158 .
-_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid159 .
-_:genid159 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ImageFileType> .
-_:genid159 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fileType> .
-_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/File> .
-_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid175 .
+_:genid175 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid175 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid178 .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid176 .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid177 .
+_:genid177 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ImageFileType> .
+_:genid177 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/fileType> .
+_:genid177 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/File> .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Image> <http://www.w3.org/2000/01/rdf-schema#comment> "An image file." .
 <https://schema.bco-dmo.org/v0.1/Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
 # 
@@ -1608,7 +1707,19 @@ _:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/Instrument
 <https://schema.bco-dmo.org/v0.1/Instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Instrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/Instrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid179 .
+_:genid179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid179 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid183 .
+_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid180 .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid181 .
+_:genid181 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/DatasetInstrument> .
+_:genid181 <http://www.w3.org/2002/07/owl#onProperty> _:genid182 .
+_:genid182 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/isDefinedAs> .
+_:genid181 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Instrument> <http://www.w3.org/2000/01/rdf-schema#comment> "A master (community-level) scientific instrument definition." .
 <https://schema.bco-dmo.org/v0.1/Instrument> <http://www.w3.org/2000/01/rdf-schema#label> "Instrument" .
 # 
@@ -1626,19 +1737,19 @@ _:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/License
 <https://schema.bco-dmo.org/v0.1/License> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/License> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid161 .
-_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid161 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid165 .
-_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid162 .
-_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid163 .
-_:genid163 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid163 <http://www.w3.org/2002/07/owl#onProperty> _:genid164 .
-_:genid164 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/license> .
-_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/License> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid184 .
+_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid184 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid188 .
+_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid185 .
+_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid186 .
+_:genid186 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid186 <http://www.w3.org/2002/07/owl#onProperty> _:genid187 .
+_:genid187 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/license> .
+_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/License> <http://www.w3.org/2000/01/rdf-schema#comment> "A  license applied to some creative work." .
 <https://schema.bco-dmo.org/v0.1/License> <http://www.w3.org/2000/01/rdf-schema#label> "License" .
 # 
@@ -1650,19 +1761,19 @@ _:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/MetadataFile
 <https://schema.bco-dmo.org/v0.1/MetadataFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/MetadataFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid166 .
-_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid166 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid170 .
-_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid167 .
-_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid168 .
-_:genid168 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid168 <http://www.w3.org/2002/07/owl#onProperty> _:genid169 .
-_:genid169 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/metadataFile> .
-_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
-_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/MetadataFile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid189 .
+_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid189 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid193 .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid190 .
+_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid191 .
+_:genid191 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid191 <http://www.w3.org/2002/07/owl#onProperty> _:genid192 .
+_:genid192 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/metadataFile> .
+_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/MetadataFile> <http://www.w3.org/2000/01/rdf-schema#comment> "A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset." .
 <https://schema.bco-dmo.org/v0.1/MetadataFile> <http://www.w3.org/2000/01/rdf-schema#label> "Metadata File" .
 # 
@@ -1672,20 +1783,27 @@ _:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://schema.bco-dmo.org/v0.1/MetadataProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal metadata profile specification to which the datapackage conforms." .
 <https://schema.bco-dmo.org/v0.1/MetadataProfile> <http://www.w3.org/2000/01/rdf-schema#label> "Metadata Profile" .
 # 
+# https://schema.bco-dmo.org/v0.1/NaturalLanguage
+<https://schema.bco-dmo.org/v0.1/NaturalLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/NaturalLanguage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Language> .
+<https://schema.bco-dmo.org/v0.1/NaturalLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Natural languages such as Spanish, Tamil, Hindi, English, etc." .
+<https://schema.bco-dmo.org/v0.1/NaturalLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "NaturalLanguage" .
+<https://schema.bco-dmo.org/v0.1/NaturalLanguage> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://schema.org/Language> .
+# 
 # https://schema.bco-dmo.org/v0.1/ORCIDIdentifier
 <https://schema.bco-dmo.org/v0.1/ORCIDIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/ORCIDIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid171 .
-_:genid171 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid171 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid174 .
-_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid172 .
-_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid173 .
-_:genid173 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_ROR> .
-_:genid173 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
-_:genid173 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
-_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/ORCIDIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid194 .
+_:genid194 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid194 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid197 .
+_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid195 .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid196 .
+_:genid196 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_ROR> .
+_:genid196 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
+_:genid196 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
+_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/ORCIDIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An Open Researcher and Contributor ID" .
 <https://schema.bco-dmo.org/v0.1/ORCIDIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "ORCID Identifier" .
 # 
@@ -1698,7 +1816,19 @@ _:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/Parameter
 <https://schema.bco-dmo.org/v0.1/Parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Parameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/Parameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid198 .
+_:genid198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid198 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid202 .
+_:genid202 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid199 .
+_:genid199 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid199 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid200 .
+_:genid200 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/DatasetParameter> .
+_:genid200 <http://www.w3.org/2002/07/owl#onProperty> _:genid201 .
+_:genid201 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/isDefinedAs> .
+_:genid200 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid199 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid202 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid202 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Parameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A master (community-level) scientific parameter definition." .
 <https://schema.bco-dmo.org/v0.1/Parameter> <http://www.w3.org/2000/01/rdf-schema#label> "Parameter" .
 # 
@@ -1716,42 +1846,78 @@ _:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/PlatformTitle
 <https://schema.bco-dmo.org/v0.1/PlatformTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/PlatformTitle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/PlatformTitle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid203 .
+_:genid203 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid203 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid207 .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid204 .
+_:genid204 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid204 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid205 .
+_:genid205 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Platform> .
+_:genid205 <http://www.w3.org/2002/07/owl#onProperty> _:genid206 .
+_:genid206 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/platformTitle> .
+_:genid205 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid204 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Category> .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/PlatformTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "A named title/designation for a platform (e.g. the full name of a research vessel)." .
 <https://schema.bco-dmo.org/v0.1/PlatformTitle> <http://www.w3.org/2000/01/rdf-schema#label> "Platform Title" .
 # 
 # https://schema.bco-dmo.org/v0.1/PlatformType
 <https://schema.bco-dmo.org/v0.1/PlatformType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/PlatformType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/PlatformType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid208 .
+_:genid208 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid208 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid212 .
+_:genid212 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid209 .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid210 .
+_:genid210 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Platform> .
+_:genid210 <http://www.w3.org/2002/07/owl#onProperty> _:genid211 .
+_:genid211 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/platformType> .
+_:genid210 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid212 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid212 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/PlatformType> <http://www.w3.org/2000/01/rdf-schema#comment> "A category of platform (e.g. vessel, mooring, glider)." .
 <https://schema.bco-dmo.org/v0.1/PlatformType> <http://www.w3.org/2000/01/rdf-schema#label> "Platform Type" .
 # 
 # https://schema.bco-dmo.org/v0.1/Policy
 <https://schema.bco-dmo.org/v0.1/Policy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Policy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid175 .
-_:genid175 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid175 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid180 .
-_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid178 .
-_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid176 .
-_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid177 .
-_:genid177 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Entity> .
-_:genid177 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/target> .
-_:genid177 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid179 .
-_:genid179 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ConsumeAction> .
-_:genid179 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/modifiesAction> .
-_:genid179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Entity> .
-_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Policy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid213 .
+_:genid213 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid213 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid218 .
+_:genid218 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid216 .
+_:genid216 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid214 .
+_:genid214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid215 .
+_:genid215 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid215 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/target> .
+_:genid215 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid216 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid217 .
+_:genid217 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ConsumeAction> .
+_:genid217 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/modifiesAction> .
+_:genid217 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid216 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid218 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid218 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Policy> <http://www.w3.org/2000/01/rdf-schema#comment> "An access or governance policy applied to a resource." .
 <https://schema.bco-dmo.org/v0.1/Policy> <http://www.w3.org/2000/01/rdf-schema#label> "Policy" .
 # 
 # https://schema.bco-dmo.org/v0.1/Program
 <https://schema.bco-dmo.org/v0.1/Program> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Program> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
+<https://schema.bco-dmo.org/v0.1/Program> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid219 .
+_:genid219 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid219 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid223 .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid220 .
+_:genid220 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid220 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid221 .
+_:genid221 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/Project> .
+_:genid221 <http://www.w3.org/2002/07/owl#onProperty> _:genid222 .
+_:genid222 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/hasParentProgram> .
+_:genid221 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid220 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/ResearchActivity> .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Program> <http://www.w3.org/2000/01/rdf-schema#comment> "A scientific program (typically a grouping of related projects) associated with a dataset." .
 <https://schema.bco-dmo.org/v0.1/Program> <http://www.w3.org/2000/01/rdf-schema#label> "Program" .
 # 
@@ -1769,24 +1935,36 @@ _:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/RORIdentifier
 <https://schema.bco-dmo.org/v0.1/RORIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/RORIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid181 .
-_:genid181 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid181 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid184 .
-_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid182 .
-_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid183 .
-_:genid183 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_ROR> .
-_:genid183 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
-_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
-_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/RORIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid224 .
+_:genid224 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid224 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid227 .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid225 .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid226 .
+_:genid226 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/IdentifierScheme_ROR> .
+_:genid226 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/identifierScheme> .
+_:genid226 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Identifier> .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/RORIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A Research Organization Registry identifier." .
 <https://schema.bco-dmo.org/v0.1/RORIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "ROR Identifier" .
 # 
 # https://schema.bco-dmo.org/v0.1/ResearchActivity
 <https://schema.bco-dmo.org/v0.1/ResearchActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/ResearchActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Entity> .
+<https://schema.bco-dmo.org/v0.1/ResearchActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid228 .
+_:genid228 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid228 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid231 .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid229 .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid230 .
+_:genid230 <http://www.w3.org/2002/07/owl#onClass> <https://schema.bco-dmo.org/v0.1/Agent> .
+_:genid230 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid230 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
+_:genid230 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Event> .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/ResearchActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity that enables research. The research typically produces datasets." .
 <https://schema.bco-dmo.org/v0.1/ResearchActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Research Activity" .
 # 
@@ -1798,26 +1976,55 @@ _:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/ResourceRelationGroup
 <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.bco-dmo.org/v0.1/Category> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid232 .
+_:genid232 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid232 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid236 .
+_:genid236 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid233 .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid234 .
+_:genid234 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/ResourceRelation> .
+_:genid234 <http://www.w3.org/2002/07/owl#onProperty> _:genid235 .
+_:genid235 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/inGroup> .
+_:genid234 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid236 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Category> .
+_:genid236 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A grouping category for resource relation types." .
 <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group" .
 # 
 # https://schema.bco-dmo.org/v0.1/Role
 <https://schema.bco-dmo.org/v0.1/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid185 .
-_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid185 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid188 .
-_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid186 .
-_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid187 .
-_:genid187 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#int> .
-_:genid187 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/roleWeight> .
-_:genid187 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Category> .
-_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid237 .
+_:genid237 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid237 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid240 .
+_:genid240 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid238 .
+_:genid238 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid238 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid239 .
+_:genid239 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#int> .
+_:genid239 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/roleWeight> .
+_:genid239 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid238 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid240 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/DefinedType> .
+_:genid240 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator)." .
 <https://schema.bco-dmo.org/v0.1/Role> <http://www.w3.org/2000/01/rdf-schema#label> "Role" .
+# 
+# https://schema.bco-dmo.org/v0.1/Situation
+<https://schema.bco-dmo.org/v0.1/Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.bco-dmo.org/v0.1/Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid241 .
+_:genid241 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid241 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid244 .
+_:genid244 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid242 .
+_:genid242 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid242 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid243 .
+_:genid243 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid243 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/situationInvolves> .
+_:genid243 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid242 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid244 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Entity> .
+_:genid244 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events." .
+<https://schema.bco-dmo.org/v0.1/Situation> <http://www.w3.org/2000/01/rdf-schema#label> "Situation" .
 # 
 # https://schema.bco-dmo.org/v0.1/String
 <https://schema.bco-dmo.org/v0.1/String> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1828,19 +2035,19 @@ _:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/SupplementalDocument
 <https://schema.bco-dmo.org/v0.1/SupplementalDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/SupplementalDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid189 .
-_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid189 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid193 .
-_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid190 .
-_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid191 .
-_:genid191 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
-_:genid191 <http://www.w3.org/2002/07/owl#onProperty> _:genid192 .
-_:genid192 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/supplementalDocument> .
-_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
-_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/SupplementalDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid245 .
+_:genid245 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid245 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid249 .
+_:genid249 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid246 .
+_:genid246 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid246 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid247 .
+_:genid247 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://schema.bco-dmo.org/v0.1/CreativeWork> .
+_:genid247 <http://www.w3.org/2002/07/owl#onProperty> _:genid248 .
+_:genid248 <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.bco-dmo.org/v0.1/supplementalDocument> .
+_:genid247 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid246 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid249 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/FileDescriptor> .
+_:genid249 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://schema.bco-dmo.org/v0.1/SupplementalDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "A supplemental (non-primary) document file associated with a dataset." .
 <https://schema.bco-dmo.org/v0.1/SupplementalDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Supplemental Document" .
 # 
@@ -1885,18 +2092,18 @@ _:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/Vessel
 <https://schema.bco-dmo.org/v0.1/Vessel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://schema.bco-dmo.org/v0.1/Vessel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid194 .
-_:genid194 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid194 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid197 .
-_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid195 .
-_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid196 .
-_:genid196 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/PlatformType_Vessel> .
-_:genid196 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/platformType> .
-_:genid196 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Platform> .
-_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://schema.bco-dmo.org/v0.1/Vessel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid250 .
+_:genid250 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid250 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid253 .
+_:genid253 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid251 .
+_:genid251 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid251 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid252 .
+_:genid252 <http://www.w3.org/2002/07/owl#hasValue> <https://schema.bco-dmo.org/v0.1/PlatformType_Vessel> .
+_:genid252 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.bco-dmo.org/v0.1/platformType> .
+_:genid252 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid251 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid253 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://schema.bco-dmo.org/v0.1/Platform> .
+_:genid253 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # 
 # 
@@ -2317,7 +2524,7 @@ _:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://schema.bco-dmo.org/v0.1/Language_USEnglish
 <https://schema.bco-dmo.org/v0.1/Language_USEnglish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://schema.bco-dmo.org/v0.1/Language_USEnglish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/Language> .
+<https://schema.bco-dmo.org/v0.1/Language_USEnglish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/NaturalLanguage> .
 <https://schema.bco-dmo.org/v0.1/Language_USEnglish> <https://schema.bco-dmo.org/v0.1/abbreviation> "en_US" .
 <https://schema.bco-dmo.org/v0.1/Language_USEnglish> <https://schema.bco-dmo.org/v0.1/name> "U.S. English" .
 <https://schema.bco-dmo.org/v0.1/Language_USEnglish> <http://www.w3.org/2000/01/rdf-schema#label> "Language: US English" .
@@ -2336,6 +2543,36 @@ _:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://schema.bco-dmo.org/v0.1/PlatformType_Vessel> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.nerc.ac.uk/collection/L06/current/31/> .
 # 
 # urn:bcodmo:taxonomy:platform-type:5e47949e1cdac2a468723a159d1923d2
+# 
+# https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetAggregation
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetAggregation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetAggregation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetAggregation> <https://schema.bco-dmo.org/v0.1/label> "Dataset Aggregation" .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetAggregation> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group: Dataset Aggregation" .
+# 
+# https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetCitation
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetCitation> <https://schema.bco-dmo.org/v0.1/label> "Dataset Citation" .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetCitation> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group: Dataset Citation" .
+# 
+# https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetDerivation
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetDerivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetDerivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetDerivation> <https://schema.bco-dmo.org/v0.1/label> "Dataset Derivation" .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetDerivation> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group: Dataset Derivation" .
+# 
+# https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetVersion
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetVersion> <https://schema.bco-dmo.org/v0.1/label> "Dataset Version" .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_DatasetVersion> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group: Dataset Version" .
+# 
+# https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_Publication
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_Publication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_Publication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/ResourceRelationGroup> .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_Publication> <https://schema.bco-dmo.org/v0.1/label> "Publication" .
+<https://schema.bco-dmo.org/v0.1/ResourceRelationGroup_Publication> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation Group: Publication" .
 # 
 # https://schema.bco-dmo.org/v0.1/Role_Analyst
 <https://schema.bco-dmo.org/v0.1/Role_Analyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2483,6 +2720,12 @@ _:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://schema.bco-dmo.org/v0.1/Role_Technician> <https://schema.bco-dmo.org/v0.1/label> "Technician" .
 <https://schema.bco-dmo.org/v0.1/Role_Technician> <https://schema.bco-dmo.org/v0.1/roleWeight> "20"^^<http://www.w3.org/2001/XMLSchema#int> .
 <https://schema.bco-dmo.org/v0.1/Role_Technician> <http://www.w3.org/2000/01/rdf-schema#label> "Role: Technician" .
+# 
+# https://schema.bco-dmo.org/v0.1/TemporalEntity_Unknown
+<https://schema.bco-dmo.org/v0.1/TemporalEntity_Unknown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v0.1/TemporalEntity_Unknown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v0.1/TemporalEntity> .
+<https://schema.bco-dmo.org/v0.1/TemporalEntity_Unknown> <https://schema.bco-dmo.org/v0.1/label> "Unknown" .
+<https://schema.bco-dmo.org/v0.1/TemporalEntity_Unknown> <http://www.w3.org/2000/01/rdf-schema#label> "Temporal Entity: Unknown" .
 # 
 # https://www.bco-dmo.org/
 <https://www.bco-dmo.org/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
