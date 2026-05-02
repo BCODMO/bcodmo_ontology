@@ -104,8 +104,8 @@ bcodmo:annotator rdf:type owl:ObjectProperty ;
 bcodmo:archives rdf:type owl:ObjectProperty ;
                 rdfs:domain bcodmo:DOIDataset ;
                 rdfs:range bcodmo:Dataset ;
-                rdfs:label "The Dataset that was archvied by a specific DOIDataset." ,
-                           "archives" .
+                rdfs:comment "The Dataset that was archvied by a specific DOIDataset." ;
+                rdfs:label "archives" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/author
@@ -179,6 +179,7 @@ bcodmo:contributor rdf:type owl:ObjectProperty ;
 bcodmo:coordinateReferenceSystem rdf:type owl:ObjectProperty ;
                                  rdfs:domain bcodmo:GeographicalLocation ;
                                  rdfs:range bcodmo:CoordinateReferenceSystem ;
+                                 rdfs:comment "the coordinate reference system for some representation of a Geographical Location" ;
                                  rdfs:label "coordinateReferenceSystem" .
 
 
@@ -274,7 +275,9 @@ bcodmo:fileType rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/fixesPreviousErrors
 bcodmo:fixesPreviousErrors rdf:type owl:ObjectProperty ;
                            rdfs:domain bcodmo:DOIDataset ;
-                           rdfs:range bcodmo:DOIDataset .
+                           rdfs:range bcodmo:DOIDataset ;
+                           rdfs:comment "The DOIDataset from the past that this DOIDataset fixes errors." ;
+                           rdfs:label "fixesPreviousErrors" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/forCreativeWork
@@ -395,6 +398,7 @@ bcodmo:hasCollectionItem rdf:type owl:ObjectProperty ;
 bcodmo:hasContent rdf:type owl:ObjectProperty ;
                   rdfs:domain bcodmo:Annotation ;
                   rdfs:range bcodmo:CreativeWork ;
+                  rdfs:comment "The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation." ;
                   rdfs:label "hasContent" .
 
 
@@ -532,6 +536,7 @@ bcodmo:inCollection rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf bcodmo:situationInvolves ;
                     rdfs:domain bcodmo:CollectionItem ;
                     rdfs:range bcodmo:Collection ;
+                    rdfs:comment "The collection to which this item belongs" ;
                     rdfs:label "inCollection" .
 
 
@@ -571,6 +576,7 @@ bcodmo:isDefinedAs rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/isPrimarySynonym
 bcodmo:isPrimarySynonym rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf bcodmo:hasSynonym ;
+                        rdfs:domain bcodmo:Deployment ;
                         rdfs:range bcodmo:Synonym ;
                         rdfs:comment "The primary Synonym for some Thing that may have multiple." ;
                         rdfs:label "isPrimarySynonym" .
@@ -738,8 +744,8 @@ bcodmo:programManager rdf:type owl:ObjectProperty ;
 bcodmo:projectExternalDatasetList rdf:type owl:ObjectProperty ;
                                   rdfs:domain bcodmo:Project ;
                                   rdfs:range bcodmo:DatasetList ;
-                                  rdfs:label "a Collection of external Datasets related to a Project" ,
-                                             "projectExternalDatasetList" .
+                                  rdfs:comment "a Collection of external Datasets related to a Project" ;
+                                  rdfs:label "projectExternalDatasetList" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/provider
@@ -755,7 +761,7 @@ bcodmo:provider rdf:type owl:ObjectProperty ;
 bcodmo:publishedDate rdf:type owl:ObjectProperty ;
                      rdfs:domain bcodmo:CreativeWork ;
                      rdfs:range bcodmo:TemporalInstant ;
-                     rdfs:comment "The date on which this dataset version was published. For Datasets, this used to be versionDate." ;
+                     rdfs:comment "The date on which this dataset version was published." ;
                      rdfs:label "publishedDate" ;
                      skos:closeMatch <https://schema.org/datePublished> .
 
@@ -923,7 +929,15 @@ bcodmo:temporalExtent rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/temporalResolution
 bcodmo:temporalResolution rdf:type owl:ObjectProperty ;
-                          rdfs:label "temporalResolution" .
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( bcodmo:TemporalInstant
+                                                      bcodmo:TemporalInterval
+                                                    )
+                                      ] ;
+                          rdfs:range time:TemporalUnit ;
+                          rdfs:comment "The temporal resolution of a temporal extent (e.g. time:unitDay)." ;
+                          rdfs:label "temporalResolution" ;
+                          skos:closeMatch time:unitType .
 
 
 ###  https://schema.bco-dmo.org/v1.0/units
@@ -937,13 +951,6 @@ bcodmo:units rdf:type owl:ObjectProperty ;
              rdfs:comment "The unit of measure for a dataset parameter." ;
              rdfs:label "units" ;
              skos:relatedMatch <https://schema.org/unitCode> .
-
-
-###  https://schema.bco-dmo.org/v1.0/westBoundary
-bcodmo:westBoundary rdf:type owl:ObjectProperty ,
-                             owl:FunctionalProperty ;
-                    rdfs:domain bcodmo:BoundingBoxGeometry ;
-                    rdfs:range bcodmo:Boolean .
 
 
 #################################################################
@@ -1150,11 +1157,6 @@ bcodmo:filename rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:token ;
                 rdfs:comment "The file name including extension." ;
                 rdfs:label "filename" .
-
-
-###  https://schema.bco-dmo.org/v1.0/fixesPreviousErrors
-bcodmo:fixesPreviousErrors rdf:type owl:DatatypeProperty ;
-                           rdfs:range xsd:boolean .
 
 
 ###  https://schema.bco-dmo.org/v1.0/givenName
@@ -1490,7 +1492,10 @@ bcodmo:version rdf:type owl:DatatypeProperty ;
 ###  https://schema.bco-dmo.org/v1.0/westBoundary
 bcodmo:westBoundary rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
-                    rdfs:range xsd:float .
+                    rdfs:domain bcodmo:BoundingBoxGeometry ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "The western longitude boundary of a bounding box (decimal degrees)." ;
+                    rdfs:label "westBoundary" .
 
 
 #################################################################
@@ -1585,7 +1590,9 @@ bcodmo:Annotation rdf:type owl:Class ;
                                                          ]
                                                        ) ;
                                     rdf:type owl:Class
-                                  ] .
+                                  ] ;
+                  rdfs:comment "A comment or some other piece of content that annotates for some specific purpose some Thing" ;
+                  rdfs:label "Annotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/AnnotationAction
@@ -1662,7 +1669,9 @@ bcodmo:AwardNoDataAnnotation rdf:type owl:Class ;
                                                                     ]
                                                                   ) ;
                                                rdf:type owl:Class
-                                             ] .
+                                             ] ;
+                             rdfs:comment "A reason why an award will not produce datasets" ;
+                             rdfs:label "AwardNoDataAnnotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/BCODMOIdentifier
@@ -1777,6 +1786,7 @@ bcodmo:ConsumeAction rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem
 bcodmo:CoordinateReferenceSystem rdf:type owl:Class ;
                                  rdfs:subClassOf bcodmo:IdentifierScheme ;
+                                 rdfs:comment "A coordinate reference system" ;
                                  rdfs:label "CoordinateReferenceSystem" .
 
 
@@ -2150,7 +2160,9 @@ bcodmo:DatasetsInOtherCatalog rdf:type owl:Class ;
                                                                      ]
                                                                    ) ;
                                                 rdf:type owl:Class
-                                              ] .
+                                              ] ;
+                              rdfs:comment "A list of datasets in a catalog that isn't BCO-DMO" ;
+                              rdfs:label "DatasetsInOtherCatalog" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype
@@ -2219,6 +2231,7 @@ bcodmo:DeploymentEntityMatch rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/EmailAddress
 bcodmo:EmailAddress rdf:type owl:Class ;
                     rdfs:subClassOf bcodmo:IdentifierString ;
+                    rdfs:comment "An email address." ;
                     rdfs:isDefinedBy bcodmo:Datatype_EmailAddress ;
                     rdfs:label "Email Address" .
 
@@ -2365,7 +2378,9 @@ bcodmo:FundingAgency rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType
 bcodmo:GCMDPlatformType rdf:type owl:Class ;
-                        rdfs:subClassOf bcodmo:PlatformType .
+                        rdfs:subClassOf bcodmo:PlatformType ;
+                        rdfs:comment "A platform type defined by GCMD" ;
+                        rdfs:label "GCMDPlatformType" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/GeographicalLocation
@@ -2402,6 +2417,7 @@ bcodmo:IdentifierScheme rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/IdentifierString
 bcodmo:IdentifierString rdf:type owl:Class ;
                         rdfs:subClassOf bcodmo:String ;
+                        rdfs:comment "A string that is used as an identifier" ;
                         rdfs:isDefinedBy bcodmo:Datatype_Identifier ;
                         rdfs:label "IdentifierString"@en .
 
@@ -2629,6 +2645,7 @@ bcodmo:Program rdf:type owl:Class ;
                                                     ) ;
                                  rdf:type owl:Class
                                ] ;
+               owl:disjointWith bcodmo:Project ;
                rdfs:comment "A scientific program (typically a grouping of related projects) associated with a dataset." ;
                rdfs:label "Program" .
 
@@ -2773,6 +2790,7 @@ bcodmo:Situation rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/String
 bcodmo:String rdf:type owl:Class ;
               rdfs:subClassOf bcodmo:Datatype ;
+              rdfs:comment "A string value" ;
               rdfs:isDefinedBy bcodmo:Datatype_String ;
               rdfs:label "String"@en ;
               skos:closeMatch <https://schema.org/Text> .
@@ -2842,6 +2860,7 @@ bcodmo:TimeSeries rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/URL
 bcodmo:URL rdf:type owl:Class ;
            rdfs:subClassOf bcodmo:IdentifierString ;
+           rdfs:comment "A URL" ;
            rdfs:isDefinedBy bcodmo:Datatype_URL ;
            rdfs:label "URL"@en ;
            skos:exactMatch <https://schema.org/URL> .
@@ -4052,14 +4071,6 @@ bcodmo:datasetInstrumentsNotUsed rdfs:comment "Asserts that no instruments were 
 
 bcodmo:datasetParametersNotRequired rdfs:comment "specifies whether parameters are not required or applicable for this dataset." ;
                                     rdfs:label "datasetParametersNotRequired" .
-
-
-bcodmo:fixesPreviousErrors rdfs:comment "The DOIDataset from the past that this DOIDataset fixes errors." ;
-                           rdfs:label "fixesPreviousErrors" .
-
-
-bcodmo:westBoundary rdfs:comment "The western longitude boundary of a bounding box (decimal degrees)." ;
-                    rdfs:label "westBoundary" .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
