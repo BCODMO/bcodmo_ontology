@@ -3,5 +3,13 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
 <https://schema.bco-dmo.org/v1.0/> a prov:Entity;
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-4486-9448>;
+	 dc:creator <https://orcid.org/0000-0003-4486-9448>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0001-9414-722X>;
+	 dc:contributor <https://orcid.org/0000-0001-9414-722X>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0002-4602-3537>;
+	 dc:contributor <https://orcid.org/0000-0002-4602-3537>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-2109-706X>;
+	 dc:contributor <https://orcid.org/0000-0003-2109-706X>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 .

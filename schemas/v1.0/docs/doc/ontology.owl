@@ -6,10 +6,18 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://schema.bco-dmo.org/v1.0/">
         <owl:versionIRI rdf:resource="https://schema.bco-dmo.org/v1.0/"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-9414-722X"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-4602-3537"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-2109-706X"/>
+        <terms:creator rdf:resource="https://orcid.org/0000-0003-4486-9448"/>
+        <terms:license>Creative Commons Zero 1.0 Universal</terms:license>
+        <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
         <rdfs:comment>Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO).</rdfs:comment>
         <rdfs:label>BCO-DMO Ontology</rdfs:label>
     </owl:Ontology>
@@ -25,6 +33,27 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
@@ -53,6 +82,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
     
 
 
@@ -6156,6 +6192,18 @@
      -->
 
 
+    <rdf:Description rdf:about="https://orcid.org/0000-0001-9414-722X">
+        <foaf:name>Conrad Schloer</foaf:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://orcid.org/0000-0002-4602-3537">
+        <foaf:name>Vimal Narepalepu</foaf:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://orcid.org/0000-0003-2109-706X">
+        <foaf:name>Shravani Nagala</foaf:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://orcid.org/0000-0003-4486-9448">
+        <foaf:name>Adam Shepherd</foaf:name>
+    </rdf:Description>
     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/awardProducingData">
         <rdfs:comment>Is the award expected to produce data. This expectation typically comes from the funding agency or PI</rdfs:comment>
         <rdfs:label>isAwardProducingData</rdfs:label>

@@ -1,5 +1,11 @@
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/2002/07/owl#versionIRI> <https://schema.bco-dmo.org/v1.0/> .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-9414-722X> .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-4602-3537> .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0003-2109-706X> .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/license> "https://creativecommons.org/publicdomain/zero/1.0/" .
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." .
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/2000/01/rdf-schema#label> "BCO-DMO Ontology" .
 # 
@@ -10,6 +16,15 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2002/07/owl#qualifiedCardinality
 <http://www.w3.org/2002/07/owl#qualifiedCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -22,6 +37,9 @@
 # 
 # http://www.w3.org/2004/02/skos/core#relatedMatch
 <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # 
 # 
@@ -4051,6 +4069,14 @@ _:genid398 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www
 # #
 # #################################################################
 # 
+# 
+<https://orcid.org/0000-0001-9414-722X> <http://xmlns.com/foaf/0.1/name> "Conrad Schloer" .
+# 
+<https://orcid.org/0000-0002-4602-3537> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
+# 
+<https://orcid.org/0000-0003-2109-706X> <http://xmlns.com/foaf/0.1/name> "Shravani Nagala" .
+# 
+<https://orcid.org/0000-0003-4486-9448> <http://xmlns.com/foaf/0.1/name> "Adam Shepherd" .
 # 
 <https://schema.bco-dmo.org/v1.0/awardProducingData> <http://www.w3.org/2000/01/rdf-schema#comment> "Is the award expected to produce data. This expectation typically comes from the funding agency or PI" .
 <https://schema.bco-dmo.org/v1.0/awardProducingData> <http://www.w3.org/2000/01/rdf-schema#label> "isAwardProducingData" .
