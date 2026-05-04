@@ -18,6 +18,7 @@
         <terms:creator rdf:resource="https://orcid.org/0000-0003-4486-9448"/>
         <terms:license>Creative Commons Zero 1.0 Universal</terms:license>
         <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
+        <terms:title>BCO-DMO Ontology (Version 1.0)</terms:title>
         <rdfs:comment>Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO).</rdfs:comment>
         <rdfs:label>BCO-DMO Ontology</rdfs:label>
     </owl:Ontology>
@@ -54,6 +55,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 

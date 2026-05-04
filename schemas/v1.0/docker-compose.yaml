@@ -8,4 +8,4 @@ services:
     volumes:
       - ./:/usr/local/widoco/in:Z
       - ./docs:/usr/local/widoco/out:Z
-    command: -ontFile in/bcodmo.ttl -outFolder out -rewriteAll -oops
+    command: -ontFile in/bcodmo.ttl -outFolder out -rewriteAll -getOntologyMetadata -webVowl

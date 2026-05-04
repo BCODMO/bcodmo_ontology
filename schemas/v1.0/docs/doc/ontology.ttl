@@ -14,6 +14,7 @@
                                     <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
                                     <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" ,
                                                                        "https://creativecommons.org/publicdomain/zero/1.0/" ;
+                                    <http://purl.org/dc/terms/title> "BCO-DMO Ontology (Version 1.0)" ;
                                     rdfs:comment "Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." ;
                                     rdfs:label "BCO-DMO Ontology" .
 
@@ -31,6 +32,10 @@
 
 ###  http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#qualifiedCardinality

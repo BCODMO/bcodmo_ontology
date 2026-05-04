@@ -6,6 +6,7 @@
 <https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> .
 <https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" .
 <https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/license> "https://creativecommons.org/publicdomain/zero/1.0/" .
+<https://schema.bco-dmo.org/v1.0/> <http://purl.org/dc/terms/title> "BCO-DMO Ontology (Version 1.0)" .
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." .
 <https://schema.bco-dmo.org/v1.0/> <http://www.w3.org/2000/01/rdf-schema#label> "BCO-DMO Ontology" .
 # 
@@ -25,6 +26,9 @@
 # 
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2002/07/owl#qualifiedCardinality
 <http://www.w3.org/2002/07/owl#qualifiedCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

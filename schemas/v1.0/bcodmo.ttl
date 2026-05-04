@@ -12,28 +12,27 @@
 @prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix bcodmo: <https://schema.bco-dmo.org/v1.0/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @base <https://schema.bco-dmo.org/v1.0/> .
 
 <https://schema.bco-dmo.org/v1.0/> rdf:type owl:Ontology ;
                                     owl:versionIRI <https://schema.bco-dmo.org/v1.0/> ;
+                                    dcterms:contributor <https://orcid.org/0000-0001-9414-722X> ,
+                                                        <https://orcid.org/0000-0002-4602-3537> ,
+                                                        <https://orcid.org/0000-0003-2109-706X> ;
                                     dcterms:creator <https://orcid.org/0000-0003-4486-9448> ;
-                                    dcterms:contributor <https://orcid.org/0000-0002-4602-3537> ; 
-                                    dcterms:contributor <https://orcid.org/0000-0003-2109-706X> ;
-                                    dcterms:contributor <https://orcid.org/0000-0001-9414-722X> ;
                                     dcterms:license "Creative Commons Zero 1.0 Universal" ,
                                                     "https://creativecommons.org/publicdomain/zero/1.0/" ;
+                                    dcterms:title "BCO-DMO Ontology (Version 1.0)" ;
                                     rdfs:comment "Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." ;
                                     rdfs:label "BCO-DMO Ontology" .
-
-<https://orcid.org/0000-0003-4486-9448> foaf:name "Adam Shepherd" .
-<https://orcid.org/0000-0002-4602-3537> foaf:name "Vimal Narepalepu" .
-<https://orcid.org/0000-0003-2109-706X> foaf:name "Shravani Nagala" .
-<https://orcid.org/0000-0001-9414-722X> foaf:name "Conrad Schloer" .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/terms/creator
 dcterms:creator rdf:type owl:AnnotationProperty .
@@ -41,6 +40,10 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/license
 dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#qualifiedCardinality
@@ -57,6 +60,10 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
 skos:relatedMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -4081,8 +4088,20 @@ bcodmo:datasetParametersNotRequired rdf:type owl:NamedIndividual .
 #    Annotations
 #################################################################
 
+<https://orcid.org/0000-0001-9414-722X> <http://xmlns.com/foaf/0.1/name> "Conrad Schloer" .
+
+
+<https://orcid.org/0000-0002-4602-3537> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
+
+
+<https://orcid.org/0000-0003-2109-706X> <http://xmlns.com/foaf/0.1/name> "Shravani Nagala" .
+
+
+<https://orcid.org/0000-0003-4486-9448> <http://xmlns.com/foaf/0.1/name> "Adam Shepherd" .
+
+
 bcodmo:awardProducingData rdfs:comment "Is the award expected to produce data. This expectation typically comes from the funding agency or PI" ;
-                           rdfs:label "isAwardProducingData" .
+                          rdfs:label "isAwardProducingData" .
 
 
 bcodmo:datasetInstrumentsNotUsed rdfs:comment "Asserts that no instruments were used in the generation of this Dataset." ;
