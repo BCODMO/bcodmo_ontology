@@ -15,4 +15,4 @@
 
 ## After uploading to S3
 
-1. `aws cloudfront create-invalidation --distribution-id E3F01APSK5H9OU --paths "/*"`
+1. `aws cloudfront create-invalidation --distribution-id **** --paths "/*"`
