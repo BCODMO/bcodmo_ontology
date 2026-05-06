@@ -2067,7 +2067,7 @@
     "@value" : "Conrad Schloer"
   } ]
 }, {
-  "@id" : "https://orcid.org/0000-0002-4602-3537",
+  "@id" : "https://orcid.org/0000-0003-3359-9120",
   "http://xmlns.com/foaf/0.1/name" : [ {
     "@value" : "Vimal Narepalepu"
   } ]
@@ -2087,7 +2087,7 @@
   "http://purl.org/dc/terms/contributor" : [ {
     "@id" : "https://orcid.org/0000-0001-9414-722X"
   }, {
-    "@id" : "https://orcid.org/0000-0002-4602-3537"
+    "@id" : "https://orcid.org/0000-0003-3359-9120"
   }, {
     "@id" : "https://orcid.org/0000-0003-2109-706X"
   } ],

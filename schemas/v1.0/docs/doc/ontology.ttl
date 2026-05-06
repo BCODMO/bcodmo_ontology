@@ -9,7 +9,7 @@
 <https://schema.bco-dmo.org/v1.0/> rdf:type owl:Ontology ;
                                     owl:versionIRI <https://schema.bco-dmo.org/v1.0/> ;
                                     <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-9414-722X> ,
-                                                                           <https://orcid.org/0000-0002-4602-3537> ,
+                                                                           <https://orcid.org/0000-0003-3359-9120> ,
                                                                            <https://orcid.org/0000-0003-2109-706X> ;
                                     <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
                                     <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" ,
@@ -4083,7 +4083,7 @@ rdf:Statement rdf:type owl:Class .
 <https://orcid.org/0000-0001-9414-722X> <http://xmlns.com/foaf/0.1/name> "Conrad Schloer" .
 
 
-<https://orcid.org/0000-0002-4602-3537> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
+<https://orcid.org/0000-0003-3359-9120> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
 
 
 <https://orcid.org/0000-0003-2109-706X> <http://xmlns.com/foaf/0.1/name> "Shravani Nagala" .

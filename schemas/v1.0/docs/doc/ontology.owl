@@ -13,7 +13,7 @@
     <owl:Ontology rdf:about="https://schema.bco-dmo.org/v1.0/">
         <owl:versionIRI rdf:resource="https://schema.bco-dmo.org/v1.0/"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9414-722X"/>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0002-4602-3537"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-3359-9120"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-2109-706X"/>
         <terms:creator rdf:resource="https://orcid.org/0000-0003-4486-9448"/>
         <terms:license>Creative Commons Zero 1.0 Universal</terms:license>
@@ -6203,7 +6203,7 @@
     <rdf:Description rdf:about="https://orcid.org/0000-0001-9414-722X">
         <foaf:name>Conrad Schloer</foaf:name>
     </rdf:Description>
-    <rdf:Description rdf:about="https://orcid.org/0000-0002-4602-3537">
+    <rdf:Description rdf:about="https://orcid.org/0000-0003-3359-9120">
         <foaf:name>Vimal Narepalepu</foaf:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://orcid.org/0000-0003-2109-706X">
