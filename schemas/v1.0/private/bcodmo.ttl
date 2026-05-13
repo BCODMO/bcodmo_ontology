@@ -1,0 +1,568 @@
+@prefix : <https://schema.bco-dmo.org/internal/v1.0/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix bcodmo: <https://schema.bco-dmo.org/v1.0/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://schema.bco-dmo.org/internal/v1.0/> .
+
+<https://schema.bco-dmo.org/internal/v1.0/> rdf:type owl:Ontology ;
+                                             owl:versionIRI <https://schema.bco-dmo.org/internal/v1.0/> ;
+                                             owl:imports bcodmo: ;
+                                             rdfs:comment "The Private Ontology for the Biological and Chemical Oceanography Data Management Office (BCO-DMO)." ;
+                                             rdfs:label "BCO-DMO Ontology (***PRIVATE***)" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://schema.bco-dmo.org/internal/v1.0/classifiedAs
+:classifiedAs rdf:type owl:ObjectProperty ;
+              rdfs:domain bcodmo:Event ;
+              rdfs:range bcodmo:Action ;
+              rdfs:comment "The Action that classifies some Event" ;
+              rdfs:label "classifiedAs" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/containedInS3Bucket
+:containedInS3Bucket rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :s3BucketContains ;
+                     rdfs:domain :S3Object ;
+                     rdfs:range :S3Bucket ;
+                     rdfs:comment "The bucket containing this S3Object" ;
+                     rdfs:label "containedInS3Bucket" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/eventDate
+:eventDate rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain bcodmo:Event ;
+           rdfs:range bcodmo:TemporalEntity ;
+           rdfs:comment "The date of some Event" ;
+           rdfs:label "eventDate" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/fileFromSubmission
+:fileFromSubmission rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf bcodmo:situationInvolves ;
+                    rdfs:domain :S3Object ;
+                    rdfs:range :Submission ;
+                    rdfs:comment "The Submission from which this file originated" ;
+                    rdfs:label "fileFromSubmission" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/hasCategoryType
+:hasCategoryType rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty bcodmo:isDefinedAs ;
+                 rdfs:comment "The Category for some Entity" ;
+                 rdfs:label "hasCategoryType" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/hasEventMetrics
+:hasEventMetrics rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf bcodmo:situationInvolves ;
+                 rdfs:domain bcodmo:CreativeWork ;
+                 rdfs:comment "The EventMetrics related to a CreativeWork" ;
+                 rdfs:label "hasEventMetrics" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/s3BucketContains
+:s3BucketContains rdf:type owl:ObjectProperty ;
+                  rdfs:domain :S3Bucket ;
+                  rdfs:range :S3Object ;
+                  rdfs:label "An object contained within an S3Bucket" ,
+                             "s3BucketContains" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/s3ObjectSource
+:s3ObjectSource rdf:type owl:ObjectProperty ;
+                rdfs:domain :S3Object ;
+                rdfs:range :S3Object ;
+                rdfs:comment "A representation of the source from which an S3Object originated" ;
+                rdfs:label "s3ObjectSource" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.bco-dmo.org/internal/v1.0/awsJobId
+:awsJobId rdf:type owl:DatatypeProperty ;
+          rdfs:domain :S3Object ;
+          rdfs:range xsd:token ;
+          rdfs:comment "The AWS Job identifier relevent to some thing." ;
+          rdfs:label "awsJobId" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/awsObjectId
+:awsObjectId rdf:type owl:DatatypeProperty ;
+             rdfs:domain :S3Object ;
+             rdfs:range xsd:token ;
+             rdfs:label "awsObjectId" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/awsSourcePath
+:awsSourcePath rdf:type owl:DatatypeProperty ;
+               rdfs:domain :S3Object ;
+               rdfs:range xsd:token ;
+               rdfs:comment "The source path of some S3 object" ;
+               rdfs:label "awsSourcePath" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/executionFrequency
+:executionFrequency rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :DatasetUsageMetricsHarvest ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "A label for how often a certain activity is run" ;
+                    rdfs:label "executionFrequency" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/s3KeyPrefix
+:s3KeyPrefix rdf:type owl:DatatypeProperty ;
+             rdfs:domain :S3Object ;
+             rdfs:range xsd:token ;
+             rdfs:comment "The prefix path for an S3 object" ;
+             rdfs:label "s3KeyPrefix" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/s3Url
+:s3Url rdf:type owl:DatatypeProperty ;
+       rdfs:domain :S3Object ;
+       rdfs:range xsd:token ;
+       rdfs:comment "The S3 URL in the form of s3://{bucket-name}/{prefix-path}/{filename}" ;
+       rdfs:label "s3Url" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/totalCount
+:totalCount rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :EventMetrics ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of occurences for some EventMetrics" ;
+            rdfs:label "totalCount" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/prov#Activity
+prov:Activity rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/CurrentStateComment
+:CurrentStateComment rdf:type owl:Class ;
+                     rdfs:subClassOf bcodmo:Situation ;
+                     rdfs:comment "To be a subclass of Annotation" ;
+                     rdfs:label "CurrentStateComment" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/DatasetSubmission
+:DatasetSubmission rdf:type owl:Class ;
+                   rdfs:subClassOf :Submission ;
+                   rdfs:comment "A submitted Dataset" ;
+                   rdfs:label "DatasetSubmission" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/DatasetUsageMetricsHarvest
+:DatasetUsageMetricsHarvest rdf:type owl:Class ;
+                            rdfs:subClassOf prov:Activity ;
+                            rdfs:comment "A harvest run looking for EventMetrics for a specific TemporalEntity" ;
+                            rdfs:label "DatasetUsageMetricsHarvest" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/EventMetrics
+:EventMetrics rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( bcodmo:Event
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :classifiedAs ;
+                                                           owl:someValuesFrom bcodmo:ConsumeAction
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :eventDate ;
+                                                           owl:someValuesFrom bcodmo:TemporalInstant
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty bcodmo:situationInvolves ;
+                                                           owl:someValuesFrom bcodmo:Dataset
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf bcodmo:Event ;
+              rdfs:comment "Metrics for a CreativeWorkas a result of some Event" ;
+              rdfs:label "EventMetrics" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/MetricsCategory
+:MetricsCategory rdf:type owl:Class ;
+                 rdfs:subClassOf bcodmo:DefinedType ;
+                 rdfs:comment "The type of metric that was inferred into counting toward some Action on an EventMetrics" ;
+                 rdfs:label "MetricsCategory" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason
+:NoDatasetDOIReason rdf:type owl:Class ;
+                    rdfs:subClassOf bcodmo:Category ;
+                    rdfs:comment "A reason why a Dataset will not get a DOI." ;
+                    rdfs:label "NoDatasetDOIReason" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/ProjectSubmission
+:ProjectSubmission rdf:type owl:Class ;
+                   rdfs:subClassOf :Submission ;
+                   rdfs:comment "A submitted Project" ;
+                   rdfs:label "ProjectSubmission" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/S3Bucket
+:S3Bucket rdf:type owl:Class ;
+          rdfs:subClassOf bcodmo:Entity ;
+          rdfs:comment "An S3 bucket for storing objects" ;
+          rdfs:label "S3Bucket" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/S3Object
+:S3Object rdf:type owl:Class ;
+          rdfs:subClassOf [ owl:intersectionOf ( bcodmo:FileDescriptor
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :containedInS3Bucket ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass :S3Bucket
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty bcodmo:filename ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:string
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :s3KeyPrefix ;
+                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:string
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          rdfs:comment "An S3 storage location." ;
+          rdfs:label "S3Object" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/StoredReportedEvent
+:StoredReportedEvent rdf:type owl:Class ;
+                     rdfs:subClassOf prov:Entity ;
+                     rdfs:comment "Raw event data that needs to be interpreted into EventMetrics" ;
+                     rdfs:label "StoredReportedEvent" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/Submission
+:Submission rdf:type owl:Class ;
+            rdfs:subClassOf bcodmo:CreativeWork ;
+            rdfs:comment "A PI-curated submission of project or dataset metadata and creativeworks" ;
+            rdfs:label "Submission" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory
+bcodmo:MetricsCategory rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://schema.bco-dmo.org/internal/v1.0/DatasetMetric_Citation
+:DatasetMetric_Citation rdf:type owl:NamedIndividual ,
+                                 bcodmo:ConsumeAction ;
+                        bcodmo:label "Citation" ;
+                        rdfs:label "Dataset Metric: Citation" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/DatasetMetric_Download
+:DatasetMetric_Download rdf:type owl:NamedIndividual ,
+                                 bcodmo:ConsumeAction ;
+                        owl:sameAs bcodmo:Action_Download ;
+                        bcodmo:label "Download" ;
+                        rdfs:label "Dataset Metric: Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/Action_Download
+
+###  https://schema.bco-dmo.org/internal/v1.0/DatasetMetric_View
+:DatasetMetric_View rdf:type owl:NamedIndividual ,
+                             bcodmo:ConsumeAction ;
+                    owl:sameAs bcodmo:Action_View ;
+                    bcodmo:label "View" ;
+                    rdfs:label "Dataset Metric: View" .
+
+
+###  https://schema.bco-dmo.org/v1.0/Action_View
+
+###  https://schema.bco-dmo.org/internal/v1.0/IdentifierScheme_SubmissionFile
+:IdentifierScheme_SubmissionFile rdf:type owl:NamedIndividual ,
+                                          bcodmo:IdentifierScheme ;
+                                 rdfs:label "A file uploaded to some Submission" ,
+                                            "IdentifierScheme: Submission File" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/IdentifierScheme_SubmissionTool
+:IdentifierScheme_SubmissionTool rdf:type owl:NamedIndividual ,
+                                          bcodmo:IdentifierScheme ;
+                                 bcodmo:label "Submission Tool" ;
+                                 rdfs:label "IdentifierScheme: Submission Tool" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_ContainsDataFileLinksOrJGOFSObjects
+:NoDatasetDOIReason_ContainsDataFileLinksOrJGOFSObjects rdf:type owl:NamedIndividual ,
+                                                                 :NoDatasetDOIReason ;
+                                                        bcodmo:description "Has a parameter ( link_object, file_link, document_link) that links to files we control or other JGOFS objects" ;
+                                                        bcodmo:label "Contains Data File Links Or JGOFS Objects" ;
+                                                        rdfs:label "NoDatasetDOIReason: Contains Data File Links Or JGOFS Objects" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_DataInDeploymentDatasets
+:NoDatasetDOIReason_DataInDeploymentDatasets rdf:type owl:NamedIndividual ,
+                                                      :NoDatasetDOIReason ;
+                                             bcodmo:description "These are typically old JGOFS datasets with no dataset URL but one or multiple dataset deployment URLs." ;
+                                             bcodmo:label "Data In Deployment Datasets" ;
+                                             rdfs:label "NoDatasetDOIReason: Data In Deployment Datasets" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_DataUrlNotAFile
+:NoDatasetDOIReason_DataUrlNotAFile rdf:type owl:NamedIndividual ,
+                                             :NoDatasetDOIReason ;
+                                    bcodmo:description "If it goes to a file on our server we can DOI if the file is in an open format (.csv, but not PDF or Excel)" ;
+                                    bcodmo:label "Data Url Not A File" ;
+                                    rdfs:label "NoDatasetDOIReason: Data Url Not A File" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_ExistingExternalDOI
+:NoDatasetDOIReason_ExistingExternalDOI rdf:type owl:NamedIndividual ,
+                                                 :NoDatasetDOIReason ;
+                                        bcodmo:description "The dataset does not need a BCO-DMO DOI because the dataset has a pre-existing DOI and we are not altering the data." ;
+                                        bcodmo:label "Existing External DOI" ;
+                                        rdfs:label "NoDatasetDOIReason: Existing External DOI" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_InventoryDataset
+:NoDatasetDOIReason_InventoryDataset rdf:type owl:NamedIndividual ,
+                                              :NoDatasetDOIReason ;
+                                     bcodmo:description "This dataset is just a list of other datasets in the catalog." ;
+                                     bcodmo:label "Inventory Dataset" ;
+                                     rdfs:label "NoDatasetDOIReason: Inventory Dataset" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_LargeDatasets
+:NoDatasetDOIReason_LargeDatasets rdf:type owl:NamedIndividual ,
+                                           :NoDatasetDOIReason ;
+                                  bcodmo:description "Data files are large ( > 5GB )" ;
+                                  bcodmo:label "Large Datasets" ;
+                                  rdfs:label "NoDatasetDOIReason: Large Datasets" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_NoPI
+:NoDatasetDOIReason_NoPI rdf:type owl:NamedIndividual ,
+                                  :NoDatasetDOIReason ;
+                         bcodmo:description "Decided at (meeting 2019-02-28)" ;
+                         bcodmo:label "No PI" ;
+                         rdfs:label "NoDatasetDOIReason: No PI" ;
+                         rdfs:seeAlso "https://docs.google.com/document/d/1pcb9-8r9SFnhk-iHBl63ck0Ye6N1ke_Avy6Czool67I/edit#bookmark=id.awomo2rd3eos"^^xsd:anyURI .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_Other
+:NoDatasetDOIReason_Other rdf:type owl:NamedIndividual ,
+                                   :NoDatasetDOIReason ;
+                          bcodmo:description "Specify the reason" ;
+                          bcodmo:label "Other" ;
+                          rdfs:label "NoDatasetDOIReason: Other" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_ParametersWithWildcards
+:NoDatasetDOIReason_ParametersWithWildcards rdf:type owl:NamedIndividual ,
+                                                     :NoDatasetDOIReason ;
+                                            bcodmo:description "To save time and lots of manual work, some dataset parameters were entered with a wildcard character (*) to represent many columns in a data file." ;
+                                            bcodmo:label "Parameters With Wildcards" ;
+                                            rdfs:label "NoDatasetDOIReason: Parameters With Wildcards" .
+
+
+###  https://schema.bco-dmo.org/internal/v1.0/NoDatasetDOIReason_RestrictedPastReleaseDate
+:NoDatasetDOIReason_RestrictedPastReleaseDate rdf:type owl:NamedIndividual ,
+                                                       :NoDatasetDOIReason ;
+                                              bcodmo:description "We will contact PIs notifying them of the lifted embargo date before DOI'ing a possible dataset that could be made accessible to the public." ;
+                                              bcodmo:label "Restricted w. Release Date in the Past" ;
+                                              rdfs:label "NoDatasetDOIReason: Restricted w. Release Date in the Past" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_CiteThisDataset
+bcodmo:MetricsCategory_CiteThisDataset rdf:type owl:NamedIndividual ,
+                                                bcodmo:MetricsCategory ;
+                                       bcodmo:label "Cite This Dataset" ;
+                                       rdfs:label "Metrics Category: Cite This Dataset" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DOIFileDownload
+bcodmo:MetricsCategory_DOIFileDownload rdf:type owl:NamedIndividual ,
+                                                bcodmo:MetricsCategory ;
+                                       bcodmo:label "DOI File Download" ;
+                                       rdfs:label "Metrics Category: DOI File Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DOIWebPage
+bcodmo:MetricsCategory_DOIWebPage rdf:type owl:NamedIndividual ,
+                                           bcodmo:MetricsCategory ;
+                                  bcodmo:label "DOI Web Page" ;
+                                  rdfs:label "Metrics Category: DOI Web Page" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DPVButton
+bcodmo:MetricsCategory_DPVButton rdf:type owl:NamedIndividual ,
+                                          bcodmo:MetricsCategory ;
+                                 bcodmo:label "DataPpackage Viewer Button" ;
+                                 rdfs:label "Metrics Category: DPVButton" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DatadocsURL
+bcodmo:MetricsCategory_DatadocsURL rdf:type owl:NamedIndividual ,
+                                            bcodmo:MetricsCategory ;
+                                   bcodmo:label "Datadocs URL" ;
+                                   rdfs:label "Metrics Category: Datadocs URL" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DatasetHTMLClick
+bcodmo:MetricsCategory_DatasetHTMLClick rdf:type owl:NamedIndividual ,
+                                                 bcodmo:MetricsCategory ;
+                                        bcodmo:label "Dataset HTML Click" ;
+                                        rdfs:label "Metrics Category: Dataset HTML Click" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DatasetISOClick
+bcodmo:MetricsCategory_DatasetISOClick rdf:type owl:NamedIndividual ,
+                                                bcodmo:MetricsCategory ;
+                                       bcodmo:label "Dataset ISO Click" ;
+                                       rdfs:label "Metrics Category: Dataset ISO Click" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DatasetJSONLDClick
+bcodmo:MetricsCategory_DatasetJSONLDClick rdf:type owl:NamedIndividual ,
+                                                   bcodmo:MetricsCategory ;
+                                          bcodmo:label "Dataset JSON-LD Click" ;
+                                          rdfs:label "Metrics Category: Dataset JSON-LD Click" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_DatasetRDFClick
+bcodmo:MetricsCategory_DatasetRDFClick rdf:type owl:NamedIndividual ,
+                                                bcodmo:MetricsCategory ;
+                                       bcodmo:label "Dataset RDF Click" ;
+                                       rdfs:label "Metrics Category: Dataset RDF Click" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPCSVDownload
+bcodmo:MetricsCategory_ERDDAPCSVDownload rdf:type owl:NamedIndividual ,
+                                                  bcodmo:MetricsCategory ;
+                                         bcodmo:label "ERDDAP CSV Download" ;
+                                         rdfs:label "Metrics Category: ERDDAP CSV Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPGeoJSONDownload
+bcodmo:MetricsCategory_ERDDAPGeoJSONDownload rdf:type owl:NamedIndividual ,
+                                                      bcodmo:MetricsCategory ;
+                                             bcodmo:label "ERDDAP GeoJSON Download" ;
+                                             rdfs:label "Metrics Category: ERDDAP GeoJSON Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPMATLABDownload
+bcodmo:MetricsCategory_ERDDAPMATLABDownload rdf:type owl:NamedIndividual ,
+                                                     bcodmo:MetricsCategory ;
+                                            bcodmo:label "ERDDAP MATLAB Download" ;
+                                            rdfs:label "Metrics Category: ERDDAP MATLAB Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPODVDownload
+bcodmo:MetricsCategory_ERDDAPODVDownload rdf:type owl:NamedIndividual ,
+                                                  bcodmo:MetricsCategory ;
+                                         bcodmo:label "ERDDAP ODV Download" ;
+                                         rdfs:label "Metrics Category: ERDDAP ODV Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPSUBSETDATADownload
+bcodmo:MetricsCategory_ERDDAPSUBSETDATADownload rdf:type owl:NamedIndividual ,
+                                                         bcodmo:MetricsCategory ;
+                                                bcodmo:label "ERDDAP SUBSET DATA Download" ;
+                                                rdfs:label "Metrics Category: ERDDAP SUBSET DATA Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPTSVDownload
+bcodmo:MetricsCategory_ERDDAPTSVDownload rdf:type owl:NamedIndividual ,
+                                                  bcodmo:MetricsCategory ;
+                                         bcodmo:label "ERDDAP TSV Download" ;
+                                         rdfs:label "Metrics Category: ERDDAP TSV Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPVIEWTABLEDownload
+bcodmo:MetricsCategory_ERDDAPVIEWTABLEDownload rdf:type owl:NamedIndividual ,
+                                                        bcodmo:MetricsCategory ;
+                                               bcodmo:label "ERDDAP VIEW TABLE Download" ;
+                                               rdfs:label "Metrics Category: ERDDAP VIEW TABLE Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ERDDAPnetCDFDownload
+bcodmo:MetricsCategory_ERDDAPnetCDFDownload rdf:type owl:NamedIndividual ,
+                                                     bcodmo:MetricsCategory ;
+                                            bcodmo:label "ERDDAP NetCDF Download" ;
+                                            rdfs:label "Metrics Category: ERDDAP NetCDF Download" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_GetDataButton
+bcodmo:MetricsCategory_GetDataButton rdf:type owl:NamedIndividual ,
+                                              bcodmo:MetricsCategory ;
+                                     bcodmo:label "Get Data Button" ;
+                                     rdfs:label "Metrics Category: Get Data Button" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_LTERDatasetClick
+bcodmo:MetricsCategory_LTERDatasetClick rdf:type owl:NamedIndividual ,
+                                                 bcodmo:MetricsCategory ;
+                                        bcodmo:label "LTER Dataset Click" ;
+                                        rdfs:label "Metrics Category: LTER Dataset Click" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_MapItButton
+bcodmo:MetricsCategory_MapItButton rdf:type owl:NamedIndividual ,
+                                            bcodmo:MetricsCategory ;
+                                   bcodmo:label "Map It Button" ;
+                                   rdfs:label "Metrics Category: Map It Button" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_ViewData
+bcodmo:MetricsCategory_ViewData rdf:type owl:NamedIndividual ,
+                                         bcodmo:MetricsCategory ;
+                                bcodmo:label "View Data" ;
+                                rdfs:label "Metrics Category: View Data" .
+
+
+###  https://schema.bco-dmo.org/v1.0/MetricsCategory_WebPage
+bcodmo:MetricsCategory_WebPage rdf:type owl:NamedIndividual ,
+                                        bcodmo:MetricsCategory ;
+                               bcodmo:label "Cite This Dataset" ;
+                               rdfs:label "Metrics Category: Cite This Dataset" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+<http://schema.bco-dmo.org/datasource/ga4> a prov:Entity ;
+        bcodmo:label "Google Analytics 4" .
+
+<http://schema.bco-dmo.org/application#GA4HarvesterDatasetUsageMetrics> a bcodmo:SoftwareApplication ;
+        rdfs:comment	"Software for extracting and processing GA4 metrics" ;
+        rdfs:label "BCO-DMO GA4 ETL Pipeline" .

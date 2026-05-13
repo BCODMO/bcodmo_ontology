@@ -212,6 +212,13 @@ rdf:subject rdf:type owl:ObjectProperty .
              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/dateCreated> .
 
 
+###  https://schema.bco-dmo.org/v1.0/creativeWorkStatus
+:creativeWorkStatus rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty :status ;
+                    rdfs:domain :CreativeWork ;
+                    rdfs:range :CreativeWorkStatus .
+
+
 ###  https://schema.bco-dmo.org/v1.0/currentState
 :currentState rdf:type owl:ObjectProperty ;
               rdfs:domain :CreativeWork ;
@@ -266,6 +273,14 @@ rdf:subject rdf:type owl:ObjectProperty .
              rdfs:label "datasetType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/deploymentDataset
+:deploymentDataset rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Dataset ;
+                   rdfs:range :DatasetDeployment ;
+                   rdfs:comment "a deployment-specific description of that deployment's aspects of a dataset." ;
+                   rdfs:label "deploymentDataset" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/describesFile
 :describesFile rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :situationInvolves ;
@@ -275,8 +290,26 @@ rdf:subject rdf:type owl:ObjectProperty .
                rdfs:label "describesFile" .
 
 
+###  https://schema.bco-dmo.org/v1.0/entityPublishingStatus
+:entityPublishingStatus rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :EntityStatus ;
+                        rdfs:range :EntityPublishingStatus ;
+                        rdfs:comment "The publishing status of some BCO-DMO Entity" ;
+                        rdfs:label "entityPublishingStatus" .
+
+
+###  https://schema.bco-dmo.org/v1.0/entityStatus
+:entityStatus rdf:type owl:ObjectProperty ;
+              rdfs:domain :Entity ;
+              rdfs:range :EntityStatus ;
+              rdfs:comment "the status of some BCO-DMO Entity" ;
+              rdfs:label "entityStatus" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/expirationDate
 :expirationDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasTime ;
                 rdfs:domain :EmbargoPolicy ;
                 rdfs:range :TemporalEntity ;
                 rdfs:comment "The date on which an embargo expires and the dataset becomes publicly accessible." ;
@@ -758,6 +791,21 @@ rdf:subject rdf:type owl:ObjectProperty .
               rdfs:label "platformType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/preferredDOI
+:preferredDOI rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :CreativeWork
+                                          :Dataset
+                                          :Deployment
+                                          :ResearchActivity
+                                        )
+                          ] ;
+              rdfs:range :DOIIdentifier ;
+              rdfs:comment "The DOI that should be presented publicly for this resource. In most cases this is the most recent DOI, but the value is determined by curatorial judgment and must be asserted explicitly." ;
+              rdfs:label "preferredDOI" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/producedWork
 :producedWork rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :situationInvolves ;
@@ -843,7 +891,8 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/releaseDate
 :releaseDate rdf:type owl:ObjectProperty ;
-             rdfs:domain :EmbargoPolicy ;
+             rdfs:subPropertyOf :hasTime ;
+             rdfs:domain :EmbargoReleasePolicy ;
              rdfs:range :TemporalEntity ;
              rdfs:comment "The date on which an embargo releases and the dataset becomes publicly accessible." ;
              rdfs:label "releaseDate" ;
@@ -920,6 +969,7 @@ rdf:subject rdf:type owl:ObjectProperty .
         rdfs:range :CreativeWorkStatus ;
         rdfs:comment "The current DOI lifecycle status of the dataset package." ;
         rdfs:label "status" ;
+        owl:deprecated "true"^^xsd:boolean ;
         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/creativeWorkStatus> .
 
 
@@ -2379,6 +2429,32 @@ rdf:Statement rdf:type owl:Class .
              rdfs:label "EntityMatch" .
 
 
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus
+:EntityPublishingStatus rdf:type owl:Class ;
+                        rdfs:subClassOf :Category ;
+                        rdfs:comment "One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it's being contructed, in draft review for a submitter, published, deprecated or unpublished." ;
+                        rdfs:label "EntityPublishingStatus" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityStatus
+:EntityStatus rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :entityPublishingStatus ;
+                                                           owl:someValuesFrom :EntityPublishingStatus
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasTime ;
+                                                           owl:someValuesFrom :TemporalEntity
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Situation ;
+              rdfs:comment "The status of some BCO-DMO Entity" ;
+              rdfs:label "EntityStatus" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Event
 :Event rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( :Situation
@@ -2622,7 +2698,8 @@ rdf:Statement rdf:type owl:Class .
 ###  https://schema.bco-dmo.org/v1.0/Organization
 :Organization rdf:type owl:Class ;
               rdfs:subClassOf :Agent ;
-              owl:disjointWith :Person ;
+              owl:disjointWith :Person ,
+                               :SoftwareApplication ;
               rdfs:comment "An organisational body such as a publisher, funder, or identifier authority." ;
               rdfs:label "Organization" ;
               <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/Organization> .
@@ -2647,6 +2724,7 @@ rdf:Statement rdf:type owl:Class .
 ###  https://schema.bco-dmo.org/v1.0/Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
+        owl:disjointWith :SoftwareApplication ;
         rdfs:comment "A human individual associated with some entity." ;
         rdfs:label "Person" ;
         <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/Person> .
@@ -2855,6 +2933,13 @@ rdf:Statement rdf:type owl:Class .
            rdfs:subClassOf :Entity ;
            rdfs:comment "A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events." ;
            rdfs:label "Situation" .
+
+
+###  https://schema.bco-dmo.org/v1.0/SoftwareApplication
+:SoftwareApplication rdf:type owl:Class ;
+                     rdfs:subClassOf :Agent ;
+                     rdfs:comment "A piece of software that is deployed and executable." ;
+                     rdfs:label "SoftwareApplication" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/String
@@ -3435,6 +3520,40 @@ rdf:Statement rdf:type owl:Class .
                                         :DeploymentActivity ;
                                :label "Turnaround" ;
                                rdfs:label "Deployment Activity: Turnaround" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated
+:EntityPublishingStatus_Deprecated rdf:type owl:NamedIndividual ;
+                                   :label "Deprecated" ;
+                                   rdfs:label "Entity Status: Deprecated" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft
+:EntityPublishingStatus_Draft rdf:type owl:NamedIndividual ,
+                                       :EntityPublishingStatus ;
+                              :label "Draft" ;
+                              rdfs:label "Entity Status: Draft" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview
+:EntityPublishingStatus_InReview rdf:type owl:NamedIndividual ,
+                                          :EntityPublishingStatus ;
+                                 :label "In Review" ;
+                                 rdfs:label "Entity Status: In Review" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published
+:EntityPublishingStatus_Published rdf:type owl:NamedIndividual ,
+                                           :EntityPublishingStatus ;
+                                  :label "Published" ;
+                                  rdfs:label "Entity Status: Published" .
+
+
+###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished
+:EntityPublishingStatus_Unpublished rdf:type owl:NamedIndividual ,
+                                             :EntityPublishingStatus ;
+                                    :label "Unpublished" ;
+                                    rdfs:label "Entity Status: Unpublished" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/FileType_BitmapImage
@@ -4021,6 +4140,13 @@ rdf:Statement rdf:type owl:Class .
                  :label "Technician" ;
                  :roleWeight "20"^^xsd:int ;
                  rdfs:label "Role: Technician" .
+
+
+###  https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity
+:TemporalEntity_InPerpetuity rdf:type owl:NamedIndividual ,
+                                      :TemporalEntity ;
+                             :label "In Perpetuity" ;
+                             rdfs:label "Temporal Entity: In Perpetuity" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/TemporalEntity_Unknown
