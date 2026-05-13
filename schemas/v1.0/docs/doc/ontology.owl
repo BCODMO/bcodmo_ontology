@@ -13,8 +13,8 @@
     <owl:Ontology rdf:about="https://schema.bco-dmo.org/v1.0/">
         <owl:versionIRI rdf:resource="https://schema.bco-dmo.org/v1.0/"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9414-722X"/>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0003-3359-9120"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-2109-706X"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-3359-9120"/>
         <terms:creator rdf:resource="https://orcid.org/0000-0003-4486-9448"/>
         <terms:license>Creative Commons Zero 1.0 Universal</terms:license>
         <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
@@ -211,6 +211,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/archives">
+        <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v1.0/isArchivedBy"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/DOIDataset"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
         <rdfs:comment>The Dataset that was archvied by a specific DOIDataset.</rdfs:comment>
@@ -556,6 +557,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/funder -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/funder">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/provider"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
+        <rdfs:label>funder</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/geometry -->
 
 
@@ -879,6 +892,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/isArchivedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/isArchivedBy">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/DOIDataset"/>
+        <rdfs:comment>An ArchiveDataset that arvhies a specific version of a Dataset.</rdfs:comment>
+        <rdfs:label>isArchivedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/isContinuingAwardOf -->
 
 
@@ -1165,6 +1190,7 @@
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/provider">
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
+        <rdfs:comment>The provider of some Award</rdfs:comment>
         <rdfs:comment>The service provider that hosts/distributes the resource.</rdfs:comment>
         <rdfs:label>provider</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/provider"/>
@@ -2315,7 +2341,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Affiliation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Organization"/>
@@ -2341,7 +2367,8 @@
                     </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Organization"/>
         <rdfs:comment>An institutional affiliation of a person (university, research institute, etc.).</rdfs:comment>
         <rdfs:label>Affiliation</rdfs:label>
     </owl:Class>
@@ -2363,7 +2390,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/AgentRole">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -2385,7 +2412,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A qualified association that links an Agent to a role and optionally an affiliation context.</rdfs:comment>
         <rdfs:label>Agent Role</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Role"/>
@@ -2397,7 +2425,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Annotation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -2416,7 +2444,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A comment or some other piece of content that annotates for some specific purpose some Thing</rdfs:comment>
         <rdfs:label>Annotation</rdfs:label>
     </owl:Class>
@@ -2445,16 +2474,27 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/ArchivedDataset -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/ArchivedDataset">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:comment>A specific version of a Dataset that has been stored  in an archive that typcially provides access</rdfs:comment>
+        <rdfs:label>ArchivedDataset</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/Award -->
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Award">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/provider"/>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/funder"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/FundingAgency"/>
                     </owl:Restriction>
                     <owl:Restriction>
@@ -2467,7 +2507,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>A funding award (grant) from a funder that supports data collection.</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Grant"/>
@@ -2479,7 +2520,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
@@ -2526,7 +2567,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
         <rdfs:comment>A reason why an award will not produce datasets</rdfs:comment>
         <rdfs:label>AwardNoDataAnnotation</rdfs:label>
     </owl:Class>
@@ -2561,7 +2603,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
@@ -2587,7 +2629,8 @@
                     </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
         <rdfs:comment>An axis-aligned bounding box geometry defined by west/south/east/north boundaries.</rdfs:comment>
         <rdfs:label>Bounding Box Geometry</rdfs:label>
         <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#Envelope"/>
@@ -2635,7 +2678,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/CollectionItem">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -2645,7 +2688,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>An item in a collection</rdfs:comment>
         <rdfs:label>CollectionItem</rdfs:label>
     </owl:Class>
@@ -2727,7 +2771,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Cruise">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Deployment"/>
@@ -2737,7 +2781,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Deployment"/>
         <rdfs:comment>A research vessel cruise, a specialisation of Platform for vessel-type platforms.</rdfs:comment>
         <rdfs:label>Cruise</rdfs:label>
     </owl:Class>
@@ -2748,7 +2793,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/CryptographicHash">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Identifier"/>
@@ -2758,7 +2803,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
         <rdfs:comment>A cryptographic hash (e.g. MD5) used as a file integrity checksum.</rdfs:comment>
         <rdfs:label>Cryptographic Hash</rdfs:label>
     </owl:Class>
@@ -2791,10 +2837,10 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DOIDataset">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Dataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/ArchivedDataset"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/identifier"/>
                         <owl:someValuesFrom>
@@ -2806,7 +2852,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/ArchivedDataset"/>
         <rdfs:comment>A versioned BCO-DMO dataset that has been assigned a DOI.</rdfs:comment>
         <rdfs:label>DOI Dataset</rdfs:label>
     </owl:Class>
@@ -2817,7 +2864,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DOIIdentifier">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Identifier"/>
@@ -2827,7 +2874,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
         <rdfs:comment>A Digital Object Identifier.</rdfs:comment>
         <rdfs:label>DOI Identifier</rdfs:label>
     </owl:Class>
@@ -2838,7 +2886,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DOIStatus">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"/>
@@ -2852,7 +2900,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"/>
         <rdfs:comment>The lifecycle status of a DOI Dataset (Draft, Reserved, Published, etc.).</rdfs:comment>
         <rdfs:label>DOI Status</rdfs:label>
     </owl:Class>
@@ -2863,7 +2912,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DataFile">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
@@ -2877,7 +2926,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
         <rdfs:comment>A primary or supplemental data file distributed as part of a dataset.</rdfs:comment>
         <rdfs:label>Data File</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/DataDownload"/>
@@ -2889,7 +2939,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DataManagementPlan">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
@@ -2903,7 +2953,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
         <rdfs:comment>A plan describing how a research activity will manage and archive data products produced.</rdfs:comment>
         <rdfs:label>DataManagementPlan</rdfs:label>
     </owl:Class>
@@ -2926,10 +2977,10 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetAward">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/fundedByAward"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
@@ -2944,7 +2995,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>The connection between a dataset and the award the funded its generation</rdfs:comment>
         <rdfs:label>DatasetAward</rdfs:label>
     </owl:Class>
@@ -2955,10 +3007,26 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetDeployment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/forDataset"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/fromDeployment"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Deployment"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/forDataset"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
@@ -2980,10 +3048,10 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetInstrument">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/forDataset"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
@@ -2995,7 +3063,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>An instrument as referenced within a specific dataset, with dataset-specific properties.</rdfs:comment>
         <rdfs:label>Dataset Instrument</rdfs:label>
     </owl:Class>
@@ -3006,7 +3075,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetList">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Collection"/>
@@ -3028,7 +3097,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Collection"/>
         <rdfs:comment>A list of Datasets</rdfs:comment>
         <rdfs:label>DatasetList</rdfs:label>
     </owl:Class>
@@ -3039,7 +3109,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
@@ -3086,7 +3156,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
         <rdfs:comment>A reason as to why no instruments were used in the generation of this Dataset.</rdfs:comment>
         <rdfs:label>DatasetNoInstrumentsAnnotation</rdfs:label>
     </owl:Class>
@@ -3097,7 +3168,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
@@ -3144,7 +3215,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
         <rdfs:comment>A reason as to why a Dataset has no parameters defined.</rdfs:comment>
         <rdfs:label>DatasetNoParametersAnnotation</rdfs:label>
     </owl:Class>
@@ -3155,10 +3227,10 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetParameter">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/forDataset"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -3171,7 +3243,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format.</rdfs:comment>
         <rdfs:label>Dataset Parameter</rdfs:label>
     </owl:Class>
@@ -3193,7 +3266,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetType">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3207,7 +3280,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A category describing the type of dataset (e.g. Cruise Data, Model Output).</rdfs:comment>
         <rdfs:label>Dataset Type</rdfs:label>
     </owl:Class>
@@ -3218,7 +3292,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetsInOtherCatalog">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DatasetList"/>
@@ -3236,7 +3310,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DatasetList"/>
         <rdfs:comment>A list of datasets in a catalog that isn&apos;t BCO-DMO</rdfs:comment>
         <rdfs:label>DatasetsInOtherCatalog</rdfs:label>
     </owl:Class>
@@ -3247,7 +3322,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Datatype">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3261,7 +3336,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>The data type of a dataset parameter column (e.g. string, integer, float).</rdfs:comment>
         <rdfs:label>Datatype</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/DataType"/>
@@ -3284,7 +3360,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Deployment">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Event"/>
@@ -3294,7 +3370,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Event"/>
         <rdfs:comment>A scientific deployment (cruise, expedition, mooring deployment) during which data were collected.</rdfs:comment>
         <rdfs:label>Deployment</rdfs:label>
         <skos:relatedMatch rdf:resource="https://schema.org/Event"/>
@@ -3317,7 +3394,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DeploymentEntityMatch">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/EntityMatch"/>
@@ -3332,7 +3409,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/EntityMatch"/>
         <rdfs:label>DeploymentEntityMatch</rdfs:label>
     </owl:Class>
     
@@ -3354,7 +3432,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/EmbargoPolicy">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Policy"/>
@@ -3373,7 +3451,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Policy"/>
         <rdfs:comment>A policy that restricts access to a dataset until an expiration date.</rdfs:comment>
         <rdfs:label>Embargo Policy</rdfs:label>
     </owl:Class>
@@ -3384,7 +3463,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Policy"/>
@@ -3403,7 +3482,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Policy"/>
         <rdfs:comment>A policy that allows access to a FileDescriptor when its overarching Dataset is under an embargo.</rdfs:comment>
         <rdfs:label>EmbargoReleasePolicy</rdfs:label>
     </owl:Class>
@@ -3424,23 +3504,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/EntityMatch">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
-                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A link between two entities that are related in some way as defined by rdf:predicate. This entity allows for annotating details of the match.</rdfs:comment>
         <rdfs:label>EntityMatch</rdfs:label>
     </owl:Class>
@@ -3451,7 +3515,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Event">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -3461,7 +3525,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A dynamic situation in which something unique or impotant happened.</rdfs:comment>
         <rdfs:label>Event</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Event"/>
@@ -3485,7 +3550,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/FileDescriptor">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -3496,7 +3561,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A context-specific description of a file. The context could be data, metadata or supplemental documentation.</rdfs:comment>
         <rdfs:label>File Descriptor</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/DigitalDocument"/>
@@ -3508,7 +3574,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/FileType">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3522,7 +3588,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A file format type, characterised by a label and MIME type (e.g. CSV, XML, PDF).</rdfs:comment>
         <rdfs:label>File Type</rdfs:label>
     </owl:Class>
@@ -3533,17 +3600,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/FundingAgency">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Organization"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/grantedAward"/>
-                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Organization"/>
         <rdfs:comment>An Organization that has provided some funding award</rdfs:comment>
         <rdfs:label>Funding Agency</rdfs:label>
     </owl:Class>
@@ -3624,7 +3681,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Image">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/File"/>
@@ -3634,7 +3691,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/File"/>
         <rdfs:comment>An image file.</rdfs:comment>
         <rdfs:label>Image</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/ImageObject"/>
@@ -3657,7 +3715,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Instrument">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3671,7 +3729,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A master (community-level) scientific instrument definition.</rdfs:comment>
         <rdfs:label>Instrument</rdfs:label>
     </owl:Class>
@@ -3704,7 +3763,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/License">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
@@ -3718,7 +3777,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
         <rdfs:comment>A  license applied to some creative work.</rdfs:comment>
         <rdfs:label>License</rdfs:label>
     </owl:Class>
@@ -3740,7 +3800,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/MetadataFile">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
@@ -3754,7 +3814,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
         <rdfs:comment>A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset.</rdfs:comment>
         <rdfs:label>Metadata File</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/DataDownload"/>
@@ -3800,17 +3861,18 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/ORCIDIdentifier">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Identifier"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/identifierScheme"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/IdentifierScheme_ROR"/>
+                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/IdentifierScheme_ORCID"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
         <rdfs:comment>An Open Researcher and Contributor ID</rdfs:comment>
         <rdfs:label>ORCID Identifier</rdfs:label>
     </owl:Class>
@@ -3834,7 +3896,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Parameter">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3848,7 +3910,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A master (community-level) scientific parameter definition.</rdfs:comment>
         <rdfs:label>Parameter</rdfs:label>
     </owl:Class>
@@ -3882,7 +3945,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/PlatformTitle">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Category"/>
@@ -3896,7 +3959,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
         <rdfs:comment>A named title/designation for a platform (e.g. the full name of a research vessel).</rdfs:comment>
         <rdfs:label>Platform Title</rdfs:label>
     </owl:Class>
@@ -3907,7 +3971,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/PlatformType">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -3921,7 +3985,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A category of platform (e.g. vessel, mooring, glider).</rdfs:comment>
         <rdfs:label>Platform Type</rdfs:label>
     </owl:Class>
@@ -3932,7 +3997,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Policy">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
@@ -3946,7 +4011,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>An access or governance policy applied to a resource.</rdfs:comment>
         <rdfs:label>Policy</rdfs:label>
     </owl:Class>
@@ -3957,7 +4023,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Program">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/ResearchActivity"/>
@@ -3971,7 +4037,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/ResearchActivity"/>
         <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Project"/>
         <rdfs:comment>A scientific program (typically a grouping of related projects) associated with a dataset.</rdfs:comment>
         <rdfs:label>Program</rdfs:label>
@@ -4006,7 +4073,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/RORIdentifier">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Identifier"/>
@@ -4016,7 +4083,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
         <rdfs:comment>A Research Organization Registry identifier.</rdfs:comment>
         <rdfs:label>ROR Identifier</rdfs:label>
     </owl:Class>
@@ -4027,7 +4095,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/RelatedWork">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
@@ -4048,7 +4116,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A related CreativeWork to some other CreativeWork. This describes the situation surrounding this relationship.</rdfs:comment>
         <rdfs:label>RelatedWork</rdfs:label>
     </owl:Class>
@@ -4059,18 +4128,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/ResearchActivity">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Event"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/situationInvolves"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Event"/>
         <rdfs:comment>An activity that enables research. The research typically produces datasets.</rdfs:comment>
         <rdfs:label>Research Activity</rdfs:label>
         <skos:relatedMatch rdf:resource="https://schema.org/ResearchProject"/>
@@ -4082,7 +4140,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -4103,7 +4161,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A controlled-vocabulary term describing the relationship between two resources (aligned to Crossref and DataCite relation types).</rdfs:comment>
         <rdfs:label>Resource Relation</rdfs:label>
     </owl:Class>
@@ -4114,7 +4173,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Category"/>
@@ -4128,7 +4187,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
         <rdfs:comment>A grouping category for resource relation types.</rdfs:comment>
         <rdfs:label>Resource Relation Group</rdfs:label>
     </owl:Class>
@@ -4139,7 +4199,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Role">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/DefinedType"/>
@@ -4149,7 +4209,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator).</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
     </owl:Class>
@@ -4160,7 +4221,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Situation">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
@@ -4168,14 +4229,10 @@
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/situationInvolves"/>
                         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
                     </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/listPosition"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events.</rdfs:comment>
         <rdfs:label>Situation</rdfs:label>
     </owl:Class>
@@ -4199,7 +4256,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/SupplementalDocument">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
@@ -4213,7 +4270,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/FileDescriptor"/>
         <rdfs:comment>A supplemental (non-primary) document file associated with a dataset.</rdfs:comment>
         <rdfs:label>Supplemental Document</rdfs:label>
     </owl:Class>
@@ -4259,6 +4317,21 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/TemporalInterval">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasBeginning"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalInstant"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasEnd"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalInstant"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A time period with a beginning and an end, used to describe dataset temporal coverage.</rdfs:comment>
         <rdfs:label>Temporal Interval</rdfs:label>
@@ -4271,17 +4344,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/TimeSeries">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Event"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasDeployment"/>
-                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Deployment"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Event"/>
         <rdfs:comment>an ordered collection of observations indexed by time, representing the temporal evolution of one or more properties of a feature, system, or phenomenon.</rdfs:comment>
         <rdfs:label>Time Series</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/EventSeries"/>
@@ -4319,7 +4382,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Vessel">
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Platform"/>
@@ -4329,7 +4392,8 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
         <rdfs:comment>A ship or boat.</rdfs:comment>
         <rdfs:label>Vessel</rdfs:label>
     </owl:Class>
@@ -6203,11 +6267,11 @@
     <rdf:Description rdf:about="https://orcid.org/0000-0001-9414-722X">
         <foaf:name>Conrad Schloer</foaf:name>
     </rdf:Description>
-    <rdf:Description rdf:about="https://orcid.org/0000-0003-3359-9120">
-        <foaf:name>Vimal Narepalepu</foaf:name>
-    </rdf:Description>
     <rdf:Description rdf:about="https://orcid.org/0000-0003-2109-706X">
         <foaf:name>Shravani Nagala</foaf:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://orcid.org/0000-0003-3359-9120">
+        <foaf:name>Vimal Narepalepu</foaf:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://orcid.org/0000-0003-4486-9448">
         <foaf:name>Adam Shepherd</foaf:name>

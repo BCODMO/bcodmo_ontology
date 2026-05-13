@@ -9,6 +9,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#AgentRole" title="https://schema.bco-dmo.org/v1.0/AgentRole">Agent Role</a></li>
   <li><a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a></li>
   <li><a href="#AnnotationAction" title="https://schema.bco-dmo.org/v1.0/AnnotationAction">AnnotationAction</a></li>
+  <li><a href="#ArchivedDataset" title="https://schema.bco-dmo.org/v1.0/ArchivedDataset">ArchivedDataset</a></li>
   <li><a href="#ArchiveFileType" title="https://schema.bco-dmo.org/v1.0/ArchiveFileType">ArchiveFileType</a></li>
   <li><a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a></li>
   <li><a href="#AwardNoDataAnnotation" title="https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation">AwardNoDataAnnotation</a></li>
@@ -141,9 +142,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<span class="logic">inverse</span> <a href="#affiliation" title="https://schema.bco-dmo.org/v1.0/affiliation">affiliation</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>) <span class="logic">or</span> (<span class="logic">inverse</span> <a href="#performedAt" title="https://schema.bco-dmo.org/v1.0/performedAt">performedAt</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#AgentRole" title="https://schema.bco-dmo.org/v1.0/AgentRole">Agent Role</a> <sup class="type-c" title="class">c</sup>))
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -181,7 +190,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in range of
    </dt>
    <dd>
-    <a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://schema.bco-dmo.org/v1.0/performedBy">performedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://schema.bco-dmo.org/v1.0/performedBy">performedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -193,9 +202,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#performedBy" title="https://schema.bco-dmo.org/v1.0/performedBy">performedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#role" title="https://schema.bco-dmo.org/v1.0/role">role</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Role" title="https://schema.bco-dmo.org/v1.0/Role">Role</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -218,9 +235,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#annotates" title="https://schema.bco-dmo.org/v1.0/annotates">annotates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1) <span class="logic">and</span> (<a href="#hasContent" title="https://schema.bco-dmo.org/v1.0/hasContent">hasContent</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AwardNoDataAnnotation" title="https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation">AwardNoDataAnnotation</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetNoInstrumentsAnnotation" title="https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation">DatasetNoInstrumentsAnnotation</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetNoParametersAnnotation" title="https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation">DatasetNoParametersAnnotation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -247,6 +278,27 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#Action_Assess" title="https://schema.bco-dmo.org/v1.0/Action_Assess">Action: Assess</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Action_Comment" title="https://schema.bco-dmo.org/v1.0/Action_Comment">Action: Comment</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Action_Question" title="https://schema.bco-dmo.org/v1.0/Action_Question">Action: Question</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Action_Rationalize" title="https://schema.bco-dmo.org/v1.0/Action_Rationalize">Action: Rationalize</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ArchivedDataset">
+  <h3>ArchivedDataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ArchivedDataset</p>
+  <div class="comment">
+   <span class="markdown">A specific version of a Dataset that has been stored in an archive that typcially provides access</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DOIDataset" title="https://schema.bco-dmo.org/v1.0/DOIDataset">DOI Dataset</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -279,14 +331,22 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#FundingAgency" title="https://schema.bco-dmo.org/v1.0/FundingAgency">Funding Agency</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#hasLeadAwardOf" title="https://schema.bco-dmo.org/v1.0/hasLeadAwardOf">hasLeadAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#awardProducingData" title="https://schema.bco-dmo.org/v1.0/awardProducingData">isAwardProducingData</a> <sup class="type-op" title="object property">op</sup>, <a href="#isContinuingAwardOf" title="https://schema.bco-dmo.org/v1.0/isContinuingAwardOf">isContinuingAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#piInstitutionChangedForPreviousAward" title="https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward">piInstitutionChangedForPreviousAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#programManager" title="https://schema.bco-dmo.org/v1.0/programManager">programManager</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedAward" title="https://schema.bco-dmo.org/v1.0/relatedAward">relatedAward</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasLeadAwardOf" title="https://schema.bco-dmo.org/v1.0/hasLeadAwardOf">hasLeadAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#awardProducingData" title="https://schema.bco-dmo.org/v1.0/awardProducingData">isAwardProducingData</a> <sup class="type-op" title="object property">op</sup>, <a href="#isContinuingAwardOf" title="https://schema.bco-dmo.org/v1.0/isContinuingAwardOf">isContinuingAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#piInstitutionChangedForPreviousAward" title="https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward">piInstitutionChangedForPreviousAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#programManager" title="https://schema.bco-dmo.org/v1.0/programManager">programManager</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedAward" title="https://schema.bco-dmo.org/v1.0/relatedAward">relatedAward</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -304,9 +364,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#annotates" title="https://schema.bco-dmo.org/v1.0/annotates">annotates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">Statement</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">subject</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#object" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">object</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#Boolean_True" title="https://schema.bco-dmo.org/v1.0/Boolean_True">Boolean: True</a> <sup class="type-ni" title="named individual">ni</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">predicate</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#awardProducingData" title="https://schema.bco-dmo.org/v1.0/awardProducingData">isAwardProducingData</a> <sup class="type-ni" title="named individual">ni</sup>)) <span class="logic">and</span> (<a href="#hasContent" title="https://schema.bco-dmo.org/v1.0/hasContent">hasContent</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>)) <span class="logic">and</span> (<a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="BCODMOIdentifier">
@@ -367,9 +435,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="#eastBoundary" title="https://schema.bco-dmo.org/v1.0/eastBoundary">eastBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#northBoundary" title="https://schema.bco-dmo.org/v1.0/northBoundary">northBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#southBoundary" title="https://schema.bco-dmo.org/v1.0/southBoundary">southBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#westBoundary" title="https://schema.bco-dmo.org/v1.0/westBoundary">westBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>))
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -395,7 +471,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#NODCTopic" title="https://schema.bco-dmo.org/v1.0/NODCTopic">NODCTopic</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#NODCTopic" title="https://schema.bco-dmo.org/v1.0/NODCTopic">NODCTopic</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelationGroup" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">Resource Relation Group</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -440,6 +516,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DatasetList" title="https://schema.bco-dmo.org/v1.0/DatasetList">DatasetList</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
@@ -461,9 +543,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#inCollection" title="https://schema.bco-dmo.org/v1.0/inCollection">inCollection</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -579,7 +669,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>, <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>, <a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a> <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://schema.bco-dmo.org/v1.0/Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>, <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://schema.bco-dmo.org/v1.0/License">License</a> <sup class="type-c" title="class">c</sup>, <a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a> <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://schema.bco-dmo.org/v1.0/Publication">Publication</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -609,6 +699,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DOIStatus" title="https://schema.bco-dmo.org/v1.0/DOIStatus">DOI Status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in range of
    </dt>
    <dd>
@@ -624,9 +720,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#onPlatform" title="https://schema.bco-dmo.org/v1.0/onPlatform">onPlatform</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Vessel" title="https://schema.bco-dmo.org/v1.0/Vessel">Vessel</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -643,9 +747,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CryptographicHashAlgorithm" title="https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm">Cryptographic Hash Algorithm</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -710,9 +822,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -735,9 +855,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#dataManagementPlan" title="https://schema.bco-dmo.org/v1.0/dataManagementPlan">dataManagementPlan</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -760,10 +888,16 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ArchivedDataset" title="https://schema.bco-dmo.org/v1.0/ArchivedDataset">ArchivedDataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#conformsTo" title="https://schema.bco-dmo.org/v1.0/conformsTo">conformsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataManagementProcessingDescription" title="https://schema.bco-dmo.org/v1.0/dataManagementProcessingDescription">dataManagementProcessingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetInstrumentsNotUsed" title="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">datasetInstrumentsNotUsed</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">datasetParametersNotRequired</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromInstrument" title="https://schema.bco-dmo.org/v1.0/fromInstrument">fromInstrument</a> <sup class="type-op" title="object property">op</sup>, <a href="#fundedBy" title="https://schema.bco-dmo.org/v1.0/fundedBy">fundedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://schema.bco-dmo.org/v1.0/hasParameter">hasParameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProgram" title="https://schema.bco-dmo.org/v1.0/hasProgram">hasProgram</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="https://schema.bco-dmo.org/v1.0/hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#metadataFile" title="https://schema.bco-dmo.org/v1.0/metadataFile">metadataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#problemDescription" title="https://schema.bco-dmo.org/v1.0/problemDescription">problemDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#restricted" title="https://schema.bco-dmo.org/v1.0/restricted">restricted</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shortDescription" title="https://schema.bco-dmo.org/v1.0/shortDescription">shortDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#storesValuesFor" title="https://schema.bco-dmo.org/v1.0/storesValuesFor">storesValuesFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#supplementalDocument" title="https://schema.bco-dmo.org/v1.0/supplementalDocument">supplementalDocument</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#title" title="https://schema.bco-dmo.org/v1.0/title">title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validated" title="https://schema.bco-dmo.org/v1.0/validated">validated</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#version" title="https://schema.bco-dmo.org/v1.0/version">version</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#conformsTo" title="https://schema.bco-dmo.org/v1.0/conformsTo">conformsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataManagementProcessingDescription" title="https://schema.bco-dmo.org/v1.0/dataManagementProcessingDescription">dataManagementProcessingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetInstrumentsNotUsed" title="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">datasetInstrumentsNotUsed</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">datasetParametersNotRequired</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromInstrument" title="https://schema.bco-dmo.org/v1.0/fromInstrument">fromInstrument</a> <sup class="type-op" title="object property">op</sup>, <a href="#fundedBy" title="https://schema.bco-dmo.org/v1.0/fundedBy">fundedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://schema.bco-dmo.org/v1.0/hasParameter">hasParameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProgram" title="https://schema.bco-dmo.org/v1.0/hasProgram">hasProgram</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="https://schema.bco-dmo.org/v1.0/hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#metadataFile" title="https://schema.bco-dmo.org/v1.0/metadataFile">metadataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#problemDescription" title="https://schema.bco-dmo.org/v1.0/problemDescription">problemDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#restricted" title="https://schema.bco-dmo.org/v1.0/restricted">restricted</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shortDescription" title="https://schema.bco-dmo.org/v1.0/shortDescription">shortDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#storesValuesFor" title="https://schema.bco-dmo.org/v1.0/storesValuesFor">storesValuesFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#supplementalDocument" title="https://schema.bco-dmo.org/v1.0/supplementalDocument">supplementalDocument</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#title" title="https://schema.bco-dmo.org/v1.0/title">title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validated" title="https://schema.bco-dmo.org/v1.0/validated">validated</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#version" title="https://schema.bco-dmo.org/v1.0/version">version</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -780,6 +914,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <span class="markdown">A deployment as referenced within a specific dataset, with dataset-specific properties.</span>
   </div>
   <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#fromDeployment" title="https://schema.bco-dmo.org/v1.0/fromDeployment">fromDeployment</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
    <dt>
     has super-classes
    </dt>
@@ -802,6 +942,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#Instrument" title="https://schema.bco-dmo.org/v1.0/Instrument">Instrument</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -822,6 +968,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <span class="markdown">A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format.</span>
   </div>
   <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#Parameter" title="https://schema.bco-dmo.org/v1.0/Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
    <dt>
     has super-classes
    </dt>
@@ -850,9 +1002,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -875,6 +1035,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -890,9 +1056,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasCollectionItem" title="https://schema.bco-dmo.org/v1.0/hasCollectionItem">hasCollectionItem</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 )
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DatasetsInOtherCatalog" title="https://schema.bco-dmo.org/v1.0/DatasetsInOtherCatalog">DatasetsInOtherCatalog</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -915,9 +1095,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#annotates" title="https://schema.bco-dmo.org/v1.0/annotates">annotates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">Statement</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">subject</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#object" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">object</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#Boolean_True" title="https://schema.bco-dmo.org/v1.0/Boolean_True">Boolean: True</a> <sup class="type-ni" title="named individual">ni</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">predicate</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#datasetInstrumentsNotUsed" title="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">datasetInstrumentsNotUsed</a> <sup class="type-ni" title="named individual">ni</sup>)) <span class="logic">and</span> (<a href="#hasContent" title="https://schema.bco-dmo.org/v1.0/hasContent">hasContent</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>)) <span class="logic">and</span> (<a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="DatasetNoParametersAnnotation">
@@ -928,9 +1116,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#annotates" title="https://schema.bco-dmo.org/v1.0/annotates">annotates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">Statement</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">subject</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#object" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">object</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#Boolean_True" title="https://schema.bco-dmo.org/v1.0/Boolean_True">Boolean: True</a> <sup class="type-ni" title="named individual">ni</sup>) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">predicate</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">datasetParametersNotRequired</a> <sup class="type-ni" title="named individual">ni</sup>)) <span class="logic">and</span> (<a href="#hasContent" title="https://schema.bco-dmo.org/v1.0/hasContent">hasContent</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>)) <span class="logic">and</span> (<a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="DatasetParameterAttribute">
@@ -968,9 +1164,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DatasetList" title="https://schema.bco-dmo.org/v1.0/DatasetList">DatasetList</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasProject" title="https://schema.bco-dmo.org/v1.0/hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Project" title="https://schema.bco-dmo.org/v1.0/Project">Project</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#publisher" title="https://schema.bco-dmo.org/v1.0/publisher">publisher</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#disclaimer" title="https://schema.bco-dmo.org/v1.0/disclaimer">disclaimer</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DatasetList" title="https://schema.bco-dmo.org/v1.0/DatasetList">DatasetList</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -987,9 +1191,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#dataType" title="https://schema.bco-dmo.org/v1.0/dataType">dataType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
@@ -1024,6 +1236,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DatasetType" title="https://schema.bco-dmo.org/v1.0/DatasetType">Dataset Type</a> <sup class="type-c" title="class">c</sup>, <a href="#Datatype" title="https://schema.bco-dmo.org/v1.0/Datatype">Datatype</a> <sup class="type-c" title="class">c</sup>, <a href="#FileType" title="https://schema.bco-dmo.org/v1.0/FileType">File Type</a> <sup class="type-c" title="class">c</sup>, <a href="#Instrument" title="https://schema.bco-dmo.org/v1.0/Instrument">Instrument</a> <sup class="type-c" title="class">c</sup>, <a href="#Parameter" title="https://schema.bco-dmo.org/v1.0/Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformType" title="https://schema.bco-dmo.org/v1.0/PlatformType">Platform Type</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>, <a href="#Role" title="https://schema.bco-dmo.org/v1.0/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in range of
    </dt>
    <dd>
@@ -1039,9 +1257,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#onPlatform" title="https://schema.bco-dmo.org/v1.0/onPlatform">onPlatform</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Cruise" title="https://schema.bco-dmo.org/v1.0/Cruise">Cruise</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1082,9 +1314,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/DeploymentEntityMatch</p>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#object" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">object</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">subject</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="DOIDataset">
@@ -1095,9 +1335,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#ArchivedDataset" title="https://schema.bco-dmo.org/v1.0/ArchivedDataset">ArchivedDataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#IdentifierScheme_DOI" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI">Identifier Scheme: DOI</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#ArchivedDataset" title="https://schema.bco-dmo.org/v1.0/ArchivedDataset">ArchivedDataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1108,7 +1356,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in range of
    </dt>
    <dd>
-    <a href="#fixesPreviousErrors" title="https://schema.bco-dmo.org/v1.0/fixesPreviousErrors">fixesPreviousErrors</a> <sup class="type-op" title="object property">op</sup>, <a href="#obsoletes" title="https://schema.bco-dmo.org/v1.0/obsoletes">obsoletes</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#fixesPreviousErrors" title="https://schema.bco-dmo.org/v1.0/fixesPreviousErrors">fixesPreviousErrors</a> <sup class="type-op" title="object property">op</sup>, <a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#obsoletes" title="https://schema.bco-dmo.org/v1.0/obsoletes">obsoletes</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1120,9 +1368,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#IdentifierScheme_DOI" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI">Identifier Scheme: DOI</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="DOIStatus">
@@ -1133,9 +1389,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#DOIDataset" title="https://schema.bco-dmo.org/v1.0/DOIDataset">DOI Dataset</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has members
    </dt>
@@ -1175,9 +1439,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#expirationDate" title="https://schema.bco-dmo.org/v1.0/expirationDate">expirationDate</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#modifiesAction" title="https://schema.bco-dmo.org/v1.0/modifiesAction">modifiesAction</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ConsumeAction" title="https://schema.bco-dmo.org/v1.0/ConsumeAction">ConsumeAction</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#target" title="https://schema.bco-dmo.org/v1.0/target">target</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1194,9 +1466,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#modifiesAction" title="https://schema.bco-dmo.org/v1.0/modifiesAction">modifiesAction</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ConsumeAction" title="https://schema.bco-dmo.org/v1.0/ConsumeAction">ConsumeAction</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#releaseDate" title="https://schema.bco-dmo.org/v1.0/releaseDate">releaseDate</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#target" title="https://schema.bco-dmo.org/v1.0/target">target</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Entity">
@@ -1210,7 +1490,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Synonym" title="https://schema.bco-dmo.org/v1.0/Synonym">Synonym</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#UnitOfMeasure" title="https://schema.bco-dmo.org/v1.0/UnitOfMeasure">Unit of Measure</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#Synonym" title="https://schema.bco-dmo.org/v1.0/Synonym">Synonym</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#UnitOfMeasure" title="https://schema.bco-dmo.org/v1.0/UnitOfMeasure">Unit of Measure</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1237,7 +1517,13 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has super-classes
    </dt>
    <dd>
-    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">Statement</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DeploymentEntityMatch" title="https://schema.bco-dmo.org/v1.0/DeploymentEntityMatch">DeploymentEntityMatch</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1249,9 +1535,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchActivity" title="https://schema.bco-dmo.org/v1.0/ResearchActivity">Research Activity</a> <sup class="type-c" title="class">c</sup>, <a href="#TimeSeries" title="https://schema.bco-dmo.org/v1.0/TimeSeries">Time Series</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="File">
@@ -1266,6 +1566,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Image" title="https://schema.bco-dmo.org/v1.0/Image">Image</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1289,9 +1595,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#describesFile" title="https://schema.bco-dmo.org/v1.0/describesFile">describesFile</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DataFile" title="https://schema.bco-dmo.org/v1.0/DataFile">Data File</a> <sup class="type-c" title="class">c</sup>, <a href="#DataManagementPlan" title="https://schema.bco-dmo.org/v1.0/DataManagementPlan">DataManagementPlan</a> <sup class="type-c" title="class">c</sup>, <a href="#MetadataFile" title="https://schema.bco-dmo.org/v1.0/MetadataFile">Metadata File</a> <sup class="type-c" title="class">c</sup>, <a href="#SupplementalDocument" title="https://schema.bco-dmo.org/v1.0/SupplementalDocument">Supplemental Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1308,9 +1628,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#fileType" title="https://schema.bco-dmo.org/v1.0/fileType">fileType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
@@ -1341,7 +1669,9 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1421,7 +1751,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#CentroidGeometry" title="https://schema.bco-dmo.org/v1.0/CentroidGeometry">Centroid Geometry</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BoundingBoxGeometry" title="https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry">Bounding Box Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#CentroidGeometry" title="https://schema.bco-dmo.org/v1.0/CentroidGeometry">Centroid Geometry</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -1448,7 +1778,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#BCODMOIdentifier" title="https://schema.bco-dmo.org/v1.0/BCODMOIdentifier">BCO-DMO Identifier</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BCODMOIdentifier" title="https://schema.bco-dmo.org/v1.0/BCODMOIdentifier">BCO-DMO Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#CryptographicHash" title="https://schema.bco-dmo.org/v1.0/CryptographicHash">Cryptographic Hash</a> <sup class="type-c" title="class">c</sup>, <a href="#DOIIdentifier" title="https://schema.bco-dmo.org/v1.0/DOIIdentifier">DOI Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#ORCIDIdentifier" title="https://schema.bco-dmo.org/v1.0/ORCIDIdentifier">ORCID Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#RORIdentifier" title="https://schema.bco-dmo.org/v1.0/RORIdentifier">ROR Identifier</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -1534,9 +1864,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#fileType" title="https://schema.bco-dmo.org/v1.0/fileType">fileType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ImageFileType" title="https://schema.bco-dmo.org/v1.0/ImageFileType">ImageFileType</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
@@ -1580,9 +1918,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#DatasetInstrument" title="https://schema.bco-dmo.org/v1.0/DatasetInstrument">Dataset Instrument</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Keyword">
@@ -1641,9 +1987,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#license" title="https://schema.bco-dmo.org/v1.0/license">license</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -1687,9 +2041,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#metadataFile" title="https://schema.bco-dmo.org/v1.0/metadataFile">metadataFile</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -1781,9 +2143,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#IdentifierScheme_ORCID" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_ORCID">Identifier Scheme: ORCID</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Organization">
@@ -1798,6 +2168,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Affiliation" title="https://schema.bco-dmo.org/v1.0/Affiliation">Affiliation</a> <sup class="type-c" title="class">c</sup>, <a href="#FundingAgency" title="https://schema.bco-dmo.org/v1.0/FundingAgency">Funding Agency</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -1827,9 +2203,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1885,6 +2269,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Vessel" title="https://schema.bco-dmo.org/v1.0/Vessel">Vessel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
@@ -1906,9 +2296,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#platformTitle" title="https://schema.bco-dmo.org/v1.0/platformTitle">platformTitle</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -1925,9 +2323,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#platformType" title="https://schema.bco-dmo.org/v1.0/platformType">platformType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
@@ -1956,9 +2362,23 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#modifiesAction" title="https://schema.bco-dmo.org/v1.0/modifiesAction">modifiesAction</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ConsumeAction" title="https://schema.bco-dmo.org/v1.0/ConsumeAction">ConsumeAction</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#target" title="https://schema.bco-dmo.org/v1.0/target">target</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#EmbargoPolicy" title="https://schema.bco-dmo.org/v1.0/EmbargoPolicy">Embargo Policy</a> <sup class="type-c" title="class">c</sup>, <a href="#EmbargoReleasePolicy" title="https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy">EmbargoReleasePolicy</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -1981,9 +2401,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#ResearchActivity" title="https://schema.bco-dmo.org/v1.0/ResearchActivity">Research Activity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#hasParentProgram" title="https://schema.bco-dmo.org/v1.0/hasParentProgram">hasParentProgram</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Project" title="https://schema.bco-dmo.org/v1.0/Project">Project</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#ResearchActivity" title="https://schema.bco-dmo.org/v1.0/ResearchActivity">Research Activity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -2054,9 +2482,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#forCreativeWork" title="https://schema.bco-dmo.org/v1.0/forCreativeWork">forCreativeWork</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#relationship" title="https://schema.bco-dmo.org/v1.0/relationship">relationship</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1 <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -2075,12 +2511,14 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
    <dd>
-    <a href="#Project" title="https://schema.bco-dmo.org/v1.0/Project">Project</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Program" title="https://schema.bco-dmo.org/v1.0/Program">Program</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="https://schema.bco-dmo.org/v1.0/Project">Project</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -2098,9 +2536,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#relationship" title="https://schema.bco-dmo.org/v1.0/relationship">relationship</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#RelatedWork" title="https://schema.bco-dmo.org/v1.0/RelatedWork">RelatedWork</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -2123,9 +2569,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -2148,9 +2602,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#roleWeight" title="https://schema.bco-dmo.org/v1.0/roleWeight">roleWeight</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#int" target="_blank" title="http://www.w3.org/2001/XMLSchema#int">int</a>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -2179,9 +2641,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#IdentifierScheme_ROR" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_ROR">Identifier Scheme: ROR</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Situation">
@@ -2192,14 +2662,22 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#situationInvolves" title="https://schema.bco-dmo.org/v1.0/situationInvolves">situationInvolves</a> <sup class="type-op" title="object property">op</sup> <span class="logic">min</span> 1)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     has sub-classes
    </dt>
    <dd>
-    <a href="#DatasetDeployment" title="https://schema.bco-dmo.org/v1.0/DatasetDeployment">Dataset Deployment</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetInstrument" title="https://schema.bco-dmo.org/v1.0/DatasetInstrument">Dataset Instrument</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetAward" title="https://schema.bco-dmo.org/v1.0/DatasetAward">DatasetAward</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AgentRole" title="https://schema.bco-dmo.org/v1.0/AgentRole">Agent Role</a> <sup class="type-c" title="class">c</sup>, <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>, <a href="#CollectionItem" title="https://schema.bco-dmo.org/v1.0/CollectionItem">CollectionItem</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDeployment" title="https://schema.bco-dmo.org/v1.0/DatasetDeployment">Dataset Deployment</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetInstrument" title="https://schema.bco-dmo.org/v1.0/DatasetInstrument">Dataset Instrument</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetAward" title="https://schema.bco-dmo.org/v1.0/DatasetAward">DatasetAward</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#RelatedWork" title="https://schema.bco-dmo.org/v1.0/RelatedWork">RelatedWork</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -2246,9 +2724,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#supplementalDocument" title="https://schema.bco-dmo.org/v1.0/supplementalDocument">supplementalDocument</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -2313,6 +2799,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasBeginning" title="https://schema.bco-dmo.org/v1.0/hasBeginning">hasBeginning</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalInstant" title="https://schema.bco-dmo.org/v1.0/TemporalInstant">Temporal Instant</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#hasEnd" title="https://schema.bco-dmo.org/v1.0/hasEnd">hasEnd</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalInstant" title="https://schema.bco-dmo.org/v1.0/TemporalInstant">Temporal Instant</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -2369,7 +2861,9 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -2430,9 +2924,17 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#platformType" title="https://schema.bco-dmo.org/v1.0/platformType">platformType</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#PlatformType_Vessel" title="https://schema.bco-dmo.org/v1.0/PlatformType_Vessel">Platform Type: Vessel</a> <sup class="type-ni" title="named individual">ni</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
@@ -2468,6 +2970,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#fromInstrument" title="https://schema.bco-dmo.org/v1.0/fromInstrument">fromInstrument</a></li>
   <li><a href="#fundedBy" title="https://schema.bco-dmo.org/v1.0/fundedBy">fundedBy</a></li>
   <li><a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a></li>
+  <li><a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a></li>
   <li><a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a></li>
   <li><a href="#governedBy" title="https://schema.bco-dmo.org/v1.0/governedBy">governedBy</a></li>
   <li><a href="#grantedAward" title="https://schema.bco-dmo.org/v1.0/grantedAward">grantedAward</a></li>
@@ -2492,6 +2995,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#inCollection" title="https://schema.bco-dmo.org/v1.0/inCollection">inCollection</a></li>
   <li><a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a></li>
   <li><a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a></li>
+  <li><a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a></li>
   <li><a href="#awardProducingData" title="https://schema.bco-dmo.org/v1.0/awardProducingData"> <span>isAwardProducingData</span> </a></li>
   <li><a href="#isContinuingAwardOf" title="https://schema.bco-dmo.org/v1.0/isContinuingAwardOf">isContinuingAwardOf</a></li>
   <li><a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a></li>
@@ -2637,6 +3141,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
     </dt>
     <dd>
      <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -3301,6 +3811,32 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="funder">
+  <h3>funder<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/funder</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="geometry">
   <h3>geometry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/geometry</p>
@@ -3937,6 +4473,35 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="isArchivedBy">
+  <h3>isArchivedBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/isArchivedBy</p>
+  <div class="comment">
+   <span class="markdown">An ArchiveDataset that arvhies a specific version of a Dataset.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DOIDataset" title="https://schema.bco-dmo.org/v1.0/DOIDataset">DOI Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#archives" title="https://schema.bco-dmo.org/v1.0/archives">archives</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="awardProducingData">
   <h3>isAwardProducingData<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/awardProducingData</p>
@@ -4548,10 +5113,16 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <h3>provider<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/provider</p>
   <div class="comment">
-   <span class="markdown">The service provider that hosts/distributes the resource.</span>
+   <span class="markdown">The provider of some Award</span>
   </div>
   <div class="description">
    <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
     <dt>
      has domain
     </dt>

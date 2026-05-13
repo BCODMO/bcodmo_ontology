@@ -9,8 +9,8 @@
 <https://schema.bco-dmo.org/v1.0/> rdf:type owl:Ontology ;
                                     owl:versionIRI <https://schema.bco-dmo.org/v1.0/> ;
                                     <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-9414-722X> ,
-                                                                           <https://orcid.org/0000-0003-3359-9120> ,
-                                                                           <https://orcid.org/0000-0003-2109-706X> ;
+                                                                           <https://orcid.org/0000-0003-2109-706X> ,
+                                                                           <https://orcid.org/0000-0003-3359-9120> ;
                                     <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4486-9448> ;
                                     <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" ,
                                                                        "https://creativecommons.org/publicdomain/zero/1.0/" ;
@@ -121,6 +121,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/archives
 :archives rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isArchivedBy ;
           rdfs:domain :DOIDataset ;
           rdfs:range :Dataset ;
           rdfs:comment "The Dataset that was archvied by a specific DOIDataset." ;
@@ -355,6 +356,14 @@ rdf:subject rdf:type owl:ObjectProperty .
                <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/funding> .
 
 
+###  https://schema.bco-dmo.org/v1.0/funder
+:funder rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :provider ;
+        rdfs:domain :Award ;
+        rdfs:range :Agent ;
+        rdfs:label "funder" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/geometry
 :geometry rdf:type owl:ObjectProperty ;
           rdfs:domain :Entity ;
@@ -575,6 +584,14 @@ rdf:subject rdf:type owl:ObjectProperty .
                      rdfs:label "inverseRelationship" .
 
 
+###  https://schema.bco-dmo.org/v1.0/isArchivedBy
+:isArchivedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Dataset ;
+              rdfs:range :DOIDataset ;
+              rdfs:comment "An ArchiveDataset that arvhies a specific version of a Dataset." ;
+              rdfs:label "isArchivedBy" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/isContinuingAwardOf
 :isContinuingAwardOf rdf:type owl:ObjectProperty ;
                      rdfs:domain :Award ;
@@ -771,7 +788,8 @@ rdf:subject rdf:type owl:ObjectProperty .
 :provider rdf:type owl:ObjectProperty ;
           rdfs:domain :Entity ;
           rdfs:range :Agent ;
-          rdfs:comment "The service provider that hosts/distributes the resource." ;
+          rdfs:comment "The provider of some Award" ,
+                       "The service provider that hosts/distributes the resource." ;
           rdfs:label "provider" ;
           <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/provider> .
 
@@ -1539,23 +1557,24 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Affiliation
 :Affiliation rdf:type owl:Class ;
-             rdfs:subClassOf [ owl:intersectionOf ( :Organization
-                                                    [ rdf:type owl:Class ;
-                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty [ owl:inverseOf :affiliation
-                                                                                     ] ;
-                                                                      owl:someValuesFrom :Person
-                                                                    ]
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty [ owl:inverseOf :performedAt
-                                                                                     ] ;
-                                                                      owl:someValuesFrom :AgentRole
-                                                                    ]
-                                                                  )
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             owl:equivalentClass [ owl:intersectionOf ( :Organization
+                                                        [ rdf:type owl:Class ;
+                                                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty [ owl:inverseOf :affiliation
+                                                                                         ] ;
+                                                                          owl:someValuesFrom :Person
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty [ owl:inverseOf :performedAt
+                                                                                         ] ;
+                                                                          owl:someValuesFrom :AgentRole
+                                                                        ]
+                                                                      )
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Organization ;
              rdfs:comment "An institutional affiliation of a person (university, research institute, etc.)." ;
              rdfs:label "Affiliation" .
 
@@ -1569,23 +1588,24 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/AgentRole
 :AgentRole rdf:type owl:Class ;
-           rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :performedBy ;
-                                                    owl:someValuesFrom :Agent
-                                                  ]
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :role ;
-                                                    owl:someValuesFrom :Role
-                                                  ]
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty [ owl:inverseOf :hasAgentWithRole
-                                                                   ] ;
-                                                    owl:someValuesFrom :Entity
-                                                  ]
-                                                ) ;
-                             rdf:type owl:Class
-                           ] ;
+           owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :performedBy ;
+                                                        owl:someValuesFrom :Agent
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :role ;
+                                                        owl:someValuesFrom :Role
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf :hasAgentWithRole
+                                                                       ] ;
+                                                        owl:someValuesFrom :Entity
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Situation ;
            rdfs:comment "A qualified association that links an Agent to a role and optionally an affiliation context." ;
            rdfs:label "Agent Role" ;
            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Role> .
@@ -1593,23 +1613,24 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Annotation
 :Annotation rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :annotator ;
-                                                     owl:someValuesFrom :Agent
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :annotates ;
-                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :hasContent ;
-                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                     owl:onClass :CreativeWork
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :annotator ;
+                                                         owl:someValuesFrom :Agent
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :annotates ;
+                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasContent ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass :CreativeWork
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Situation ;
             rdfs:comment "A comment or some other piece of content that annotates for some specific purpose some Thing" ;
             rdfs:label "Annotation" .
 
@@ -1628,21 +1649,29 @@ rdf:Statement rdf:type owl:Class .
                  rdfs:label "ArchiveFileType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/ArchivedDataset
+:ArchivedDataset rdf:type owl:Class ;
+                 rdfs:subClassOf :Dataset ;
+                 rdfs:comment "A specific version of a Dataset that has been stored  in an archive that typcially provides access" ;
+                 rdfs:label "ArchivedDataset" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Award
 :Award rdf:type owl:Class ;
-       rdfs:subClassOf [ owl:intersectionOf ( :Entity
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :provider ;
-                                                owl:someValuesFrom :FundingAgency
-                                              ]
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty [ owl:inverseOf :fundedByAward
-                                                               ] ;
-                                                owl:someValuesFrom :CreativeWork
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
+       owl:equivalentClass [ owl:intersectionOf ( :Entity
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :funder ;
+                                                    owl:someValuesFrom :FundingAgency
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty [ owl:inverseOf :fundedByAward
+                                                                   ] ;
+                                                    owl:someValuesFrom :CreativeWork
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Entity ;
        rdfs:comment "A funding award (grant) from a funder that supports data collection." ;
        rdfs:label "Award" ;
        <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Grant> .
@@ -1650,45 +1679,46 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation
 :AwardNoDataAnnotation rdf:type owl:Class ;
-                       rdfs:subClassOf [ owl:intersectionOf ( :Annotation
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :annotates ;
-                                                                owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty rdf:subject ;
-                                                                                                            owl:someValuesFrom :Award
-                                                                                                          ]
-                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty rdf:object ;
-                                                                                                            owl:hasValue :Boolean_True
-                                                                                                          ]
-                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty rdf:predicate ;
-                                                                                                            owl:hasValue :awardProducingData
-                                                                                                          ]
-                                                                                                        ) ;
-                                                                                     rdf:type owl:Class
-                                                                                   ]
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :hasContent ;
-                                                                owl:someValuesFrom [ owl:intersectionOf ( :Comment
-                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty :content ;
-                                                                                                            owl:someValuesFrom xsd:string
-                                                                                                          ]
-                                                                                                        ) ;
-                                                                                     rdf:type owl:Class
-                                                                                   ]
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :annotator ;
-                                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                owl:onClass :Agent
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Annotation
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :annotates ;
+                                                                    owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty rdf:subject ;
+                                                                                                                owl:someValuesFrom :Award
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty rdf:object ;
+                                                                                                                owl:hasValue :Boolean_True
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty rdf:predicate ;
+                                                                                                                owl:hasValue :awardProducingData
+                                                                                                              ]
+                                                                                                            ) ;
+                                                                                         rdf:type owl:Class
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasContent ;
+                                                                    owl:someValuesFrom [ owl:intersectionOf ( :Comment
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty :content ;
+                                                                                                                owl:someValuesFrom xsd:string
+                                                                                                              ]
+                                                                                                            ) ;
+                                                                                         rdf:type owl:Class
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :annotator ;
+                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onClass :Agent
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Annotation ;
                        rdfs:comment "A reason why an award will not produce datasets" ;
                        rdfs:label "AwardNoDataAnnotation" .
 
@@ -1711,29 +1741,30 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry
 :BoundingBoxGeometry rdf:type owl:Class ;
-                     rdfs:subClassOf [ owl:intersectionOf ( :Geometry
-                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty :eastBoundary ;
-                                                                                     owl:someValuesFrom xsd:float
-                                                                                   ]
-                                                                                   [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty :northBoundary ;
-                                                                                     owl:someValuesFrom xsd:float
-                                                                                   ]
-                                                                                   [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty :southBoundary ;
-                                                                                     owl:someValuesFrom xsd:float
-                                                                                   ]
-                                                                                   [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty :westBoundary ;
-                                                                                     owl:someValuesFrom xsd:float
-                                                                                   ]
-                                                                                 ) ;
-                                                              rdf:type owl:Class
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Geometry
+                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :eastBoundary ;
+                                                                                         owl:someValuesFrom xsd:float
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :northBoundary ;
+                                                                                         owl:someValuesFrom xsd:float
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :southBoundary ;
+                                                                                         owl:someValuesFrom xsd:float
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :westBoundary ;
+                                                                                         owl:someValuesFrom xsd:float
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Geometry ;
                      rdfs:comment "An axis-aligned bounding box geometry defined by west/south/east/north boundaries." ;
                      rdfs:label "Bounding Box Geometry" ;
                      <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/ont/sf#Envelope> .
@@ -1765,14 +1796,15 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/CollectionItem
 :CollectionItem rdf:type owl:Class ;
-                rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :inCollection ;
-                                                         owl:someValuesFrom :Collection
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
+                owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :inCollection ;
+                                                             owl:someValuesFrom :Collection
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Situation ;
                 rdfs:comment "An item in a collection" ;
                 rdfs:label "CollectionItem" .
 
@@ -1826,28 +1858,30 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Cruise
 :Cruise rdf:type owl:Class ;
-        rdfs:subClassOf [ owl:intersectionOf ( :Deployment
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :onPlatform ;
-                                                 owl:someValuesFrom :Vessel
-                                               ]
-                                             ) ;
-                          rdf:type owl:Class
-                        ] ;
+        owl:equivalentClass [ owl:intersectionOf ( :Deployment
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :onPlatform ;
+                                                     owl:someValuesFrom :Vessel
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Deployment ;
         rdfs:comment "A research vessel cruise, a specialisation of Platform for vessel-type platforms." ;
         rdfs:label "Cruise" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/CryptographicHash
 :CryptographicHash rdf:type owl:Class ;
-                   rdfs:subClassOf [ owl:intersectionOf ( :Identifier
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :identifierScheme ;
-                                                            owl:someValuesFrom :CryptographicHashAlgorithm
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Identifier
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :identifierScheme ;
+                                                                owl:someValuesFrom :CryptographicHashAlgorithm
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Identifier ;
                    rdfs:comment "A cryptographic hash (e.g. MD5) used as a file integrity checksum." ;
                    rdfs:label "Cryptographic Hash" .
 
@@ -1868,61 +1902,65 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DOIDataset
 :DOIDataset rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :Dataset
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :identifier ;
-                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :identifierScheme ;
-                                                                          owl:hasValue :IdentifierScheme_DOI
-                                                                        ]
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            owl:equivalentClass [ owl:intersectionOf ( :ArchivedDataset
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :identifier ;
+                                                         owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :identifierScheme ;
+                                                                              owl:hasValue :IdentifierScheme_DOI
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :ArchivedDataset ;
             rdfs:comment "A versioned BCO-DMO dataset that has been assigned a DOI." ;
             rdfs:label "DOI Dataset" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DOIIdentifier
 :DOIIdentifier rdf:type owl:Class ;
-               rdfs:subClassOf [ owl:intersectionOf ( :Identifier
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :identifierScheme ;
-                                                        owl:hasValue :IdentifierScheme_DOI
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
+               owl:equivalentClass [ owl:intersectionOf ( :Identifier
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :identifierScheme ;
+                                                            owl:hasValue :IdentifierScheme_DOI
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Identifier ;
                rdfs:comment "A Digital Object Identifier." ;
                rdfs:label "DOI Identifier" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DOIStatus
 :DOIStatus rdf:type owl:Class ;
-           rdfs:subClassOf [ owl:intersectionOf ( :CreativeWorkStatus
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty [ owl:inverseOf :status
-                                                                   ] ;
-                                                    owl:someValuesFrom :DOIDataset
-                                                  ]
-                                                ) ;
-                             rdf:type owl:Class
-                           ] ;
+           owl:equivalentClass [ owl:intersectionOf ( :CreativeWorkStatus
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf :status
+                                                                       ] ;
+                                                        owl:someValuesFrom :DOIDataset
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :CreativeWorkStatus ;
            rdfs:comment "The lifecycle status of a DOI Dataset (Draft, Reserved, Published, etc.)." ;
            rdfs:label "DOI Status" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DataFile
 :DataFile rdf:type owl:Class ;
-          rdfs:subClassOf [ owl:intersectionOf ( :FileDescriptor
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty [ owl:inverseOf :dataFile
-                                                                  ] ;
-                                                   owl:someValuesFrom :CreativeWork
-                                                 ]
-                                               ) ;
-                            rdf:type owl:Class
-                          ] ;
+          owl:equivalentClass [ owl:intersectionOf ( :FileDescriptor
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty [ owl:inverseOf :dataFile
+                                                                      ] ;
+                                                       owl:someValuesFrom :CreativeWork
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :FileDescriptor ;
           rdfs:comment "A primary or supplemental data file distributed as part of a dataset." ;
           rdfs:label "Data File" ;
           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/DataDownload> .
@@ -1930,15 +1968,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DataManagementPlan
 :DataManagementPlan rdf:type owl:Class ;
-                    rdfs:subClassOf [ owl:intersectionOf ( :FileDescriptor
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf :dataManagementPlan
-                                                                            ] ;
-                                                             owl:someValuesFrom :CreativeWork
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
+                    owl:equivalentClass [ owl:intersectionOf ( :FileDescriptor
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty [ owl:inverseOf :dataManagementPlan
+                                                                                ] ;
+                                                                 owl:someValuesFrom :CreativeWork
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :FileDescriptor ;
                     rdfs:comment "A plan describing how a research activity will manage and archive data products produced." ;
                     rdfs:label "DataManagementPlan" .
 
@@ -1953,27 +1992,41 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetAward
 :DatasetAward rdf:type owl:Class ;
-              rdfs:subClassOf :Situation ,
-                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :fundedByAward ;
-                                                       owl:someValuesFrom :Award
-                                                     ]
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty [ owl:inverseOf :forDataset
-                                                                      ] ;
-                                                       owl:someValuesFrom :Dataset
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
+              owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :fundedByAward ;
+                                                           owl:someValuesFrom :Award
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty [ owl:inverseOf :forDataset
+                                                                          ] ;
+                                                           owl:someValuesFrom :Dataset
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Situation ;
               rdfs:comment "The connection between a dataset and the award the funded its generation" ;
               rdfs:label "DatasetAward" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetDeployment
 :DatasetDeployment rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :forDataset ;
+                                                                owl:someValuesFrom :Dataset
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :fromDeployment ;
+                                                                owl:someValuesFrom :Deployment
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
                    rdfs:subClassOf :Situation ,
-                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                   [ owl:intersectionOf ( :Situation
+                                                          [ rdf:type owl:Restriction ;
                                                             owl:onProperty :forDataset ;
                                                             owl:someValuesFrom :Dataset
                                                           ]
@@ -1990,152 +2043,157 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetInstrument
 :DatasetInstrument rdf:type owl:Class ;
-                   rdfs:subClassOf :Situation ,
-                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :forDataset ;
-                                                            owl:someValuesFrom :Dataset
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :isDefinedAs ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass :Instrument
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :forDataset ;
+                                                                owl:someValuesFrom :Dataset
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isDefinedAs ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass :Instrument
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Situation ;
                    rdfs:comment "An instrument as referenced within a specific dataset, with dataset-specific properties." ;
                    rdfs:label "Dataset Instrument" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetList
 :DatasetList rdf:type owl:Class ;
-             rdfs:subClassOf [ owl:intersectionOf ( :Collection
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :hasCollectionItem ;
-                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass [ owl:intersectionOf ( :CollectionItem
-                                                                                         [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty :collectionItem ;
-                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                           owl:onClass :Dataset
-                                                                                         ]
-                                                                                       ) ;
-                                                                    rdf:type owl:Class
-                                                                  ]
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasCollectionItem ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass [ owl:intersectionOf ( :CollectionItem
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty :collectionItem ;
+                                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                               owl:onClass :Dataset
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Collection ;
              rdfs:comment "A list of Datasets" ;
              rdfs:label "DatasetList" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation
 :DatasetNoInstrumentsAnnotation rdf:type owl:Class ;
-                                rdfs:subClassOf [ owl:intersectionOf ( :Annotation
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :annotates ;
-                                                                         owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty rdf:subject ;
-                                                                                                                     owl:someValuesFrom :Dataset
-                                                                                                                   ]
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty rdf:object ;
-                                                                                                                     owl:hasValue :Boolean_True
-                                                                                                                   ]
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty rdf:predicate ;
-                                                                                                                     owl:hasValue :datasetInstrumentsNotUsed
-                                                                                                                   ]
-                                                                                                                 ) ;
-                                                                                              rdf:type owl:Class
-                                                                                            ]
-                                                                       ]
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasContent ;
-                                                                         owl:someValuesFrom [ owl:intersectionOf ( :Comment
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty :content ;
-                                                                                                                     owl:someValuesFrom xsd:string
-                                                                                                                   ]
-                                                                                                                 ) ;
-                                                                                              rdf:type owl:Class
-                                                                                            ]
-                                                                       ]
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :annotator ;
-                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                         owl:onClass :Agent
-                                                                       ]
-                                                                     ) ;
-                                                  rdf:type owl:Class
-                                                ] ;
+                                owl:equivalentClass [ owl:intersectionOf ( :Annotation
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :annotates ;
+                                                                             owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty rdf:subject ;
+                                                                                                                         owl:someValuesFrom :Dataset
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty rdf:object ;
+                                                                                                                         owl:hasValue :Boolean_True
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty rdf:predicate ;
+                                                                                                                         owl:hasValue :datasetInstrumentsNotUsed
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :hasContent ;
+                                                                             owl:someValuesFrom [ owl:intersectionOf ( :Comment
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty :content ;
+                                                                                                                         owl:someValuesFrom xsd:string
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :annotator ;
+                                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onClass :Agent
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :Annotation ;
                                 rdfs:comment "A reason as to why no instruments were used in the generation of this Dataset." ;
                                 rdfs:label "DatasetNoInstrumentsAnnotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation
 :DatasetNoParametersAnnotation rdf:type owl:Class ;
-                               rdfs:subClassOf [ owl:intersectionOf ( :Annotation
-                                                                      [ rdf:type owl:Restriction ;
-                                                                        owl:onProperty :annotates ;
-                                                                        owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                                  [ rdf:type owl:Restriction ;
-                                                                                                                    owl:onProperty rdf:subject ;
-                                                                                                                    owl:someValuesFrom :Dataset
-                                                                                                                  ]
-                                                                                                                  [ rdf:type owl:Restriction ;
-                                                                                                                    owl:onProperty rdf:object ;
-                                                                                                                    owl:hasValue :Boolean_True
-                                                                                                                  ]
-                                                                                                                  [ rdf:type owl:Restriction ;
-                                                                                                                    owl:onProperty rdf:predicate ;
-                                                                                                                    owl:hasValue :datasetParametersNotRequired
-                                                                                                                  ]
-                                                                                                                ) ;
-                                                                                             rdf:type owl:Class
-                                                                                           ]
-                                                                      ]
-                                                                      [ rdf:type owl:Restriction ;
-                                                                        owl:onProperty :hasContent ;
-                                                                        owl:someValuesFrom [ owl:intersectionOf ( :Comment
-                                                                                                                  [ rdf:type owl:Restriction ;
-                                                                                                                    owl:onProperty :content ;
-                                                                                                                    owl:someValuesFrom xsd:string
-                                                                                                                  ]
-                                                                                                                ) ;
-                                                                                             rdf:type owl:Class
-                                                                                           ]
-                                                                      ]
-                                                                      [ rdf:type owl:Restriction ;
-                                                                        owl:onProperty :annotator ;
-                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                        owl:onClass :Agent
-                                                                      ]
-                                                                    ) ;
-                                                 rdf:type owl:Class
-                                               ] ;
+                               owl:equivalentClass [ owl:intersectionOf ( :Annotation
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :annotates ;
+                                                                            owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
+                                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty rdf:subject ;
+                                                                                                                        owl:someValuesFrom :Dataset
+                                                                                                                      ]
+                                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty rdf:object ;
+                                                                                                                        owl:hasValue :Boolean_True
+                                                                                                                      ]
+                                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty rdf:predicate ;
+                                                                                                                        owl:hasValue :datasetParametersNotRequired
+                                                                                                                      ]
+                                                                                                                    ) ;
+                                                                                                 rdf:type owl:Class
+                                                                                               ]
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :hasContent ;
+                                                                            owl:someValuesFrom [ owl:intersectionOf ( :Comment
+                                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty :content ;
+                                                                                                                        owl:someValuesFrom xsd:string
+                                                                                                                      ]
+                                                                                                                    ) ;
+                                                                                                 rdf:type owl:Class
+                                                                                               ]
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :annotator ;
+                                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                            owl:onClass :Agent
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf :Annotation ;
                                rdfs:comment "A reason as to why a Dataset has no parameters defined." ;
                                rdfs:label "DatasetNoParametersAnnotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetParameter
 :DatasetParameter rdf:type owl:Class ;
-                  rdfs:subClassOf :Situation ,
-                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :forDataset ;
-                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass :Dataset
-                                                         ]
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isDefinedAs ;
-                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass :Parameter
-                                                         ]
-                                                       ) ;
-                                    rdf:type owl:Class
-                                  ] ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :forDataset ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Dataset
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isDefinedAs ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Parameter
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Situation ;
                   rdfs:comment "A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format." ;
                   rdfs:label "Dataset Parameter" .
 
@@ -2149,52 +2207,55 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetType
 :DatasetType rdf:type owl:Class ;
-             rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty [ owl:inverseOf :datasetType
-                                                                     ] ;
-                                                      owl:someValuesFrom :Dataset
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty [ owl:inverseOf :datasetType
+                                                                         ] ;
+                                                          owl:someValuesFrom :Dataset
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :DefinedType ;
              rdfs:comment "A category describing the type of dataset (e.g. Cruise Data, Model Output)." ;
              rdfs:label "Dataset Type" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetsInOtherCatalog
 :DatasetsInOtherCatalog rdf:type owl:Class ;
-                        rdfs:subClassOf [ owl:intersectionOf ( :DatasetList
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty :hasProject ;
-                                                                 owl:someValuesFrom :Project
-                                                               ]
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty :publisher ;
-                                                                 owl:someValuesFrom :Agent
-                                                               ]
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty :disclaimer ;
-                                                                 owl:someValuesFrom xsd:string
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
+                        owl:equivalentClass [ owl:intersectionOf ( :DatasetList
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasProject ;
+                                                                     owl:someValuesFrom :Project
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :publisher ;
+                                                                     owl:someValuesFrom :Agent
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :disclaimer ;
+                                                                     owl:someValuesFrom xsd:string
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :DatasetList ;
                         rdfs:comment "A list of datasets in a catalog that isn't BCO-DMO" ;
                         rdfs:label "DatasetsInOtherCatalog" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype
 :Datatype rdf:type owl:Class ;
-          rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty [ owl:inverseOf :dataType
-                                                                  ] ;
-                                                   owl:someValuesFrom :DatasetParameter
-                                                 ]
-                                               ) ;
-                            rdf:type owl:Class
-                          ] ;
+          owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty [ owl:inverseOf :dataType
+                                                                      ] ;
+                                                       owl:someValuesFrom :DatasetParameter
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :DefinedType ;
           rdfs:comment "The data type of a dataset parameter column (e.g. string, integer, float)." ;
           rdfs:label "Datatype" ;
           <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/DataType> .
@@ -2209,14 +2270,15 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Deployment
 :Deployment rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :Event
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :onPlatform ;
-                                                     owl:someValuesFrom :Platform
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            owl:equivalentClass [ owl:intersectionOf ( :Event
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :onPlatform ;
+                                                         owl:someValuesFrom :Platform
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Event ;
             rdfs:comment "A scientific deployment (cruise, expedition, mooring deployment) during which data were collected." ;
             rdfs:label "Deployment" ;
             <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://schema.org/Event> .
@@ -2231,19 +2293,20 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/DeploymentEntityMatch
 :DeploymentEntityMatch rdf:type owl:Class ;
-                       rdfs:subClassOf [ owl:intersectionOf ( :EntityMatch
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty rdf:object ;
-                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty rdf:subject ;
-                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                owl:onClass :Deployment
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
+                       owl:equivalentClass [ owl:intersectionOf ( :EntityMatch
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty rdf:object ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty rdf:subject ;
+                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onClass :Deployment
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :EntityMatch ;
                        rdfs:label "DeploymentEntityMatch" .
 
 
@@ -2257,46 +2320,48 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/EmbargoPolicy
 :EmbargoPolicy rdf:type owl:Class ;
-               rdfs:subClassOf [ owl:intersectionOf ( :Policy
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :expirationDate ;
-                                                        owl:someValuesFrom :TemporalEntity
-                                                      ]
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :modifiesAction ;
-                                                        owl:someValuesFrom :ConsumeAction
-                                                      ]
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :target ;
-                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                        owl:onClass :CreativeWork
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
+               owl:equivalentClass [ owl:intersectionOf ( :Policy
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :expirationDate ;
+                                                            owl:someValuesFrom :TemporalEntity
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :modifiesAction ;
+                                                            owl:someValuesFrom :ConsumeAction
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :target ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :CreativeWork
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Policy ;
                rdfs:comment "A policy that restricts access to a dataset until an expiration date." ;
                rdfs:label "Embargo Policy" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy
 :EmbargoReleasePolicy rdf:type owl:Class ;
-                      rdfs:subClassOf [ owl:intersectionOf ( :Policy
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :modifiesAction ;
-                                                               owl:someValuesFrom :ConsumeAction
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :releaseDate ;
-                                                               owl:someValuesFrom :TemporalEntity
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :target ;
-                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onClass :CreativeWork
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Policy
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :modifiesAction ;
+                                                                   owl:someValuesFrom :ConsumeAction
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :releaseDate ;
+                                                                   owl:someValuesFrom :TemporalEntity
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :target ;
+                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass :CreativeWork
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :Policy ;
                       rdfs:comment "A policy that allows access to a FileDescriptor when its overarching Dataset is under an embargo." ;
                       rdfs:label "EmbargoReleasePolicy" .
 
@@ -2309,34 +2374,22 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/EntityMatch
 :EntityMatch rdf:type owl:Class ;
-             rdfs:subClassOf rdf:Statement ,
-                             [ owl:intersectionOf ( :Situation
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty rdf:object ;
-                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                    ]
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty rdf:subject ;
-                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :Entity
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             rdfs:subClassOf :Situation ;
              rdfs:comment "A link between two entities that are related in some way as defined by rdf:predicate. This entity allows for annotating details of the match." ;
              rdfs:label "EntityMatch" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Event
 :Event rdf:type owl:Class ;
-       rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :hasTime ;
-                                                owl:someValuesFrom :TemporalEntity
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
+       owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasTime ;
+                                                    owl:someValuesFrom :TemporalEntity
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :Situation ;
        rdfs:comment "A dynamic situation in which something unique or impotant happened." ;
        rdfs:label "Event" ;
        <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Event> .
@@ -2352,15 +2405,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/FileDescriptor
 :FileDescriptor rdf:type owl:Class ;
-                rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :describesFile ;
-                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                         owl:onClass :File
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
+                owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :describesFile ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :File
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Situation ;
                 rdfs:comment "A context-specific description of a file. The context could be data, metadata or supplemental documentation." ;
                 rdfs:label "File Descriptor" ;
                 <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/DigitalDocument> .
@@ -2368,29 +2422,23 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/FileType
 :FileType rdf:type owl:Class ;
-          rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty [ owl:inverseOf :fileType
-                                                                  ] ;
-                                                   owl:someValuesFrom :File
-                                                 ]
-                                               ) ;
-                            rdf:type owl:Class
-                          ] ;
+          owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty [ owl:inverseOf :fileType
+                                                                      ] ;
+                                                       owl:someValuesFrom :File
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :DefinedType ;
           rdfs:comment "A file format type, characterised by a label and MIME type (e.g. CSV, XML, PDF)." ;
           rdfs:label "File Type" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/FundingAgency
 :FundingAgency rdf:type owl:Class ;
-               rdfs:subClassOf [ owl:intersectionOf ( :Organization
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :grantedAward ;
-                                                        owl:someValuesFrom :Award
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
+               rdfs:subClassOf :Organization ;
                rdfs:comment "An Organization that has provided some funding award" ;
                rdfs:label "Funding Agency" .
 
@@ -2443,14 +2491,15 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Image
 :Image rdf:type owl:Class ;
-       rdfs:subClassOf [ owl:intersectionOf ( :File
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :fileType ;
-                                                owl:someValuesFrom :ImageFileType
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
+       owl:equivalentClass [ owl:intersectionOf ( :File
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :fileType ;
+                                                    owl:someValuesFrom :ImageFileType
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf :File ;
        rdfs:comment "An image file." ;
        rdfs:label "Image" ;
        <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/ImageObject> .
@@ -2465,15 +2514,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Instrument
 :Instrument rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty [ owl:inverseOf :isDefinedAs
-                                                                    ] ;
-                                                     owl:someValuesFrom :DatasetInstrument
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty [ owl:inverseOf :isDefinedAs
+                                                                        ] ;
+                                                         owl:someValuesFrom :DatasetInstrument
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :DefinedType ;
             rdfs:comment "A master (community-level) scientific instrument definition." ;
             rdfs:label "Instrument" .
 
@@ -2494,15 +2544,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/License
 :License rdf:type owl:Class ;
-         rdfs:subClassOf [ owl:intersectionOf ( :CreativeWork
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty [ owl:inverseOf :license
-                                                                 ] ;
-                                                  owl:someValuesFrom :CreativeWork
-                                                ]
-                                              ) ;
-                           rdf:type owl:Class
-                         ] ;
+         owl:equivalentClass [ owl:intersectionOf ( :CreativeWork
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty [ owl:inverseOf :license
+                                                                     ] ;
+                                                      owl:someValuesFrom :CreativeWork
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :CreativeWork ;
          rdfs:comment "A  license applied to some creative work." ;
          rdfs:label "License" .
 
@@ -2516,15 +2567,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/MetadataFile
 :MetadataFile rdf:type owl:Class ;
-              rdfs:subClassOf [ owl:intersectionOf ( :FileDescriptor
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty [ owl:inverseOf :metadataFile
-                                                                      ] ;
-                                                       owl:someValuesFrom :CreativeWork
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
+              owl:equivalentClass [ owl:intersectionOf ( :FileDescriptor
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty [ owl:inverseOf :metadataFile
+                                                                          ] ;
+                                                           owl:someValuesFrom :CreativeWork
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :FileDescriptor ;
               rdfs:comment "A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset." ;
               rdfs:label "Metadata File" ;
               <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/DataDownload> .
@@ -2554,14 +2606,15 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/ORCIDIdentifier
 :ORCIDIdentifier rdf:type owl:Class ;
-                 rdfs:subClassOf [ owl:intersectionOf ( :Identifier
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty :identifierScheme ;
-                                                          owl:hasValue :IdentifierScheme_ROR
-                                                        ]
-                                                      ) ;
-                                   rdf:type owl:Class
-                                 ] ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Identifier
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :identifierScheme ;
+                                                              owl:hasValue :IdentifierScheme_ORCID
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Identifier ;
                  rdfs:comment "An Open Researcher and Contributor ID" ;
                  rdfs:label "ORCID Identifier" .
 
@@ -2577,15 +2630,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Parameter
 :Parameter rdf:type owl:Class ;
-           rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty [ owl:inverseOf :isDefinedAs
-                                                                   ] ;
-                                                    owl:someValuesFrom :DatasetParameter
-                                                  ]
-                                                ) ;
-                             rdf:type owl:Class
-                           ] ;
+           owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf :isDefinedAs
+                                                                       ] ;
+                                                        owl:someValuesFrom :DatasetParameter
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :DefinedType ;
            rdfs:comment "A master (community-level) scientific parameter definition." ;
            rdfs:label "Parameter" .
 
@@ -2607,63 +2661,67 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/PlatformTitle
 :PlatformTitle rdf:type owl:Class ;
-               rdfs:subClassOf [ owl:intersectionOf ( :Category
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty [ owl:inverseOf :platformTitle
-                                                                       ] ;
-                                                        owl:someValuesFrom :Platform
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
+               owl:equivalentClass [ owl:intersectionOf ( :Category
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty [ owl:inverseOf :platformTitle
+                                                                           ] ;
+                                                            owl:someValuesFrom :Platform
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Category ;
                rdfs:comment "A named title/designation for a platform (e.g. the full name of a research vessel)." ;
                rdfs:label "Platform Title" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/PlatformType
 :PlatformType rdf:type owl:Class ;
-              rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty [ owl:inverseOf :platformType
-                                                                      ] ;
-                                                       owl:someValuesFrom :Platform
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
+              owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty [ owl:inverseOf :platformType
+                                                                          ] ;
+                                                           owl:someValuesFrom :Platform
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :DefinedType ;
               rdfs:comment "A category of platform (e.g. vessel, mooring, glider)." ;
               rdfs:label "Platform Type" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Policy
 :Policy rdf:type owl:Class ;
-        rdfs:subClassOf [ owl:intersectionOf ( :Entity
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :modifiesAction ;
-                                                 owl:someValuesFrom :ConsumeAction
-                                               ]
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :target ;
-                                                 owl:someValuesFrom :Entity
-                                               ]
-                                             ) ;
-                          rdf:type owl:Class
-                        ] ;
+        owl:equivalentClass [ owl:intersectionOf ( :Entity
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :modifiesAction ;
+                                                     owl:someValuesFrom :ConsumeAction
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :target ;
+                                                     owl:someValuesFrom :Entity
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Entity ;
         rdfs:comment "An access or governance policy applied to a resource." ;
         rdfs:label "Policy" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Program
 :Program rdf:type owl:Class ;
-         rdfs:subClassOf [ owl:intersectionOf ( :ResearchActivity
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty [ owl:inverseOf :hasParentProgram
-                                                                 ] ;
-                                                  owl:someValuesFrom :Project
-                                                ]
-                                              ) ;
-                           rdf:type owl:Class
-                         ] ;
+         owl:equivalentClass [ owl:intersectionOf ( :ResearchActivity
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty [ owl:inverseOf :hasParentProgram
+                                                                     ] ;
+                                                      owl:someValuesFrom :Project
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :ResearchActivity ;
          owl:disjointWith :Project ;
          rdfs:comment "A scientific program (typically a grouping of related projects) associated with a dataset." ;
          rdfs:label "Program" .
@@ -2686,54 +2744,48 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/RORIdentifier
 :RORIdentifier rdf:type owl:Class ;
-               rdfs:subClassOf [ owl:intersectionOf ( :Identifier
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :identifierScheme ;
-                                                        owl:hasValue :IdentifierScheme_ROR
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
+               owl:equivalentClass [ owl:intersectionOf ( :Identifier
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :identifierScheme ;
+                                                            owl:hasValue :IdentifierScheme_ROR
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Identifier ;
                rdfs:comment "A Research Organization Registry identifier." ;
                rdfs:label "ROR Identifier" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/RelatedWork
 :RelatedWork rdf:type owl:Class ;
-             rdfs:subClassOf [ owl:intersectionOf ( :Situation
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :forCreativeWork ;
-                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :CreativeWork
-                                                    ]
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :relations ;
-                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :CreativeWork
-                                                    ]
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :relationship ;
-                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :ResourceRelation
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
+             owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :forCreativeWork ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass :CreativeWork
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :relations ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass :CreativeWork
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :relationship ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass :ResourceRelation
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Situation ;
              rdfs:comment "A related CreativeWork to some other CreativeWork. This describes the situation surrounding this relationship." ;
              rdfs:label "RelatedWork" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/ResearchActivity
 :ResearchActivity rdf:type owl:Class ;
-                  rdfs:subClassOf [ owl:intersectionOf ( :Event
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :situationInvolves ;
-                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass :Agent
-                                                         ]
-                                                       ) ;
-                                    rdf:type owl:Class
-                                  ] ;
+                  rdfs:subClassOf :Event ;
                   rdfs:comment "An activity that enables research. The research typically produces datasets." ;
                   rdfs:label "Research Activity" ;
                   <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://schema.org/ResearchProject> .
@@ -2741,67 +2793,66 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation
 :ResourceRelation rdf:type owl:Class ;
-                  rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty [ owl:inverseOf :relationship
-                                                                          ] ;
-                                                           owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                owl:unionOf ( :Dataset
-                                                                                              :RelatedWork
-                                                                                            )
-                                                                              ]
-                                                         ]
-                                                       ) ;
-                                    rdf:type owl:Class
-                                  ] ;
+                  owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty [ owl:inverseOf :relationship
+                                                                              ] ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( :Dataset
+                                                                                                  :RelatedWork
+                                                                                                )
+                                                                                  ]
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :DefinedType ;
                   rdfs:comment "A controlled-vocabulary term describing the relationship between two resources (aligned to Crossref and DataCite relation types)." ;
                   rdfs:label "Resource Relation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelationGroup
 :ResourceRelationGroup rdf:type owl:Class ;
-                       rdfs:subClassOf [ owl:intersectionOf ( :Category
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty [ owl:inverseOf :inGroup
-                                                                               ] ;
-                                                                owl:someValuesFrom :ResourceRelation
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Category
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty [ owl:inverseOf :inGroup
+                                                                                   ] ;
+                                                                    owl:someValuesFrom :ResourceRelation
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Category ;
                        rdfs:comment "A grouping category for resource relation types." ;
                        rdfs:label "Resource Relation Group" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Role
 :Role rdf:type owl:Class ;
-      rdfs:subClassOf [ owl:intersectionOf ( :DefinedType
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty :roleWeight ;
-                                               owl:someValuesFrom xsd:int
-                                             ]
-                                           ) ;
-                        rdf:type owl:Class
-                      ] ;
+      owl:equivalentClass [ owl:intersectionOf ( :DefinedType
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :roleWeight ;
+                                                   owl:someValuesFrom xsd:int
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :DefinedType ;
       rdfs:comment "A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator)." ;
       rdfs:label "Role" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Situation
 :Situation rdf:type owl:Class ;
-           rdfs:subClassOf [ owl:intersectionOf ( :Entity
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :situationInvolves ;
-                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                  ]
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :listPosition ;
-                                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                    owl:onDataRange xsd:integer
-                                                  ]
-                                                ) ;
-                             rdf:type owl:Class
-                           ] ;
+           owl:equivalentClass [ owl:intersectionOf ( :Entity
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situationInvolves ;
+                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Entity ;
            rdfs:comment "A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events." ;
            rdfs:label "Situation" .
 
@@ -2817,15 +2868,16 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/SupplementalDocument
 :SupplementalDocument rdf:type owl:Class ;
-                      rdfs:subClassOf [ owl:intersectionOf ( :FileDescriptor
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty [ owl:inverseOf :supplementalDocument
-                                                                              ] ;
-                                                               owl:someValuesFrom :CreativeWork
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
+                      owl:equivalentClass [ owl:intersectionOf ( :FileDescriptor
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty [ owl:inverseOf :supplementalDocument
+                                                                                  ] ;
+                                                                   owl:someValuesFrom :CreativeWork
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :FileDescriptor ;
                       rdfs:comment "A supplemental (non-primary) document file associated with a dataset." ;
                       rdfs:label "Supplemental Document" .
 
@@ -2855,6 +2907,18 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/TemporalInterval
 :TemporalInterval rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :TemporalEntity
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasBeginning ;
+                                                               owl:someValuesFrom :TemporalInstant
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasEnd ;
+                                                               owl:someValuesFrom :TemporalInstant
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
                   rdfs:subClassOf :TemporalEntity ;
                   rdfs:comment "A time period with a beginning and an end, used to describe dataset temporal coverage." ;
                   rdfs:label "Temporal Interval" ;
@@ -2863,14 +2927,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/TimeSeries
 :TimeSeries rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :Event
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :hasDeployment ;
-                                                     owl:someValuesFrom :Deployment
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            rdfs:subClassOf :Event ;
             rdfs:comment "an ordered collection of observations indexed by time, representing the temporal evolution of one or more properties of a feature, system, or phenomenon." ;
             rdfs:label "Time Series" ;
             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/EventSeries> .
@@ -2896,14 +2953,15 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Vessel
 :Vessel rdf:type owl:Class ;
-        rdfs:subClassOf [ owl:intersectionOf ( :Platform
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :platformType ;
-                                                 owl:hasValue :PlatformType_Vessel
-                                               ]
-                                             ) ;
-                          rdf:type owl:Class
-                        ] ;
+        owl:equivalentClass [ owl:intersectionOf ( :Platform
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :platformType ;
+                                                     owl:hasValue :PlatformType_Vessel
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Platform ;
         rdfs:comment "A ship or boat." ;
         rdfs:label "Vessel" .
 
@@ -4083,10 +4141,10 @@ rdf:Statement rdf:type owl:Class .
 <https://orcid.org/0000-0001-9414-722X> <http://xmlns.com/foaf/0.1/name> "Conrad Schloer" .
 
 
-<https://orcid.org/0000-0003-3359-9120> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
-
-
 <https://orcid.org/0000-0003-2109-706X> <http://xmlns.com/foaf/0.1/name> "Shravani Nagala" .
+
+
+<https://orcid.org/0000-0003-3359-9120> <http://xmlns.com/foaf/0.1/name> "Vimal Narepalepu" .
 
 
 <https://orcid.org/0000-0003-4486-9448> <http://xmlns.com/foaf/0.1/name> "Adam Shepherd" .
