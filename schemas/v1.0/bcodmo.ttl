@@ -191,7 +191,8 @@ bcodmo:conformsTo rdf:type owl:ObjectProperty ;
                   rdfs:domain bcodmo:Dataset ;
                   rdfs:range bcodmo:MetadataProfile ;
                   rdfs:comment "The metadata profile specification to which this dataset conforms." ;
-                  rdfs:label "conformsTo" .
+                  rdfs:label "conformsTo" ;
+                  skos:exactMatch dcterms:conformsTo .
 
 
 ###  https://schema.bco-dmo.org/v1.0/contributor
@@ -208,7 +209,8 @@ bcodmo:coordinateReferenceSystem rdf:type owl:ObjectProperty ;
                                  rdfs:domain bcodmo:GeographicalLocation ;
                                  rdfs:range bcodmo:CoordinateReferenceSystem ;
                                  rdfs:comment "the coordinate reference system for some representation of a Geographical Location" ;
-                                 rdfs:label "coordinateReferenceSystem" .
+                                 rdfs:label "coordinateReferenceSystem" ;
+                                 skos:closeMatch geo:crs .
 
 
 ###  https://schema.bco-dmo.org/v1.0/createdDate
@@ -224,7 +226,10 @@ bcodmo:createdDate rdf:type owl:ObjectProperty ;
 bcodmo:creativeWorkStatus rdf:type owl:ObjectProperty ;
                           owl:equivalentProperty bcodmo:status ;
                           rdfs:domain bcodmo:CreativeWork ;
-                          rdfs:range bcodmo:CreativeWorkStatus .
+                          rdfs:range bcodmo:CreativeWorkStatus ;
+                          rdfs:comment "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle." ;
+                          rdfs:label "creativeWorkStatus" ;
+                          skos:exactMatch <https://schema.org/creativeWorkStatus> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/currentState
@@ -330,7 +335,8 @@ bcodmo:fileType rdf:type owl:ObjectProperty ;
                 rdfs:domain bcodmo:File ;
                 rdfs:range bcodmo:FileType ;
                 rdfs:comment "The format type of this file." ;
-                rdfs:label "fileType" .
+                rdfs:label "fileType" ;
+                skos:closeMatch <http://www.w3.org/ns/dcat#mediaType> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/fixesPreviousErrors
@@ -411,7 +417,8 @@ bcodmo:geometry rdf:type owl:ObjectProperty ;
                 rdfs:range bcodmo:Geometry ;
                 rdfs:comment "One or more geometries (centroid, bounding box) describing a geographical location." ;
                 rdfs:label "geometry" ;
-                skos:closeMatch <https://schema.org/geo> .
+                skos:closeMatch <https://schema.org/geo> ;
+                skos:exactMatch geo:hasGeometry .
 
 
 ###  https://schema.bco-dmo.org/v1.0/governedBy
@@ -460,7 +467,8 @@ bcodmo:hasCollectionItem rdf:type owl:ObjectProperty ;
                          rdfs:domain bcodmo:Collection ;
                          rdfs:range bcodmo:CollectionItem ;
                          rdfs:comment "An CollectionItem in a Collection" ;
-                         rdfs:label "hasCollectionItem" .
+                         rdfs:label "hasCollectionItem" ;
+                         skos:exactMatch <https://schema.org/item> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasContent
@@ -468,7 +476,8 @@ bcodmo:hasContent rdf:type owl:ObjectProperty ;
                   rdfs:domain bcodmo:Annotation ;
                   rdfs:range bcodmo:CreativeWork ;
                   rdfs:comment "The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation." ;
-                  rdfs:label "hasContent" .
+                  rdfs:label "hasContent" ;
+                  skos:exactMatch <https://schema.org/text> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasCoordinatedDeployment
@@ -523,7 +532,8 @@ bcodmo:hasParameter rdf:type owl:ObjectProperty ;
                     rdfs:range bcodmo:DatasetParameter ;
                     rdfs:comment "A dataset collected this dataset-parameter"@en ;
                     rdfs:label "hasParameter"@en ;
-                    skos:closeMatch <https://schema.org/variableMeasured> .
+                    skos:closeMatch <http://www.w3.org/ns/sosa/observedProperty> ,
+                                    <https://schema.org/variableMeasured> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasParameterAttribute
@@ -968,7 +978,7 @@ bcodmo:spatialExtent rdf:type owl:ObjectProperty ;
                      rdfs:range bcodmo:GeographicalLocation ;
                      rdfs:comment "The spatial coverage of the dataset, deployment, project, or program." ;
                      rdfs:label "spatialExtent" ;
-                     skos:closeMatch <https://schema.org/temporal> .
+                     skos:closeMatch <https://schema.org/spatialCoverage> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/status
@@ -1183,7 +1193,8 @@ bcodmo:dataURL rdf:type owl:DatatypeProperty ;
                            ] ;
                rdfs:range xsd:anyURI ;
                rdfs:comment "A URL where the data can be found for some thing, typically a Dataset or ResearchActivity" ;
-               rdfs:label "dataURL" .
+               rdfs:label "dataURL" ;
+               skos:closeMatch <http://www.w3.org/ns/dcat#accessURL> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/description
@@ -1359,7 +1370,8 @@ bcodmo:listPosition rdf:type owl:DatatypeProperty ;
                                 ] ;
                     rdfs:range xsd:integer ;
                     rdfs:comment "A integer representing a position of some Thing in a list of things. Can be used to rank, sort and order a list of things." ;
-                    rdfs:label "listPosition" .
+                    rdfs:label "listPosition" ;
+                    skos:closeMatch <https://schema.org/position> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/middleName
@@ -1386,7 +1398,8 @@ bcodmo:mimeType rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:token ;
                 rdfs:comment "The MIME type associated with a file type." ;
                 rdfs:label "mimeType" ;
-                skos:closeMatch <https://schema.org/encodingFormat> .
+                skos:closeMatch <http://www.w3.org/ns/dcat#mediaType> ,
+                                <https://schema.org/encodingFormat> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/name
@@ -1641,7 +1654,8 @@ bcodmo:Affiliation rdf:type owl:Class ;
 bcodmo:Agent rdf:type owl:Class ;
              rdfs:subClassOf bcodmo:Entity ;
              rdfs:comment "An entity (person or organisation) that can perform roles." ;
-             rdfs:label "Agent" .
+             rdfs:label "Agent" ;
+             skos:exactMatch prov:Agent .
 
 
 ###  https://schema.bco-dmo.org/v1.0/AgentRole
@@ -1666,7 +1680,8 @@ bcodmo:AgentRole rdf:type owl:Class ;
                  rdfs:subClassOf bcodmo:Situation ;
                  rdfs:comment "A qualified association that links an Agent to a role and optionally an affiliation context." ;
                  rdfs:label "Agent Role" ;
-                 skos:closeMatch <https://schema.org/Role> .
+                 skos:closeMatch <https://schema.org/Role> ,
+                                 <https://www.w3.org/ns/prov#Role> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Annotation
@@ -1864,7 +1879,8 @@ bcodmo:CollectionItem rdf:type owl:Class ;
                                           ] ;
                       rdfs:subClassOf bcodmo:Situation ;
                       rdfs:comment "An item in a collection" ;
-                      rdfs:label "CollectionItem" .
+                      rdfs:label "CollectionItem" ;
+                      skos:exactMatch <https://schema.org/ListItem> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Comment
@@ -2253,7 +2269,8 @@ bcodmo:DatasetParameter rdf:type owl:Class ;
                                             ] ;
                         rdfs:subClassOf bcodmo:Situation ;
                         rdfs:comment "A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format." ;
-                        rdfs:label "Dataset Parameter" .
+                        rdfs:label "Dataset Parameter" ;
+                        skos:closeMatch <http://www.w3.org/ns/sosa/ObservableProperty> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute
@@ -2339,7 +2356,7 @@ bcodmo:Deployment rdf:type owl:Class ;
                   rdfs:subClassOf bcodmo:Event ;
                   rdfs:comment "A scientific deployment (cruise, expedition, mooring deployment) during which data were collected." ;
                   rdfs:label "Deployment" ;
-                  skos:relatedMatch <https://schema.org/Event> .
+                  skos:closeMatch <http://www.w3.org/ns/ssn/Deployment> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DeploymentActivity
@@ -2524,7 +2541,8 @@ bcodmo:FileType rdf:type owl:Class ;
 bcodmo:FundingAgency rdf:type owl:Class ;
                      rdfs:subClassOf bcodmo:Organization ;
                      rdfs:comment "An Organization that has provided some funding award" ;
-                     rdfs:label "Funding Agency" .
+                     rdfs:label "Funding Agency" ;
+                     skos:exactMatch <https://schema.org/FundingAgency> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType
@@ -2539,7 +2557,8 @@ bcodmo:GeographicalLocation rdf:type owl:Class ;
                             rdfs:subClassOf bcodmo:Entity ;
                             rdfs:comment "A spatial extent or named location associated with a dataset, deployment, project, or program." ;
                             rdfs:label "Geographical Location" ;
-                            skos:exactMatch <https://schema.org/Place> .
+                            skos:exactMatch <https://schema.org/Place> ;
+                            skos:relatedMatch <http://www.w3.org/ns/sosa/FeatureOfInterest> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Geometry
@@ -2609,7 +2628,9 @@ bcodmo:Instrument rdf:type owl:Class ;
                                       ] ;
                   rdfs:subClassOf bcodmo:DefinedType ;
                   rdfs:comment "A master (community-level) scientific instrument definition." ;
-                  rdfs:label "Instrument" .
+                  rdfs:label "Instrument" ;
+                  skos:closeMatch <http://www.w3.org/ns/sosa/Sensor> ;
+                  skos:relatedMatch <https://www.w3.org/TR/vocab-ssn/#SSNSystem> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Keyword
@@ -2710,7 +2731,8 @@ bcodmo:Organization rdf:type owl:Class ;
                                      bcodmo:SoftwareApplication ;
                     rdfs:comment "An organisational body such as a publisher, funder, or identifier authority." ;
                     rdfs:label "Organization" ;
-                    skos:exactMatch <https://schema.org/Organization> .
+                    skos:exactMatch <https://schema.org/Organization> ,
+                                    <https://www.w3.org/ns/prov#Organization> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Parameter
@@ -2735,14 +2757,16 @@ bcodmo:Person rdf:type owl:Class ;
               owl:disjointWith bcodmo:SoftwareApplication ;
               rdfs:comment "A human individual associated with some entity." ;
               rdfs:label "Person" ;
-              skos:exactMatch <https://schema.org/Person> .
+              skos:exactMatch <https://schema.org/Person> ,
+                              <https://www.w3.org/ns/prov#Person> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Platform
 bcodmo:Platform rdf:type owl:Class ;
                 rdfs:subClassOf bcodmo:Entity ;
                 rdfs:comment "A platform (vessel, buoy, glider, etc.) used for data collection." ;
-                rdfs:label "Platform" .
+                rdfs:label "Platform" ;
+                skos:closeMatch <http://www.w3.org/ns/sosa/Platform> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/PlatformTitle
@@ -2947,7 +2971,9 @@ bcodmo:Situation rdf:type owl:Class ;
 bcodmo:SoftwareApplication rdf:type owl:Class ;
                            rdfs:subClassOf bcodmo:Agent ;
                            rdfs:comment "A piece of software that is deployed and executable." ;
-                           rdfs:label "SoftwareApplication" .
+                           rdfs:label "SoftwareApplication" ;
+                           skos:exactMatch <https://schema.org/SoftwareApplication> ,
+                                           <https://www.w3.org/ns/prov#SoftwareAgent> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/String

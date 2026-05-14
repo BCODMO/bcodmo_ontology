@@ -56,6 +56,8 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#EmbargoReleasePolicy" title="https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy">EmbargoReleasePolicy</a></li>
   <li><a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a></li>
   <li><a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a></li>
+  <li><a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a></li>
+  <li><a href="#EntityStatus" title="https://schema.bco-dmo.org/v1.0/EntityStatus">EntityStatus</a></li>
   <li><a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a></li>
   <li><a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a></li>
   <li><a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a></li>
@@ -96,6 +98,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#Role" title="https://schema.bco-dmo.org/v1.0/Role">Role</a></li>
   <li><a href="#RORIdentifier" title="https://schema.bco-dmo.org/v1.0/RORIdentifier">ROR Identifier</a></li>
   <li><a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a></li>
+  <li><a href="#SoftwareApplication" title="https://schema.bco-dmo.org/v1.0/SoftwareApplication">SoftwareApplication</a></li>
   <li><a href="#String" title="https://schema.bco-dmo.org/v1.0/String">String</a></li>
   <li><a href="#SupplementalDocument" title="https://schema.bco-dmo.org/v1.0/SupplementalDocument">Supplemental Document</a></li>
   <li><a href="#Synonym" title="https://schema.bco-dmo.org/v1.0/Synonym">Synonym</a></li>
@@ -184,7 +187,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareApplication" title="https://schema.bco-dmo.org/v1.0/SoftwareApplication">SoftwareApplication</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -471,7 +474,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#NODCTopic" title="https://schema.bco-dmo.org/v1.0/NODCTopic">NODCTopic</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelationGroup" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">Resource Relation Group</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedType" title="https://schema.bco-dmo.org/v1.0/DefinedType">DefinedType</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#NODCTopic" title="https://schema.bco-dmo.org/v1.0/NODCTopic">NODCTopic</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelationGroup" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">Resource Relation Group</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -675,7 +678,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#abstract" title="https://schema.bco-dmo.org/v1.0/abstract">abstract</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#author" title="https://schema.bco-dmo.org/v1.0/author">author</a> <sup class="type-op" title="object property">op</sup>, <a href="#bibliographicCitation" title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#contributor" title="https://schema.bco-dmo.org/v1.0/contributor">contributor</a> <sup class="type-op" title="object property">op</sup>, <a href="#createdDate" title="https://schema.bco-dmo.org/v1.0/createdDate">createdDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#currentState" title="https://schema.bco-dmo.org/v1.0/currentState">currentState</a> <sup class="type-op" title="object property">op</sup>, <a href="#expectingPublication" title="https://schema.bco-dmo.org/v1.0/expectingPublication">expectingPublication</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#governedBy" title="https://schema.bco-dmo.org/v1.0/governedBy">governedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#keywords" title="https://schema.bco-dmo.org/v1.0/keywords">keywords</a> <sup class="type-op" title="object property">op</sup>, <a href="#language" title="https://schema.bco-dmo.org/v1.0/language">language</a> <sup class="type-op" title="object property">op</sup>, <a href="#license" title="https://schema.bco-dmo.org/v1.0/license">license</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedDate" title="https://schema.bco-dmo.org/v1.0/publishedDate">publishedDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup>, <a href="#relationship" title="https://schema.bco-dmo.org/v1.0/relationship">relationship</a> <sup class="type-op" title="object property">op</sup>, <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#abstract" title="https://schema.bco-dmo.org/v1.0/abstract">abstract</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#author" title="https://schema.bco-dmo.org/v1.0/author">author</a> <sup class="type-op" title="object property">op</sup>, <a href="#bibliographicCitation" title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#contributor" title="https://schema.bco-dmo.org/v1.0/contributor">contributor</a> <sup class="type-op" title="object property">op</sup>, <a href="#createdDate" title="https://schema.bco-dmo.org/v1.0/createdDate">createdDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#currentState" title="https://schema.bco-dmo.org/v1.0/currentState">currentState</a> <sup class="type-op" title="object property">op</sup>, <a href="#expectingPublication" title="https://schema.bco-dmo.org/v1.0/expectingPublication">expectingPublication</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#governedBy" title="https://schema.bco-dmo.org/v1.0/governedBy">governedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#keywords" title="https://schema.bco-dmo.org/v1.0/keywords">keywords</a> <sup class="type-op" title="object property">op</sup>, <a href="#language" title="https://schema.bco-dmo.org/v1.0/language">language</a> <sup class="type-op" title="object property">op</sup>, <a href="#license" title="https://schema.bco-dmo.org/v1.0/license">license</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedDate" title="https://schema.bco-dmo.org/v1.0/publishedDate">publishedDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup>, <a href="#relationship" title="https://schema.bco-dmo.org/v1.0/relationship">relationship</a> <sup class="type-op" title="object property">op</sup>, <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -708,7 +711,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in range of
    </dt>
    <dd>
-    <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -897,7 +900,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#conformsTo" title="https://schema.bco-dmo.org/v1.0/conformsTo">conformsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataManagementProcessingDescription" title="https://schema.bco-dmo.org/v1.0/dataManagementProcessingDescription">dataManagementProcessingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetInstrumentsNotUsed" title="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">datasetInstrumentsNotUsed</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">datasetParametersNotRequired</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromInstrument" title="https://schema.bco-dmo.org/v1.0/fromInstrument">fromInstrument</a> <sup class="type-op" title="object property">op</sup>, <a href="#fundedBy" title="https://schema.bco-dmo.org/v1.0/fundedBy">fundedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://schema.bco-dmo.org/v1.0/hasParameter">hasParameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProgram" title="https://schema.bco-dmo.org/v1.0/hasProgram">hasProgram</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="https://schema.bco-dmo.org/v1.0/hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#metadataFile" title="https://schema.bco-dmo.org/v1.0/metadataFile">metadataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#problemDescription" title="https://schema.bco-dmo.org/v1.0/problemDescription">problemDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#restricted" title="https://schema.bco-dmo.org/v1.0/restricted">restricted</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shortDescription" title="https://schema.bco-dmo.org/v1.0/shortDescription">shortDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#storesValuesFor" title="https://schema.bco-dmo.org/v1.0/storesValuesFor">storesValuesFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#supplementalDocument" title="https://schema.bco-dmo.org/v1.0/supplementalDocument">supplementalDocument</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#title" title="https://schema.bco-dmo.org/v1.0/title">title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validated" title="https://schema.bco-dmo.org/v1.0/validated">validated</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#version" title="https://schema.bco-dmo.org/v1.0/version">version</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#conformsTo" title="https://schema.bco-dmo.org/v1.0/conformsTo">conformsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataManagementProcessingDescription" title="https://schema.bco-dmo.org/v1.0/dataManagementProcessingDescription">dataManagementProcessingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#datasetInstrumentsNotUsed" title="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">datasetInstrumentsNotUsed</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">datasetParametersNotRequired</a> <sup class="type-op" title="object property">op</sup>, <a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a> <sup class="type-op" title="object property">op</sup>, <a href="#deploymentDataset" title="https://schema.bco-dmo.org/v1.0/deploymentDataset">deploymentDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromInstrument" title="https://schema.bco-dmo.org/v1.0/fromInstrument">fromInstrument</a> <sup class="type-op" title="object property">op</sup>, <a href="#fundedBy" title="https://schema.bco-dmo.org/v1.0/fundedBy">fundedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://schema.bco-dmo.org/v1.0/hasParameter">hasParameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProgram" title="https://schema.bco-dmo.org/v1.0/hasProgram">hasProgram</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="https://schema.bco-dmo.org/v1.0/hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#isArchivedBy" title="https://schema.bco-dmo.org/v1.0/isArchivedBy">isArchivedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#metadataFile" title="https://schema.bco-dmo.org/v1.0/metadataFile">metadataFile</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#problemDescription" title="https://schema.bco-dmo.org/v1.0/problemDescription">problemDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#restricted" title="https://schema.bco-dmo.org/v1.0/restricted">restricted</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shortDescription" title="https://schema.bco-dmo.org/v1.0/shortDescription">shortDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#storesValuesFor" title="https://schema.bco-dmo.org/v1.0/storesValuesFor">storesValuesFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#supplementalDocument" title="https://schema.bco-dmo.org/v1.0/supplementalDocument">supplementalDocument</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#title" title="https://schema.bco-dmo.org/v1.0/title">title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validated" title="https://schema.bco-dmo.org/v1.0/validated">validated</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#version" title="https://schema.bco-dmo.org/v1.0/version">version</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -931,6 +934,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#fromDeployment" title="https://schema.bco-dmo.org/v1.0/fromDeployment">fromDeployment</a> <sup class="type-op" title="object property">op</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#deploymentDataset" title="https://schema.bco-dmo.org/v1.0/deploymentDataset">deploymentDataset</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1278,7 +1287,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCoordinatedDeployment" title="https://schema.bco-dmo.org/v1.0/hasCoordinatedDeployment">hasCoordinatedDeployment</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasReportURL" title="https://schema.bco-dmo.org/v1.0/hasReportURL">hasReportURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSynonym" title="https://schema.bco-dmo.org/v1.0/hasSynonym">hasSynonym</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPrimarySynonym" title="https://schema.bco-dmo.org/v1.0/isPrimarySynonym">isPrimarySynonym</a> <sup class="type-op" title="object property">op</sup>, <a href="#onPlatform" title="https://schema.bco-dmo.org/v1.0/onPlatform">onPlatform</a> <sup class="type-op" title="object property">op</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#acquisitionDescription" title="https://schema.bco-dmo.org/v1.0/acquisitionDescription">acquisitionDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCoordinatedDeployment" title="https://schema.bco-dmo.org/v1.0/hasCoordinatedDeployment">hasCoordinatedDeployment</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasReportURL" title="https://schema.bco-dmo.org/v1.0/hasReportURL">hasReportURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSynonym" title="https://schema.bco-dmo.org/v1.0/hasSynonym">hasSynonym</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPrimarySynonym" title="https://schema.bco-dmo.org/v1.0/isPrimarySynonym">isPrimarySynonym</a> <sup class="type-op" title="object property">op</sup>, <a href="#onPlatform" title="https://schema.bco-dmo.org/v1.0/onPlatform">onPlatform</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#processingDescription" title="https://schema.bco-dmo.org/v1.0/processingDescription">processingDescription</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -1379,6 +1388,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>
    </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="DOIStatus">
@@ -1454,7 +1469,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#expirationDate" title="https://schema.bco-dmo.org/v1.0/expirationDate">expirationDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#releaseDate" title="https://schema.bco-dmo.org/v1.0/releaseDate">releaseDate</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#expirationDate" title="https://schema.bco-dmo.org/v1.0/expirationDate">expirationDate</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1477,6 +1492,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>
    </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#releaseDate" title="https://schema.bco-dmo.org/v1.0/releaseDate">releaseDate</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Entity">
@@ -1496,7 +1517,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#abbreviation" title="https://schema.bco-dmo.org/v1.0/abbreviation">abbreviation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#acronym" title="https://schema.bco-dmo.org/v1.0/acronym">acronym</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#browseGraphic" title="https://schema.bco-dmo.org/v1.0/browseGraphic">browseGraphic</a> <sup class="type-op" title="object property">op</sup>, <a href="#codeValue" title="https://schema.bco-dmo.org/v1.0/codeValue">codeValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#externalWebsite" title="https://schema.bco-dmo.org/v1.0/externalWebsite">externalWebsite</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>, <a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isTypeOf" title="https://schema.bco-dmo.org/v1.0/isTypeOf">isTypeOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#logo" title="https://schema.bco-dmo.org/v1.0/logo">logo</a> <sup class="type-op" title="object property">op</sup>, <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="https://schema.bco-dmo.org/v1.0/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>, <a href="#publisher" title="https://schema.bco-dmo.org/v1.0/publisher">publisher</a> <sup class="type-op" title="object property">op</sup>, <a href="#smallLogo" title="https://schema.bco-dmo.org/v1.0/smallLogo">smallLogo</a> <sup class="type-op" title="object property">op</sup>, <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#abbreviation" title="https://schema.bco-dmo.org/v1.0/abbreviation">abbreviation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#acronym" title="https://schema.bco-dmo.org/v1.0/acronym">acronym</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#browseGraphic" title="https://schema.bco-dmo.org/v1.0/browseGraphic">browseGraphic</a> <sup class="type-op" title="object property">op</sup>, <a href="#codeValue" title="https://schema.bco-dmo.org/v1.0/codeValue">codeValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#entityStatus" title="https://schema.bco-dmo.org/v1.0/entityStatus">entityStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#externalWebsite" title="https://schema.bco-dmo.org/v1.0/externalWebsite">externalWebsite</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>, <a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isTypeOf" title="https://schema.bco-dmo.org/v1.0/isTypeOf">isTypeOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#logo" title="https://schema.bco-dmo.org/v1.0/logo">logo</a> <sup class="type-op" title="object property">op</sup>, <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="https://schema.bco-dmo.org/v1.0/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>, <a href="#publisher" title="https://schema.bco-dmo.org/v1.0/publisher">publisher</a> <sup class="type-op" title="object property">op</sup>, <a href="#smallLogo" title="https://schema.bco-dmo.org/v1.0/smallLogo">smallLogo</a> <sup class="type-op" title="object property">op</sup>, <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -1524,6 +1545,66 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#DeploymentEntityMatch" title="https://schema.bco-dmo.org/v1.0/DeploymentEntityMatch">DeploymentEntityMatch</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus">
+  <h3>EntityPublishingStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus</p>
+  <div class="comment">
+   <span class="markdown">One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it's being contructed, in draft review for a submitter, published, deprecated or unpublished.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#EntityPublishingStatus_Draft" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft">Entity Status: Draft</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#EntityPublishingStatus_InReview" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview">Entity Status: In Review</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#EntityPublishingStatus_Published" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published">Entity Status: Published</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#EntityPublishingStatus_Unpublished" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished">Entity Status: Unpublished</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityStatus">
+  <h3>EntityStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityStatus</p>
+  <div class="comment">
+   <span class="markdown">The status of some BCO-DMO Entity</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#entityStatus" title="https://schema.bco-dmo.org/v1.0/entityStatus">entityStatus</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2191,7 +2272,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is disjoint with
    </dt>
    <dd>
-    <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareApplication" title="https://schema.bco-dmo.org/v1.0/SoftwareApplication">SoftwareApplication</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2251,7 +2332,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is disjoint with
    </dt>
    <dd>
-    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareApplication" title="https://schema.bco-dmo.org/v1.0/SoftwareApplication">SoftwareApplication</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2524,7 +2605,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#dataManagementPlan" title="https://schema.bco-dmo.org/v1.0/dataManagementPlan">dataManagementPlan</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#producedWork" title="https://schema.bco-dmo.org/v1.0/producedWork">producedWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#dataManagementPlan" title="https://schema.bco-dmo.org/v1.0/dataManagementPlan">dataManagementPlan</a> <sup class="type-op" title="object property">op</sup>, <a href="#dataURL" title="https://schema.bco-dmo.org/v1.0/dataURL">dataURL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#producedWork" title="https://schema.bco-dmo.org/v1.0/producedWork">producedWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2677,13 +2758,34 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#AgentRole" title="https://schema.bco-dmo.org/v1.0/AgentRole">Agent Role</a> <sup class="type-c" title="class">c</sup>, <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>, <a href="#CollectionItem" title="https://schema.bco-dmo.org/v1.0/CollectionItem">CollectionItem</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDeployment" title="https://schema.bco-dmo.org/v1.0/DatasetDeployment">Dataset Deployment</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetInstrument" title="https://schema.bco-dmo.org/v1.0/DatasetInstrument">Dataset Instrument</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetAward" title="https://schema.bco-dmo.org/v1.0/DatasetAward">DatasetAward</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#RelatedWork" title="https://schema.bco-dmo.org/v1.0/RelatedWork">RelatedWork</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AgentRole" title="https://schema.bco-dmo.org/v1.0/AgentRole">Agent Role</a> <sup class="type-c" title="class">c</sup>, <a href="#Annotation" title="https://schema.bco-dmo.org/v1.0/Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>, <a href="#CollectionItem" title="https://schema.bco-dmo.org/v1.0/CollectionItem">CollectionItem</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDeployment" title="https://schema.bco-dmo.org/v1.0/DatasetDeployment">Dataset Deployment</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetInstrument" title="https://schema.bco-dmo.org/v1.0/DatasetInstrument">Dataset Instrument</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameter" title="https://schema.bco-dmo.org/v1.0/DatasetParameter">Dataset Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetAward" title="https://schema.bco-dmo.org/v1.0/DatasetAward">DatasetAward</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityMatch" title="https://schema.bco-dmo.org/v1.0/EntityMatch">EntityMatch</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityStatus" title="https://schema.bco-dmo.org/v1.0/EntityStatus">EntityStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="https://schema.bco-dmo.org/v1.0/Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#RelatedWork" title="https://schema.bco-dmo.org/v1.0/RelatedWork">RelatedWork</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
     <a href="#forCreativeWork" title="https://schema.bco-dmo.org/v1.0/forCreativeWork">forCreativeWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#situationInvolves" title="https://schema.bco-dmo.org/v1.0/situationInvolves">situationInvolves</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SoftwareApplication">
+  <h3>SoftwareApplication<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/SoftwareApplication</p>
+  <div class="comment">
+   <span class="markdown">A piece of software that is deployed and executable.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="https://schema.bco-dmo.org/v1.0/Person">Person</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2847,7 +2949,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has members
    </dt>
    <dd>
-    <a href="#TemporalEntity_Unknown" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_Unknown">Temporal Entity: Unknown</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#TemporalEntity_InPerpetuity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity">Temporal Entity: In Perpetuity</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#TemporalEntity_Unknown" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_Unknown">Temporal Entity: Unknown</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -2953,6 +3055,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#contributor" title="https://schema.bco-dmo.org/v1.0/contributor">contributor</a></li>
   <li><a href="#coordinateReferenceSystem" title="https://schema.bco-dmo.org/v1.0/coordinateReferenceSystem">coordinateReferenceSystem</a></li>
   <li><a href="#createdDate" title="https://schema.bco-dmo.org/v1.0/createdDate">createdDate</a></li>
+  <li><a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a></li>
   <li><a href="#currentState" title="https://schema.bco-dmo.org/v1.0/currentState">currentState</a></li>
   <li><a href="#dataFile" title="https://schema.bco-dmo.org/v1.0/dataFile">dataFile</a></li>
   <li><a href="#dataManagementPlan" title="https://schema.bco-dmo.org/v1.0/dataManagementPlan">dataManagementPlan</a></li>
@@ -2960,7 +3063,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#datasetParametersNotRequired" title="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired"> <span>datasetParametersNotRequired</span> </a></li>
   <li><a href="#datasetType" title="https://schema.bco-dmo.org/v1.0/datasetType">datasetType</a></li>
   <li><a href="#dataType" title="https://schema.bco-dmo.org/v1.0/dataType">dataType</a></li>
+  <li><a href="#deploymentDataset" title="https://schema.bco-dmo.org/v1.0/deploymentDataset">deploymentDataset</a></li>
   <li><a href="#describesFile" title="https://schema.bco-dmo.org/v1.0/describesFile">describesFile</a></li>
+  <li><a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a></li>
+  <li><a href="#entityStatus" title="https://schema.bco-dmo.org/v1.0/entityStatus">entityStatus</a></li>
   <li><a href="#expirationDate" title="https://schema.bco-dmo.org/v1.0/expirationDate">expirationDate</a></li>
   <li><a href="#fileType" title="https://schema.bco-dmo.org/v1.0/fileType">fileType</a></li>
   <li><a href="#fixesPreviousErrors" title="https://schema.bco-dmo.org/v1.0/fixesPreviousErrors">fixesPreviousErrors</a></li>
@@ -3016,6 +3122,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#piInstitutionChangedForPreviousAward" title="https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward">piInstitutionChangedForPreviousAward</a></li>
   <li><a href="#platformTitle" title="https://schema.bco-dmo.org/v1.0/platformTitle">platformTitle</a></li>
   <li><a href="#platformType" title="https://schema.bco-dmo.org/v1.0/platformType">platformType</a></li>
+  <li><a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a></li>
   <li><a href="#producedWork" title="https://schema.bco-dmo.org/v1.0/producedWork">producedWork</a></li>
   <li><a href="#programManager" title="https://schema.bco-dmo.org/v1.0/programManager">programManager</a></li>
   <li><a href="#projectExternalDatasetList" title="https://schema.bco-dmo.org/v1.0/projectExternalDatasetList">projectExternalDatasetList</a></li>
@@ -3376,6 +3483,35 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="creativeWorkStatus">
+  <h3>creativeWorkStatus<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/creativeWorkStatus</p>
+  <div class="comment">
+   <span class="markdown">The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has equivalent properties
+    </dt>
+    <dd>
+     <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="currentState">
   <h3>currentState<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/currentState</p>
@@ -3545,6 +3681,29 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="deploymentDataset">
+  <h3>deploymentDataset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/deploymentDataset</p>
+  <div class="comment">
+   <span class="markdown">a deployment-specific description of that deployment's aspects of a dataset.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DatasetDeployment" title="https://schema.bco-dmo.org/v1.0/DatasetDeployment">Dataset Deployment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="describesFile">
   <h3>describesFile<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/describesFile</p>
@@ -3574,6 +3733,53 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="entityPublishingStatus">
+  <h3>entityPublishingStatus<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/entityPublishingStatus</p>
+  <div class="comment">
+   <span class="markdown">The publishing status of some BCO-DMO Entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#EntityStatus" title="https://schema.bco-dmo.org/v1.0/EntityStatus">EntityStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="entityStatus">
+  <h3>entityStatus<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/entityStatus</p>
+  <div class="comment">
+   <span class="markdown">the status of some BCO-DMO Entity</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#EntityStatus" title="https://schema.bco-dmo.org/v1.0/EntityStatus">EntityStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="expirationDate">
   <h3>expirationDate<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/expirationDate</p>
@@ -3582,6 +3788,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <div class="description">
    <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
     <dt>
      has domain
     </dt>
@@ -4323,7 +4535,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
      has sub-properties
     </dt>
     <dd>
-     <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#expirationDate" title="https://schema.bco-dmo.org/v1.0/expirationDate">expirationDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#releaseDate" title="https://schema.bco-dmo.org/v1.0/releaseDate">releaseDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#temporalExtent" title="https://schema.bco-dmo.org/v1.0/temporalExtent">temporalExtent</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -5028,6 +5240,30 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="preferredDOI">
+  <h3>preferredDOI<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/preferredDOI</p>
+  <div class="comment">
+   <span class="markdown">The DOI that should be presented publicly for this resource. In most cases this is the most recent DOI, but the value is determined by curatorial judgment and must be asserted explicitly.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Deployment" title="https://schema.bco-dmo.org/v1.0/Deployment">Deployment</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#ResearchActivity" title="https://schema.bco-dmo.org/v1.0/ResearchActivity">Research Activity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DOIIdentifier" title="https://schema.bco-dmo.org/v1.0/DOIIdentifier">DOI Identifier</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="producedWork">
   <h3>producedWork<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/producedWork</p>
@@ -5262,10 +5498,16 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <div class="description">
    <dl>
     <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
      has domain
     </dt>
     <dd>
-     <a href="#EmbargoPolicy" title="https://schema.bco-dmo.org/v1.0/EmbargoPolicy">Embargo Policy</a> <sup class="type-c" title="class">c</sup>
+     <a href="#EmbargoReleasePolicy" title="https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy">EmbargoReleasePolicy</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -5452,8 +5694,22 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <div class="comment">
    <span class="markdown">The current DOI lifecycle status of the dataset package.</span>
   </div>
+  <dl>
+   <dt>
+    Is deprecated
+   </dt>
+   <dd>
+    true
+   </dd>
+  </dl>
   <div class="description">
    <dl>
+    <dt>
+     has equivalent properties
+    </dt>
+    <dd>
+     <a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
     <dt>
      has domain
     </dt>
@@ -7165,6 +7421,11 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#DeploymentActivity_Deploy" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity_Deploy">Deployment Activity: Deploy</a></li>
   <li><a href="#DeploymentActivity_Recovery" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity_Recovery">Deployment Activity: Recovery</a></li>
   <li><a href="#DeploymentActivity_Turnaround" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity_Turnaround">Deployment Activity: Turnaround</a></li>
+  <li><a href="#EntityPublishingStatus_Deprecated" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated">Entity Status: Deprecated</a></li>
+  <li><a href="#EntityPublishingStatus_Draft" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft">Entity Status: Draft</a></li>
+  <li><a href="#EntityPublishingStatus_InReview" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview">Entity Status: In Review</a></li>
+  <li><a href="#EntityPublishingStatus_Published" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published">Entity Status: Published</a></li>
+  <li><a href="#EntityPublishingStatus_Unpublished" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished">Entity Status: Unpublished</a></li>
   <li><a href="#FileType_BitmapImage" title="https://schema.bco-dmo.org/v1.0/FileType_BitmapImage">File Type: Bitmap Image</a></li>
   <li><a href="#FileType_JPEGImage" title="https://schema.bco-dmo.org/v1.0/FileType_JPEGImage">File Type: JPEG Image</a></li>
   <li><a href="#FileType_ScalarVectorGraphics" title="https://schema.bco-dmo.org/v1.0/FileType_ScalarVectorGraphics">File Type: Scalar Vector Graphics</a></li>
@@ -7245,6 +7506,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#Role_Scientist" title="https://schema.bco-dmo.org/v1.0/Role_Scientist">Role: Scientist</a></li>
   <li><a href="#Role_Student" title="https://schema.bco-dmo.org/v1.0/Role_Student">Role: Student</a></li>
   <li><a href="#Role_Technician" title="https://schema.bco-dmo.org/v1.0/Role_Technician">Role: Technician</a></li>
+  <li><a href="#TemporalEntity_InPerpetuity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity">Temporal Entity: In Perpetuity</a></li>
   <li><a href="#TemporalEntity_Unknown" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_Unknown">Temporal Entity: Unknown</a></li>
  </ul>
  <div class="entity" id="Action_Assess">
@@ -8411,6 +8673,90 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Turnaround"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus_Deprecated">
+  <h3>Entity Status: Deprecated<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated</p>
+  <dl class="description">
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Deprecated"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus_Draft">
+  <h3>Entity Status: Draft<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Draft"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus_InReview">
+  <h3>Entity Status: In Review<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"In Review"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus_Published">
+  <h3>Entity Status: Published<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Published"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntityPublishingStatus_Unpublished">
+  <h3>Entity Status: Unpublished<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Unpublished"</span>
    </dd>
   </dl>
  </div>
@@ -10091,6 +10437,24 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
    <dd>
     <a href="#roleWeight" title="https://schema.bco-dmo.org/v1.0/roleWeight">roleWeight</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"20"^^<a href="http://www.w3.org/2001/XMLSchema#int" target="_blank" title="http://www.w3.org/2001/XMLSchema#int">int</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalEntity_InPerpetuity">
+  <h3>Temporal Entity: In Perpetuity<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"In Perpetuity"</span>
    </dd>
   </dl>
  </div>

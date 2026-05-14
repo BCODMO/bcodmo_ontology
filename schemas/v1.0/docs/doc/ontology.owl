@@ -302,6 +302,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/MetadataProfile"/>
         <rdfs:comment>The metadata profile specification to which this dataset conforms.</rdfs:comment>
         <rdfs:label>conformsTo</rdfs:label>
+        <skos:exactMatch rdf:resource="http://purl.org/dc/terms/conformsTo"/>
     </owl:ObjectProperty>
     
 
@@ -327,6 +328,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem"/>
         <rdfs:comment>the coordinate reference system for some representation of a Geographical Location</rdfs:comment>
         <rdfs:label>coordinateReferenceSystem</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.opengis.net/ont/geosparql#crs"/>
     </owl:ObjectProperty>
     
 
@@ -340,6 +342,20 @@
         <rdfs:comment>The date on which a creative work was created.</rdfs:comment>
         <rdfs:label>createdDate</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/dateCreated"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/creativeWorkStatus -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">
+        <owl:equivalentProperty rdf:resource="https://schema.bco-dmo.org/v1.0/status"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"/>
+        <rdfs:comment>The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.</rdfs:comment>
+        <rdfs:label>creativeWorkStatus</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/creativeWorkStatus"/>
     </owl:ObjectProperty>
     
 
@@ -426,6 +442,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/deploymentDataset -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/deploymentDataset">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/DatasetDeployment"/>
+        <rdfs:comment>a deployment-specific description of that deployment&apos;s aspects of a dataset.</rdfs:comment>
+        <rdfs:label>deploymentDataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/describesFile -->
 
 
@@ -439,10 +467,36 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/entityPublishingStatus -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/EntityStatus"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+        <rdfs:comment>The publishing status of some BCO-DMO Entity</rdfs:comment>
+        <rdfs:label>entityPublishingStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/entityStatus -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/entityStatus">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/EntityStatus"/>
+        <rdfs:comment>the status of some BCO-DMO Entity</rdfs:comment>
+        <rdfs:label>entityStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/expirationDate -->
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/expirationDate">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasTime"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/EmbargoPolicy"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>The date on which an embargo expires and the dataset becomes publicly accessible.</rdfs:comment>
@@ -460,6 +514,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/FileType"/>
         <rdfs:comment>The format type of this file.</rdfs:comment>
         <rdfs:label>fileType</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/dcat#mediaType"/>
     </owl:ObjectProperty>
     
 
@@ -578,6 +633,7 @@
         <rdfs:comment>One or more geometries (centroid, bounding box) describing a geographical location.</rdfs:comment>
         <rdfs:label>geometry</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/geo"/>
+        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
     </owl:ObjectProperty>
     
 
@@ -650,6 +706,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CollectionItem"/>
         <rdfs:comment>An CollectionItem in a Collection</rdfs:comment>
         <rdfs:label>hasCollectionItem</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/item"/>
     </owl:ObjectProperty>
     
 
@@ -662,6 +719,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
         <rdfs:comment>The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation.</rdfs:comment>
         <rdfs:label>hasContent</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/text"/>
     </owl:ObjectProperty>
     
 
@@ -740,6 +798,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/DatasetParameter"/>
         <rdfs:comment xml:lang="en">A dataset collected this dataset-parameter</rdfs:comment>
         <rdfs:label xml:lang="en">hasParameter</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
         <skos:closeMatch rdf:resource="https://schema.org/variableMeasured"/>
     </owl:ObjectProperty>
     
@@ -1146,6 +1205,28 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/preferredDOI -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/preferredDOI">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Dataset"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Deployment"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/ResearchActivity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/DOIIdentifier"/>
+        <rdfs:comment>The DOI that should be presented publicly for this resource. In most cases this is the most recent DOI, but the value is determined by curatorial judgment and must be asserted explicitly.</rdfs:comment>
+        <rdfs:label>preferredDOI</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/producedWork -->
 
 
@@ -1272,7 +1353,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/releaseDate">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/EmbargoPolicy"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasTime"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>The date on which an embargo releases and the dataset becomes publicly accessible.</rdfs:comment>
         <rdfs:label>releaseDate</rdfs:label>
@@ -1370,7 +1452,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
         <rdfs:comment>The spatial coverage of the dataset, deployment, project, or program.</rdfs:comment>
         <rdfs:label>spatialExtent</rdfs:label>
-        <skos:closeMatch rdf:resource="https://schema.org/temporal"/>
+        <skos:closeMatch rdf:resource="https://schema.org/spatialCoverage"/>
     </owl:ObjectProperty>
     
 
@@ -1383,6 +1465,7 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"/>
         <rdfs:comment>The current DOI lifecycle status of the dataset package.</rdfs:comment>
         <rdfs:label>status</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
         <skos:closeMatch rdf:resource="https://schema.org/creativeWorkStatus"/>
     </owl:ObjectProperty>
     
@@ -1696,6 +1779,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>A URL where the data can be found for some thing, typically a Dataset or ResearchActivity</rdfs:comment>
         <rdfs:label>dataURL</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/dcat#accessURL"/>
     </owl:DatatypeProperty>
     
 
@@ -1955,6 +2039,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>A integer representing a position of some Thing in a list of things. Can be used to rank, sort and order a list of things.</rdfs:comment>
         <rdfs:label>listPosition</rdfs:label>
+        <skos:closeMatch rdf:resource="https://schema.org/position"/>
     </owl:DatatypeProperty>
     
 
@@ -1993,6 +2078,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
         <rdfs:comment>The MIME type associated with a file type.</rdfs:comment>
         <rdfs:label>mimeType</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/dcat#mediaType"/>
         <skos:closeMatch rdf:resource="https://schema.org/encodingFormat"/>
     </owl:DatatypeProperty>
     
@@ -2382,6 +2468,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>An entity (person or organisation) that can perform roles.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.w3.org/ns/prov#Agent"/>
     </owl:Class>
     
 
@@ -2417,6 +2504,7 @@
         <rdfs:comment>A qualified association that links an Agent to a role and optionally an affiliation context.</rdfs:comment>
         <rdfs:label>Agent Role</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Role"/>
+        <skos:closeMatch rdf:resource="https://www.w3.org/ns/prov#Role"/>
     </owl:Class>
     
 
@@ -2692,6 +2780,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>An item in a collection</rdfs:comment>
         <rdfs:label>CollectionItem</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/ListItem"/>
     </owl:Class>
     
 
@@ -3247,6 +3336,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
         <rdfs:comment>A parameter as instantiated within a specific dataset column, with dataset-level name, description, units, and format.</rdfs:comment>
         <rdfs:label>Dataset Parameter</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
     </owl:Class>
     
 
@@ -3374,7 +3464,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Event"/>
         <rdfs:comment>A scientific deployment (cruise, expedition, mooring deployment) during which data were collected.</rdfs:comment>
         <rdfs:label>Deployment</rdfs:label>
-        <skos:relatedMatch rdf:resource="https://schema.org/Event"/>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
     </owl:Class>
     
 
@@ -3511,6 +3601,43 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
+        <rdfs:comment>One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it&apos;s being contructed, in draft review for a submitter, published, deprecated or unpublished.</rdfs:comment>
+        <rdfs:label>EntityPublishingStatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/EntityStatus -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/EntityStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/entityPublishingStatus"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasTime"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <rdfs:comment>The status of some BCO-DMO Entity</rdfs:comment>
+        <rdfs:label>EntityStatus</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/Event -->
 
 
@@ -3603,6 +3730,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Organization"/>
         <rdfs:comment>An Organization that has provided some funding award</rdfs:comment>
         <rdfs:label>Funding Agency</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/FundingAgency"/>
     </owl:Class>
     
 
@@ -3626,6 +3754,7 @@
         <rdfs:comment>A spatial extent or named location associated with a dataset, deployment, project, or program.</rdfs:comment>
         <rdfs:label>Geographical Location</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/Place"/>
+        <skos:relatedMatch rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
     </owl:Class>
     
 
@@ -3733,6 +3862,8 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/DefinedType"/>
         <rdfs:comment>A master (community-level) scientific instrument definition.</rdfs:comment>
         <rdfs:label>Instrument</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <skos:relatedMatch rdf:resource="https://www.w3.org/TR/vocab-ssn/#SSNSystem"/>
     </owl:Class>
     
 
@@ -3885,9 +4016,11 @@
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Organization">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
         <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Person"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/SoftwareApplication"/>
         <rdfs:comment>An organisational body such as a publisher, funder, or identifier authority.</rdfs:comment>
         <rdfs:label>Organization</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/Organization"/>
+        <skos:exactMatch rdf:resource="https://www.w3.org/ns/prov#Organization"/>
     </owl:Class>
     
 
@@ -3923,9 +4056,11 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Person">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/SoftwareApplication"/>
         <rdfs:comment>A human individual associated with some entity.</rdfs:comment>
         <rdfs:label>Person</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/Person"/>
+        <skos:exactMatch rdf:resource="https://www.w3.org/ns/prov#Person"/>
     </owl:Class>
     
 
@@ -3937,6 +4072,7 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>A platform (vessel, buoy, glider, etc.) used for data collection.</rdfs:comment>
         <rdfs:label>Platform</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
     </owl:Class>
     
 
@@ -4235,6 +4371,19 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events.</rdfs:comment>
         <rdfs:label>Situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/SoftwareApplication -->
+
+
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/SoftwareApplication">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
+        <rdfs:comment>A piece of software that is deployed and executable.</rdfs:comment>
+        <rdfs:label>SoftwareApplication</rdfs:label>
+        <skos:exactMatch rdf:resource="https://schema.org/SoftwareApplication"/>
+        <skos:exactMatch rdf:resource="https://www.w3.org/ns/prov#SoftwareAgent"/>
     </owl:Class>
     
 
@@ -5189,6 +5338,60 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated">
+        <label>Deprecated</label>
+        <rdfs:label>Entity Status: Deprecated</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+        <label>Draft</label>
+        <rdfs:label>Entity Status: Draft</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+        <label>In Review</label>
+        <rdfs:label>Entity Status: In Review</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+        <label>Published</label>
+        <rdfs:label>Entity Status: Published</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus"/>
+        <label>Unpublished</label>
+        <rdfs:label>Entity Status: Unpublished</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/FileType_BitmapImage -->
 
 
@@ -6064,6 +6267,17 @@
         <label>Technician</label>
         <roleWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</roleWeight>
         <rdfs:label>Role: Technician</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
+        <label>In Perpetuity</label>
+        <rdfs:label>Temporal Entity: In Perpetuity</rdfs:label>
     </owl:NamedIndividual>
     
 
