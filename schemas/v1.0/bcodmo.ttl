@@ -160,12 +160,29 @@ bcodmo:awardProducingData rdf:type owl:ObjectProperty ,
                           rdfs:range bcodmo:Boolean .
 
 
+###  https://schema.bco-dmo.org/v1.0/boundingBox
+bcodmo:boundingBox rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf bcodmo:geometry ;
+                   rdfs:domain bcodmo:GeographicalLocation ;
+                   rdfs:range bcodmo:BoundingBoxGeometry ;
+                   rdfs:comment "A bounding box" ;
+                   rdfs:label "boundingBox" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/browseGraphic
 bcodmo:browseGraphic rdf:type owl:ObjectProperty ;
                      rdfs:domain bcodmo:Entity ;
                      rdfs:range bcodmo:Image ;
                      rdfs:comment "An image that is representative of some thing. This could be a logo for a project or organization. It could also be an image that represents a creative work." ;
                      rdfs:label "browseGraphic" .
+
+
+###  https://schema.bco-dmo.org/v1.0/categorizedBy
+bcodmo:categorizedBy rdf:type owl:ObjectProperty ;
+                     rdfs:domain bcodmo:Entity ;
+                     rdfs:range bcodmo:Category ;
+                     rdfs:comment "A category for some Entity" ;
+                     rdfs:label "categorizedBy" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/checksum
@@ -242,6 +259,7 @@ bcodmo:currentState rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/dataFile
 bcodmo:dataFile rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain bcodmo:Dataset ;
                 rdfs:range bcodmo:DataFile ;
                 rdfs:comment "A primary or supplemental data file distributed with this dataset package." ;
@@ -288,6 +306,7 @@ bcodmo:datasetType rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/deploymentDataset
 bcodmo:deploymentDataset rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf bcodmo:hasPart ;
                          rdfs:domain bcodmo:Dataset ;
                          rdfs:range bcodmo:DatasetDeployment ;
                          rdfs:comment "a deployment-specific description of that deployment's aspects of a dataset." ;
@@ -341,6 +360,7 @@ bcodmo:fileType rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/fixesPreviousErrors
 bcodmo:fixesPreviousErrors rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf bcodmo:obsoletes ;
                            rdfs:domain bcodmo:DOIDataset ;
                            rdfs:range bcodmo:DOIDataset ;
                            rdfs:comment "The DOIDataset from the past that this DOIDataset fixes errors." ;
@@ -553,6 +573,14 @@ bcodmo:hasParentProgram rdf:type owl:ObjectProperty ;
                         rdfs:label "hasParentProgram" .
 
 
+###  https://schema.bco-dmo.org/v1.0/hasPart
+bcodmo:hasPart rdf:type owl:ObjectProperty ;
+               owl:inverseOf bcodmo:isPartOf ;
+               rdfs:domain bcodmo:Entity ;
+               rdfs:range bcodmo:Entity ;
+               rdfs:comment "A related entity that is included either physically or logically in the described entity." .
+
+
 ###  https://schema.bco-dmo.org/v1.0/hasProgram
 bcodmo:hasProgram rdf:type owl:ObjectProperty ;
                   rdfs:domain bcodmo:Dataset ;
@@ -619,6 +647,16 @@ bcodmo:inCollection rdf:type owl:ObjectProperty ;
                     rdfs:label "inCollection" .
 
 
+###  https://schema.bco-dmo.org/v1.0/inControlledVocabulary
+bcodmo:inControlledVocabulary rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf bcodmo:isPartOf ;
+                              rdf:type owl:FunctionalProperty ;
+                              rdfs:domain bcodmo:Keyword ;
+                              rdfs:range bcodmo:ControlledVocabulary ;
+                              rdfs:comment "The ControlledVocabulary to which a term belongs" ;
+                              rdfs:label "inControlledVocabulary" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/inGroup
 bcodmo:inGroup rdf:type owl:ObjectProperty ;
                rdfs:domain bcodmo:ResourceRelation ;
@@ -655,9 +693,17 @@ bcodmo:isContinuingAwardOf rdf:type owl:ObjectProperty ;
 bcodmo:isDefinedAs rdf:type owl:ObjectProperty ;
                    owl:equivalentProperty bcodmo:isTypeOf ;
                    rdfs:domain bcodmo:Entity ;
-                   rdfs:range bcodmo:DefinedType ;
+                   rdfs:range bcodmo:DefinedTerm ;
                    rdfs:comment "A thing is defined to be something more specific or colloquial than this more standardized cateogrization or community term." ;
                    rdfs:label "isDefinedAs" .
+
+
+###  https://schema.bco-dmo.org/v1.0/isPartOf
+bcodmo:isPartOf rdf:type owl:ObjectProperty ;
+                rdfs:domain bcodmo:Entity ;
+                rdfs:range bcodmo:Entity ;
+                rdfs:comment "A related entity in which the described entity is physically or logically included." ;
+                rdfs:label "isPartOf" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/isPrimarySynonym
@@ -672,7 +718,7 @@ bcodmo:isPrimarySynonym rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/isTypeOf
 bcodmo:isTypeOf rdf:type owl:ObjectProperty ;
                 rdfs:domain bcodmo:Entity ;
-                rdfs:range bcodmo:Category ;
+                rdfs:range bcodmo:DefinedTerm ;
                 rdfs:comment "Categorizes some thing." ;
                 rdfs:label "isTypeOf" ;
                 owl:deprecated "true"^^xsd:boolean .
@@ -886,6 +932,32 @@ bcodmo:relatedAward rdf:type owl:ObjectProperty ;
                     rdfs:label "relatedAward" .
 
 
+###  https://schema.bco-dmo.org/v1.0/relatedDataset
+bcodmo:relatedDataset rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf bcodmo:relations ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( bcodmo:CreativeWork
+                                                  bcodmo:RelatedWork
+                                                )
+                                  ] ;
+                      rdfs:range bcodmo:Dataset ;
+                      rdfs:comment "Related Datasets to some CreativeWork" ;
+                      rdfs:label "relatedDataset" .
+
+
+###  https://schema.bco-dmo.org/v1.0/relatedPublication
+bcodmo:relatedPublication rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf bcodmo:relations ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( bcodmo:CreativeWork
+                                                      bcodmo:RelatedWork
+                                                    )
+                                      ] ;
+                          rdfs:range bcodmo:Publication ;
+                          rdfs:comment "Related Publication to some CreativeWork" ;
+                          rdfs:label "relatedPublication" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/relations
 bcodmo:relations rdf:type owl:ObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
@@ -915,6 +987,14 @@ bcodmo:releaseDate rdf:type owl:ObjectProperty ;
                    rdfs:comment "The date on which an embargo releases and the dataset becomes publicly accessible." ;
                    rdfs:label "releaseDate" ;
                    skos:closeMatch <https://schema.org/expires> .
+
+
+###  https://schema.bco-dmo.org/v1.0/replacedBy
+bcodmo:replacedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:DeprecatedEntity ;
+                  rdfs:range bcodmo:Entity ;
+                  rdfs:comment "An entity that replaces a deprecated Entity." ;
+                  rdfs:label "replacedBy" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/resolution
@@ -1908,6 +1988,13 @@ bcodmo:ConsumeAction rdf:type owl:Class ;
                      skos:closeMatch "https://schema.org/ConsumeAction" .
 
 
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary
+bcodmo:ControlledVocabulary rdf:type owl:Class ;
+                            rdfs:subClassOf bcodmo:CreativeWork ;
+                            rdfs:comment "A vocabulary of terms or phrases used to describe concepts in a specific domain" ;
+                            rdfs:label "ControlledVocabulary" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem
 bcodmo:CoordinateReferenceSystem rdf:type owl:Class ;
                                  rdfs:subClassOf bcodmo:IdentifierScheme ;
@@ -2282,7 +2369,7 @@ bcodmo:DatasetParameterAttribute rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetType
 bcodmo:DatasetType rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                   owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty [ owl:inverseOf bcodmo:datasetType
                                                                                ] ;
@@ -2291,7 +2378,7 @@ bcodmo:DatasetType rdf:type owl:Class ;
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:subClassOf bcodmo:DefinedType ;
+                   rdfs:subClassOf bcodmo:Category ;
                    rdfs:comment "A category describing the type of dataset (e.g. Cruise Data, Model Output)." ;
                    rdfs:label "Dataset Type" .
 
@@ -2321,7 +2408,7 @@ bcodmo:DatasetsInOtherCatalog rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype
 bcodmo:Datatype rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf bcodmo:dataType
                                                                             ] ;
@@ -2330,17 +2417,26 @@ bcodmo:Datatype rdf:type owl:Class ;
                                                          ) ;
                                       rdf:type owl:Class
                                     ] ;
-                rdfs:subClassOf bcodmo:DefinedType ;
+                rdfs:subClassOf bcodmo:Category ;
                 rdfs:comment "The data type of a dataset parameter column (e.g. string, integer, float)." ;
                 rdfs:label "Datatype" ;
                 skos:exactMatch <https://schema.org/DataType> .
 
 
-###  https://schema.bco-dmo.org/v1.0/DefinedType
-bcodmo:DefinedType rdf:type owl:Class ;
+###  https://schema.bco-dmo.org/v1.0/DefinedTerm
+bcodmo:DefinedTerm rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty bcodmo:inControlledVocabulary ;
+                                                                owl:someValuesFrom bcodmo:ControlledVocabulary
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
                    rdfs:subClassOf bcodmo:Category ;
-                   rdfs:comment "A type of something" ;
-                   rdfs:label "DefinedType" .
+                   rdfs:comment "A term in some ControlledVocabulary with a community-agreed definition" ;
+                   rdfs:label "DefinedTerm" ;
+                   skos:exactMatch <https://schema.org/DefinedTerm> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Deployment
@@ -2383,6 +2479,24 @@ bcodmo:DeploymentEntityMatch rdf:type owl:Class ;
                                                  ] ;
                              rdfs:subClassOf bcodmo:EntityMatch ;
                              rdfs:label "DeploymentEntityMatch" .
+
+
+###  https://schema.bco-dmo.org/v1.0/DeprecatedEntity
+bcodmo:DeprecatedEntity rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty bcodmo:entityStatus ;
+                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty bcodmo:entityPublishingStatus ;
+                                                                                          owl:hasValue bcodmo:EntityPublishingStatus_Deprecated
+                                                                                        ]
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf bcodmo:Entity ;
+                        rdfs:comment "An entity that should no longer be used." ;
+                        rdfs:label "DeprecatedEntity" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/EmailAddress
@@ -2523,7 +2637,7 @@ bcodmo:FileDescriptor rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/FileType
 bcodmo:FileType rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf bcodmo:fileType
                                                                             ] ;
@@ -2532,7 +2646,7 @@ bcodmo:FileType rdf:type owl:Class ;
                                                          ) ;
                                       rdf:type owl:Class
                                     ] ;
-                rdfs:subClassOf bcodmo:DefinedType ;
+                rdfs:subClassOf bcodmo:Category ;
                 rdfs:comment "A file format type, characterised by a label and MIME type (e.g. CSV, XML, PDF)." ;
                 rdfs:label "File Type" .
 
@@ -2547,8 +2661,9 @@ bcodmo:FundingAgency rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType
 bcodmo:GCMDPlatformType rdf:type owl:Class ;
-                        rdfs:subClassOf bcodmo:PlatformType ;
+                        rdfs:subClassOf bcodmo:DefinedTerm ;
                         rdfs:comment "A platform type defined by GCMD" ;
+                        rdfs:isDefinedBy bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                         rdfs:label "GCMDPlatformType" .
 
 
@@ -2572,6 +2687,17 @@ bcodmo:Geometry rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Identifier
 bcodmo:Identifier rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bcodmo:identifierScheme ;
+                                                               owl:someValuesFrom bcodmo:IdentifierScheme
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bcodmo:identifierValue ;
+                                                               owl:someValuesFrom xsd:token
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
                   rdfs:subClassOf bcodmo:Entity ;
                   rdfs:comment "An identifier assigned to a resource by some scheme." ;
                   rdfs:label "Identifier" .
@@ -2617,7 +2743,7 @@ bcodmo:ImageFileType rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Instrument
 bcodmo:Instrument rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                  owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedTerm
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty [ owl:inverseOf bcodmo:isDefinedAs
                                                                               ] ;
@@ -2626,7 +2752,7 @@ bcodmo:Instrument rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf bcodmo:DefinedType ;
+                  rdfs:subClassOf bcodmo:DefinedTerm ;
                   rdfs:comment "A master (community-level) scientific instrument definition." ;
                   rdfs:label "Instrument" ;
                   skos:closeMatch <http://www.w3.org/ns/sosa/Sensor> ;
@@ -2636,7 +2762,7 @@ bcodmo:Instrument rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/Keyword
 bcodmo:Keyword rdf:type owl:Class ;
                rdfs:subClassOf bcodmo:Category ;
-               rdfs:comment "A subject keyword associated with a dataset." ;
+               rdfs:comment "A subject keyword associated with a CreativeWork." ;
                rdfs:label "Keyword" .
 
 
@@ -2696,8 +2822,9 @@ bcodmo:MetadataProfile rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic
 bcodmo:NODCTopic rdf:type owl:Class ;
-                 rdfs:subClassOf bcodmo:Category ;
+                 rdfs:subClassOf bcodmo:DefinedTerm ;
                  rdfs:comment "A NODC topic category for Datases." ;
+                 rdfs:isDefinedBy bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                  rdfs:label "NODCTopic" .
 
 
@@ -2737,7 +2864,7 @@ bcodmo:Organization rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Parameter
 bcodmo:Parameter rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                 owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedTerm
                                                             [ rdf:type owl:Restriction ;
                                                               owl:onProperty [ owl:inverseOf bcodmo:isDefinedAs
                                                                              ] ;
@@ -2746,7 +2873,7 @@ bcodmo:Parameter rdf:type owl:Class ;
                                                           ) ;
                                        rdf:type owl:Class
                                      ] ;
-                 rdfs:subClassOf bcodmo:DefinedType ;
+                 rdfs:subClassOf bcodmo:DefinedTerm ;
                  rdfs:comment "A master (community-level) scientific parameter definition." ;
                  rdfs:label "Parameter" .
 
@@ -2787,7 +2914,7 @@ bcodmo:PlatformTitle rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/PlatformType
 bcodmo:PlatformType rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                    owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                                [ rdf:type owl:Restriction ;
                                                                  owl:onProperty [ owl:inverseOf bcodmo:platformType
                                                                                 ] ;
@@ -2796,7 +2923,7 @@ bcodmo:PlatformType rdf:type owl:Class ;
                                                              ) ;
                                           rdf:type owl:Class
                                         ] ;
-                    rdfs:subClassOf bcodmo:DefinedType ;
+                    rdfs:subClassOf bcodmo:Category ;
                     rdfs:comment "A category of platform (e.g. vessel, mooring, glider)." ;
                     rdfs:label "Platform Type" .
 
@@ -2867,6 +2994,33 @@ bcodmo:RORIdentifier rdf:type owl:Class ;
                      rdfs:label "ROR Identifier" .
 
 
+###  https://schema.bco-dmo.org/v1.0/RelatedDataset
+bcodmo:RelatedDataset rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( bcodmo:RelatedWork
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty bcodmo:relations ;
+                                                                   owl:someValuesFrom bcodmo:Dataset
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf bcodmo:RelatedWork ;
+                      rdfs:label "RelatedDataset" .
+
+
+###  https://schema.bco-dmo.org/v1.0/RelatedPublication
+bcodmo:RelatedPublication rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( bcodmo:RelatedWork
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty bcodmo:relations ;
+                                                                       owl:someValuesFrom bcodmo:Publication
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf bcodmo:RelatedWork .
+
+
 ###  https://schema.bco-dmo.org/v1.0/RelatedWork
 bcodmo:RelatedWork rdf:type owl:Class ;
                    owl:equivalentClass [ owl:intersectionOf ( bcodmo:Situation
@@ -2903,7 +3057,7 @@ bcodmo:ResearchActivity rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation
 bcodmo:ResourceRelation rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+                        owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty [ owl:inverseOf bcodmo:relationship
                                                                                     ] ;
@@ -2916,7 +3070,7 @@ bcodmo:ResourceRelation rdf:type owl:Class ;
                                                                  ) ;
                                               rdf:type owl:Class
                                             ] ;
-                        rdfs:subClassOf bcodmo:DefinedType ;
+                        rdfs:subClassOf bcodmo:Category ;
                         rdfs:comment "A controlled-vocabulary term describing the relationship between two resources (aligned to Crossref and DataCite relation types)." ;
                         rdfs:label "Resource Relation" .
 
@@ -2939,7 +3093,7 @@ bcodmo:ResourceRelationGroup rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Role
 bcodmo:Role rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedType
+            owl:equivalentClass [ owl:intersectionOf ( bcodmo:Category
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty bcodmo:roleWeight ;
                                                          owl:someValuesFrom xsd:int
@@ -2947,7 +3101,7 @@ bcodmo:Role rdf:type owl:Class ;
                                                      ) ;
                                   rdf:type owl:Class
                                 ] ;
-            rdfs:subClassOf bcodmo:DefinedType ;
+            rdfs:subClassOf bcodmo:Category ;
             rdfs:comment "A functional role performed by an agent (e.g. Principal Investigator, Co-Investigator)." ;
             rdfs:label "Role" .
 
@@ -3194,6 +3348,62 @@ bcodmo:Boolean_True rdf:type owl:NamedIndividual ,
                              bcodmo:Boolean ;
                     bcodmo:label "true"^^xsd:boolean ;
                     rdfs:label "Boolean: True" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Instruments
+bcodmo:ControlledVocabulary_BCODMO_Instruments rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ControlledVocabulary ;
+                                               bcodmo:label "BCO-DMO Instruments" ;
+                                               rdfs:label "Controlled Vocabulary: BCO-DMO Instruments" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Parameters
+bcodmo:ControlledVocabulary_BCODMO_Parameters rdf:type owl:NamedIndividual ,
+                                                       bcodmo:ControlledVocabulary ;
+                                              bcodmo:label "BCO-DMO Parameters" ;
+                                              rdfs:label "Controlled Vocabulary: BCO-DMO Parameters" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BODCParameterUsageVocabulary
+bcodmo:ControlledVocabulary_BODCParameterUsageVocabulary rdf:type owl:NamedIndividual ;
+                                                         bcodmo:abbreviation "P01" ;
+                                                         bcodmo:label "BODC Parameter Usage Vocabulary" ;
+                                                         bcodmo:url "https://vocab.nerc.ac.uk/collection/P01/current/"^^xsd:anyURI ;
+                                                         rdfs:label "Controlled Vocabulary: BODC Parameter Usage Vocabulary" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_GCMDPlatformTypes
+bcodmo:ControlledVocabulary_GCMDPlatformTypes rdf:type owl:NamedIndividual ,
+                                                       bcodmo:ControlledVocabulary ;
+                                              bcodmo:label "GCMD Platform Types" ;
+                                              bcodmo:url "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"^^xsd:anyURI ;
+                                              rdfs:label "Controlled Vocabulary: GCMD Platform Types" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode
+bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode rdf:type owl:NamedIndividual ,
+                                                                          bcodmo:ControlledVocabulary ;
+                                                                 bcodmo:label "NODC ISO19115-2 MD_TopicCategoryCode" ;
+                                                                 bcodmo:url "https://www.ncei.noaa.gov/sites/default/files/2020-04/ISO%2019115-2%20Workbook_Part%20II%20Extentions%20for%20imagery%20and%20Gridded%20Data.pdf"^^xsd:anyURI ;
+                                                                 rdfs:label "ControlledVocabulary: NODC ISO19115-2 MD_TopicCategoryCode" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetDeviceCategories
+bcodmo:ControlledVocabulary_SeaDataNetDeviceCategories rdf:type owl:NamedIndividual ,
+                                                                bcodmo:ControlledVocabulary ;
+                                                       bcodmo:abbreviation "L05" ;
+                                                       bcodmo:label "SeaDataNet device Categories" ;
+                                                       bcodmo:url "https://vocab.nerc.ac.uk/collection/L05/current/"^^xsd:anyURI ;
+                                                       rdfs:label "Controlled Vocabulary: SeaDataNet device Categories" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary
+bcodmo:ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary rdf:type owl:NamedIndividual ,
+                                                                            bcodmo:ControlledVocabulary ;
+                                                                   bcodmo:abbreviation "P02" ;
+                                                                   bcodmo:name "SeaDataNet Parameter Discovery Vocabulary" ;
+                                                                   bcodmo:url "https://vocab.nerc.ac.uk/collection/P02/current/"^^xsd:anyURI ;
+                                                                   rdfs:label "Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm_MD5
@@ -3656,6 +3866,7 @@ bcodmo:FileType_ZIPArchive rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_Aircraft
 bcodmo:GCMDPlatformType_Aircraft rdf:type owl:NamedIndividual ,
                                           bcodmo:GCMDPlatformType ;
+                                 bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                  bcodmo:label "Aircraft"^^xsd:token ;
                                  rdfs:label "GCMD Platform Type: Aircraft" .
 
@@ -3663,6 +3874,7 @@ bcodmo:GCMDPlatformType_Aircraft rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_BalloonsAndRockets
 bcodmo:GCMDPlatformType_BalloonsAndRockets rdf:type owl:NamedIndividual ,
                                                     bcodmo:GCMDPlatformType ;
+                                           bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                            bcodmo:label "Balloons/Rockets"^^xsd:token ;
                                            rdfs:label "GCMD Platform Type: Balloons/Rockets" .
 
@@ -3670,6 +3882,7 @@ bcodmo:GCMDPlatformType_BalloonsAndRockets rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_EarthObservationSatellites
 bcodmo:GCMDPlatformType_EarthObservationSatellites rdf:type owl:NamedIndividual ,
                                                             bcodmo:GCMDPlatformType ;
+                                                   bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                    bcodmo:label "Earth Observation Satellites"^^xsd:token ;
                                                    rdfs:label "GCMD Platform Type: Earth Observation Satellites" .
 
@@ -3677,6 +3890,7 @@ bcodmo:GCMDPlatformType_EarthObservationSatellites rdf:type owl:NamedIndividual 
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_InSituLandBasedPlatforms
 bcodmo:GCMDPlatformType_InSituLandBasedPlatforms rdf:type owl:NamedIndividual ,
                                                           bcodmo:GCMDPlatformType ;
+                                                 bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                  bcodmo:label "In Situ Land-based Platforms"^^xsd:token ;
                                                  rdfs:label "GCMD Platform Type: In Situ Land-based Platforms" .
 
@@ -3684,6 +3898,7 @@ bcodmo:GCMDPlatformType_InSituLandBasedPlatforms rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_InSituOceanBasedPlatforms
 bcodmo:GCMDPlatformType_InSituOceanBasedPlatforms rdf:type owl:NamedIndividual ,
                                                            bcodmo:GCMDPlatformType ;
+                                                  bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                   bcodmo:label "In Situ Ocean-based Platforms"^^xsd:token ;
                                                   rdfs:label "GCMD Platform Type: In Situ Ocean-based Platforms" .
 
@@ -3691,6 +3906,7 @@ bcodmo:GCMDPlatformType_InSituOceanBasedPlatforms rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_InterplanetarySpacecraft
 bcodmo:GCMDPlatformType_InterplanetarySpacecraft rdf:type owl:NamedIndividual ,
                                                           bcodmo:GCMDPlatformType ;
+                                                 bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                  bcodmo:label "Interplanetary Spacecraft"^^xsd:token ;
                                                  rdfs:label "GCMD Platform Type: Interplanetary Spacecraft" .
 
@@ -3698,6 +3914,7 @@ bcodmo:GCMDPlatformType_InterplanetarySpacecraft rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_MapsChartsPhotographs
 bcodmo:GCMDPlatformType_MapsChartsPhotographs rdf:type owl:NamedIndividual ,
                                                        bcodmo:GCMDPlatformType ;
+                                              bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                               bcodmo:label "Maps/Charts/Photographs"^^xsd:token ;
                                               rdfs:label "GCMD Platform Type: Maps/Charts/Photographs" .
 
@@ -3705,6 +3922,7 @@ bcodmo:GCMDPlatformType_MapsChartsPhotographs rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_ModelsAnalyses
 bcodmo:GCMDPlatformType_ModelsAnalyses rdf:type owl:NamedIndividual ,
                                                 bcodmo:GCMDPlatformType ;
+                                       bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                        bcodmo:label "Models/Analyses"^^xsd:token ;
                                        rdfs:label "GCMD Platform Type: Models/Analyses" .
 
@@ -3712,6 +3930,7 @@ bcodmo:GCMDPlatformType_ModelsAnalyses rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_NavigationalPlatforms
 bcodmo:GCMDPlatformType_NavigationalPlatforms rdf:type owl:NamedIndividual ,
                                                        bcodmo:GCMDPlatformType ;
+                                              bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                               bcodmo:label "Navigational Platforms"^^xsd:token ;
                                               rdfs:label "GCMD Platform Type: Navigational Platforms" .
 
@@ -3719,6 +3938,7 @@ bcodmo:GCMDPlatformType_NavigationalPlatforms rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_SolarSpaceObservationSatellites
 bcodmo:GCMDPlatformType_SolarSpaceObservationSatellites rdf:type owl:NamedIndividual ,
                                                                  bcodmo:GCMDPlatformType ;
+                                                        bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                         bcodmo:label "Solar/Space Observation Satellites"^^xsd:token ;
                                                         rdfs:label "GCMD Platform Type: Solar/Space Observation Satellites" .
 
@@ -3726,6 +3946,7 @@ bcodmo:GCMDPlatformType_SolarSpaceObservationSatellites rdf:type owl:NamedIndivi
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType_SpaceStationsMannedSpacecraft
 bcodmo:GCMDPlatformType_SpaceStationsMannedSpacecraft rdf:type owl:NamedIndividual ,
                                                                bcodmo:GCMDPlatformType ;
+                                                      bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_GCMDPlatformTypes ;
                                                       bcodmo:label "Space Stations/Manned Spacecraft"^^xsd:token ;
                                                       rdfs:label "GCMD Platform Type: Space Stations/Manned Spacecraft" .
 
@@ -3804,6 +4025,7 @@ bcodmo:MetadataProfile_Datapackage_DOI_V1.0 rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_Biota
 bcodmo:NODCTopic_Biota rdf:type owl:NamedIndividual ,
                                 bcodmo:NODCTopic ;
+                       bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                        bcodmo:codeValue "002"^^xsd:token ;
                        bcodmo:description "flora and/or fauna in natural environment Examples: wildlife, vegetation, biological sciences, ecology, wilderness, sealife, wetlands, habitat" ;
                        bcodmo:label "biota"^^xsd:token ;
@@ -3813,6 +4035,7 @@ bcodmo:NODCTopic_Biota rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_ClimatologyMeteorologyAtmosphere
 bcodmo:NODCTopic_ClimatologyMeteorologyAtmosphere rdf:type owl:NamedIndividual ,
                                                            bcodmo:NODCTopic ;
+                                                  bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                                                   bcodmo:codeValue "004"^^xsd:token ;
                                                   bcodmo:description "processes and phenomena of the atmosphere Examples: cloud cover, weather, climate, atmospheric conditions, climate change, precipitation" ;
                                                   bcodmo:label "climatologyMeteorologyAtmosphere"^^xsd:token ;
@@ -3822,6 +4045,7 @@ bcodmo:NODCTopic_ClimatologyMeteorologyAtmosphere rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_Elevation
 bcodmo:NODCTopic_Elevation rdf:type owl:NamedIndividual ,
                                     bcodmo:NODCTopic ;
+                           bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                            bcodmo:codeValue "006"^^xsd:token ;
                            bcodmo:description "height above or below sea level Examples: altitude, bathymetry, digital elevation models, slope, derived products" ;
                            bcodmo:label "elevation"^^xsd:token ;
@@ -3831,6 +4055,7 @@ bcodmo:NODCTopic_Elevation rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_ImageryBaseMapsEarthCover
 bcodmo:NODCTopic_ImageryBaseMapsEarthCover rdf:type owl:NamedIndividual ,
                                                     bcodmo:NODCTopic ;
+                                           bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                                            bcodmo:codeValue "010"^^xsd:token ;
                                            bcodmo:description "base maps Examples: land cover, topographic maps, imagery, unclassified images, annotations" ;
                                            bcodmo:label "imageryBaseMapsEarthCover"^^xsd:token ;
@@ -3840,6 +4065,7 @@ bcodmo:NODCTopic_ImageryBaseMapsEarthCover rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_InlandWaters
 bcodmo:NODCTopic_InlandWaters rdf:type owl:NamedIndividual ,
                                        bcodmo:NODCTopic ;
+                              bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                               bcodmo:codeValue "012"^^xsd:token ;
                               bcodmo:description "inland water features, drainage systems and their characteristics Examples: rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water quality, hydrographic charts"^^xsd:token ;
                               bcodmo:label "inlandWaters"^^xsd:token ;
@@ -3849,6 +4075,7 @@ bcodmo:NODCTopic_InlandWaters rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_Location
 bcodmo:NODCTopic_Location rdf:type owl:NamedIndividual ,
                                    bcodmo:NODCTopic ;
+                          bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                           bcodmo:codeValue "013"^^xsd:token ;
                           bcodmo:description "positional information and services Examples: addresses, geodetic networks, control points, postal zones and services, place names<" ;
                           bcodmo:label "location"^^xsd:token ;
@@ -3858,6 +4085,7 @@ bcodmo:NODCTopic_Location rdf:type owl:NamedIndividual ,
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic_Oceans
 bcodmo:NODCTopic_Oceans rdf:type owl:NamedIndividual ,
                                  bcodmo:NODCTopic ;
+                        bcodmo:inControlledVocabulary bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
                         bcodmo:codeValue "014"^^xsd:token ;
                         bcodmo:description "features and characteristics of salt water bodies (excluding inland waters) Examples: tides, tidal waves, coastal information, reefs" ;
                         bcodmo:label "oceans"^^xsd:token ;
