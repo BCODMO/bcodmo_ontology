@@ -494,6 +494,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/hasAgentWithRole
 :hasAgentWithRole rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isRoleFor ;
                   rdfs:domain [ rdf:type owl:Class ;
                                 owl:unionOf ( :CreativeWork
                                               :Deployment
@@ -512,6 +513,14 @@ rdf:subject rdf:type owl:ObjectProperty .
               rdfs:comment "The start of a temporal interval." ;
               rdfs:label "hasBeginning" ;
               <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/2006/time#hasBeginning> .
+
+
+###  https://schema.bco-dmo.org/v1.0/hasCollection
+:hasCollection rdf:type owl:ObjectProperty ;
+               rdfs:domain :Entity ;
+               rdfs:range :Collection ;
+               rdfs:comment "A collection related to some Thing" ;
+               rdfs:label "hasCollection" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasCollectionItem
@@ -656,6 +665,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/hasSynonym
 :hasSynonym rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :situationInvolves ;
             rdfs:domain :Deployment ;
             rdfs:range :Synonym ;
             rdfs:comment "An alternative name used for a deployment." ;
@@ -756,13 +766,17 @@ rdf:subject rdf:type owl:ObjectProperty .
           rdfs:label "isPartOf" .
 
 
-###  https://schema.bco-dmo.org/v1.0/isPrimarySynonym
-:isPrimarySynonym rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :hasSynonym ;
-                  rdfs:domain :Deployment ;
-                  rdfs:range :Synonym ;
-                  rdfs:comment "The primary Synonym for some Thing that may have multiple." ;
-                  rdfs:label "isPrimarySynonym" .
+###  https://schema.bco-dmo.org/v1.0/isRoleFor
+:isRoleFor rdf:type owl:ObjectProperty ;
+           rdfs:domain :AgentRole ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :CreativeWork
+                                      :Deployment
+                                      :ResearchActivity
+                                    )
+                      ] ;
+           rdfs:comment "Associates a dataset or deployment with an a qualified role of an agent." ;
+           rdfs:label "hasAgentWithRole" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/isTypeOf
@@ -865,6 +879,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/offers
 :offers rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasCollection ;
         rdfs:domain :MediaService ;
         rdfs:range :OfferCatalog ;
         rdfs:comment "The offering made by some MediaService" ;
@@ -881,6 +896,16 @@ rdf:subject rdf:type owl:ObjectProperty .
             rdfs:label "onPlatform" .
 
 
+###  https://schema.bco-dmo.org/v1.0/orcidIdentifier
+:orcidIdentifier rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :identifier ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :ORCIDIdentifier ;
+                 rdfs:comment "The ORCID Identifier for some person" ;
+                 rdfs:label "orcidIdentifier" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/performedAt
 :performedAt rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :situationInvolves ;
@@ -893,10 +918,20 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/performedBy
 :performedBy rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :situationInvolves ;
+             owl:inverseOf :performedRole ;
              rdfs:domain :AgentRole ;
              rdfs:range :Agent ;
              rdfs:comment "The person who performed or holds this role." ;
              rdfs:label "performedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/performedRole
+:performedRole rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :situationInvolves ;
+               rdfs:domain :Agent ;
+               rdfs:range :AgentRole ;
+               rdfs:comment "An Agent Role performed by some Agent." ;
+               rdfs:label "performedRole" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward
@@ -923,9 +958,23 @@ rdf:subject rdf:type owl:ObjectProperty .
               rdfs:label "platformType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/postalAddress
+:postalAddress rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Organization
+                                           :Person
+                                         )
+                           ] ;
+               rdfs:range :PostalAddress ;
+               rdfs:comment "Postal address of some Agent." ;
+               rdfs:label "postalAddress" ;
+               <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/address> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/preferredDOI
-:preferredDOI rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty ;
+:preferredDOI rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :identifier ;
+              rdf:type owl:FunctionalProperty ;
               rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( :CreativeWork
                                           :Dataset
@@ -968,6 +1017,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/projectExternalDatasetList
 :projectExternalDatasetList rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasCollection ;
                             rdfs:domain :Project ;
                             rdfs:range :DatasetList ;
                             rdfs:comment "a Collection of external Datasets related to a Project" ;
@@ -1269,6 +1319,35 @@ rdf:subject rdf:type owl:ObjectProperty .
          rdfs:label "acronym" .
 
 
+###  https://schema.bco-dmo.org/v1.0/addressCountry
+:addressCountry rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :PostalAddress ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The country for some physical address." ;
+                rdfs:label "addressCountry" ;
+                <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/addressCountry> .
+
+
+###  https://schema.bco-dmo.org/v1.0/addressLocality
+:addressLocality rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :PostalAddress ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division such as the Province in Italy or Region in Germany." ;
+                 rdfs:label "addressLocality" ;
+                 <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/addressLocality> .
+
+
+###  https://schema.bco-dmo.org/v1.0/addressRegion
+:addressRegion rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :PostalAddress ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The region in which the locality is, and which is in the country. For the US, this would be the name of the state, the province in Italy, or region in Germany." ;
+               rdfs:label "addressRegion" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/affiliationName
 :affiliationName rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Affiliation ;
@@ -1392,6 +1471,17 @@ rdf:subject rdf:type owl:ObjectProperty .
               rdfs:label "eastBoundary" .
 
 
+###  https://schema.bco-dmo.org/v1.0/email
+:email rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Agent ;
+       rdfs:range xsd:token ;
+       rdfs:comment "Email address" ;
+       rdfs:label "email" ;
+       rdfs:seeAlso :Datatype_EmailAddress ;
+       <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/email> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/encoding
 :encoding rdf:type owl:DatatypeProperty ;
           rdfs:domain :File ;
@@ -1426,12 +1516,29 @@ rdf:subject rdf:type owl:ObjectProperty .
             <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/familyName> .
 
 
+###  https://schema.bco-dmo.org/v1.0/faxNumber
+:faxNumber rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range xsd:token ;
+           rdfs:comment "The fax number." ;
+           rdfs:label "faxNumber" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/filename
 :filename rdf:type owl:DatatypeProperty ;
           rdfs:domain :File ;
           rdfs:range xsd:token ;
           rdfs:comment "The file name including extension." ;
           rdfs:label "filename" .
+
+
+###  https://schema.bco-dmo.org/v1.0/firstNameSynonyms
+:firstNameSynonyms rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Person ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "A list of synonyms for the perons's first name" ;
+                   rdfs:label "firstNameSynonyms" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/givenName
@@ -1503,8 +1610,18 @@ rdf:subject rdf:type owl:ObjectProperty .
                                 rdfs:label "inverseSymmetricalRelationship" .
 
 
+###  https://schema.bco-dmo.org/v1.0/isPrimary
+:isPrimary rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Entity ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "In a multi-valued set of Things, this one is the primary" ;
+           rdfs:label "isPrimary" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/isPrimaryDataFile
 :isPrimaryDataFile rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :isPrimary ;
                    rdfs:domain :DataFile ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "Indicates whether this is the primary data file of a dataset (true/false)." ;
@@ -1523,7 +1640,6 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/lastNameSynonyms
 :lastNameSynonyms rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
                   rdfs:domain :Person ;
                   rdfs:range xsd:string ;
                   rdfs:comment "Last name that a person may have or be known as" ;
@@ -1572,7 +1688,6 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/middleNameSynonyms
 :middleNameSynonyms rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf owl:topDataProperty ;
                     rdfs:domain :Person ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Other middle names a person may have or be known as" ;
@@ -1635,6 +1750,15 @@ rdf:subject rdf:type owl:ObjectProperty .
               rdfs:comment "The official name for a master parameter." ;
               rdfs:label "officialName" ;
               <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://schema.org/name> .
+
+
+###  https://schema.bco-dmo.org/v1.0/postalCode
+:postalCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :PostalAddress ;
+            rdfs:range xsd:token ;
+            rdfs:comment "The postal code" ;
+            rdfs:label "postalCode" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/problemDescription
@@ -1723,6 +1847,26 @@ rdf:subject rdf:type owl:ObjectProperty .
                rdfs:range xsd:float ;
                rdfs:comment "The southern latitude boundary of a bounding box (decimal degrees)." ;
                rdfs:label "southBoundary" .
+
+
+###  https://schema.bco-dmo.org/v1.0/streetAddress
+:streetAddress rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :PostalAddress ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The street address. For example, 1600 Amphitheatre Pkwy. Can be multi-line to include APT or other street informaion. It typically comes after the addressee's name but before the addressLocality" ;
+               rdfs:label "streetAddress" ;
+               <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/streetAddress> .
+
+
+###  https://schema.bco-dmo.org/v1.0/telephone
+:telephone rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range xsd:token ;
+           rdfs:comment "The telephone number." ;
+           rdfs:label "telephone" ;
+           <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/telephone> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/title
@@ -3400,6 +3544,14 @@ rdf:Statement rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/ont/sf#Polygon> .
 
 
+###  https://schema.bco-dmo.org/v1.0/PostalAddress
+:PostalAddress rdf:type owl:Class ;
+               rdfs:subClassOf :GeographicalLocation ;
+               rdfs:comment "The mailing address." ;
+               rdfs:label "PostalAddress" ;
+               <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/PostalAddress> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Program
 :Program rdf:type owl:Class ;
          owl:equivalentClass [ owl:intersectionOf ( :ResearchActivity
@@ -3651,7 +3803,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Synonym
 :Synonym rdf:type owl:Class ;
-         rdfs:subClassOf :Entity ;
+         rdfs:subClassOf :Situation ;
          rdfs:comment "An alternative name or synonym, e.g. for a deployment." ;
          rdfs:label "Synonym" .
 
@@ -3736,6 +3888,14 @@ rdf:Statement rdf:type owl:Class .
         rdfs:subClassOf :Platform ;
         rdfs:comment "A ship or boat." ;
         rdfs:label "Vessel" .
+
+
+###  https://schema.bco-dmo.org/v1.0/WebPage
+:WebPage rdf:type owl:Class ;
+         rdfs:subClassOf :CreativeWork ;
+         rdfs:comment "A web page" ;
+         rdfs:label "WebPage" ;
+         <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/WebPage> .
 
 
 #################################################################

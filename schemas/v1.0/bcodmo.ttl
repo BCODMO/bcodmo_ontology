@@ -502,6 +502,7 @@ bcodmo:grantedAward rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/hasAgentWithRole
 bcodmo:hasAgentWithRole rdf:type owl:ObjectProperty ;
+                        owl:inverseOf bcodmo:isRoleFor ;
                         rdfs:domain [ rdf:type owl:Class ;
                                       owl:unionOf ( bcodmo:CreativeWork
                                                     bcodmo:Deployment
@@ -520,6 +521,14 @@ bcodmo:hasBeginning rdf:type owl:ObjectProperty ;
                     rdfs:comment "The start of a temporal interval." ;
                     rdfs:label "hasBeginning" ;
                     skos:exactMatch time:hasBeginning .
+
+
+###  https://schema.bco-dmo.org/v1.0/hasCollection
+bcodmo:hasCollection rdf:type owl:ObjectProperty ;
+                     rdfs:domain bcodmo:Entity ;
+                     rdfs:range bcodmo:Collection ;
+                     rdfs:comment "A collection related to some Thing" ;
+                     rdfs:label "hasCollection" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasCollectionItem
@@ -664,6 +673,7 @@ bcodmo:hasProject rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/hasSynonym
 bcodmo:hasSynonym rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf bcodmo:situationInvolves ;
                   rdfs:domain bcodmo:Deployment ;
                   rdfs:range bcodmo:Synonym ;
                   rdfs:comment "An alternative name used for a deployment." ;
@@ -764,13 +774,17 @@ bcodmo:isPartOf rdf:type owl:ObjectProperty ;
                 rdfs:label "isPartOf" .
 
 
-###  https://schema.bco-dmo.org/v1.0/isPrimarySynonym
-bcodmo:isPrimarySynonym rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf bcodmo:hasSynonym ;
-                        rdfs:domain bcodmo:Deployment ;
-                        rdfs:range bcodmo:Synonym ;
-                        rdfs:comment "The primary Synonym for some Thing that may have multiple." ;
-                        rdfs:label "isPrimarySynonym" .
+###  https://schema.bco-dmo.org/v1.0/isRoleFor
+bcodmo:isRoleFor rdf:type owl:ObjectProperty ;
+                 rdfs:domain bcodmo:AgentRole ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( bcodmo:CreativeWork
+                                            bcodmo:Deployment
+                                            bcodmo:ResearchActivity
+                                          )
+                            ] ;
+                 rdfs:comment "Associates a dataset or deployment with an a qualified role of an agent." ;
+                 rdfs:label "hasAgentWithRole" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/isTypeOf
@@ -873,6 +887,7 @@ bcodmo:obsoletes rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/offers
 bcodmo:offers rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bcodmo:hasCollection ;
               rdfs:domain bcodmo:MediaService ;
               rdfs:range bcodmo:OfferCatalog ;
               rdfs:comment "The offering made by some MediaService" ;
@@ -889,6 +904,16 @@ bcodmo:onPlatform rdf:type owl:ObjectProperty ;
                   rdfs:label "onPlatform" .
 
 
+###  https://schema.bco-dmo.org/v1.0/orcidIdentifier
+bcodmo:orcidIdentifier rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf bcodmo:identifier ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain bcodmo:Person ;
+                       rdfs:range bcodmo:ORCIDIdentifier ;
+                       rdfs:comment "The ORCID Identifier for some person" ;
+                       rdfs:label "orcidIdentifier" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/performedAt
 bcodmo:performedAt rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf bcodmo:situationInvolves ;
@@ -901,10 +926,20 @@ bcodmo:performedAt rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/performedBy
 bcodmo:performedBy rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf bcodmo:situationInvolves ;
+                   owl:inverseOf bcodmo:performedRole ;
                    rdfs:domain bcodmo:AgentRole ;
                    rdfs:range bcodmo:Agent ;
                    rdfs:comment "The person who performed or holds this role." ;
                    rdfs:label "performedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/performedRole
+bcodmo:performedRole rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf bcodmo:situationInvolves ;
+                     rdfs:domain bcodmo:Agent ;
+                     rdfs:range bcodmo:AgentRole ;
+                     rdfs:comment "An Agent Role performed by some Agent." ;
+                     rdfs:label "performedRole" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward
@@ -931,9 +966,23 @@ bcodmo:platformType rdf:type owl:ObjectProperty ;
                     rdfs:label "platformType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/postalAddress
+bcodmo:postalAddress rdf:type owl:ObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( bcodmo:Organization
+                                                 bcodmo:Person
+                                               )
+                                 ] ;
+                     rdfs:range bcodmo:PostalAddress ;
+                     rdfs:comment "Postal address of some Agent." ;
+                     rdfs:label "postalAddress" ;
+                     skos:closeMatch <https://schema.org/address> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/preferredDOI
-bcodmo:preferredDOI rdf:type owl:ObjectProperty ,
-                             owl:FunctionalProperty ;
+bcodmo:preferredDOI rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf bcodmo:identifier ;
+                    rdf:type owl:FunctionalProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
                                   owl:unionOf ( bcodmo:CreativeWork
                                                 bcodmo:Dataset
@@ -976,6 +1025,7 @@ bcodmo:projectActedOnWork rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/projectExternalDatasetList
 bcodmo:projectExternalDatasetList rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf bcodmo:hasCollection ;
                                   rdfs:domain bcodmo:Project ;
                                   rdfs:range bcodmo:DatasetList ;
                                   rdfs:comment "a Collection of external Datasets related to a Project" ;
@@ -1277,6 +1327,35 @@ bcodmo:acronym rdf:type owl:DatatypeProperty ;
                rdfs:label "acronym" .
 
 
+###  https://schema.bco-dmo.org/v1.0/addressCountry
+bcodmo:addressCountry rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain bcodmo:PostalAddress ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "The country for some physical address." ;
+                      rdfs:label "addressCountry" ;
+                      skos:exactMatch <https://schema.org/addressCountry> .
+
+
+###  https://schema.bco-dmo.org/v1.0/addressLocality
+bcodmo:addressLocality rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain bcodmo:PostalAddress ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division such as the Province in Italy or Region in Germany." ;
+                       rdfs:label "addressLocality" ;
+                       skos:exactMatch <https://schema.org/addressLocality> .
+
+
+###  https://schema.bco-dmo.org/v1.0/addressRegion
+bcodmo:addressRegion rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain bcodmo:PostalAddress ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "The region in which the locality is, and which is in the country. For the US, this would be the name of the state, the province in Italy, or region in Germany." ;
+                     rdfs:label "addressRegion" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/affiliationName
 bcodmo:affiliationName rdf:type owl:DatatypeProperty ;
                        rdfs:domain bcodmo:Affiliation ;
@@ -1400,6 +1479,17 @@ bcodmo:eastBoundary rdf:type owl:DatatypeProperty ,
                     rdfs:label "eastBoundary" .
 
 
+###  https://schema.bco-dmo.org/v1.0/email
+bcodmo:email rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain bcodmo:Agent ;
+             rdfs:range xsd:token ;
+             rdfs:comment "Email address" ;
+             rdfs:label "email" ;
+             rdfs:seeAlso bcodmo:Datatype_EmailAddress ;
+             skos:exactMatch <https://schema.org/email> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/encoding
 bcodmo:encoding rdf:type owl:DatatypeProperty ;
                 rdfs:domain bcodmo:File ;
@@ -1434,12 +1524,29 @@ bcodmo:familyName rdf:type owl:DatatypeProperty ;
                   skos:exactMatch <https://schema.org/familyName> .
 
 
+###  https://schema.bco-dmo.org/v1.0/faxNumber
+bcodmo:faxNumber rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain bcodmo:Agent ;
+                 rdfs:range xsd:token ;
+                 rdfs:comment "The fax number." ;
+                 rdfs:label "faxNumber" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/filename
 bcodmo:filename rdf:type owl:DatatypeProperty ;
                 rdfs:domain bcodmo:File ;
                 rdfs:range xsd:token ;
                 rdfs:comment "The file name including extension." ;
                 rdfs:label "filename" .
+
+
+###  https://schema.bco-dmo.org/v1.0/firstNameSynonyms
+bcodmo:firstNameSynonyms rdf:type owl:DatatypeProperty ;
+                         rdfs:domain bcodmo:Person ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "A list of synonyms for the perons's first name" ;
+                         rdfs:label "firstNameSynonyms" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/givenName
@@ -1511,8 +1618,18 @@ bcodmo:inverseSymmetricalRelationship rdf:type owl:DatatypeProperty ,
                                       rdfs:label "inverseSymmetricalRelationship" .
 
 
+###  https://schema.bco-dmo.org/v1.0/isPrimary
+bcodmo:isPrimary rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain bcodmo:Entity ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "In a multi-valued set of Things, this one is the primary" ;
+                 rdfs:label "isPrimary" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/isPrimaryDataFile
 bcodmo:isPrimaryDataFile rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf bcodmo:isPrimary ;
                          rdfs:domain bcodmo:DataFile ;
                          rdfs:range xsd:boolean ;
                          rdfs:comment "Indicates whether this is the primary data file of a dataset (true/false)." ;
@@ -1531,7 +1648,6 @@ bcodmo:label rdf:type owl:DatatypeProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/lastNameSynonyms
 bcodmo:lastNameSynonyms rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf owl:topDataProperty ;
                         rdfs:domain bcodmo:Person ;
                         rdfs:range xsd:string ;
                         rdfs:comment "Last name that a person may have or be known as" ;
@@ -1580,7 +1696,6 @@ bcodmo:middleName rdf:type owl:DatatypeProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/middleNameSynonyms
 bcodmo:middleNameSynonyms rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf owl:topDataProperty ;
                           rdfs:domain bcodmo:Person ;
                           rdfs:range xsd:string ;
                           rdfs:comment "Other middle names a person may have or be known as" ;
@@ -1643,6 +1758,15 @@ bcodmo:officialName rdf:type owl:DatatypeProperty ;
                     rdfs:comment "The official name for a master parameter." ;
                     rdfs:label "officialName" ;
                     skos:relatedMatch <https://schema.org/name> .
+
+
+###  https://schema.bco-dmo.org/v1.0/postalCode
+bcodmo:postalCode rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain bcodmo:PostalAddress ;
+                  rdfs:range xsd:token ;
+                  rdfs:comment "The postal code" ;
+                  rdfs:label "postalCode" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/problemDescription
@@ -1731,6 +1855,26 @@ bcodmo:southBoundary rdf:type owl:DatatypeProperty ,
                      rdfs:range xsd:float ;
                      rdfs:comment "The southern latitude boundary of a bounding box (decimal degrees)." ;
                      rdfs:label "southBoundary" .
+
+
+###  https://schema.bco-dmo.org/v1.0/streetAddress
+bcodmo:streetAddress rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain bcodmo:PostalAddress ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "The street address. For example, 1600 Amphitheatre Pkwy. Can be multi-line to include APT or other street informaion. It typically comes after the addressee's name but before the addressLocality" ;
+                     rdfs:label "streetAddress" ;
+                     skos:closeMatch <https://schema.org/streetAddress> .
+
+
+###  https://schema.bco-dmo.org/v1.0/telephone
+bcodmo:telephone rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain bcodmo:Agent ;
+                 rdfs:range xsd:token ;
+                 rdfs:comment "The telephone number." ;
+                 rdfs:label "telephone" ;
+                 skos:exactMatch <https://schema.org/telephone> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/title
@@ -3408,6 +3552,14 @@ bcodmo:PolygonGeometry rdf:type owl:Class ;
                        skos:exactMatch sf:Polygon .
 
 
+###  https://schema.bco-dmo.org/v1.0/PostalAddress
+bcodmo:PostalAddress rdf:type owl:Class ;
+                     rdfs:subClassOf bcodmo:GeographicalLocation ;
+                     rdfs:comment "The mailing address." ;
+                     rdfs:label "PostalAddress" ;
+                     skos:exactMatch <https://schema.org/PostalAddress> .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Program
 bcodmo:Program rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( bcodmo:ResearchActivity
@@ -3659,7 +3811,7 @@ bcodmo:SupplementalDocument rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Synonym
 bcodmo:Synonym rdf:type owl:Class ;
-               rdfs:subClassOf bcodmo:Entity ;
+               rdfs:subClassOf bcodmo:Situation ;
                rdfs:comment "An alternative name or synonym, e.g. for a deployment." ;
                rdfs:label "Synonym" .
 
@@ -3744,6 +3896,14 @@ bcodmo:Vessel rdf:type owl:Class ;
               rdfs:subClassOf bcodmo:Platform ;
               rdfs:comment "A ship or boat." ;
               rdfs:label "Vessel" .
+
+
+###  https://schema.bco-dmo.org/v1.0/WebPage
+bcodmo:WebPage rdf:type owl:Class ;
+               rdfs:subClassOf bcodmo:CreativeWork ;
+               rdfs:comment "A web page" ;
+               rdfs:label "WebPage" ;
+               skos:exactMatch <https://schema.org/WebPage> .
 
 
 #################################################################
