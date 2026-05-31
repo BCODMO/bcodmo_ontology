@@ -60,12 +60,12 @@ function loadTOC(){
         return this.clone().find(sel||">*").remove().end();
  };    $(function(){
 	  $("#citation").load("sections/citation.html"); 
-      $("#abstract").load("sections/abstract-en.html"); 
+      $("#abs-sect").load("sections/abstract-en.html"); 
       $("#introduction").load("sections/introduction-en.html"); 
       $("#nstable").load("sections/ns-en.html"); 
       $("#overview").load("sections/overview-en.html"); 
-      $("#description").load("sections/description-en.html"); 
-      $("#references").load("sections/references-en.html"); 
+      $("#desc-sect").load("sections/description-en.html"); 
+      $("#references-sect").load("sections/references-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
     </script> 
@@ -100,13 +100,13 @@ function loadTOC(){
 <div>
 <span>Ontology Specification Draft</span>
 </div>
-</div>     <div id="abstract"></div>
+</div>     <div id="abs-sect"></div>
 <div id="toc"></div>     <div id="introduction"></div>
 	  <div id="nstable"></div>
      <div id="overview"></div>
-     <div id="description"></div>
+     <div id="desc-sect"></div>
      <div id="crossref"></div>
-     <div id="references"></div>
+     <div id="references-sect"></div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>
