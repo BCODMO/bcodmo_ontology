@@ -50,6 +50,10 @@ dcterms:title rdf:type owl:AnnotationProperty .
 owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
 skos:closeMatch rdf:type owl:AnnotationProperty .
 
@@ -356,20 +360,11 @@ bcodmo:describesFile rdf:type owl:ObjectProperty ;
 
 
 ###  https://schema.bco-dmo.org/v1.0/entityPublishingStatus
-bcodmo:entityPublishingStatus rdf:type owl:ObjectProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain bcodmo:EntityStatus ;
+bcodmo:entityPublishingStatus rdf:type owl:ObjectProperty ;
+                              rdfs:domain bcodmo:Entity ;
                               rdfs:range bcodmo:EntityPublishingStatus ;
-                              rdfs:comment "The publishing status of some BCO-DMO Entity" ;
+                              rdfs:comment "the publishing status of some BCO-DMO Entity" ;
                               rdfs:label "entityPublishingStatus" .
-
-
-###  https://schema.bco-dmo.org/v1.0/entityStatus
-bcodmo:entityStatus rdf:type owl:ObjectProperty ;
-                    rdfs:domain bcodmo:Entity ;
-                    rdfs:range bcodmo:EntityStatus ;
-                    rdfs:comment "the status of some BCO-DMO Entity" ;
-                    rdfs:label "entityStatus" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/entryPoint
@@ -727,6 +722,7 @@ bcodmo:inControlledVocabulary rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/inGroup
 bcodmo:inGroup rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf bcodmo:categorizedBy ;
                rdfs:domain bcodmo:ResourceRelation ;
                rdfs:range bcodmo:ResourceRelationGroup ;
                rdfs:comment "The group/category to which a resource relation type belongs." ;
@@ -760,6 +756,7 @@ bcodmo:isContinuingAwardOf rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/isDefinedAs
 bcodmo:isDefinedAs rdf:type owl:ObjectProperty ;
                    owl:equivalentProperty bcodmo:isTypeOf ;
+                   rdfs:subPropertyOf bcodmo:categorizedBy ;
                    rdfs:domain bcodmo:Entity ;
                    rdfs:range bcodmo:DefinedTerm ;
                    rdfs:comment "A thing is defined to be something more specific or colloquial than this more standardized cateogrization or community term." ;
@@ -844,11 +841,21 @@ bcodmo:logo rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/matches
 bcodmo:matches rdf:type owl:ObjectProperty ;
+               owl:inverseOf bcodmo:matchesToEntity ;
                rdfs:domain bcodmo:Entity ;
-               rdfs:range owl:Thing ;
+               rdfs:range bcodmo:EntityMatch ;
                rdfs:comment "Aligns a BCO-DMO vocabulary term with an equivalent term from an external community vocabulary (e.g. SeaDataNet, NERC, Crossref, DataCite)." ;
                rdfs:label "matches" ;
                skos:exactMatch skos:exactMatch .
+
+
+###  https://schema.bco-dmo.org/v1.0/matchesToEntity
+bcodmo:matchesToEntity rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf bcodmo:situationInvolves ;
+                       rdfs:domain bcodmo:EntityMatch ;
+                       rdfs:range bcodmo:Entity ;
+                       rdfs:comment "The entity to which this match belongs. The entity would be rdf:subject and the EntityMatch defines the rdf:predicate and rdf:object." ;
+                       rdfs:label "matchesToEntity" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/metadataFile
@@ -1109,7 +1116,11 @@ bcodmo:relations rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/relationship
 bcodmo:relationship rdf:type owl:ObjectProperty ;
-                    rdfs:domain bcodmo:CreativeWork ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( bcodmo:Dataset
+                                                bcodmo:RelatedWork
+                                              )
+                                ] ;
                     rdfs:range bcodmo:ResourceRelation ;
                     rdfs:comment "A controlled-vocabulary relation type between two resources." ;
                     rdfs:label "relationship" .
@@ -2792,17 +2803,6 @@ bcodmo:DeploymentEntityMatch rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/DeprecatedEntity
 bcodmo:DeprecatedEntity rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty bcodmo:entityStatus ;
-                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty bcodmo:entityPublishingStatus ;
-                                                                                          owl:hasValue bcodmo:EntityPublishingStatus_Deprecated
-                                                                                        ]
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ;
                         rdfs:subClassOf bcodmo:Entity ;
                         rdfs:comment "An entity that should no longer be used." ;
                         rdfs:label "DeprecatedEntity" .
@@ -2882,25 +2882,6 @@ bcodmo:EntityPublishingStatus rdf:type owl:Class ;
                               rdfs:subClassOf bcodmo:Category ;
                               rdfs:comment "One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it's being contructed, in draft review for a submitter, published, deprecated or unpublished." ;
                               rdfs:label "EntityPublishingStatus" .
-
-
-###  https://schema.bco-dmo.org/v1.0/EntityStatus
-bcodmo:EntityStatus rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( bcodmo:Situation
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty bcodmo:entityPublishingStatus ;
-                                                                 owl:someValuesFrom bcodmo:EntityPublishingStatus
-                                                               ]
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty bcodmo:hasTime ;
-                                                                 owl:someValuesFrom bcodmo:TemporalEntity
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                    rdfs:subClassOf bcodmo:Situation ;
-                    rdfs:comment "The status of some BCO-DMO Entity" ;
-                    rdfs:label "EntityStatus" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Event
@@ -3072,6 +3053,14 @@ bcodmo:Instrument rdf:type owl:Class ;
                                                                owl:onProperty [ owl:inverseOf bcodmo:isDefinedAs
                                                                               ] ;
                                                                owl:someValuesFrom bcodmo:DatasetInstrument
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ,
+                                      [ owl:intersectionOf ( bcodmo:DefinedTerm
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bcodmo:inControlledVocabulary ;
+                                                               owl:hasValue bcodmo:ControlledVocabulary_BCODMO_Instruments
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -3333,6 +3322,23 @@ bcodmo:MultiPolygonGeometry rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic
 bcodmo:NODCTopic rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( bcodmo:DefinedTerm
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty [ owl:inverseOf bcodmo:nodcTopicCategory
+                                                                             ] ;
+                                                              owl:someValuesFrom bcodmo:Dataset
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ,
+                                     [ owl:intersectionOf ( bcodmo:DefinedTerm
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:inControlledVocabulary ;
+                                                              owl:hasValue bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
                  rdfs:subClassOf bcodmo:DefinedTerm ;
                  rdfs:comment "A NODC topic category for Datases." ;
                  rdfs:isDefinedBy bcodmo:ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
@@ -3408,6 +3414,14 @@ bcodmo:Parameter rdf:type owl:Class ;
                                                               owl:onProperty [ owl:inverseOf bcodmo:isDefinedAs
                                                                              ] ;
                                                               owl:someValuesFrom bcodmo:DatasetParameter
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ,
+                                     [ owl:intersectionOf ( bcodmo:DefinedTerm
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bcodmo:inControlledVocabulary ;
+                                                              owl:hasValue bcodmo:ControlledVocabulary_BCODMO_Parameters
                                                             ]
                                                           ) ;
                                        rdf:type owl:Class
@@ -4477,7 +4491,8 @@ bcodmo:DeploymentActivity_Turnaround rdf:type owl:NamedIndividual ,
 
 
 ###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated
-bcodmo:EntityPublishingStatus_Deprecated rdf:type owl:NamedIndividual ;
+bcodmo:EntityPublishingStatus_Deprecated rdf:type owl:NamedIndividual ,
+                                                  bcodmo:EntityPublishingStatus ;
                                          bcodmo:label "Deprecated" ;
                                          rdfs:label "Entity Status: Deprecated" .
 
@@ -4883,6 +4898,22 @@ bcodmo:Organization_BCODMO rdf:type owl:NamedIndividual ,
 
 ###  https://www.bco-dmo.org/
 
+###  https://schema.bco-dmo.org/v1.0/Organization_Crossref
+bcodmo:Organization_Crossref rdf:type owl:NamedIndividual ,
+                                      bcodmo:Organization ;
+                             bcodmo:label "Crossref" ;
+                             bcodmo:url "https://www.crossref.org"^^xsd:anyURI ;
+                             rdfs:label "Organization: Crossref" .
+
+
+###  https://schema.bco-dmo.org/v1.0/Organization_DataCite
+bcodmo:Organization_DataCite rdf:type owl:NamedIndividual ,
+                                      bcodmo:Organization ;
+                             bcodmo:label "DataCite" ;
+                             bcodmo:url "https://datacite.org"^^xsd:anyURI ;
+                             rdfs:label "Organization: DataCite" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/PlatformType_Aircraft
 bcodmo:PlatformType_Aircraft rdf:type owl:NamedIndividual ,
                                       bcodmo:PlatformType ;
@@ -5025,6 +5056,458 @@ bcodmo:ResourceRelationGroup_Publication rdf:type owl:NamedIndividual ,
                                                   bcodmo:ResourceRelationGroup ;
                                          bcodmo:label "Publication" ;
                                          rdfs:label "Resource Relation Group: Publication" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_CollectionLevelDataDOI
+bcodmo:ResourceRelation_CollectionLevelDataDOI rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_BCODMO ;
+                                               bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetAggregation ;
+                                               bcodmo:matches bcodmo:ResourceRelation_Crossref_IsPartOf ,
+                                                              bcodmo:ResourceRelation_DataCite_IsPartOf ;
+                                               bcodmo:description "A DOI for a collection of data files that individually have their own DOIs" ;
+                                               bcodmo:label "Collection-Level Data DOI" ;
+                                               rdfs:label "Resource Relation: Collection-level Data DOI" ;
+                                               skos:broader bcodmo:ResourceRelation_IsPartOf .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Continues
+bcodmo:ResourceRelation_Continues rdf:type owl:NamedIndividual ,
+                                           bcodmo:ResourceRelation ;
+                                  bcodmo:authority bcodmo:Organization_BCODMO ;
+                                  bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                  bcodmo:inverseRelationship bcodmo:ResourceRelation_IsContinuedBy ;
+                                  bcodmo:matches bcodmo:ResourceRelation_Crossref_Continues ,
+                                                 bcodmo:ResourceRelation_DataCite_Continues ;
+                                  bcodmo:description "Indicates datasets which are continued by this dataset, such as time series, repeat sampling locations, or two sections of one cruise." ;
+                                  bcodmo:inverseDescription "Indicates datasets that are a continuation of this dataset, such as time series, repeat sampling locations, or two sections of one cruise." ;
+                                  bcodmo:label "Continues" ;
+                                  rdfs:label "Resource Relation: Continues" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Continues
+bcodmo:ResourceRelation_Crossref_Continues rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_Crossref ;
+                                           bcodmo:label "continues" ;
+                                           rdfs:label "ResourceRelation: Crossref - continues" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_HasPart
+bcodmo:ResourceRelation_Crossref_HasPart rdf:type owl:NamedIndividual ,
+                                                  bcodmo:ResourceRelation ;
+                                         bcodmo:authority bcodmo:Organization_Crossref ;
+                                         bcodmo:label "hasPart" ;
+                                         rdfs:label "ResourceRelation: Crossref - hasPart" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsContinuedBy
+bcodmo:ResourceRelation_Crossref_IsContinuedBy rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_Crossref ;
+                                               bcodmo:label "isContinuedBy" ;
+                                               rdfs:label "ResourceRelation: Crossref - isContinuedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDataBasisFor
+bcodmo:ResourceRelation_Crossref_IsDataBasisFor rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_Crossref ;
+                                                bcodmo:label "isDataBasisFor" ;
+                                                rdfs:label "ResourceRelation: Crossref - isDataBasisFor" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDerivedFrom
+bcodmo:ResourceRelation_Crossref_IsDerivedFrom rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_Crossref ;
+                                               bcodmo:label "isDerivedFrom" ;
+                                               rdfs:label "ResourceRelation: Crossref - isDerivedFrom" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDocumentedBy
+bcodmo:ResourceRelation_Crossref_IsDocumentedBy rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_Crossref ;
+                                                bcodmo:label "isDocumentedBy" ;
+                                                rdfs:label "ResourceRelation: Crossref - isDocumentedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsPartOf
+bcodmo:ResourceRelation_Crossref_IsPartOf rdf:type owl:NamedIndividual ,
+                                                   bcodmo:ResourceRelation ;
+                                          bcodmo:authority bcodmo:Organization_Crossref ;
+                                          bcodmo:label "isPartOf" ;
+                                          rdfs:label "ResourceRelation: Crossref - isPartOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial
+bcodmo:ResourceRelation_Crossref_IsRelatedMaterial rdf:type owl:NamedIndividual ,
+                                                            bcodmo:ResourceRelation ;
+                                                   bcodmo:authority bcodmo:Organization_Crossref ;
+                                                   bcodmo:label "isRelatedMaterial" ;
+                                                   rdfs:label "ResourceRelation: Crossref - isRelatedMaterial" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf
+bcodmo:ResourceRelation_Crossref_IsVersionOf rdf:type owl:NamedIndividual ,
+                                                      bcodmo:ResourceRelation ;
+                                             bcodmo:authority bcodmo:Organization_Crossref ;
+                                             bcodmo:label "isVersionOf" ;
+                                             rdfs:label "ResourceRelation: Crossref - isVersionOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces
+bcodmo:ResourceRelation_Crossref_Replaces rdf:type owl:NamedIndividual ,
+                                                   bcodmo:ResourceRelation ;
+                                          bcodmo:authority bcodmo:Organization_Crossref ;
+                                          bcodmo:label "replaces" ;
+                                          rdfs:label "ResourceRelation: Crossref - replaces" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Cites
+bcodmo:ResourceRelation_DataCite_Cites rdf:type owl:NamedIndividual ,
+                                                bcodmo:ResourceRelation ;
+                                       bcodmo:authority bcodmo:Organization_DataCite ;
+                                       bcodmo:label "Cites" ;
+                                       rdfs:label "ResourceRelation: DataCite - Cites" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Continues
+bcodmo:ResourceRelation_DataCite_Continues rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_DataCite ;
+                                           bcodmo:label "Continues" ;
+                                           rdfs:label "ResourceRelation: DataCite - Continues" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_HasPart
+bcodmo:ResourceRelation_DataCite_HasPart rdf:type owl:NamedIndividual ,
+                                                  bcodmo:ResourceRelation ;
+                                         bcodmo:authority bcodmo:Organization_DataCite ;
+                                         bcodmo:label "HasPart" ;
+                                         rdfs:label "ResourceRelation: DataCite - HasPart" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsContinuedBy
+bcodmo:ResourceRelation_DataCite_IsContinuedBy rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_DataCite ;
+                                               bcodmo:label "IsContinuedBy" ;
+                                               rdfs:label "ResourceRelation: DataCite - IsContinuedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDerivedFrom
+bcodmo:ResourceRelation_DataCite_IsDerivedFrom rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_DataCite ;
+                                               bcodmo:label "IsDerivedFrom" ;
+                                               rdfs:label "ResourceRelation: DataCite - IsDerivedFrom" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDocumentedBy
+bcodmo:ResourceRelation_DataCite_IsDocumentedBy rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_DataCite ;
+                                                bcodmo:label "IsDocumentedBy" ;
+                                                rdfs:label "ResourceRelation: DataCite - IsDocumentedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsNewVersionOf
+bcodmo:ResourceRelation_DataCite_IsNewVersionOf rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_DataCite ;
+                                                bcodmo:label "IsNewVersionOf" ;
+                                                rdfs:label "ResourceRelation: DataCite - IsNewVersionOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy
+bcodmo:ResourceRelation_DataCite_IsObsoletedBy rdf:type owl:NamedIndividual ,
+                                                        bcodmo:ResourceRelation ;
+                                               bcodmo:authority bcodmo:Organization_DataCite ;
+                                               bcodmo:label "IsObsoletedBy" ;
+                                               rdfs:label "ResourceRelation: DataCite - IsObsoletedBy" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPartOf
+bcodmo:ResourceRelation_DataCite_IsPartOf rdf:type owl:NamedIndividual ,
+                                                   bcodmo:ResourceRelation ;
+                                          bcodmo:authority bcodmo:Organization_DataCite ;
+                                          bcodmo:label "IsPartOf" ;
+                                          rdfs:label "ResourceRelation: DataCite - IsPartOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPreviousVersionOf
+bcodmo:ResourceRelation_DataCite_IsPreviousVersionOf rdf:type owl:NamedIndividual ,
+                                                              bcodmo:ResourceRelation ;
+                                                     bcodmo:authority bcodmo:Organization_DataCite ;
+                                                     bcodmo:label "IsPreviousVersionOf" ;
+                                                     rdfs:label "ResourceRelation: DataCite - IsPreviousVersionOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo
+bcodmo:ResourceRelation_DataCite_IsSupplementTo rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_DataCite ;
+                                                bcodmo:label "IsSupplementTo" ;
+                                                rdfs:label "ResourceRelation: DataCite - IsSupplementTo" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf
+bcodmo:ResourceRelation_DataCite_IsVariantFormOf rdf:type owl:NamedIndividual ,
+                                                          bcodmo:ResourceRelation ;
+                                                 bcodmo:authority bcodmo:Organization_DataCite ;
+                                                 bcodmo:label "IsVariantFormOf" ;
+                                                 rdfs:label "ResourceRelation: DataCite - IsVariantFormOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Obsoletes
+bcodmo:ResourceRelation_DataCite_Obsoletes rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_DataCite ;
+                                           bcodmo:label "Obsoletes" ;
+                                           rdfs:label "ResourceRelation: DataCite - Obsoletes" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References
+bcodmo:ResourceRelation_DataCite_References rdf:type owl:NamedIndividual ,
+                                                     bcodmo:ResourceRelation ;
+                                            bcodmo:authority bcodmo:Organization_DataCite ;
+                                            bcodmo:label "References" ;
+                                            rdfs:label "ResourceRelation: DataCite - References" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DifferentVersion
+bcodmo:ResourceRelation_DifferentVersion rdf:type owl:NamedIndividual ,
+                                                  bcodmo:ResourceRelation ;
+                                         bcodmo:authority bcodmo:Organization_BCODMO ;
+                                         bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                         bcodmo:inverseRelationship bcodmo:ResourceRelation_DifferentVersion ;
+                                         bcodmo:matches bcodmo:ResourceRelation_Crossref_IsVersionOf ,
+                                                        bcodmo:ResourceRelation_DataCite_IsVariantFormOf ;
+                                         bcodmo:description "Another variant version of the dataset we have in some other repository" ;
+                                         bcodmo:inverseDescription "Another variant version of the dataset we have in some other repository" ;
+                                         bcodmo:label "Different Version" ;
+                                         rdfs:label "Resource Relation: Different Version" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_General
+bcodmo:ResourceRelation_General rdf:type owl:NamedIndividual ,
+                                         bcodmo:ResourceRelation ;
+                                bcodmo:authority bcodmo:Organization_BCODMO ;
+                                bcodmo:inGroup bcodmo:ResourceRelationGroup_Publication ;
+                                bcodmo:matches bcodmo:ResourceRelation_Crossref_IsRelatedMaterial ,
+                                               bcodmo:ResourceRelation_DataCite_References ;
+                                bcodmo:description "Some other publication" ;
+                                bcodmo:label "General" ;
+                                rdfs:label "Resource Relation: General" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_HasPart
+bcodmo:ResourceRelation_HasPart rdf:type owl:NamedIndividual ,
+                                         bcodmo:ResourceRelation ;
+                                bcodmo:authority bcodmo:Organization_BCODMO ;
+                                bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetAggregation ;
+                                bcodmo:inverseRelationship bcodmo:ResourceRelation_IsPartOf ;
+                                bcodmo:matches bcodmo:ResourceRelation_Crossref_HasPart ,
+                                               bcodmo:ResourceRelation_DataCite_HasPart ;
+                                bcodmo:description "Other datasets that are a piece of this dataset." ;
+                                bcodmo:inverseDescription "A collection of some sort, perhaps a series, and this dataset is a part of" ;
+                                bcodmo:label "Has Part" ;
+                                rdfs:label "Resource Relation: Has Part" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsContinuedBy
+bcodmo:ResourceRelation_IsContinuedBy rdf:type owl:NamedIndividual ,
+                                               bcodmo:ResourceRelation ;
+                                      bcodmo:authority bcodmo:Organization_BCODMO ;
+                                      bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                      bcodmo:inverseRelationship bcodmo:ResourceRelation_Continues ;
+                                      bcodmo:matches bcodmo:ResourceRelation_Crossref_IsContinuedBy ,
+                                                     bcodmo:ResourceRelation_DataCite_IsContinuedBy ;
+                                      bcodmo:description "Indicates datasets that are a continuation of this dataset, such as time series, repeat sampling locations, or two sections of one cruise." ;
+                                      bcodmo:inverseDescription "Indicates datasets which are continued by this dataset, such as time series, repeat sampling locations, or two sections of one cruise." ;
+                                      bcodmo:label "Is Continued By" ;
+                                      rdfs:label "Resource Relation: Is Continued By" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsDerivedFrom
+bcodmo:ResourceRelation_IsDerivedFrom rdf:type owl:NamedIndividual ,
+                                               bcodmo:ResourceRelation ;
+                                      bcodmo:authority bcodmo:Organization_BCODMO ;
+                                      bcodmo:matches bcodmo:ResourceRelation_Crossref_IsDerivedFrom ,
+                                                     bcodmo:ResourceRelation_DataCite_IsDerivedFrom ;
+                                      bcodmo:label "Is Derived From" ;
+                                      rdfs:label "Resource Relation: Is Derived From" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsPartOf
+bcodmo:ResourceRelation_IsPartOf rdf:type owl:NamedIndividual ,
+                                          bcodmo:ResourceRelation ;
+                                 bcodmo:authority bcodmo:Organization_BCODMO ;
+                                 bcodmo:inverseRelationship bcodmo:ResourceRelation_HasPart ;
+                                 bcodmo:matches bcodmo:ResourceRelation_Crossref_IsPartOf ,
+                                                bcodmo:ResourceRelation_DataCite_IsPartOf ;
+                                 bcodmo:description "A collection of some sort, perhaps a series, and this dataset is a part of" ;
+                                 bcodmo:inverseDescription "Other datasets that are a piece of this dataset." ;
+                                 bcodmo:label "Is Part Of" ;
+                                 rdfs:label "Resource Relation: Is Part Of" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy
+bcodmo:ResourceRelation_IsReferencedBy rdf:type owl:NamedIndividual ,
+                                                bcodmo:ResourceRelation ;
+                                       bcodmo:authority bcodmo:Organization_BCODMO ;
+                                       bcodmo:label "Is Referenced By" ;
+                                       rdfs:label "Resource Relation: Is Referenced By" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsRelatedTo
+bcodmo:ResourceRelation_IsRelatedTo rdf:type owl:NamedIndividual ,
+                                             bcodmo:ResourceRelation ;
+                                    bcodmo:authority bcodmo:Organization_BCODMO ;
+                                    bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetCitation ;
+                                    bcodmo:inverseRelationship bcodmo:ResourceRelation_IsRelatedTo ;
+                                    bcodmo:matches bcodmo:ResourceRelation_Crossref_IsRelatedMaterial ,
+                                                   bcodmo:ResourceRelation_DataCite_IsSupplementTo ;
+                                    bcodmo:description "The dataset is related to another dataset." ;
+                                    bcodmo:inverseDescription "The dataset is related to another dataset." ;
+                                    bcodmo:label "Is Related To" ;
+                                    rdfs:label "Resource Relation: Is Related To" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo
+bcodmo:ResourceRelation_IsSupplementTo rdf:type owl:NamedIndividual ,
+                                                bcodmo:ResourceRelation ;
+                                       bcodmo:authority bcodmo:Organization_BCODMO ;
+                                       bcodmo:inverseRelationship bcodmo:ResourceRelation_IsSupplementTo ;
+                                       bcodmo:description "Indicates datasets that are supplemental to this dataset." ;
+                                       bcodmo:inverseDescription "Indicates datasets that are supplemented by this dataset." ;
+                                       bcodmo:inverseSymmetricalRelationship "true"^^xsd:boolean ;
+                                       bcodmo:label "Is Supplement To" ;
+                                       rdfs:label "Resource Relation: Is Supplement To" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy
+bcodmo:ResourceRelation_IsSupplementedBy rdf:type owl:NamedIndividual ,
+                                                  bcodmo:ResourceRelation ;
+                                         bcodmo:authority bcodmo:Organization_BCODMO ;
+                                         bcodmo:label "Is Supplemented By" ;
+                                         rdfs:label "Resource Relation: Is Supplemented By" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication
+bcodmo:ResourceRelation_MethodsPublication rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_BCODMO ;
+                                           bcodmo:inGroup bcodmo:ResourceRelationGroup_Publication ;
+                                           bcodmo:matches bcodmo:ResourceRelation_Crossref_IsDocumentedBy ,
+                                                          bcodmo:ResourceRelation_DataCite_Cites ;
+                                           bcodmo:description "A publication describing the methods used to generate/produce the data" ;
+                                           bcodmo:label "Methods" ;
+                                           rdfs:label "Resource Relation: Methods Publication" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_NewVersion
+bcodmo:ResourceRelation_NewVersion rdf:type owl:NamedIndividual ,
+                                            bcodmo:ResourceRelation ;
+                                   bcodmo:authority bcodmo:Organization_BCODMO ;
+                                   bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                   bcodmo:inverseRelationship bcodmo:ResourceRelation_OldVersion ;
+                                   bcodmo:matches bcodmo:ResourceRelation_Crossref_IsVersionOf ,
+                                                  bcodmo:ResourceRelation_DataCite_IsPreviousVersionOf ;
+                                   bcodmo:description "The dataset described on this page is superseded by the following dataset(s)." ;
+                                   bcodmo:inverseDescription "This dataset supersedes the following dataset." ;
+                                   bcodmo:label "New Version" ;
+                                   rdfs:label "Resource Relation: New Version" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_OldVersion
+bcodmo:ResourceRelation_OldVersion rdf:type owl:NamedIndividual ,
+                                            bcodmo:ResourceRelation ;
+                                   bcodmo:authority bcodmo:Organization_BCODMO ;
+                                   bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                   bcodmo:inverseRelationship bcodmo:ResourceRelation_NewVersion ;
+                                   bcodmo:matches bcodmo:ResourceRelation_Crossref_IsVersionOf ,
+                                                  bcodmo:ResourceRelation_DataCite_IsNewVersionOf ;
+                                   bcodmo:description "The following dataset(s) have been modified, and the dataset described on this page should be used in preference." ;
+                                   bcodmo:inverseDescription "The dataset described on this page is superseded by the following dataset(s)." ;
+                                   bcodmo:label "Old Version" ;
+                                   rdfs:label "Resource Relation: Old Version" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_References
+bcodmo:ResourceRelation_References rdf:type owl:NamedIndividual ,
+                                            bcodmo:ResourceRelation ;
+                                   bcodmo:authority bcodmo:Organization_BCODMO ;
+                                   bcodmo:label "References" ;
+                                   rdfs:label "Resource Relation: References" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_RelatedResearch
+bcodmo:ResourceRelation_RelatedResearch rdf:type owl:NamedIndividual ,
+                                                 bcodmo:ResourceRelation ;
+                                        bcodmo:authority bcodmo:Organization_BCODMO ;
+                                        bcodmo:inGroup bcodmo:ResourceRelationGroup_Publication ;
+                                        bcodmo:matches bcodmo:ResourceRelation_Crossref_IsRelatedMaterial ,
+                                                       bcodmo:ResourceRelation_DataCite_References ;
+                                        bcodmo:description "A publication describing research that is related to this dataset's research" ;
+                                        bcodmo:label "Related Research" ;
+                                        rdfs:label "Resource Relation: Related Research" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacedbyNewVersion
+bcodmo:ResourceRelation_ReplacedbyNewVersion rdf:type owl:NamedIndividual ,
+                                                      bcodmo:ResourceRelation ;
+                                             bcodmo:authority bcodmo:Organization_BCODMO ;
+                                             bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                             bcodmo:inverseRelationship bcodmo:ResourceRelation_ReplacesOldVersion ;
+                                             bcodmo:matches bcodmo:ResourceRelation_Crossref_Replaces ,
+                                                            bcodmo:ResourceRelation_DataCite_IsObsoletedBy ;
+                                             bcodmo:description "The following dataset(s) supplants, displaces, or supersedes the dataset described on this page because of a correction." ;
+                                             bcodmo:inverseDescription "A related dataset that is supplanted, displaced, or superseded by this dataset because of a correction." ;
+                                             bcodmo:label "Replaced by New Version" ;
+                                             rdfs:label "Resource Relation: Replaced by New Version" ;
+                                             skos:broader bcodmo:ResourceRelation_NewVersion .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacesOldVersion
+bcodmo:ResourceRelation_ReplacesOldVersion rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_BCODMO ;
+                                           bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetVersion ;
+                                           bcodmo:inverseRelationship bcodmo:ResourceRelation_ReplacedbyNewVersion ;
+                                           bcodmo:matches bcodmo:ResourceRelation_Crossref_IsVersionOf ,
+                                                          bcodmo:ResourceRelation_DataCite_Obsoletes ;
+                                           bcodmo:description "A related dataset that is supplanted, displaced, or superseded by this dataset because of a correction." ;
+                                           bcodmo:inverseDescription "New dataset that supplants, or supersedes, this dataset because of a correction." ;
+                                           bcodmo:label "Replaces Old Version" ;
+                                           rdfs:label "Resource Relation: Replaces Old Version" ;
+                                           skos:broader bcodmo:ResourceRelation_OldVersion .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_ResultsPublication
+bcodmo:ResourceRelation_ResultsPublication rdf:type owl:NamedIndividual ,
+                                                    bcodmo:ResourceRelation ;
+                                           bcodmo:authority bcodmo:Organization_BCODMO ;
+                                           bcodmo:inGroup bcodmo:ResourceRelationGroup_Publication ;
+                                           bcodmo:matches bcodmo:ResourceRelation_Crossref_IsDataBasisFor ,
+                                                          bcodmo:ResourceRelation_DataCite_IsDocumentedBy ;
+                                           bcodmo:description "A publication describing the results of these data" ;
+                                           bcodmo:label "Results" ;
+                                           rdfs:label "Resource Relation: Results Publication" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Software
+bcodmo:ResourceRelation_Software rdf:type owl:NamedIndividual ,
+                                          bcodmo:ResourceRelation ;
+                                 bcodmo:authority bcodmo:Organization_BCODMO ;
+                                 bcodmo:inGroup bcodmo:ResourceRelationGroup_Publication ;
+                                 bcodmo:matches bcodmo:ResourceRelation_Crossref_IsDerivedFrom ,
+                                                bcodmo:ResourceRelation_DataCite_IsDerivedFrom ;
+                                 bcodmo:description "The software that was used to derive this data." ;
+                                 bcodmo:label "Software" ;
+                                 rdfs:label "Resource Relation: Software" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Role_Analyst
