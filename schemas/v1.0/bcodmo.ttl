@@ -1,6 +1,5 @@
 @prefix : <https://schema.bco-dmo.org/v1.0/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,9 +8,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix bcodmo: <https://schema.bco-dmo.org/v1.0/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @base <https://schema.bco-dmo.org/v1.0/> .
 
 <https://schema.bco-dmo.org/v1.0/> rdf:type owl:Ontology ;
@@ -73,6 +72,14 @@ skos:relatedMatch rdf:type owl:AnnotationProperty .
 #################################################################
 #    Datatypes
 #################################################################
+
+###  http://www.opengis.net/ont/geosparql#geoJSONLiteral
+geosparql:geoJSONLiteral rdf:type rdfs:Datatype .
+
+
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+geosparql:wktLiteral rdf:type rdfs:Datatype .
+
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
 rdf:HTML rdf:type rdfs:Datatype .
@@ -252,12 +259,13 @@ bcodmo:contributor rdf:type owl:ObjectProperty ;
 
 
 ###  https://schema.bco-dmo.org/v1.0/coordinateReferenceSystem
-bcodmo:coordinateReferenceSystem rdf:type owl:ObjectProperty ;
-                                 rdfs:domain bcodmo:GeographicalLocation ;
+bcodmo:coordinateReferenceSystem rdf:type owl:ObjectProperty ,
+                                          owl:FunctionalProperty ;
+                                 rdfs:domain bcodmo:Geometry ;
                                  rdfs:range bcodmo:CoordinateReferenceSystem ;
                                  rdfs:comment "the coordinate reference system for some representation of a Geographical Location" ;
                                  rdfs:label "coordinateReferenceSystem" ;
-                                 skos:closeMatch geo:crs .
+                                 skos:closeMatch geosparql:crs .
 
 
 ###  https://schema.bco-dmo.org/v1.0/coordinates
@@ -462,7 +470,7 @@ bcodmo:fundedByAward rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/funder
 bcodmo:funder rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf bcodmo:provider ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain bcodmo:Award ;
               rdfs:range bcodmo:Agent ;
               rdfs:label "funder" .
@@ -475,7 +483,7 @@ bcodmo:geometry rdf:type owl:ObjectProperty ;
                 rdfs:comment "One or more geometries (centroid, bounding box) describing a geographical location." ;
                 rdfs:label "geometry" ;
                 skos:closeMatch <https://schema.org/geo> ;
-                skos:exactMatch geo:hasGeometry .
+                skos:exactMatch geosparql:hasGeometry .
 
 
 ###  https://schema.bco-dmo.org/v1.0/governedBy
@@ -1041,9 +1049,13 @@ bcodmo:projectExternalDatasetList rdf:type owl:ObjectProperty ;
 
 ###  https://schema.bco-dmo.org/v1.0/provider
 bcodmo:provider rdf:type owl:ObjectProperty ;
-                rdfs:domain bcodmo:Entity ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( bcodmo:CreativeWork
+                                            bcodmo:SoftwareApplication
+                                          )
+                            ] ;
                 rdfs:range bcodmo:Agent ;
-                rdfs:comment "The provider of some Award" ,
+                rdfs:comment "The provider of some CreativeWork" ,
                              "The service provider that hosts/distributes the resource." ;
                 rdfs:label "provider" ;
                 skos:exactMatch <https://schema.org/provider> .
@@ -1391,6 +1403,24 @@ bcodmo:archiveComment rdf:type owl:DatatypeProperty ;
                       rdfs:label "archiveComment" .
 
 
+###  https://schema.bco-dmo.org/v1.0/asGeoJSON
+bcodmo:asGeoJSON rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain bcodmo:Geometry ;
+                 rdfs:range geosparql:geoJSONLiteral ;
+                 rdfs:label "asGeoJSON" ;
+                 skos:exactMatch geosparql:asGeoJSON .
+
+
+###  https://schema.bco-dmo.org/v1.0/asWKT
+bcodmo:asWKT rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain bcodmo:Geometry ;
+             rdfs:range geosparql:wktLiteral ;
+             rdfs:label "asWKT" ;
+             skos:exactMatch geosparql:asWKT .
+
+
 ###  https://schema.bco-dmo.org/v1.0/bibliographicCitation
 bcodmo:bibliographicCitation rdf:type owl:DatatypeProperty ;
                              rdfs:domain bcodmo:CreativeWork ;
@@ -1629,6 +1659,15 @@ bcodmo:inverseSymmetricalRelationship rdf:type owl:DatatypeProperty ,
                                       rdfs:label "inverseSymmetricalRelationship" .
 
 
+###  https://schema.bco-dmo.org/v1.0/isDeprecated
+bcodmo:isDeprecated rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain bcodmo:Entity ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "A way to mark an Entity as deprecated from use." ;
+                    rdfs:label "isDeprecated" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/isPrimary
 bcodmo:isPrimary rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
@@ -1668,7 +1707,7 @@ bcodmo:lastNameSynonyms rdf:type owl:DatatypeProperty ;
 ###  https://schema.bco-dmo.org/v1.0/latitude
 bcodmo:latitude rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain bcodmo:PointGeometry ;
+                rdfs:domain sf:Point ;
                 rdfs:range xsd:float ;
                 rdfs:comment "Latitude is the angular measure of a point's position along the primary axis of a CRS, perpendicular to the reference surface's axis of symmetry." ;
                 rdfs:label "latitude" .
@@ -1690,7 +1729,7 @@ bcodmo:listPosition rdf:type owl:DatatypeProperty ;
 ###  https://schema.bco-dmo.org/v1.0/longitude
 bcodmo:longitude rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
-                 rdfs:domain bcodmo:PointGeometry ;
+                 rdfs:domain sf:Point ;
                  rdfs:range xsd:float ;
                  rdfs:comment "Longitude is the angular measure of a point's position around the secondary axis of a CRS, relative to an arbitrarily defined reference meridian." ;
                  rdfs:label "longitude" .
@@ -1967,6 +2006,45 @@ bcodmo:westBoundary rdf:type owl:DatatypeProperty ,
 #    Classes
 #################################################################
 
+###  http://www.opengis.net/ont/sf#LineString
+sf:LineString rdf:type owl:Class ;
+              rdfs:subClassOf bcodmo:Geometry .
+
+
+###  http://www.opengis.net/ont/sf#MultiLineString
+sf:MultiLineString rdf:type owl:Class ;
+                   rdfs:subClassOf bcodmo:Geometry .
+
+
+###  http://www.opengis.net/ont/sf#MultiPoint
+sf:MultiPoint rdf:type owl:Class ;
+              rdfs:subClassOf bcodmo:Geometry .
+
+
+###  http://www.opengis.net/ont/sf#Point
+sf:Point rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty bcodmo:latitude ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:float
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty bcodmo:longitude ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:float
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf bcodmo:Geometry .
+
+
+###  http://www.opengis.net/ont/sf#Polygon
+sf:Polygon rdf:type owl:Class ;
+           rdfs:subClassOf bcodmo:Geometry .
+
+
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#List
 rdf:List rdf:type owl:Class .
 
@@ -2014,6 +2092,15 @@ bcodmo:Affiliation rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/Agent
 bcodmo:Agent rdf:type owl:Class ;
              rdfs:subClassOf bcodmo:Entity ;
+             owl:disjointWith bcodmo:Award ,
+                              bcodmo:Category ,
+                              bcodmo:CreativeWork ,
+                              bcodmo:GeographicalLocation ,
+                              bcodmo:Geometry ,
+                              bcodmo:Identifier ,
+                              bcodmo:Platform ,
+                              bcodmo:Situation ,
+                              bcodmo:TemporalEntity ;
              rdfs:comment "An entity (person or organisation) that can perform roles." ;
              rdfs:label "Agent" ;
              skos:exactMatch prov:Agent .
@@ -2114,6 +2201,14 @@ bcodmo:Award rdf:type owl:Class ;
                                    rdf:type owl:Class
                                  ] ;
              rdfs:subClassOf bcodmo:Entity ;
+             owl:disjointWith bcodmo:Category ,
+                              bcodmo:CreativeWork ,
+                              bcodmo:GeographicalLocation ,
+                              bcodmo:Geometry ,
+                              bcodmo:Identifier ,
+                              bcodmo:Platform ,
+                              bcodmo:Situation ,
+                              bcodmo:TemporalEntity ;
              rdfs:comment "A funding award (grant) from a funder that supports data collection." ;
              rdfs:label "Award" ;
              skos:closeMatch <https://schema.org/Grant> .
@@ -2183,39 +2278,8 @@ bcodmo:Boolean rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry
 bcodmo:BoundingBoxGeometry rdf:type owl:Class ;
-                           owl:equivalentClass [ owl:intersectionOf ( bcodmo:PolygonGeometry
-                                                                      [ rdf:type owl:Class ;
-                                                                        owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty bcodmo:eastBoundary ;
-                                                                                                               owl:someValuesFrom xsd:float
-                                                                                                             ]
-                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty bcodmo:northBoundary ;
-                                                                                                               owl:someValuesFrom xsd:float
-                                                                                                             ]
-                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty bcodmo:southBoundary ;
-                                                                                                               owl:someValuesFrom xsd:float
-                                                                                                             ]
-                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty bcodmo:westBoundary ;
-                                                                                                               owl:someValuesFrom xsd:float
-                                                                                                             ]
-                                                                                                           ) ;
-                                                                                        rdf:type owl:Class
-                                                                                      ]
-                                                                                      [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty bcodmo:coordinates ;
-                                                                                        owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
-                                                                                        owl:onClass bcodmo:PointGeometry
-                                                                                      ]
-                                                                                    )
-                                                                      ]
-                                                                    ) ;
-                                                 rdf:type owl:Class
-                                               ] ;
-                           rdfs:subClassOf bcodmo:PolygonGeometry ;
-                           rdfs:comment "An axis-aligned bounding box geometry defined by west/south/east/north boundaries." ;
+                           rdfs:subClassOf sf:Polygon ;
+                           rdfs:comment "An axis-aligned bounding box geometry defined by west/south/east/north boundaries. A set of Point geometries where the first Point and the last point are the same Point." ;
                            rdfs:label "Bounding Box Geometry" ;
                            skos:exactMatch sf:Envelope .
 
@@ -2223,6 +2287,13 @@ bcodmo:BoundingBoxGeometry rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/Category
 bcodmo:Category rdf:type owl:Class ;
                 rdfs:subClassOf bcodmo:Entity ;
+                owl:disjointWith bcodmo:CreativeWork ,
+                                 bcodmo:GeographicalLocation ,
+                                 bcodmo:Geometry ,
+                                 bcodmo:Identifier ,
+                                 bcodmo:Platform ,
+                                 bcodmo:Situation ,
+                                 bcodmo:TemporalEntity ;
                 rdfs:comment "A set of taxonomy" ;
                 rdfs:label "Category" ;
                 skos:closeMatch <https://schema.org/DefinedTerm> .
@@ -2230,7 +2301,7 @@ bcodmo:Category rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/CentroidGeometry
 bcodmo:CentroidGeometry rdf:type owl:Class ;
-                        rdfs:subClassOf bcodmo:PointGeometry ;
+                        rdfs:subClassOf sf:Point ;
                         rdfs:comment "A point geometry representing the centroid of a spatial extent." ;
                         rdfs:label "Centroid Geometry" ;
                         skos:closeMatch sf:Point .
@@ -2302,6 +2373,12 @@ bcodmo:CoordinateReferenceSystem rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/CreativeWork
 bcodmo:CreativeWork rdf:type owl:Class ;
                     rdfs:subClassOf bcodmo:Entity ;
+                    owl:disjointWith bcodmo:GeographicalLocation ,
+                                     bcodmo:Geometry ,
+                                     bcodmo:Identifier ,
+                                     bcodmo:Platform ,
+                                     bcodmo:Situation ,
+                                     bcodmo:TemporalEntity ;
                     rdfs:comment "Any work that can be created by some Agent" ;
                     rdfs:label "Creative Work" ;
                     skos:exactMatch <https://schema.org/CreativeWork> .
@@ -2310,7 +2387,7 @@ bcodmo:CreativeWork rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/CreativeWorkStatus
 bcodmo:CreativeWorkStatus rdf:type owl:Class ;
                           rdfs:subClassOf bcodmo:Category ;
-                          rdfs:comment "A state of for some createive work." ;
+                          rdfs:comment "A state of for some creative work." ;
                           rdfs:label "CreativeWorkStatus" .
 
 
@@ -2803,6 +2880,14 @@ bcodmo:DeploymentEntityMatch rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/DeprecatedEntity
 bcodmo:DeprecatedEntity rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty bcodmo:isDeprecated ;
+                                                                     owl:hasValue "true"^^xsd:boolean
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
                         rdfs:subClassOf bcodmo:Entity ;
                         rdfs:comment "An entity that should no longer be used." ;
                         rdfs:label "DeprecatedEntity" .
@@ -2943,6 +3028,15 @@ bcodmo:FileType rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/FundingAgency
 bcodmo:FundingAgency rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( bcodmo:Organization
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty [ owl:inverseOf bcodmo:funder
+                                                                                 ] ;
+                                                                  owl:someValuesFrom bcodmo:Award
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
                      rdfs:subClassOf bcodmo:Organization ;
                      rdfs:comment "An Organization that has provided some funding award" ;
                      rdfs:label "Funding Agency" ;
@@ -2960,6 +3054,11 @@ bcodmo:GCMDPlatformType rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/GeographicalLocation
 bcodmo:GeographicalLocation rdf:type owl:Class ;
                             rdfs:subClassOf bcodmo:Entity ;
+                            owl:disjointWith bcodmo:Geometry ,
+                                             bcodmo:Identifier ,
+                                             bcodmo:Platform ,
+                                             bcodmo:Situation ,
+                                             bcodmo:TemporalEntity ;
                             rdfs:comment "A spatial extent or named location associated with a dataset, deployment, project, or program." ;
                             rdfs:label "Geographical Location" ;
                             skos:exactMatch <https://schema.org/Place> ;
@@ -2968,31 +3067,21 @@ bcodmo:GeographicalLocation rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/Geometry
 bcodmo:Geometry rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty bcodmo:categorizedBy ;
-                                                             owl:someValuesFrom bcodmo:GeometryShape
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
                 rdfs:subClassOf bcodmo:Entity ;
+                owl:disjointWith bcodmo:Identifier ,
+                                 bcodmo:Platform ,
+                                 bcodmo:Situation ,
+                                 bcodmo:TemporalEntity ;
                 rdfs:comment "An abstract spatial geometry." ;
                 rdfs:label "Geometry" ;
                 skos:closeMatch <https://schema.org/GeospatialGeometry> ;
                 skos:exactMatch sf:Geometry .
 
 
-###  https://schema.bco-dmo.org/v1.0/GeometryShape
-bcodmo:GeometryShape rdf:type owl:Class ;
-                     rdfs:subClassOf bcodmo:Category ;
-                     rdfs:comment "The shape of various geometries." ;
-                     rdfs:label "GeometryShape" .
-
-
 ###  https://schema.bco-dmo.org/v1.0/Identifier
 bcodmo:Identifier rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                  owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
+                                                             [ rdf:type owl:Restriction ;
                                                                owl:onProperty bcodmo:identifierScheme ;
                                                                owl:someValuesFrom bcodmo:IdentifierScheme
                                                              ]
@@ -3004,6 +3093,9 @@ bcodmo:Identifier rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf bcodmo:Entity ;
+                  owl:disjointWith bcodmo:Platform ,
+                                   bcodmo:Situation ,
+                                   bcodmo:TemporalEntity ;
                   rdfs:comment "An identifier assigned to a resource by some scheme." ;
                   rdfs:label "Identifier" .
 
@@ -3102,44 +3194,6 @@ bcodmo:License rdf:type owl:Class ;
                rdfs:label "License" .
 
 
-###  https://schema.bco-dmo.org/v1.0/LineStringGeometry
-bcodmo:LineStringGeometry rdf:type owl:Class ;
-                          owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty bcodmo:coordinates ;
-                                                                       owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                 [ rdf:type owl:Class ;
-                                                                                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                                                   owl:onProperty rdf:rest ;
-                                                                                                                                   owl:someValuesFrom rdf:List
-                                                                                                                                 ]
-                                                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                                                   owl:onProperty rdf:rest ;
-                                                                                                                                   owl:hasValue rdf:nil
-                                                                                                                                 ]
-                                                                                                                               )
-                                                                                                                 ]
-                                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                                   owl:onProperty rdf:first ;
-                                                                                                                   owl:someValuesFrom bcodmo:PointGeometry
-                                                                                                                 ]
-                                                                                                               ) ;
-                                                                                            rdf:type owl:Class
-                                                                                          ]
-                                                                     ]
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty bcodmo:categorizedBy ;
-                                                                       owl:hasValue bcodmo:GeometryShape_Linestring
-                                                                     ]
-                                                                   ) ;
-                                                rdf:type owl:Class
-                                              ] ;
-                          rdfs:subClassOf bcodmo:Geometry ;
-                          rdfs:comment "Two or more PointGeometry that when connected form lines between between adjacent points." ;
-                          rdfs:label "LineStringGeometry" ;
-                          skos:exactMatch sf:LineString .
-
-
 ###  https://schema.bco-dmo.org/v1.0/Logo
 bcodmo:Logo rdf:type owl:Class ;
             rdfs:subClassOf bcodmo:Image ;
@@ -3197,127 +3251,9 @@ bcodmo:MetadataProfile rdf:type owl:Class ;
                        rdfs:label "Metadata Profile" .
 
 
-###  https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry
-bcodmo:MultiLineStringGeometry rdf:type owl:Class ;
-                               owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                   owl:onProperty rdf:rest ;
-                                                                                                   owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                                               owl:onProperty rdf:first ;
-                                                                                                                                               owl:someValuesFrom bcodmo:LineStringGeometry
-                                                                                                                                             ]
-                                                                                                                                           ) ;
-                                                                                                                        rdf:type owl:Class
-                                                                                                                      ]
-                                                                                                 ]
-                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                   owl:onProperty bcodmo:coordinates ;
-                                                                                                   owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                                               owl:onProperty rdf:first ;
-                                                                                                                                               owl:someValuesFrom bcodmo:LineStringGeometry
-                                                                                                                                             ]
-                                                                                                                                           ) ;
-                                                                                                                        rdf:type owl:Class
-                                                                                                                      ]
-                                                                                                 ]
-                                                                                               ) ;
-                                                                            rdf:type owl:Class
-                                                                          ]
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty bcodmo:categorizedBy ;
-                                                                            owl:hasValue bcodmo:GeometryShape_MultiLinestring
-                                                                          ]
-                                                                        ) ;
-                                                     rdf:type owl:Class
-                                                   ] ;
-                               rdfs:subClassOf bcodmo:Geometry ;
-                               rdfs:comment "A geometry whose coordinates member is an array of LineString coordinate arrays" ;
-                               rdfs:label "MultiLineStringGeometry" ;
-                               skos:exactMatch sf:MultiLineString .
-
-
-###  https://schema.bco-dmo.org/v1.0/MultiPointGeometry
-bcodmo:MultiPointGeometry rdf:type owl:Class ;
-                          owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty rdf:rest ;
-                                                                                              owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                                                          owl:onProperty rdf:first ;
-                                                                                                                                          owl:someValuesFrom bcodmo:PointGeometry
-                                                                                                                                        ]
-                                                                                                                                      ) ;
-                                                                                                                   rdf:type owl:Class
-                                                                                                                 ]
-                                                                                            ]
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty bcodmo:coordinates ;
-                                                                                              owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                                                          owl:onProperty rdf:first ;
-                                                                                                                                          owl:someValuesFrom bcodmo:PointGeometry
-                                                                                                                                        ]
-                                                                                                                                      ) ;
-                                                                                                                   rdf:type owl:Class
-                                                                                                                 ]
-                                                                                            ]
-                                                                                          ) ;
-                                                                       rdf:type owl:Class
-                                                                     ]
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty bcodmo:categorizedBy ;
-                                                                       owl:hasValue bcodmo:GeometryShape_MultiPoint
-                                                                     ]
-                                                                   ) ;
-                                                rdf:type owl:Class
-                                              ] ;
-                          rdfs:subClassOf bcodmo:Geometry ;
-                          rdfs:comment "A geometry whose coordinates member is an array of point coordinate arrays" ;
-                          rdfs:label "MultiPointGeometry" ;
-                          skos:exactMatch sf:MultiPoint .
-
-
-###  https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry
-bcodmo:MultiPolygonGeometry rdf:type owl:Class ;
-                            owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty rdf:rest ;
-                                                                                                owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                                                            owl:onProperty rdf:first ;
-                                                                                                                                            owl:someValuesFrom bcodmo:PolygonGeometry
-                                                                                                                                          ]
-                                                                                                                                        ) ;
-                                                                                                                     rdf:type owl:Class
-                                                                                                                   ]
-                                                                                              ]
-                                                                                              [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty bcodmo:coordinates ;
-                                                                                                owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                                                            owl:onProperty rdf:first ;
-                                                                                                                                            owl:someValuesFrom bcodmo:PolygonGeometry
-                                                                                                                                          ]
-                                                                                                                                        ) ;
-                                                                                                                     rdf:type owl:Class
-                                                                                                                   ]
-                                                                                              ]
-                                                                                            ) ;
-                                                                         rdf:type owl:Class
-                                                                       ]
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty bcodmo:categorizedBy ;
-                                                                         owl:hasValue bcodmo:GeometryShape_MultiPolygon
-                                                                       ]
-                                                                     ) ;
-                                                  rdf:type owl:Class
-                                                ] ;
-                            rdfs:subClassOf bcodmo:Geometry ;
-                            rdfs:comment "A geometry whose coordinates member is an array of Polygon coordinate arrays" ;
-                            rdfs:label "MultiPolygonGeometry" ;
-                            skos:exactMatch sf:MultiPolygon .
+###  https://schema.bco-dmo.org/v1.0/MultiPolygon
+bcodmo:MultiPolygon rdf:type owl:Class ;
+                    rdfs:subClassOf bcodmo:Geometry .
 
 
 ###  https://schema.bco-dmo.org/v1.0/NODCTopic
@@ -3444,6 +3380,8 @@ bcodmo:Person rdf:type owl:Class ;
 ###  https://schema.bco-dmo.org/v1.0/Platform
 bcodmo:Platform rdf:type owl:Class ;
                 rdfs:subClassOf bcodmo:Entity ;
+                owl:disjointWith bcodmo:Situation ,
+                                 bcodmo:TemporalEntity ;
                 rdfs:comment "A platform (vessel, buoy, glider, etc.) used for data collection." ;
                 rdfs:label "Platform" ;
                 skos:closeMatch <http://www.w3.org/ns/sosa/Platform> .
@@ -3481,89 +3419,22 @@ bcodmo:PlatformType rdf:type owl:Class ;
                     rdfs:label "Platform Type" .
 
 
-###  https://schema.bco-dmo.org/v1.0/PointGeometry
-bcodmo:PointGeometry rdf:type owl:Class ;
-                     owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty bcodmo:categorizedBy ;
-                                                                  owl:hasValue bcodmo:GeometryShape_Point
-                                                                ]
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty bcodmo:latitude ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onDataRange xsd:float
-                                                                ]
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty bcodmo:longitude ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onDataRange xsd:float
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ] ;
-                     rdfs:subClassOf bcodmo:Geometry ;
-                     rdfs:comment "A single coordinate" ;
-                     rdfs:label "PointGeometry" ;
-                     rdfs:seeAlso bcodmo:GeometryShape_Point ;
-                     skos:exactMatch sf:Point .
-
-
 ###  https://schema.bco-dmo.org/v1.0/Policy
 bcodmo:Policy rdf:type owl:Class ;
-              owl:equivalentClass [ owl:intersectionOf ( bcodmo:Entity
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty bcodmo:modifiesAction ;
-                                                           owl:someValuesFrom bcodmo:ConsumeAction
-                                                         ]
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty bcodmo:target ;
-                                                           owl:someValuesFrom bcodmo:Entity
-                                                         ]
-                                                       ) ;
-                                    rdf:type owl:Class
-                                  ] ;
-              rdfs:subClassOf bcodmo:Entity ;
+              rdfs:subClassOf bcodmo:CreativeWork ,
+                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bcodmo:modifiesAction ;
+                                                       owl:someValuesFrom bcodmo:ConsumeAction
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bcodmo:target ;
+                                                       owl:someValuesFrom bcodmo:Entity
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
               rdfs:comment "An access or governance policy applied to a resource." ;
               rdfs:label "Policy" .
-
-
-###  https://schema.bco-dmo.org/v1.0/PolygonGeometry
-bcodmo:PolygonGeometry rdf:type owl:Class ;
-                       owl:equivalentClass [ owl:intersectionOf ( bcodmo:Geometry
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty bcodmo:coordinates ;
-                                                                    owl:someValuesFrom [ owl:intersectionOf ( rdf:List
-                                                                                                              [ rdf:type owl:Class ;
-                                                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                                                owl:onProperty rdf:rest ;
-                                                                                                                                owl:someValuesFrom rdf:List
-                                                                                                                              ]
-                                                                                                                              [ rdf:type owl:Restriction ;
-                                                                                                                                owl:onProperty rdf:rest ;
-                                                                                                                                owl:hasValue rdf:nil
-                                                                                                                              ]
-                                                                                                                            )
-                                                                                                              ]
-                                                                                                              [ rdf:type owl:Restriction ;
-                                                                                                                owl:onProperty rdf:first ;
-                                                                                                                owl:someValuesFrom bcodmo:PointGeometry
-                                                                                                              ]
-                                                                                                            ) ;
-                                                                                         rdf:type owl:Class
-                                                                                       ]
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty bcodmo:categorizedBy ;
-                                                                    owl:hasValue bcodmo:GeometryShape_Polygon
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ;
-                       rdfs:subClassOf bcodmo:Geometry ;
-                       rdfs:comment "A collection of points where the first and last are equal in irder to close the shape." ;
-                       rdfs:label "PolygonGeometry" ;
-                       rdfs:seeAlso bcodmo:GeometryShape_Polygon ;
-                       skos:exactMatch sf:Polygon .
 
 
 ###  https://schema.bco-dmo.org/v1.0/PostalAddress
@@ -3760,6 +3631,7 @@ bcodmo:Situation rdf:type owl:Class ;
                                        rdf:type owl:Class
                                      ] ;
                  rdfs:subClassOf bcodmo:Entity ;
+                 owl:disjointWith bcodmo:TemporalEntity ;
                  rdfs:comment "A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events." ;
                  rdfs:label "Situation" .
 
@@ -3890,7 +3762,7 @@ bcodmo:URL rdf:type owl:Class ;
 
 ###  https://schema.bco-dmo.org/v1.0/UnitOfMeasure
 bcodmo:UnitOfMeasure rdf:type owl:Class ;
-                     rdfs:subClassOf bcodmo:Entity ;
+                     rdfs:subClassOf bcodmo:Category ;
                      rdfs:comment "A unit of measure associated with a dataset parameter." ;
                      rdfs:label "Unit of Measure" ;
                      skos:closeMatch <http://purl.obolibrary.org/obo/UO_0000000> ,
@@ -3931,12 +3803,20 @@ bcodmo:WebPage rdf:type owl:Class ;
                                                  rdfs:label "License: CC-BY-SA-4" .
 
 
+###  http://www.opengis.net/def/crs/EPSG/0/4326
+<http://www.opengis.net/def/crs/EPSG/0/4326> rdf:type owl:NamedIndividual ,
+                                                      bcodmo:CoordinateReferenceSystem ;
+                                             bcodmo:label "EPSG:4326" ;
+                                             bcodmo:url "EPSG"^^xsd:anyURI ;
+                                             rdfs:label "Coordinate Reference System: EPSG:4326" .
+
+
 ###  http://www.opengis.net/def/crs/OGC/1.3/CRS84
 <http://www.opengis.net/def/crs/OGC/1.3/CRS84> rdf:type owl:NamedIndividual ,
                                                         bcodmo:CoordinateReferenceSystem ;
                                                bcodmo:label "CRS84" ;
                                                bcodmo:url "http://www.opengis.net/def/crs/OGC/1.3/CRS84"^^xsd:anyURI ;
-                                               rdfs:label "CRS84" .
+                                               rdfs:label "Coordinate Reference System: CRS84" .
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#nil
@@ -4676,54 +4556,6 @@ bcodmo:GCMDPlatformType_SpaceStationsMannedSpacecraft rdf:type owl:NamedIndividu
                                                       rdfs:label "GCMD Platform Type: Space Stations/Manned Spacecraft" .
 
 
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring
-bcodmo:GeometryShape_Linestring rdf:type owl:NamedIndividual ,
-                                         bcodmo:GeometryShape ;
-                                bcodmo:label "linestring"^^xsd:anyURI ;
-                                rdfs:label "Geometry Shape: Linestring" ;
-                                rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.4" .
-
-
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring
-bcodmo:GeometryShape_MultiLinestring rdf:type owl:NamedIndividual ,
-                                              bcodmo:GeometryShape ;
-                                     bcodmo:label "multilinestring"^^xsd:anyURI ;
-                                     rdfs:label "Geometry Shape: MultiLinestring" ;
-                                     rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.5" .
-
-
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint
-bcodmo:GeometryShape_MultiPoint rdf:type owl:NamedIndividual ,
-                                         bcodmo:GeometryShape ;
-                                bcodmo:label "multipoint"^^xsd:anyURI ;
-                                rdfs:label "Geometry Shape: MultiPoint" ;
-                                rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.3" .
-
-
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon
-bcodmo:GeometryShape_MultiPolygon rdf:type owl:NamedIndividual ,
-                                           bcodmo:GeometryShape ;
-                                  bcodmo:label "multipolygon"^^xsd:anyURI ;
-                                  rdfs:label "Geometry Shape: MultiPolygon" ;
-                                  rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.7" .
-
-
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_Point
-bcodmo:GeometryShape_Point rdf:type owl:NamedIndividual ,
-                                    bcodmo:GeometryShape ;
-                           bcodmo:label "point"^^xsd:anyURI ;
-                           rdfs:label "Geometry Shape: Point" ;
-                           rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2" .
-
-
-###  https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon
-bcodmo:GeometryShape_Polygon rdf:type owl:NamedIndividual ,
-                                      bcodmo:GeometryShape ;
-                             bcodmo:label "polygon"^^xsd:anyURI ;
-                             rdfs:label "Geometry Shape: Polygon" ;
-                             rdfs:seeAlso "https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6" .
-
-
 ###  https://schema.bco-dmo.org/v1.0/IdentifierScheme_BCODMO_Version_1
 bcodmo:IdentifierScheme_BCODMO_Version_1 rdf:type owl:NamedIndividual ,
                                                   bcodmo:IdentifierScheme ;
@@ -5149,12 +4981,36 @@ bcodmo:ResourceRelation_Crossref_IsRelatedMaterial rdf:type owl:NamedIndividual 
                                                    rdfs:label "ResourceRelation: Crossref - isRelatedMaterial" .
 
 
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo
+bcodmo:ResourceRelation_Crossref_IsSupplementTo rdf:type owl:NamedIndividual ,
+                                                         bcodmo:ResourceRelation ;
+                                                bcodmo:authority bcodmo:Organization_Crossref ;
+                                                bcodmo:label "isSupplementTo" ;
+                                                rdfs:label "ResourceRelation: Crossref - isSupplementTo" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy
+bcodmo:ResourceRelation_Crossref_IsSupplementedBy rdf:type owl:NamedIndividual ,
+                                                           bcodmo:ResourceRelation ;
+                                                  bcodmo:authority bcodmo:Organization_Crossref ;
+                                                  bcodmo:label "isSupplementedBy" ;
+                                                  rdfs:label "ResourceRelation: Crossref - isSupplementedBy" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf
 bcodmo:ResourceRelation_Crossref_IsVersionOf rdf:type owl:NamedIndividual ,
                                                       bcodmo:ResourceRelation ;
                                              bcodmo:authority bcodmo:Organization_Crossref ;
                                              bcodmo:label "isVersionOf" ;
                                              rdfs:label "ResourceRelation: Crossref - isVersionOf" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References
+bcodmo:ResourceRelation_Crossref_References rdf:type owl:NamedIndividual ,
+                                                     bcodmo:ResourceRelation ;
+                                            bcodmo:authority bcodmo:Organization_Crossref ;
+                                            bcodmo:label "references" ;
+                                            rdfs:label "ResourceRelation: Crossref - references" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces
@@ -5253,6 +5109,14 @@ bcodmo:ResourceRelation_DataCite_IsSupplementTo rdf:type owl:NamedIndividual ,
                                                 rdfs:label "ResourceRelation: DataCite - IsSupplementTo" .
 
 
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy
+bcodmo:ResourceRelation_DataCite_IsSupplementedBy rdf:type owl:NamedIndividual ,
+                                                           bcodmo:ResourceRelation ;
+                                                  bcodmo:authority bcodmo:Organization_DataCite ;
+                                                  bcodmo:label "IsSupplementedBy" ;
+                                                  rdfs:label "ResourceRelation: DataCite - IsSupplementedBy" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf
 bcodmo:ResourceRelation_DataCite_IsVariantFormOf rdf:type owl:NamedIndividual ,
                                                           bcodmo:ResourceRelation ;
@@ -5287,6 +5151,7 @@ bcodmo:ResourceRelation_DifferentVersion rdf:type owl:NamedIndividual ,
                                                         bcodmo:ResourceRelation_DataCite_IsVariantFormOf ;
                                          bcodmo:description "Another variant version of the dataset we have in some other repository" ;
                                          bcodmo:inverseDescription "Another variant version of the dataset we have in some other repository" ;
+                                         bcodmo:inverseSymmetricalRelationship "true"^^xsd:boolean ;
                                          bcodmo:label "Different Version" ;
                                          rdfs:label "Resource Relation: Different Version" .
 
@@ -5335,8 +5200,11 @@ bcodmo:ResourceRelation_IsContinuedBy rdf:type owl:NamedIndividual ,
 bcodmo:ResourceRelation_IsDerivedFrom rdf:type owl:NamedIndividual ,
                                                bcodmo:ResourceRelation ;
                                       bcodmo:authority bcodmo:Organization_BCODMO ;
+                                      bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetDerivation ;
                                       bcodmo:matches bcodmo:ResourceRelation_Crossref_IsDerivedFrom ,
                                                      bcodmo:ResourceRelation_DataCite_IsDerivedFrom ;
+                                      bcodmo:description "The following pre-existing datasets were used to generate, or derive, the data on this page." ;
+                                      bcodmo:inverseDescription "This dataset was used to generate the following datasets." ;
                                       bcodmo:label "Is Derived From" ;
                                       rdfs:label "Resource Relation: Is Derived From" .
 
@@ -5358,6 +5226,12 @@ bcodmo:ResourceRelation_IsPartOf rdf:type owl:NamedIndividual ,
 bcodmo:ResourceRelation_IsReferencedBy rdf:type owl:NamedIndividual ,
                                                 bcodmo:ResourceRelation ;
                                        bcodmo:authority bcodmo:Organization_BCODMO ;
+                                       bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetCitation ;
+                                       bcodmo:inverseRelationship bcodmo:ResourceRelation_References ;
+                                       bcodmo:matches bcodmo:ResourceRelation_Crossref_References ,
+                                                      bcodmo:ResourceRelation_DataCite_References ;
+                                       bcodmo:description "Used as a source of information for the dataset" ;
+                                       bcodmo:inverseDescription "A dataset that was used as a source of information." ;
                                        bcodmo:label "Is Referenced By" ;
                                        rdfs:label "Resource Relation: Is Referenced By" .
 
@@ -5372,6 +5246,7 @@ bcodmo:ResourceRelation_IsRelatedTo rdf:type owl:NamedIndividual ,
                                                    bcodmo:ResourceRelation_DataCite_IsSupplementTo ;
                                     bcodmo:description "The dataset is related to another dataset." ;
                                     bcodmo:inverseDescription "The dataset is related to another dataset." ;
+                                    bcodmo:inverseSymmetricalRelationship "true"^^xsd:boolean ;
                                     bcodmo:label "Is Related To" ;
                                     rdfs:label "Resource Relation: Is Related To" .
 
@@ -5380,10 +5255,12 @@ bcodmo:ResourceRelation_IsRelatedTo rdf:type owl:NamedIndividual ,
 bcodmo:ResourceRelation_IsSupplementTo rdf:type owl:NamedIndividual ,
                                                 bcodmo:ResourceRelation ;
                                        bcodmo:authority bcodmo:Organization_BCODMO ;
-                                       bcodmo:inverseRelationship bcodmo:ResourceRelation_IsSupplementTo ;
+                                       bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetCitation ;
+                                       bcodmo:inverseRelationship bcodmo:ResourceRelation_IsSupplementedBy ;
+                                       bcodmo:matches bcodmo:ResourceRelation_Crossref_IsSupplementTo ,
+                                                      bcodmo:ResourceRelation_DataCite_IsSupplementTo ;
                                        bcodmo:description "Indicates datasets that are supplemental to this dataset." ;
                                        bcodmo:inverseDescription "Indicates datasets that are supplemented by this dataset." ;
-                                       bcodmo:inverseSymmetricalRelationship "true"^^xsd:boolean ;
                                        bcodmo:label "Is Supplement To" ;
                                        rdfs:label "Resource Relation: Is Supplement To" .
 
@@ -5392,6 +5269,12 @@ bcodmo:ResourceRelation_IsSupplementTo rdf:type owl:NamedIndividual ,
 bcodmo:ResourceRelation_IsSupplementedBy rdf:type owl:NamedIndividual ,
                                                   bcodmo:ResourceRelation ;
                                          bcodmo:authority bcodmo:Organization_BCODMO ;
+                                         bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetCitation ;
+                                         bcodmo:inverseRelationship bcodmo:ResourceRelation_IsSupplementTo ;
+                                         bcodmo:matches bcodmo:ResourceRelation_Crossref_IsSupplementedBy ,
+                                                        bcodmo:ResourceRelation_DataCite_IsSupplementedBy ;
+                                         bcodmo:description "Indicates datasets that are supplemental to this dataset." ;
+                                         bcodmo:inverseDescription "Indicates datasets that are supplemented by this dataset." ;
                                          bcodmo:label "Is Supplemented By" ;
                                          rdfs:label "Resource Relation: Is Supplemented By" .
 
@@ -5440,6 +5323,12 @@ bcodmo:ResourceRelation_OldVersion rdf:type owl:NamedIndividual ,
 bcodmo:ResourceRelation_References rdf:type owl:NamedIndividual ,
                                             bcodmo:ResourceRelation ;
                                    bcodmo:authority bcodmo:Organization_BCODMO ;
+                                   bcodmo:inGroup bcodmo:ResourceRelationGroup_DatasetCitation ;
+                                   bcodmo:inverseRelationship bcodmo:ResourceRelation_IsReferencedBy ;
+                                   bcodmo:matches bcodmo:ResourceRelation_Crossref_References ,
+                                                  bcodmo:ResourceRelation_DataCite_References ;
+                                   bcodmo:description "A dataset that was used as a source of information." ;
+                                   bcodmo:inverseDescription "Used as a source of information for the following dataset(s):" ;
                                    bcodmo:label "References" ;
                                    rdfs:label "Resource Relation: References" .
 

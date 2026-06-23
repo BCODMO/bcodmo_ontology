@@ -230,9 +230,6 @@ This ontology has the following classes and properties.</span>
       <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a>
    </li>
    <li>
-      <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a>
-   </li>
-   <li>
       <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a>
    </li>
    <li>
@@ -262,8 +259,9 @@ This ontology has the following classes and properties.</span>
       <a href="#License" title="https://schema.bco-dmo.org/v1.0/License">License</a>
    </li>
    <li>
-      <a href="#LineStringGeometry"
-         title="https://schema.bco-dmo.org/v1.0/LineStringGeometry">LineStringGeometry</a>
+      <a href="#http://www.opengis.net/ont/sf#LineString" title="http://www.opengis.net/ont/sf#LineString">
+         <span>Line String</span>
+      </a>
    </li>
    <li>
       <a href="#Logo" title="https://schema.bco-dmo.org/v1.0/Logo">Logo</a>
@@ -282,16 +280,19 @@ This ontology has the following classes and properties.</span>
       <a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a>
    </li>
    <li>
-      <a href="#MultiLineStringGeometry"
-         title="https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry">MultiLineStringGeometry</a>
+      <a href="#http://www.opengis.net/ont/sf#MultiLineString" title="http://www.opengis.net/ont/sf#MultiLineString">
+         <span>Multi Line String</span>
+      </a>
    </li>
    <li>
-      <a href="#MultiPointGeometry"
-         title="https://schema.bco-dmo.org/v1.0/MultiPointGeometry">MultiPointGeometry</a>
+      <a href="#http://www.opengis.net/ont/sf#MultiPoint" title="http://www.opengis.net/ont/sf#MultiPoint">
+         <span>Multi Point</span>
+      </a>
    </li>
    <li>
-      <a href="#MultiPolygonGeometry"
-         title="https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry">MultiPolygonGeometry</a>
+      <a href="#MultiPolygon" title="https://schema.bco-dmo.org/v1.0/MultiPolygon">
+         <span>Multi Polygon</span>
+      </a>
    </li>
    <li>
       <a href="#NaturalLanguage" title="https://schema.bco-dmo.org/v1.0/NaturalLanguage">NaturalLanguage</a>
@@ -324,13 +325,17 @@ This ontology has the following classes and properties.</span>
       <a href="#PlatformType" title="https://schema.bco-dmo.org/v1.0/PlatformType">Platform Type</a>
    </li>
    <li>
-      <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a>
+      <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">
+         <span>Point</span>
+      </a>
    </li>
    <li>
       <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a>
    </li>
    <li>
-      <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a>
+      <a href="#http://www.opengis.net/ont/sf#Polygon" title="http://www.opengis.net/ont/sf#Polygon">
+         <span>Polygon</span>
+      </a>
    </li>
    <li>
       <a href="#PostalAddress" title="https://schema.bco-dmo.org/v1.0/PostalAddress">PostalAddress</a>
@@ -875,6 +880,12 @@ This ontology has the following classes and properties.</span>
       <a href="#archiveComment" title="https://schema.bco-dmo.org/v1.0/archiveComment">archiveComment</a>
    </li>
    <li>
+      <a href="#asGeoJSON" title="https://schema.bco-dmo.org/v1.0/asGeoJSON">asGeoJSON</a>
+   </li>
+   <li>
+      <a href="#asWKT" title="https://schema.bco-dmo.org/v1.0/asWKT">asWKT</a>
+   </li>
+   <li>
       <a href="#bibliographicCitation"
          title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a>
    </li>
@@ -962,6 +973,9 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#inverseSymmetricalRelationship"
          title="https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship">inverseSymmetricalRelationship</a>
+   </li>
+   <li>
+      <a href="#isDeprecated" title="https://schema.bco-dmo.org/v1.0/isDeprecated">isDeprecated</a>
    </li>
    <li>
       <a href="#isPrimary" title="https://schema.bco-dmo.org/v1.0/isPrimary">isPrimary</a>
@@ -1151,7 +1165,10 @@ This ontology has the following classes and properties.</span>
          title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode">ControlledVocabulary: NODC ISO19115-2 MD_TopicCategoryCode</a>
    </li>
    <li>
-      <a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a>
+      <a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">Coordinate Reference System: CRS84</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/def/crs/EPSG/0/4326" title="http://www.opengis.net/def/crs/EPSG/0/4326">Coordinate Reference System: EPSG:4326</a>
    </li>
    <li>
       <a href="#CryptographicHashAlgorithm_MD5"
@@ -1410,30 +1427,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#GCMDPlatformType_SpaceStationsMannedSpacecraft"
          title="https://schema.bco-dmo.org/v1.0/GCMDPlatformType_SpaceStationsMannedSpacecraft">GCMD Platform Type: Space Stations/Manned Spacecraft</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_Linestring"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring">Geometry Shape: Linestring</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_MultiLinestring"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring">Geometry Shape: MultiLinestring</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_MultiPoint"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint">Geometry Shape: MultiPoint</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_MultiPolygon"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon">Geometry Shape: MultiPolygon</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_Point"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_Point">Geometry Shape: Point</a>
-   </li>
-   <li>
-      <a href="#GeometryShape_Polygon"
-         title="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon">Geometry Shape: Polygon</a>
    </li>
    <li>
       <a href="#IdentifierScheme_BCODMO_Version_2"
@@ -1738,8 +1731,20 @@ This ontology has the following classes and properties.</span>
          title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial">ResourceRelation: Crossref - isRelatedMaterial</a>
    </li>
    <li>
+      <a href="#ResourceRelation_Crossref_IsSupplementedBy"
+         title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy">ResourceRelation: Crossref - isSupplementedBy</a>
+   </li>
+   <li>
+      <a href="#ResourceRelation_Crossref_IsSupplementTo"
+         title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo">ResourceRelation: Crossref - isSupplementTo</a>
+   </li>
+   <li>
       <a href="#ResourceRelation_Crossref_IsVersionOf"
          title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf">ResourceRelation: Crossref - isVersionOf</a>
+   </li>
+   <li>
+      <a href="#ResourceRelation_Crossref_References"
+         title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">ResourceRelation: Crossref - references</a>
    </li>
    <li>
       <a href="#ResourceRelation_Crossref_Replaces"
@@ -1784,6 +1789,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#ResourceRelation_DataCite_IsPreviousVersionOf"
          title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPreviousVersionOf">ResourceRelation: DataCite - IsPreviousVersionOf</a>
+   </li>
+   <li>
+      <a href="#ResourceRelation_DataCite_IsSupplementedBy"
+         title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy">ResourceRelation: DataCite - IsSupplementedBy</a>
    </li>
    <li>
       <a href="#ResourceRelation_DataCite_IsSupplementTo"

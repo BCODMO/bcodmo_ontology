@@ -69,7 +69,6 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#GCMDPlatformType" title="https://schema.bco-dmo.org/v1.0/GCMDPlatformType">GCMDPlatformType</a></li>
   <li><a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a></li>
   <li><a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a></li>
-  <li><a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a></li>
   <li><a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a></li>
   <li><a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a></li>
   <li><a href="#IdentifierString" title="https://schema.bco-dmo.org/v1.0/IdentifierString">IdentifierString</a></li>
@@ -79,15 +78,15 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a></li>
   <li><a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a></li>
   <li><a href="#License" title="https://schema.bco-dmo.org/v1.0/License">License</a></li>
-  <li><a href="#LineStringGeometry" title="https://schema.bco-dmo.org/v1.0/LineStringGeometry">LineStringGeometry</a></li>
+  <li><a href="#http://www.opengis.net/ont/sf#LineString" title="http://www.opengis.net/ont/sf#LineString"> <span>Line String</span> </a></li>
   <li><a href="#Logo" title="https://schema.bco-dmo.org/v1.0/Logo">Logo</a></li>
   <li><a href="#MediaService" title="https://schema.bco-dmo.org/v1.0/MediaService">MediaService</a></li>
   <li><a href="#MediaServiceType" title="https://schema.bco-dmo.org/v1.0/MediaServiceType">MediaServiceType</a></li>
   <li><a href="#MetadataFile" title="https://schema.bco-dmo.org/v1.0/MetadataFile">Metadata File</a></li>
   <li><a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a></li>
-  <li><a href="#MultiLineStringGeometry" title="https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry">MultiLineStringGeometry</a></li>
-  <li><a href="#MultiPointGeometry" title="https://schema.bco-dmo.org/v1.0/MultiPointGeometry">MultiPointGeometry</a></li>
-  <li><a href="#MultiPolygonGeometry" title="https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry">MultiPolygonGeometry</a></li>
+  <li><a href="#http://www.opengis.net/ont/sf#MultiLineString" title="http://www.opengis.net/ont/sf#MultiLineString"> <span>Multi Line String</span> </a></li>
+  <li><a href="#http://www.opengis.net/ont/sf#MultiPoint" title="http://www.opengis.net/ont/sf#MultiPoint"> <span>Multi Point</span> </a></li>
+  <li><a href="#MultiPolygon" title="https://schema.bco-dmo.org/v1.0/MultiPolygon"> <span>Multi Polygon</span> </a></li>
   <li><a href="#NaturalLanguage" title="https://schema.bco-dmo.org/v1.0/NaturalLanguage">NaturalLanguage</a></li>
   <li><a href="#NODCTopic" title="https://schema.bco-dmo.org/v1.0/NODCTopic">NODCTopic</a></li>
   <li><a href="#OfferCatalog" title="https://schema.bco-dmo.org/v1.0/OfferCatalog">OfferCatalog</a></li>
@@ -98,9 +97,9 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a></li>
   <li><a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a></li>
   <li><a href="#PlatformType" title="https://schema.bco-dmo.org/v1.0/PlatformType">Platform Type</a></li>
-  <li><a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a></li>
+  <li><a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point"> <span>Point</span> </a></li>
   <li><a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a></li>
-  <li><a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a></li>
+  <li><a href="#http://www.opengis.net/ont/sf#Polygon" title="http://www.opengis.net/ont/sf#Polygon"> <span>Polygon</span> </a></li>
   <li><a href="#PostalAddress" title="https://schema.bco-dmo.org/v1.0/PostalAddress">PostalAddress</a></li>
   <li><a href="#Program" title="https://schema.bco-dmo.org/v1.0/Program">Program</a></li>
   <li><a href="#Project" title="https://schema.bco-dmo.org/v1.0/Project">Project</a></li>
@@ -226,6 +225,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#annotator" title="https://schema.bco-dmo.org/v1.0/annotator">annotator</a> <sup class="type-op" title="object property">op</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://schema.bco-dmo.org/v1.0/performedBy">performedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -416,6 +421,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#grantedAward" title="https://schema.bco-dmo.org/v1.0/grantedAward">grantedAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasLeadAwardOf" title="https://schema.bco-dmo.org/v1.0/hasLeadAwardOf">hasLeadAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#isContinuingAwardOf" title="https://schema.bco-dmo.org/v1.0/isContinuingAwardOf">isContinuingAwardOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#piInstitutionChangedForPreviousAward" title="https://schema.bco-dmo.org/v1.0/piInstitutionChangedForPreviousAward">piInstitutionChangedForPreviousAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedAward" title="https://schema.bco-dmo.org/v1.0/relatedAward">relatedAward</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="AwardNoDataAnnotation">
@@ -493,20 +504,14 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <h3>Bounding Box Geometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry</p>
   <div class="comment">
-   <span class="markdown">An axis-aligned bounding box geometry defined by west/south/east/north boundaries.</span>
+   <span class="markdown">An axis-aligned bounding box geometry defined by west/south/east/north boundaries. A set of Point geometries where the first Point and the last point are the same Point.</span>
   </div>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (((<a href="#eastBoundary" title="https://schema.bco-dmo.org/v1.0/eastBoundary">eastBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#northBoundary" title="https://schema.bco-dmo.org/v1.0/northBoundary">northBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#southBoundary" title="https://schema.bco-dmo.org/v1.0/southBoundary">southBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>) <span class="logic">and</span> (<a href="#westBoundary" title="https://schema.bco-dmo.org/v1.0/westBoundary">westBoundary</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>)) <span class="logic">or</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 5 <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>))
-   </dd>
    <dt>
     has super-classes
    </dt>
    <dd>
-    <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://www.opengis.net/ont/sf#Polygon" title="http://www.opengis.net/ont/sf#Polygon">Polygon</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -539,13 +544,19 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#Audience" title="https://schema.bco-dmo.org/v1.0/Audience">Audience</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetType" title="https://schema.bco-dmo.org/v1.0/DatasetType">Dataset Type</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#Datatype" title="https://schema.bco-dmo.org/v1.0/Datatype">Datatype</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedTerm" title="https://schema.bco-dmo.org/v1.0/DefinedTerm">DefinedTerm</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#FileType" title="https://schema.bco-dmo.org/v1.0/FileType">File Type</a> <sup class="type-c" title="class">c</sup>, <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#MediaServiceType" title="https://schema.bco-dmo.org/v1.0/MediaServiceType">MediaServiceType</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformType" title="https://schema.bco-dmo.org/v1.0/PlatformType">Platform Type</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelationGroup" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">Resource Relation Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Role" title="https://schema.bco-dmo.org/v1.0/Role">Role</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Action" title="https://schema.bco-dmo.org/v1.0/Action">Action</a> <sup class="type-c" title="class">c</sup>, <a href="#Audience" title="https://schema.bco-dmo.org/v1.0/Audience">Audience</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">CreativeWorkStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#CurrentState" title="https://schema.bco-dmo.org/v1.0/CurrentState">Current State</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetType" title="https://schema.bco-dmo.org/v1.0/DatasetType">Dataset Type</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetParameterAttribute" title="https://schema.bco-dmo.org/v1.0/DatasetParameterAttribute">DatasetParameterAttribute</a> <sup class="type-c" title="class">c</sup>, <a href="#Datatype" title="https://schema.bco-dmo.org/v1.0/Datatype">Datatype</a> <sup class="type-c" title="class">c</sup>, <a href="#DefinedTerm" title="https://schema.bco-dmo.org/v1.0/DefinedTerm">DefinedTerm</a> <sup class="type-c" title="class">c</sup>, <a href="#DeploymentActivity" title="https://schema.bco-dmo.org/v1.0/DeploymentActivity">DeploymentActivity</a> <sup class="type-c" title="class">c</sup>, <a href="#EntityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/EntityPublishingStatus">EntityPublishingStatus</a> <sup class="type-c" title="class">c</sup>, <a href="#FileType" title="https://schema.bco-dmo.org/v1.0/FileType">File Type</a> <sup class="type-c" title="class">c</sup>, <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>, <a href="#Keyword" title="https://schema.bco-dmo.org/v1.0/Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>, <a href="#Language" title="https://schema.bco-dmo.org/v1.0/Language">Language</a> <sup class="type-c" title="class">c</sup>, <a href="#MediaServiceType" title="https://schema.bco-dmo.org/v1.0/MediaServiceType">MediaServiceType</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformTitle" title="https://schema.bco-dmo.org/v1.0/PlatformTitle">Platform Title</a> <sup class="type-c" title="class">c</sup>, <a href="#PlatformType" title="https://schema.bco-dmo.org/v1.0/PlatformType">Platform Type</a> <sup class="type-c" title="class">c</sup>, <a href="#ResourceRelationGroup" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup">Resource Relation Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Role" title="https://schema.bco-dmo.org/v1.0/Role">Role</a> <sup class="type-c" title="class">c</sup>, <a href="#UnitOfMeasure" title="https://schema.bco-dmo.org/v1.0/UnitOfMeasure">Unit of Measure</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
     <a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -560,7 +571,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has super-classes
    </dt>
    <dd>
-    <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -749,7 +760,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has members
    </dt>
    <dd>
-    <a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">Coordinate Reference System: CRS84</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.opengis.net/def/crs/EPSG/0/4326" title="http://www.opengis.net/def/crs/EPSG/0/4326">Coordinate Reference System: EPSG:4326</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -770,13 +781,13 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>, <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup>, <a href="#ControlledVocabulary" title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary">ControlledVocabulary</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>, <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://schema.bco-dmo.org/v1.0/License">License</a> <sup class="type-c" title="class">c</sup>, <a href="#MediaService" title="https://schema.bco-dmo.org/v1.0/MediaService">MediaService</a> <sup class="type-c" title="class">c</sup>, <a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a> <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://schema.bco-dmo.org/v1.0/Publication">Publication</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareService" title="https://schema.bco-dmo.org/v1.0/SoftwareService">SoftwareService</a> <sup class="type-c" title="class">c</sup>, <a href="#WebPage" title="https://schema.bco-dmo.org/v1.0/WebPage">WebPage</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Collection" title="https://schema.bco-dmo.org/v1.0/Collection">Collection</a> <sup class="type-c" title="class">c</sup>, <a href="#Comment" title="https://schema.bco-dmo.org/v1.0/Comment">Comment</a> <sup class="type-c" title="class">c</sup>, <a href="#ControlledVocabulary" title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary">ControlledVocabulary</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="https://schema.bco-dmo.org/v1.0/Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#File" title="https://schema.bco-dmo.org/v1.0/File">File</a> <sup class="type-c" title="class">c</sup>, <a href="#FileDescriptor" title="https://schema.bco-dmo.org/v1.0/FileDescriptor">File Descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#License" title="https://schema.bco-dmo.org/v1.0/License">License</a> <sup class="type-c" title="class">c</sup>, <a href="#MediaService" title="https://schema.bco-dmo.org/v1.0/MediaService">MediaService</a> <sup class="type-c" title="class">c</sup>, <a href="#MetadataProfile" title="https://schema.bco-dmo.org/v1.0/MetadataProfile">Metadata Profile</a> <sup class="type-c" title="class">c</sup>, <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>, <a href="#Publication" title="https://schema.bco-dmo.org/v1.0/Publication">Publication</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareService" title="https://schema.bco-dmo.org/v1.0/SoftwareService">SoftwareService</a> <sup class="type-c" title="class">c</sup>, <a href="#WebPage" title="https://schema.bco-dmo.org/v1.0/WebPage">WebPage</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#abstract" title="https://schema.bco-dmo.org/v1.0/abstract">abstract</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#audience" title="https://schema.bco-dmo.org/v1.0/audience">audience</a> <sup class="type-op" title="object property">op</sup>, <a href="#author" title="https://schema.bco-dmo.org/v1.0/author">author</a> <sup class="type-op" title="object property">op</sup>, <a href="#bibliographicCitation" title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#contributor" title="https://schema.bco-dmo.org/v1.0/contributor">contributor</a> <sup class="type-op" title="object property">op</sup>, <a href="#createdDate" title="https://schema.bco-dmo.org/v1.0/createdDate">createdDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#currentState" title="https://schema.bco-dmo.org/v1.0/currentState">currentState</a> <sup class="type-op" title="object property">op</sup>, <a href="#expectingPublication" title="https://schema.bco-dmo.org/v1.0/expectingPublication">expectingPublication</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#governedBy" title="https://schema.bco-dmo.org/v1.0/governedBy">governedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDistribution" title="https://schema.bco-dmo.org/v1.0/hasDistribution">hasDistribution</a> <sup class="type-op" title="object property">op</sup>, <a href="#keywords" title="https://schema.bco-dmo.org/v1.0/keywords">keywords</a> <sup class="type-op" title="object property">op</sup>, <a href="#language" title="https://schema.bco-dmo.org/v1.0/language">language</a> <sup class="type-op" title="object property">op</sup>, <a href="#license" title="https://schema.bco-dmo.org/v1.0/license">license</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedDate" title="https://schema.bco-dmo.org/v1.0/publishedDate">publishedDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedDataset" title="https://schema.bco-dmo.org/v1.0/relatedDataset">relatedDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedPublication" title="https://schema.bco-dmo.org/v1.0/relatedPublication">relatedPublication</a> <sup class="type-op" title="object property">op</sup>, <a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup>, <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#abstract" title="https://schema.bco-dmo.org/v1.0/abstract">abstract</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#audience" title="https://schema.bco-dmo.org/v1.0/audience">audience</a> <sup class="type-op" title="object property">op</sup>, <a href="#author" title="https://schema.bco-dmo.org/v1.0/author">author</a> <sup class="type-op" title="object property">op</sup>, <a href="#bibliographicCitation" title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#content" title="https://schema.bco-dmo.org/v1.0/content">content</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#contributor" title="https://schema.bco-dmo.org/v1.0/contributor">contributor</a> <sup class="type-op" title="object property">op</sup>, <a href="#createdDate" title="https://schema.bco-dmo.org/v1.0/createdDate">createdDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#creativeWorkStatus" title="https://schema.bco-dmo.org/v1.0/creativeWorkStatus">creativeWorkStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#currentState" title="https://schema.bco-dmo.org/v1.0/currentState">currentState</a> <sup class="type-op" title="object property">op</sup>, <a href="#expectingPublication" title="https://schema.bco-dmo.org/v1.0/expectingPublication">expectingPublication</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#fundedByAward" title="https://schema.bco-dmo.org/v1.0/fundedByAward">fundedByAward</a> <sup class="type-op" title="object property">op</sup>, <a href="#governedBy" title="https://schema.bco-dmo.org/v1.0/governedBy">governedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAgentWithRole" title="https://schema.bco-dmo.org/v1.0/hasAgentWithRole">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDistribution" title="https://schema.bco-dmo.org/v1.0/hasDistribution">hasDistribution</a> <sup class="type-op" title="object property">op</sup>, <a href="#keywords" title="https://schema.bco-dmo.org/v1.0/keywords">keywords</a> <sup class="type-op" title="object property">op</sup>, <a href="#language" title="https://schema.bco-dmo.org/v1.0/language">language</a> <sup class="type-op" title="object property">op</sup>, <a href="#license" title="https://schema.bco-dmo.org/v1.0/license">license</a> <sup class="type-op" title="object property">op</sup>, <a href="#preferredDOI" title="https://schema.bco-dmo.org/v1.0/preferredDOI">preferredDOI</a> <sup class="type-op" title="object property">op</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedDate" title="https://schema.bco-dmo.org/v1.0/publishedDate">publishedDate</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedDataset" title="https://schema.bco-dmo.org/v1.0/relatedDataset">relatedDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#relatedPublication" title="https://schema.bco-dmo.org/v1.0/relatedPublication">relatedPublication</a> <sup class="type-op" title="object property">op</sup>, <a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup>, <a href="#status" title="https://schema.bco-dmo.org/v1.0/status">status</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -784,13 +795,19 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#forCreativeWork" title="https://schema.bco-dmo.org/v1.0/forCreativeWork">forCreativeWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#isRoleFor" title="https://schema.bco-dmo.org/v1.0/isRoleFor">hasAgentWithRole</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasContent" title="https://schema.bco-dmo.org/v1.0/hasContent">hasContent</a> <sup class="type-op" title="object property">op</sup>, <a href="#producedWork" title="https://schema.bco-dmo.org/v1.0/producedWork">producedWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#relations" title="https://schema.bco-dmo.org/v1.0/relations">relations</a> <sup class="type-op" title="object property">op</sup>, <a href="#target" title="https://schema.bco-dmo.org/v1.0/target">target</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedWork" title="https://schema.bco-dmo.org/v1.0/usedWork">usedWork</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="CreativeWorkStatus">
   <h3>CreativeWorkStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/CreativeWorkStatus</p>
   <div class="comment">
-   <span class="markdown">A state of for some createive work.</span>
+   <span class="markdown">A state of for some creative work.</span>
   </div>
   <dl class="description">
    <dt>
@@ -1475,6 +1492,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#isDeprecated" title="https://schema.bco-dmo.org/v1.0/isDeprecated">isDeprecated</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> true)
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1663,13 +1686,13 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#DeprecatedEntity" title="https://schema.bco-dmo.org/v1.0/DeprecatedEntity">DeprecatedEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Policy" title="https://schema.bco-dmo.org/v1.0/Policy">Policy</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#UnitOfMeasure" title="https://schema.bco-dmo.org/v1.0/UnitOfMeasure">Unit of Measure</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#DeprecatedEntity" title="https://schema.bco-dmo.org/v1.0/DeprecatedEntity">DeprecatedEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#abbreviation" title="https://schema.bco-dmo.org/v1.0/abbreviation">abbreviation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#acronym" title="https://schema.bco-dmo.org/v1.0/acronym">acronym</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#actionType" title="https://schema.bco-dmo.org/v1.0/actionType">actionType</a> <sup class="type-op" title="object property">op</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#browseGraphic" title="https://schema.bco-dmo.org/v1.0/browseGraphic">browseGraphic</a> <sup class="type-op" title="object property">op</sup>, <a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#codeValue" title="https://schema.bco-dmo.org/v1.0/codeValue">codeValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#externalWebsite" title="https://schema.bco-dmo.org/v1.0/externalWebsite">externalWebsite</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPart" title="https://schema.bco-dmo.org/v1.0/hasPart">has Part</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCollection" title="https://schema.bco-dmo.org/v1.0/hasCollection">hasCollection</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>, <a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPartOf" title="https://schema.bco-dmo.org/v1.0/isPartOf">isPartOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPrimary" title="https://schema.bco-dmo.org/v1.0/isPrimary">isPrimary</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isTypeOf" title="https://schema.bco-dmo.org/v1.0/isTypeOf">isTypeOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#logo" title="https://schema.bco-dmo.org/v1.0/logo">logo</a> <sup class="type-op" title="object property">op</sup>, <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="https://schema.bco-dmo.org/v1.0/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>, <a href="#publisher" title="https://schema.bco-dmo.org/v1.0/publisher">publisher</a> <sup class="type-op" title="object property">op</sup>, <a href="#smallLogo" title="https://schema.bco-dmo.org/v1.0/smallLogo">smallLogo</a> <sup class="type-op" title="object property">op</sup>, <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#abbreviation" title="https://schema.bco-dmo.org/v1.0/abbreviation">abbreviation</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#acronym" title="https://schema.bco-dmo.org/v1.0/acronym">acronym</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#actionType" title="https://schema.bco-dmo.org/v1.0/actionType">actionType</a> <sup class="type-op" title="object property">op</sup>, <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup>, <a href="#browseGraphic" title="https://schema.bco-dmo.org/v1.0/browseGraphic">browseGraphic</a> <sup class="type-op" title="object property">op</sup>, <a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#codeValue" title="https://schema.bco-dmo.org/v1.0/codeValue">codeValue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#entityPublishingStatus" title="https://schema.bco-dmo.org/v1.0/entityPublishingStatus">entityPublishingStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#externalWebsite" title="https://schema.bco-dmo.org/v1.0/externalWebsite">externalWebsite</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPart" title="https://schema.bco-dmo.org/v1.0/hasPart">has Part</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCollection" title="https://schema.bco-dmo.org/v1.0/hasCollection">hasCollection</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTime" title="https://schema.bco-dmo.org/v1.0/hasTime">hasTime</a> <sup class="type-op" title="object property">op</sup>, <a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedAs" title="https://schema.bco-dmo.org/v1.0/isDefinedAs">isDefinedAs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDeprecated" title="https://schema.bco-dmo.org/v1.0/isDeprecated">isDeprecated</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isPartOf" title="https://schema.bco-dmo.org/v1.0/isPartOf">isPartOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPrimary" title="https://schema.bco-dmo.org/v1.0/isPrimary">isPrimary</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isTypeOf" title="https://schema.bco-dmo.org/v1.0/isTypeOf">isTypeOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#logo" title="https://schema.bco-dmo.org/v1.0/logo">logo</a> <sup class="type-op" title="object property">op</sup>, <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="https://schema.bco-dmo.org/v1.0/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#publisher" title="https://schema.bco-dmo.org/v1.0/publisher">publisher</a> <sup class="type-op" title="object property">op</sup>, <a href="#smallLogo" title="https://schema.bco-dmo.org/v1.0/smallLogo">smallLogo</a> <sup class="type-op" title="object property">op</sup>, <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -1879,6 +1902,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Organization" title="https://schema.bco-dmo.org/v1.0/Organization">Organization</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<span class="logic">inverse</span> <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>)
+   </dd>
+   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1950,13 +1979,19 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#boundingBox" title="https://schema.bco-dmo.org/v1.0/boundingBox">boundingBox</a> <sup class="type-op" title="object property">op</sup>, <a href="#coordinateReferenceSystem" title="https://schema.bco-dmo.org/v1.0/coordinateReferenceSystem">coordinateReferenceSystem</a> <sup class="type-op" title="object property">op</sup>, <a href="#spatialCenter" title="https://schema.bco-dmo.org/v1.0/spatialCenter">spatialCenter</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#boundingBox" title="https://schema.bco-dmo.org/v1.0/boundingBox">boundingBox</a> <sup class="type-op" title="object property">op</sup>, <a href="#spatialCenter" title="https://schema.bco-dmo.org/v1.0/spatialCenter">spatialCenter</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
     <a href="#spatialExtent" title="https://schema.bco-dmo.org/v1.0/spatialExtent">spatialExtent</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1968,12 +2003,6 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>)
-   </dd>
-   <dt>
     has super-classes
    </dt>
    <dd>
@@ -1983,13 +2012,13 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has sub-classes
    </dt>
    <dd>
-    <a href="#LineStringGeometry" title="https://schema.bco-dmo.org/v1.0/LineStringGeometry">LineStringGeometry</a> <sup class="type-c" title="class">c</sup>, <a href="#MultiLineStringGeometry" title="https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry">MultiLineStringGeometry</a> <sup class="type-c" title="class">c</sup>, <a href="#MultiPointGeometry" title="https://schema.bco-dmo.org/v1.0/MultiPointGeometry">MultiPointGeometry</a> <sup class="type-c" title="class">c</sup>, <a href="#MultiPolygonGeometry" title="https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry">MultiPolygonGeometry</a> <sup class="type-c" title="class">c</sup>, <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>, <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://www.opengis.net/ont/sf#LineString" title="http://www.opengis.net/ont/sf#LineString">Line String</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/sf#MultiLineString" title="http://www.opengis.net/ont/sf#MultiLineString">Multi Line String</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/sf#MultiPoint" title="http://www.opengis.net/ont/sf#MultiPoint">Multi Point</a> <sup class="type-c" title="class">c</sup>, <a href="#MultiPolygon" title="https://schema.bco-dmo.org/v1.0/MultiPolygon">Multi Polygon</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/sf#Polygon" title="http://www.opengis.net/ont/sf#Polygon">Polygon</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#asGeoJSON" title="https://schema.bco-dmo.org/v1.0/asGeoJSON">asGeoJSON</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#asWKT" title="https://schema.bco-dmo.org/v1.0/asWKT">asWKT</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#coordinateReferenceSystem" title="https://schema.bco-dmo.org/v1.0/coordinateReferenceSystem">coordinateReferenceSystem</a> <sup class="type-op" title="object property">op</sup>, <a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -1997,26 +2026,11 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#geometry" title="https://schema.bco-dmo.org/v1.0/geometry">geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCruiseTrajectory" title="https://schema.bco-dmo.org/v1.0/hasCruiseTrajectory">hasCruiseTrajectory</a> <sup class="type-op" title="object property">op</sup>
    </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape">
-  <h3>GeometryShape<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape</p>
-  <div class="comment">
-   <span class="markdown">The shape of various geometries.</span>
-  </div>
-  <dl class="description">
    <dt>
-    has super-classes
+    is disjoint with
    </dt>
    <dd>
-    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has members
-   </dt>
-   <dd>
-    <a href="#GeometryShape_Linestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring">Geometry Shape: Linestring</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometryShape_MultiLinestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring">Geometry Shape: MultiLinestring</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometryShape_MultiPoint" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint">Geometry Shape: MultiPoint</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometryShape_MultiPolygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon">Geometry Shape: MultiPolygon</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometryShape_Point" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Point">Geometry Shape: Point</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometryShape_Polygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon">Geometry Shape: Polygon</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2031,7 +2045,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     is equivalent to
    </dt>
    <dd>
-    (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#identifierValue" title="https://schema.bco-dmo.org/v1.0/identifierValue">identifierValue</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#token" target="_blank" title="http://www.w3.org/2001/XMLSchema#token">token</a>)
+    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#identifierScheme" title="https://schema.bco-dmo.org/v1.0/identifierScheme">identifierScheme</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#IdentifierScheme" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme">Identifier Scheme</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#identifierValue" title="https://schema.bco-dmo.org/v1.0/identifierValue">identifierValue</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">some</span> <a href="http://www.w3.org/2001/XMLSchema#token" target="_blank" title="http://www.w3.org/2001/XMLSchema#token">token</a>)
    </dd>
    <dt>
     has super-classes
@@ -2056,6 +2070,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#identifier" title="https://schema.bco-dmo.org/v1.0/identifier">identifier</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2286,19 +2306,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="LineStringGeometry">
-  <h3>LineStringGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/LineStringGeometry</p>
-  <div class="comment">
-   <span class="markdown">Two or more PointGeometry that when connected form lines between between adjacent points.</span>
-  </div>
+ <div class="entity" id="http://www.opengis.net/ont/sf#LineString">
+  <h3>Line String<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/sf#LineString</p>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup>) <span class="logic">or</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">nil</a> <sup class="type-ni" title="named individual">ni</sup>)) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_Linestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring">Geometry Shape: Linestring</a> <sup class="type-ni" title="named individual">ni</sup>)
-   </dd>
    <dt>
     has super-classes
    </dt>
@@ -2436,19 +2447,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="MultiLineStringGeometry">
-  <h3>MultiLineStringGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry</p>
-  <div class="comment">
-   <span class="markdown">A geometry whose coordinates member is an array of LineString coordinate arrays</span>
-  </div>
+ <div class="entity" id="http://www.opengis.net/ont/sf#MultiLineString">
+  <h3>Multi Line String<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/sf#MultiLineString</p>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#LineStringGeometry" title="https://schema.bco-dmo.org/v1.0/LineStringGeometry">LineStringGeometry</a> <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#LineStringGeometry" title="https://schema.bco-dmo.org/v1.0/LineStringGeometry">LineStringGeometry</a> <sup class="type-c" title="class">c</sup>))) <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_MultiLinestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring">Geometry Shape: MultiLinestring</a> <sup class="type-ni" title="named individual">ni</sup>)
-   </dd>
    <dt>
     has super-classes
    </dt>
@@ -2457,19 +2459,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="MultiPointGeometry">
-  <h3>MultiPointGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/MultiPointGeometry</p>
-  <div class="comment">
-   <span class="markdown">A geometry whose coordinates member is an array of point coordinate arrays</span>
-  </div>
+ <div class="entity" id="http://www.opengis.net/ont/sf#MultiPoint">
+  <h3>Multi Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/sf#MultiPoint</p>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>))) <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_MultiPoint" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint">Geometry Shape: MultiPoint</a> <sup class="type-ni" title="named individual">ni</sup>)
-   </dd>
    <dt>
     has super-classes
    </dt>
@@ -2478,19 +2471,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="MultiPolygonGeometry">
-  <h3>MultiPolygonGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry</p>
-  <div class="comment">
-   <span class="markdown">A geometry whose coordinates member is an array of Polygon coordinate arrays</span>
-  </div>
+ <div class="entity" id="MultiPolygon">
+  <h3>Multi Polygon<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/MultiPolygon</p>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a> <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PolygonGeometry" title="https://schema.bco-dmo.org/v1.0/PolygonGeometry">PolygonGeometry</a> <sup class="type-c" title="class">c</sup>))) <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_MultiPolygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon">Geometry Shape: MultiPolygon</a> <sup class="type-ni" title="named individual">ni</sup>)
-   </dd>
    <dt>
     has super-classes
    </dt>
@@ -2763,6 +2747,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#onPlatform" title="https://schema.bco-dmo.org/v1.0/onPlatform">onPlatform</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="PlatformTitle">
@@ -2825,18 +2815,15 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="PointGeometry">
-  <h3>PointGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/PointGeometry</p>
-  <div class="comment">
-   <span class="markdown">A single coordinate</span>
-  </div>
+ <div class="entity" id="http://www.opengis.net/ont/sf#Point">
+  <h3>Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/sf#Point</p>
   <dl class="description">
    <dt>
     is equivalent to
    </dt>
    <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_Point" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Point">Geometry Shape: Point</a> <sup class="type-ni" title="named individual">ni</sup>) <span class="logic">and</span> (<a href="#latitude" title="https://schema.bco-dmo.org/v1.0/latitude">latitude</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1) <span class="logic">and</span> (<a href="#longitude" title="https://schema.bco-dmo.org/v1.0/longitude">longitude</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1)
+    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#latitude" title="https://schema.bco-dmo.org/v1.0/latitude">latitude</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1) <span class="logic">and</span> (<a href="#longitude" title="https://schema.bco-dmo.org/v1.0/longitude">longitude</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1)
    </dd>
    <dt>
     has super-classes
@@ -2866,16 +2853,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </div>
   <dl class="description">
    <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#modifiesAction" title="https://schema.bco-dmo.org/v1.0/modifiesAction">modifiesAction</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#ConsumeAction" title="https://schema.bco-dmo.org/v1.0/ConsumeAction">ConsumeAction</a> <sup class="type-c" title="class">c</sup>) <span class="logic">and</span> (<a href="#target" title="https://schema.bco-dmo.org/v1.0/target">target</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>)
-   </dd>
-   <dt>
     has super-classes
    </dt>
    <dd>
-    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has sub-classes
@@ -2897,19 +2878,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="PolygonGeometry">
-  <h3>PolygonGeometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/PolygonGeometry</p>
-  <div class="comment">
-   <span class="markdown">A collection of points where the first and last are equal in irder to close the shape.</span>
-  </div>
+ <div class="entity" id="http://www.opengis.net/ont/sf#Polygon">
+  <h3>Polygon<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/sf#Polygon</p>
   <dl class="description">
-   <dt>
-    is equivalent to
-   </dt>
-   <dd>
-    <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#coordinates" title="https://schema.bco-dmo.org/v1.0/coordinates">coordinates</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a> <sup class="type-c" title="class">c</sup>) <span class="logic">or</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">rest</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">nil</a> <sup class="type-ni" title="named individual">ni</sup>)) <span class="logic">and</span> (<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#first" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#first">first</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<a href="#categorizedBy" title="https://schema.bco-dmo.org/v1.0/categorizedBy">categorizedBy</a> <sup class="type-op" title="object property">op</sup> <span class="logic">value</span> <a href="#GeometryShape_Polygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon">Geometry Shape: Polygon</a> <sup class="type-ni" title="named individual">ni</sup>)
-   </dd>
    <dt>
     has super-classes
    </dt>
@@ -3175,7 +3147,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has members
    </dt>
    <dd>
-    <a href="#ResourceRelation_CollectionLevelDataDOI" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_CollectionLevelDataDOI">Resource Relation: Collection-level Data DOI</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Continues">Resource Relation: Continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DifferentVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DifferentVersion">Resource Relation: Different Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_General" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_General">Resource Relation: General</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_HasPart">Resource Relation: Has Part</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsContinuedBy">Resource Relation: Is Continued By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsDerivedFrom">Resource Relation: Is Derived From</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsPartOf">Resource Relation: Is Part Of</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsReferencedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy">Resource Relation: Is Referenced By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsRelatedTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsRelatedTo">Resource Relation: Is Related To</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo">Resource Relation: Is Supplement To</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy">Resource Relation: Is Supplemented By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_MethodsPublication" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication">Resource Relation: Methods Publication</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_NewVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_NewVersion">Resource Relation: New Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_OldVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_OldVersion">Resource Relation: Old Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_References">Resource Relation: References</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_RelatedResearch" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_RelatedResearch">Resource Relation: Related Research</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ReplacedbyNewVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacedbyNewVersion">Resource Relation: Replaced by New Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ReplacesOldVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacesOldVersion">Resource Relation: Replaces Old Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ResultsPublication" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ResultsPublication">Resource Relation: Results Publication</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Software" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Software">Resource Relation: Software</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Continues">ResourceRelation: Crossref - continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_HasPart">ResourceRelation: Crossref - hasPart</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsContinuedBy">ResourceRelation: Crossref - isContinuedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDataBasisFor" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDataBasisFor">ResourceRelation: Crossref - isDataBasisFor</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDerivedFrom">ResourceRelation: Crossref - isDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDocumentedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDocumentedBy">ResourceRelation: Crossref - isDocumentedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsPartOf">ResourceRelation: Crossref - isPartOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsRelatedMaterial" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial">ResourceRelation: Crossref - isRelatedMaterial</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf">ResourceRelation: Crossref - isVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_Replaces" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces">ResourceRelation: Crossref - replaces</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Cites" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Cites">ResourceRelation: DataCite - Cites</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Continues">ResourceRelation: DataCite - Continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_HasPart">ResourceRelation: DataCite - HasPart</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsContinuedBy">ResourceRelation: DataCite - IsContinuedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDerivedFrom">ResourceRelation: DataCite - IsDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsDocumentedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDocumentedBy">ResourceRelation: DataCite - IsDocumentedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsNewVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsNewVersionOf">ResourceRelation: DataCite - IsNewVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsObsoletedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy">ResourceRelation: DataCite - IsObsoletedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPartOf">ResourceRelation: DataCite - IsPartOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsPreviousVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPreviousVersionOf">ResourceRelation: DataCite - IsPreviousVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo">ResourceRelation: DataCite - IsSupplementTo</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsVariantFormOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf">ResourceRelation: DataCite - IsVariantFormOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Obsoletes" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Obsoletes">ResourceRelation: DataCite - Obsoletes</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References">ResourceRelation: DataCite - References</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#ResourceRelation_CollectionLevelDataDOI" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_CollectionLevelDataDOI">Resource Relation: Collection-level Data DOI</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Continues">Resource Relation: Continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DifferentVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DifferentVersion">Resource Relation: Different Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_General" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_General">Resource Relation: General</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_HasPart">Resource Relation: Has Part</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsContinuedBy">Resource Relation: Is Continued By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsDerivedFrom">Resource Relation: Is Derived From</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsPartOf">Resource Relation: Is Part Of</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsReferencedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy">Resource Relation: Is Referenced By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsRelatedTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsRelatedTo">Resource Relation: Is Related To</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo">Resource Relation: Is Supplement To</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy">Resource Relation: Is Supplemented By</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_MethodsPublication" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication">Resource Relation: Methods Publication</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_NewVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_NewVersion">Resource Relation: New Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_OldVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_OldVersion">Resource Relation: Old Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_References">Resource Relation: References</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_RelatedResearch" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_RelatedResearch">Resource Relation: Related Research</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ReplacedbyNewVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacedbyNewVersion">Resource Relation: Replaced by New Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ReplacesOldVersion" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ReplacesOldVersion">Resource Relation: Replaces Old Version</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_ResultsPublication" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_ResultsPublication">Resource Relation: Results Publication</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Software" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Software">Resource Relation: Software</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Continues">ResourceRelation: Crossref - continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_HasPart">ResourceRelation: Crossref - hasPart</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsContinuedBy">ResourceRelation: Crossref - isContinuedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDataBasisFor" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDataBasisFor">ResourceRelation: Crossref - isDataBasisFor</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDerivedFrom">ResourceRelation: Crossref - isDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsDocumentedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDocumentedBy">ResourceRelation: Crossref - isDocumentedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsPartOf">ResourceRelation: Crossref - isPartOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsRelatedMaterial" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial">ResourceRelation: Crossref - isRelatedMaterial</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo">ResourceRelation: Crossref - isSupplementTo</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy">ResourceRelation: Crossref - isSupplementedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_IsVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf">ResourceRelation: Crossref - isVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">ResourceRelation: Crossref - references</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_Crossref_Replaces" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces">ResourceRelation: Crossref - replaces</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Cites" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Cites">ResourceRelation: DataCite - Cites</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Continues">ResourceRelation: DataCite - Continues</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_HasPart" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_HasPart">ResourceRelation: DataCite - HasPart</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsContinuedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsContinuedBy">ResourceRelation: DataCite - IsContinuedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDerivedFrom">ResourceRelation: DataCite - IsDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsDocumentedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDocumentedBy">ResourceRelation: DataCite - IsDocumentedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsNewVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsNewVersionOf">ResourceRelation: DataCite - IsNewVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsObsoletedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy">ResourceRelation: DataCite - IsObsoletedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPartOf">ResourceRelation: DataCite - IsPartOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsPreviousVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPreviousVersionOf">ResourceRelation: DataCite - IsPreviousVersionOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo">ResourceRelation: DataCite - IsSupplementTo</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy">ResourceRelation: DataCite - IsSupplementedBy</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_IsVariantFormOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf">ResourceRelation: DataCite - IsVariantFormOf</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_Obsoletes" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Obsoletes">ResourceRelation: DataCite - Obsoletes</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ResourceRelation_DataCite_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References">ResourceRelation: DataCite - References</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -3330,6 +3302,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#forCreativeWork" title="https://schema.bco-dmo.org/v1.0/forCreativeWork">forCreativeWork</a> <sup class="type-op" title="object property">op</sup>, <a href="#forDataset" title="https://schema.bco-dmo.org/v1.0/forDataset">forDataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#situationInvolves" title="https://schema.bco-dmo.org/v1.0/situationInvolves">situationInvolves</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="SoftwareApplication">
@@ -3350,6 +3328,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has members
@@ -3578,6 +3562,12 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <dd>
     <a href="#TemporalEntity_InPerpetuity" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_InPerpetuity">Temporal Entity: In Perpetuity</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#TemporalEntity_Unknown" title="https://schema.bco-dmo.org/v1.0/TemporalEntity_Unknown">Temporal Entity: Unknown</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="https://schema.bco-dmo.org/v1.0/Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Award" title="https://schema.bco-dmo.org/v1.0/Award">Award</a> <sup class="type-c" title="class">c</sup>, <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup>, <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>, <a href="#Identifier" title="https://schema.bco-dmo.org/v1.0/Identifier">Identifier</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://schema.bco-dmo.org/v1.0/Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Situation" title="https://schema.bco-dmo.org/v1.0/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="TimeSeries">
@@ -3612,7 +3602,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
     has super-classes
    </dt>
    <dd>
-    <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    <a href="#Category" title="https://schema.bco-dmo.org/v1.0/Category">Category</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
@@ -4217,12 +4207,13 @@ This section provides details for each class and property defined by BCO-DMO Ont
    <span class="markdown">the coordinate reference system for some representation of a Geographical Location</span>
   </div>
   <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#GeographicalLocation" title="https://schema.bco-dmo.org/v1.0/GeographicalLocation">Geographical Location</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -4839,7 +4830,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
      has super-properties
     </dt>
     <dd>
-     <a href="#provider" title="https://schema.bco-dmo.org/v1.0/provider">provider</a> <sup class="type-op" title="object property">op</sup>
+     <a href="http://www.w3.org/2002/07/owl#topObjectProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topObjectProperty">top Object Property</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -6581,21 +6572,15 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <h3>provider<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/provider</p>
   <div class="comment">
-   <span class="markdown">The provider of some Award</span>
+   <span class="markdown">The provider of some CreativeWork</span>
   </div>
   <div class="description">
    <dl>
     <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#funder" title="https://schema.bco-dmo.org/v1.0/funder">funder</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
      has domain
     </dt>
     <dd>
-     <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+     <a href="#CreativeWork" title="https://schema.bco-dmo.org/v1.0/CreativeWork">Creative Work</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#SoftwareApplication" title="https://schema.bco-dmo.org/v1.0/SoftwareApplication">SoftwareApplication</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -7242,6 +7227,8 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#affiliationName" title="https://schema.bco-dmo.org/v1.0/affiliationName">affiliationName</a></li>
   <li><a href="#affiliationSubName" title="https://schema.bco-dmo.org/v1.0/affiliationSubName">affiliationSubName</a></li>
   <li><a href="#archiveComment" title="https://schema.bco-dmo.org/v1.0/archiveComment">archiveComment</a></li>
+  <li><a href="#asGeoJSON" title="https://schema.bco-dmo.org/v1.0/asGeoJSON">asGeoJSON</a></li>
+  <li><a href="#asWKT" title="https://schema.bco-dmo.org/v1.0/asWKT">asWKT</a></li>
   <li><a href="#bibliographicCitation" title="https://schema.bco-dmo.org/v1.0/bibliographicCitation">bibliographicCitation</a></li>
   <li><a href="#bytesize" title="https://schema.bco-dmo.org/v1.0/bytesize">bytesize</a></li>
   <li><a href="#codeValue" title="https://schema.bco-dmo.org/v1.0/codeValue">codeValue</a></li>
@@ -7269,6 +7256,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a></li>
   <li><a href="#inverseLabel" title="https://schema.bco-dmo.org/v1.0/inverseLabel">inverseLabel</a></li>
   <li><a href="#inverseSymmetricalRelationship" title="https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship">inverseSymmetricalRelationship</a></li>
+  <li><a href="#isDeprecated" title="https://schema.bco-dmo.org/v1.0/isDeprecated">isDeprecated</a></li>
   <li><a href="#isPrimary" title="https://schema.bco-dmo.org/v1.0/isPrimary">isPrimary</a></li>
   <li><a href="#isPrimaryDataFile" title="https://schema.bco-dmo.org/v1.0/isPrimaryDataFile">isPrimaryDataFile</a></li>
   <li><a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a></li>
@@ -7534,6 +7522,48 @@ This section provides details for each class and property defined by BCO-DMO Ont
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="asGeoJSON">
+  <h3>asGeoJSON<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/asGeoJSON</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.opengis.net/ont/geosparql#geoJSONLiteral" target="_blank" title="http://www.opengis.net/ont/geosparql#geoJSONLiteral">geo J S O N Literal</a> <sup class="type-ep" title="external property">ep</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="asWKT">
+  <h3>asWKT<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/asWKT</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Geometry" title="https://schema.bco-dmo.org/v1.0/Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.opengis.net/ont/geosparql#wktLiteral" target="_blank" title="http://www.opengis.net/ont/geosparql#wktLiteral">wkt Literal</a> <sup class="type-ep" title="external property">ep</sup>
     </dd>
    </dl>
   </div>
@@ -8169,6 +8199,30 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dl>
   </div>
  </div>
+ <div class="entity" id="isDeprecated">
+  <h3>isDeprecated<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/isDeprecated</p>
+  <div class="comment">
+   <span class="markdown">A way to mark an Entity as deprecated from use.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://schema.bco-dmo.org/v1.0/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="isPrimary">
   <h3>isPrimary<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/isPrimary</p>
@@ -8298,7 +8352,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
      has domain
     </dt>
     <dd>
-     <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>
+     <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -8345,7 +8399,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
      has domain
     </dt>
     <dd>
-     <a href="#PointGeometry" title="https://schema.bco-dmo.org/v1.0/PointGeometry">PointGeometry</a> <sup class="type-c" title="class">c</sup>
+     <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -9056,7 +9110,8 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#ControlledVocabulary_SeaDataNetDeviceCategories" title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetDeviceCategories">Controlled Vocabulary: SeaDataNet device Categories</a></li>
   <li><a href="#ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary" title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary">Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary</a></li>
   <li><a href="#ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode" title="https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode">ControlledVocabulary: NODC ISO19115-2 MD_TopicCategoryCode</a></li>
-  <li><a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a></li>
+  <li><a href="#http://www.opengis.net/def/crs/OGC/1.3/CRS84" title="http://www.opengis.net/def/crs/OGC/1.3/CRS84">Coordinate Reference System: CRS84</a></li>
+  <li><a href="#http://www.opengis.net/def/crs/EPSG/0/4326" title="http://www.opengis.net/def/crs/EPSG/0/4326">Coordinate Reference System: EPSG:4326</a></li>
   <li><a href="#CryptographicHashAlgorithm_MD5" title="https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm_MD5"> <span>Cryptographic Hash Algorithm M D5</span> </a></li>
   <li><a href="#urn:bcodmo:taxonomy:cryptographic-hash:190" title="urn:bcodmo:taxonomy:cryptographic-hash:190">Cryptographic Hash Algorithm: MD5</a></li>
   <li><a href="#CurrentState_Dataset-DataNotAvailable" title="https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-DataNotAvailable">Current State: Dataset - Data Not Available</a></li>
@@ -9120,12 +9175,6 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#GCMDPlatformType_NavigationalPlatforms" title="https://schema.bco-dmo.org/v1.0/GCMDPlatformType_NavigationalPlatforms">GCMD Platform Type: Navigational Platforms</a></li>
   <li><a href="#GCMDPlatformType_SolarSpaceObservationSatellites" title="https://schema.bco-dmo.org/v1.0/GCMDPlatformType_SolarSpaceObservationSatellites">GCMD Platform Type: Solar/Space Observation Satellites</a></li>
   <li><a href="#GCMDPlatformType_SpaceStationsMannedSpacecraft" title="https://schema.bco-dmo.org/v1.0/GCMDPlatformType_SpaceStationsMannedSpacecraft">GCMD Platform Type: Space Stations/Manned Spacecraft</a></li>
-  <li><a href="#GeometryShape_Linestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring">Geometry Shape: Linestring</a></li>
-  <li><a href="#GeometryShape_MultiLinestring" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring">Geometry Shape: MultiLinestring</a></li>
-  <li><a href="#GeometryShape_MultiPoint" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint">Geometry Shape: MultiPoint</a></li>
-  <li><a href="#GeometryShape_MultiPolygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon">Geometry Shape: MultiPolygon</a></li>
-  <li><a href="#GeometryShape_Point" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Point">Geometry Shape: Point</a></li>
-  <li><a href="#GeometryShape_Polygon" title="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon">Geometry Shape: Polygon</a></li>
   <li><a href="#IdentifierScheme_BCODMO_Version_2" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_BCODMO_Version_2">Identifier Scheme: BCO-DMO Version 2</a></li>
   <li><a href="#IdentifierScheme_BCODMO_Version_1" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_BCODMO_Version_1">Identifier Scheme: BCODMO Version 1</a></li>
   <li><a href="#IdentifierScheme_DOI" title="https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI">Identifier Scheme: DOI</a></li>
@@ -9202,7 +9251,10 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#ResourceRelation_Crossref_IsDocumentedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDocumentedBy">ResourceRelation: Crossref - isDocumentedBy</a></li>
   <li><a href="#ResourceRelation_Crossref_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsPartOf">ResourceRelation: Crossref - isPartOf</a></li>
   <li><a href="#ResourceRelation_Crossref_IsRelatedMaterial" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial">ResourceRelation: Crossref - isRelatedMaterial</a></li>
+  <li><a href="#ResourceRelation_Crossref_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy">ResourceRelation: Crossref - isSupplementedBy</a></li>
+  <li><a href="#ResourceRelation_Crossref_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo">ResourceRelation: Crossref - isSupplementTo</a></li>
   <li><a href="#ResourceRelation_Crossref_IsVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf">ResourceRelation: Crossref - isVersionOf</a></li>
+  <li><a href="#ResourceRelation_Crossref_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">ResourceRelation: Crossref - references</a></li>
   <li><a href="#ResourceRelation_Crossref_Replaces" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces">ResourceRelation: Crossref - replaces</a></li>
   <li><a href="#ResourceRelation_DataCite_Cites" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Cites">ResourceRelation: DataCite - Cites</a></li>
   <li><a href="#ResourceRelation_DataCite_Continues" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Continues">ResourceRelation: DataCite - Continues</a></li>
@@ -9214,6 +9266,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   <li><a href="#ResourceRelation_DataCite_IsObsoletedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy">ResourceRelation: DataCite - IsObsoletedBy</a></li>
   <li><a href="#ResourceRelation_DataCite_IsPartOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPartOf">ResourceRelation: DataCite - IsPartOf</a></li>
   <li><a href="#ResourceRelation_DataCite_IsPreviousVersionOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsPreviousVersionOf">ResourceRelation: DataCite - IsPreviousVersionOf</a></li>
+  <li><a href="#ResourceRelation_DataCite_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy">ResourceRelation: DataCite - IsSupplementedBy</a></li>
   <li><a href="#ResourceRelation_DataCite_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo">ResourceRelation: DataCite - IsSupplementTo</a></li>
   <li><a href="#ResourceRelation_DataCite_IsVariantFormOf" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf">ResourceRelation: DataCite - IsVariantFormOf</a></li>
   <li><a href="#ResourceRelation_DataCite_Obsoletes" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_Obsoletes">ResourceRelation: DataCite - Obsoletes</a></li>
@@ -9656,7 +9709,7 @@ This section provides details for each class and property defined by BCO-DMO Ont
   </dl>
  </div>
  <div class="entity" id="http://www.opengis.net/def/crs/OGC/1.3/CRS84">
-  <h3>CRS84<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Coordinate Reference System: CRS84<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://www.opengis.net/def/crs/OGC/1.3/CRS84</p>
   <dl class="description">
    <dt>
@@ -9673,6 +9726,27 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
    <dd>
     <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup> <a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84" target="_blank">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.opengis.net/def/crs/EPSG/0/4326">
+  <h3>Coordinate Reference System: EPSG:4326<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/def/crs/EPSG/0/4326</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CoordinateReferenceSystem" title="https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem">CoordinateReferenceSystem</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"EPSG:4326"</span>
+   </dd>
+   <dd>
+    <a href="#url" title="https://schema.bco-dmo.org/v1.0/url">url</a> <sup class="type-dp" title="data property">dp</sup> <a href="EPSG" target="_blank">EPSG</a>
    </dd>
   </dl>
  </div>
@@ -11161,114 +11235,6 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
- <div class="entity" id="GeometryShape_Linestring">
-  <h3>Geometry Shape: Linestring<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="linestring" target="_blank">linestring</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape_MultiLinestring">
-  <h3>Geometry Shape: MultiLinestring<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="multilinestring" target="_blank">multilinestring</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape_MultiPoint">
-  <h3>Geometry Shape: MultiPoint<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="multipoint" target="_blank">multipoint</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape_MultiPolygon">
-  <h3>Geometry Shape: MultiPolygon<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="multipolygon" target="_blank">multipolygon</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape_Point">
-  <h3>Geometry Shape: Point<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_Point</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="point" target="_blank">point</a>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="GeometryShape_Polygon">
-  <h3>Geometry Shape: Polygon<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon</p>
-  <dl class="description">
-   <dt>
-    belongs to
-   </dt>
-   <dd>
-    <a href="#GeometryShape" title="https://schema.bco-dmo.org/v1.0/GeometryShape">GeometryShape</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    has facts
-   </dt>
-   <dd>
-    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <a href="polygon" target="_blank">polygon</a>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="IdentifierScheme_BCODMO_Version_2">
   <h3>Identifier Scheme: BCO-DMO Version 2<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/IdentifierScheme_BCODMO_Version_2</p>
@@ -12378,6 +12344,9 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Another variant version of the dataset we have in some other repository"</span>
    </dd>
    <dd>
+    <a href="#inverseSymmetricalRelationship" title="https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship">inverseSymmetricalRelationship</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Different Version"</span>
    </dd>
   </dl>
@@ -12510,10 +12479,19 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_BCODMO" title="https://schema.bco-dmo.org/v1.0/Organization_BCODMO">Organization: BCO-DMO</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
+    <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelationGroup_DatasetDerivation" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetDerivation">Resource Relation Group: Dataset Derivation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
     <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_Crossref_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDerivedFrom">ResourceRelation: Crossref - isDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_DataCite_IsDerivedFrom" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDerivedFrom">ResourceRelation: DataCite - IsDerivedFrom</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"The following pre-existing datasets were used to generate, or derive, the data on this page."</span>
+   </dd>
+   <dd>
+    <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"This dataset was used to generate the following datasets."</span>
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Is Derived From"</span>
@@ -12573,6 +12551,24 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_BCODMO" title="https://schema.bco-dmo.org/v1.0/Organization_BCODMO">Organization: BCO-DMO</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
+    <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelationGroup_DatasetCitation" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation">Resource Relation Group: Dataset Citation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_References">Resource Relation: References</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_Crossref_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">ResourceRelation: Crossref - references</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_DataCite_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References">ResourceRelation: DataCite - References</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Used as a source of information for the dataset"</span>
+   </dd>
+   <dd>
+    <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"A dataset that was used as a source of information."</span>
+   </dd>
+   <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Is Referenced By"</span>
    </dd>
   </dl>
@@ -12612,6 +12608,9 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"The dataset is related to another dataset."</span>
    </dd>
    <dd>
+    <a href="#inverseSymmetricalRelationship" title="https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship">inverseSymmetricalRelationship</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Is Related To"</span>
    </dd>
   </dl>
@@ -12633,16 +12632,22 @@ This section provides details for each class and property defined by BCO-DMO Ont
     <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_BCODMO" title="https://schema.bco-dmo.org/v1.0/Organization_BCODMO">Organization: BCO-DMO</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo">Resource Relation: Is Supplement To</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelationGroup_DatasetCitation" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation">Resource Relation Group: Dataset Citation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy">Resource Relation: Is Supplemented By</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_Crossref_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo">ResourceRelation: Crossref - isSupplementTo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_DataCite_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo">ResourceRelation: DataCite - IsSupplementTo</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Indicates datasets that are supplemental to this dataset."</span>
    </dd>
    <dd>
     <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Indicates datasets that are supplemented by this dataset."</span>
-   </dd>
-   <dd>
-    <a href="#inverseSymmetricalRelationship" title="https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship">inverseSymmetricalRelationship</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Is Supplement To"</span>
@@ -12664,6 +12669,24 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_BCODMO" title="https://schema.bco-dmo.org/v1.0/Organization_BCODMO">Organization: BCO-DMO</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelationGroup_DatasetCitation" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation">Resource Relation Group: Dataset Citation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_IsSupplementTo" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo">Resource Relation: Is Supplement To</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_Crossref_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy">ResourceRelation: Crossref - isSupplementedBy</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_DataCite_IsSupplementedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy">ResourceRelation: DataCite - IsSupplementedBy</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Indicates datasets that are supplemental to this dataset."</span>
+   </dd>
+   <dd>
+    <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Indicates datasets that are supplemented by this dataset."</span>
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Is Supplemented By"</span>
@@ -12796,6 +12819,24 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dt>
    <dd>
     <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_BCODMO" title="https://schema.bco-dmo.org/v1.0/Organization_BCODMO">Organization: BCO-DMO</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inGroup" title="https://schema.bco-dmo.org/v1.0/inGroup">inGroup</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelationGroup_DatasetCitation" title="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation">Resource Relation Group: Dataset Citation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#inverseRelationship" title="https://schema.bco-dmo.org/v1.0/inverseRelationship">inverseRelationship</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_IsReferencedBy" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy">Resource Relation: Is Referenced By</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_Crossref_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">ResourceRelation: Crossref - references</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#matches" title="https://schema.bco-dmo.org/v1.0/matches">matches</a> <sup class="type-op" title="object property">op</sup> <a href="#ResourceRelation_DataCite_References" title="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References">ResourceRelation: DataCite - References</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#description" title="https://schema.bco-dmo.org/v1.0/description">description</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"A dataset that was used as a source of information."</span>
+   </dd>
+   <dd>
+    <a href="#inverseDescription" title="https://schema.bco-dmo.org/v1.0/inverseDescription">inverseDescription</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Used as a source of information for the following dataset(s):"</span>
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"References"</span>
@@ -13153,6 +13194,48 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ResourceRelation_Crossref_IsSupplementedBy">
+  <h3>ResourceRelation: Crossref - isSupplementedBy<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_Crossref" title="https://schema.bco-dmo.org/v1.0/Organization_Crossref">Organization: Crossref</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"isSupplementedBy"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResourceRelation_Crossref_IsSupplementTo">
+  <h3>ResourceRelation: Crossref - isSupplementTo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_Crossref" title="https://schema.bco-dmo.org/v1.0/Organization_Crossref">Organization: Crossref</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"isSupplementTo"</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="ResourceRelation_Crossref_IsVersionOf">
   <h3>ResourceRelation: Crossref - isVersionOf<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf</p>
@@ -13171,6 +13254,27 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"isVersionOf"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResourceRelation_Crossref_References">
+  <h3>ResourceRelation: Crossref - references<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_Crossref" title="https://schema.bco-dmo.org/v1.0/Organization_Crossref">Organization: Crossref</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"references"</span>
    </dd>
   </dl>
  </div>
@@ -13402,6 +13506,27 @@ This section provides details for each class and property defined by BCO-DMO Ont
    </dd>
    <dd>
     <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"IsPreviousVersionOf"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResourceRelation_DataCite_IsSupplementedBy">
+  <h3>ResourceRelation: DataCite - IsSupplementedBy<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResourceRelation" title="https://schema.bco-dmo.org/v1.0/ResourceRelation">Resource Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#authority" title="https://schema.bco-dmo.org/v1.0/authority">authority</a> <sup class="type-op" title="object property">op</sup> <a href="#Organization_DataCite" title="https://schema.bco-dmo.org/v1.0/Organization_DataCite">Organization: DataCite</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#label" title="https://schema.bco-dmo.org/v1.0/label">label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"IsSupplementedBy"</span>
    </dd>
   </dl>
  </div>

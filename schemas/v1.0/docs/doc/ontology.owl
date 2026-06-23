@@ -119,6 +119,20 @@
     
 
 
+    <!-- http://www.opengis.net/ont/geosparql#geoJSONLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#geoJSONLiteral"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
 
 
@@ -396,7 +410,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/coordinateReferenceSystem">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem"/>
         <rdfs:comment>the coordinate reference system for some representation of a Geographical Location</rdfs:comment>
         <rdfs:label>coordinateReferenceSystem</rdfs:label>
@@ -702,7 +717,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/funder">
-        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/provider"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
         <rdfs:label>funder</rdfs:label>
@@ -1542,9 +1557,16 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/provider">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/SoftwareApplication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
-        <rdfs:comment>The provider of some Award</rdfs:comment>
+        <rdfs:comment>The provider of some CreativeWork</rdfs:comment>
         <rdfs:comment>The service provider that hosts/distributes the resource.</rdfs:comment>
         <rdfs:label>provider</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/provider"/>
@@ -2064,6 +2086,32 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/asGeoJSON -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/asGeoJSON">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#geoJSONLiteral"/>
+        <rdfs:label>asGeoJSON</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/geosparql#asGeoJSON"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/asWKT -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/asWKT">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:label>asWKT</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/bibliographicCitation -->
 
 
@@ -2413,6 +2461,19 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/isDeprecated -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/isDeprecated">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>A way to mark an Entity as deprecated from use.</rdfs:comment>
+        <rdfs:label>isDeprecated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/isPrimary -->
 
 
@@ -2470,7 +2531,7 @@
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/latitude">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/sf#Point"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Latitude is the angular measure of a point&apos;s position along the primary axis of a CRS, perpendicular to the reference surface&apos;s axis of symmetry.</rdfs:comment>
         <rdfs:label>latitude</rdfs:label>
@@ -2503,7 +2564,7 @@
 
     <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/longitude">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/sf#Point"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Longitude is the angular measure of a point&apos;s position around the secondary axis of a CRS, relative to an arbitrarily defined reference meridian.</rdfs:comment>
         <rdfs:label>longitude</rdfs:label>
@@ -2914,6 +2975,68 @@
     
 
 
+    <!-- http://www.opengis.net/ont/sf#LineString -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#LineString">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#MultiLineString -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#MultiLineString">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#MultiPoint -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#MultiPoint">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Point -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Point">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/latitude"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/longitude"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Polygon -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
 
 
@@ -2990,6 +3113,15 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Agent">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>An entity (person or organisation) that can perform roles.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
         <skos:exactMatch rdf:resource="http://www.w3.org/ns/prov#Agent"/>
@@ -3133,6 +3265,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A funding award (grant) from a funder that supports data collection.</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Grant"/>
@@ -3227,44 +3367,8 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/BoundingBoxGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/PolygonGeometry"/>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/eastBoundary"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/northBoundary"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/southBoundary"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/westBoundary"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/PolygonGeometry"/>
-        <rdfs:comment>An axis-aligned bounding box geometry defined by west/south/east/north boundaries.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Polygon"/>
+        <rdfs:comment>An axis-aligned bounding box geometry defined by west/south/east/north boundaries. A set of Point geometries where the first Point and the last point are the same Point.</rdfs:comment>
         <rdfs:label>Bounding Box Geometry</rdfs:label>
         <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#Envelope"/>
     </owl:Class>
@@ -3276,6 +3380,13 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Category">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A set of taxonomy</rdfs:comment>
         <rdfs:label>Category</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/DefinedTerm"/>
@@ -3287,7 +3398,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/CentroidGeometry">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
         <rdfs:comment>A point geometry representing the centroid of a spatial extent.</rdfs:comment>
         <rdfs:label>Centroid Geometry</rdfs:label>
         <skos:closeMatch rdf:resource="http://www.opengis.net/ont/sf#Point"/>
@@ -3394,6 +3505,12 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWork">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/GeographicalLocation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>Any work that can be created by some Agent</rdfs:comment>
         <rdfs:label>Creative Work</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/CreativeWork"/>
@@ -3406,7 +3523,7 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/CreativeWorkStatus">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
-        <rdfs:comment>A state of for some createive work.</rdfs:comment>
+        <rdfs:comment>A state of for some creative work.</rdfs:comment>
         <rdfs:label>CreativeWorkStatus</rdfs:label>
     </owl:Class>
     
@@ -4108,6 +4225,17 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DeprecatedEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/isDeprecated"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
         <rdfs:comment>An entity that should no longer be used.</rdfs:comment>
         <rdfs:label>DeprecatedEntity</rdfs:label>
@@ -4310,6 +4438,21 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/FundingAgency">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Organization"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://schema.bco-dmo.org/v1.0/funder"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Organization"/>
         <rdfs:comment>An Organization that has provided some funding award</rdfs:comment>
         <rdfs:label>Funding Agency</rdfs:label>
@@ -4335,6 +4478,11 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/GeographicalLocation">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A spatial extent or named location associated with a dataset, deployment, project, or program.</rdfs:comment>
         <rdfs:label>Geographical Location</rdfs:label>
         <skos:exactMatch rdf:resource="https://schema.org/Place"/>
@@ -4347,33 +4495,15 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Geometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Identifier"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>An abstract spatial geometry.</rdfs:comment>
         <rdfs:label>Geometry</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/GeospatialGeometry"/>
         <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#Geometry"/>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
-        <rdfs:comment>The shape of various geometries.</rdfs:comment>
-        <rdfs:label>GeometryShape</rdfs:label>
     </owl:Class>
     
 
@@ -4385,6 +4515,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/identifierScheme"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/IdentifierScheme"/>
@@ -4397,6 +4528,9 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Platform"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>An identifier assigned to a resource by some scheme.</rdfs:comment>
         <rdfs:label>Identifier</rdfs:label>
     </owl:Class>
@@ -4547,55 +4681,6 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/LineStringGeometry -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/LineStringGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                    <owl:Class>
-                                        <owl:unionOf rdf:parseType="Collection">
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                                <owl:someValuesFrom rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            </owl:Restriction>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                                <owl:hasValue rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </owl:Restriction>
-                                        </owl:unionOf>
-                                    </owl:Class>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>Two or more PointGeometry that when connected form lines between between adjacent points.</rdfs:comment>
-        <rdfs:label>LineStringGeometry</rdfs:label>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#LineString"/>
-    </owl:Class>
-    
-
-
     <!-- https://schema.bco-dmo.org/v1.0/Logo -->
 
 
@@ -4682,167 +4767,11 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry -->
+    <!-- https://schema.bco-dmo.org/v1.0/MultiPolygon -->
 
 
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/MultiLineStringGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/LineStringGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/LineStringGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/MultiPolygon">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>A geometry whose coordinates member is an array of LineString coordinate arrays</rdfs:comment>
-        <rdfs:label>MultiLineStringGeometry</rdfs:label>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#MultiLineString"/>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/MultiPointGeometry -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/MultiPointGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>A geometry whose coordinates member is an array of point coordinate arrays</rdfs:comment>
-        <rdfs:label>MultiPointGeometry</rdfs:label>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#MultiPoint"/>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/MultiPolygonGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PolygonGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                                <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PolygonGeometry"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>A geometry whose coordinates member is an array of Polygon coordinate arrays</rdfs:comment>
-        <rdfs:label>MultiPolygonGeometry</rdfs:label>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#MultiPolygon"/>
     </owl:Class>
     
 
@@ -5031,6 +4960,8 @@
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Platform">
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/Situation"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A platform (vessel, buoy, glider, etc.) used for data collection.</rdfs:comment>
         <rdfs:label>Platform</rdfs:label>
         <skos:closeMatch rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
@@ -5090,48 +5021,14 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/PointGeometry -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/PointGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_Point"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/latitude"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/longitude"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>A single coordinate</rdfs:comment>
-        <rdfs:label>PointGeometry</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_Point"/>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#Point"/>
-    </owl:Class>
-    
-
-
     <!-- https://schema.bco-dmo.org/v1.0/Policy -->
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/Policy">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Entity"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/modifiesAction"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/ConsumeAction"/>
@@ -5142,60 +5039,9 @@
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        </rdfs:subClassOf>
         <rdfs:comment>An access or governance policy applied to a resource.</rdfs:comment>
         <rdfs:label>Policy</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/PolygonGeometry -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/PolygonGeometry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Geometry"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/coordinates"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                    <owl:Class>
-                                        <owl:unionOf rdf:parseType="Collection">
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                                <owl:someValuesFrom rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                            </owl:Restriction>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
-                                                <owl:hasValue rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </owl:Restriction>
-                                        </owl:unionOf>
-                                    </owl:Class>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
-                                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/PointGeometry"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/categorizedBy"/>
-                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Geometry"/>
-        <rdfs:comment>A collection of points where the first and last are equal in irder to close the shape.</rdfs:comment>
-        <rdfs:label>PolygonGeometry</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon"/>
-        <skos:exactMatch rdf:resource="http://www.opengis.net/ont/sf#Polygon"/>
     </owl:Class>
     
 
@@ -5490,6 +5336,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <owl:disjointWith rdf:resource="https://schema.bco-dmo.org/v1.0/TemporalEntity"/>
         <rdfs:comment>A static or dynamic scenario. A state of affairs that describes some configuration of the world. Most often a situation describes the interaction of 2 or more entities. In some cases these interactions are time bounded and can be labeled as significant events.</rdfs:comment>
         <rdfs:label>Situation</rdfs:label>
     </owl:Class>
@@ -5683,7 +5530,7 @@
 
 
     <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/UnitOfMeasure">
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Category"/>
         <rdfs:comment>A unit of measure associated with a dataset parameter.</rdfs:comment>
         <rdfs:label>Unit of Measure</rdfs:label>
         <skos:closeMatch rdf:resource="http://purl.obolibrary.org/obo/UO_0000000"/>
@@ -5749,6 +5596,18 @@
     
 
 
+    <!-- http://www.opengis.net/def/crs/EPSG/0/4326 -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.opengis.net/def/crs/EPSG/0/4326">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem"/>
+        <label>EPSG:4326</label>
+        <url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">EPSG</url>
+        <rdfs:label>Coordinate Reference System: EPSG:4326</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.opengis.net/def/crs/OGC/1.3/CRS84 -->
 
 
@@ -5756,7 +5615,7 @@
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/CoordinateReferenceSystem"/>
         <label>CRS84</label>
         <url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/crs/OGC/1.3/CRS84</url>
-        <rdfs:label>CRS84</rdfs:label>
+        <rdfs:label>Coordinate Reference System: CRS84</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -6939,78 +6798,6 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_Linestring">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">linestring</label>
-        <rdfs:label>Geometry Shape: Linestring</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.4</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiLinestring">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">multilinestring</label>
-        <rdfs:label>Geometry Shape: MultiLinestring</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.5</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPoint">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">multipoint</label>
-        <rdfs:label>Geometry Shape: MultiPoint</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.3</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_MultiPolygon">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">multipolygon</label>
-        <rdfs:label>Geometry Shape: MultiPolygon</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.7</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_Point -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_Point">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">point</label>
-        <rdfs:label>Geometry Shape: Point</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon -->
-
-
-    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/GeometryShape_Polygon">
-        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/GeometryShape"/>
-        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">polygon</label>
-        <rdfs:label>Geometry Shape: Polygon</rdfs:label>
-        <rdfs:seeAlso>https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6</rdfs:seeAlso>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://schema.bco-dmo.org/v1.0/IdentifierScheme_BCODMO_Version_1 -->
 
 
@@ -7646,6 +7433,30 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
+        <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_Crossref"/>
+        <label>isSupplementTo</label>
+        <rdfs:label>ResourceRelation: Crossref - isSupplementTo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
+        <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_Crossref"/>
+        <label>isSupplementedBy</label>
+        <rdfs:label>ResourceRelation: Crossref - isSupplementedBy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf -->
 
 
@@ -7654,6 +7465,18 @@
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_Crossref"/>
         <label>isVersionOf</label>
         <rdfs:label>ResourceRelation: Crossref - isVersionOf</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
+        <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_Crossref"/>
+        <label>references</label>
+        <rdfs:label>ResourceRelation: Crossref - references</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -7802,6 +7625,18 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
+        <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_DataCite"/>
+        <label>IsSupplementedBy</label>
+        <rdfs:label>ResourceRelation: DataCite - IsSupplementedBy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf -->
 
 
@@ -7850,6 +7685,7 @@
         <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsVariantFormOf"/>
         <description>Another variant version of the dataset we have in some other repository</description>
         <inverseDescription>Another variant version of the dataset we have in some other repository</inverseDescription>
+        <inverseSymmetricalRelationship rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</inverseSymmetricalRelationship>
         <label>Different Version</label>
         <rdfs:label>Resource Relation: Different Version</rdfs:label>
     </owl:NamedIndividual>
@@ -7914,8 +7750,11 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsDerivedFrom">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetDerivation"/>
         <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDerivedFrom"/>
         <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsDerivedFrom"/>
+        <description>The following pre-existing datasets were used to generate, or derive, the data on this page.</description>
+        <inverseDescription>This dataset was used to generate the following datasets.</inverseDescription>
         <label>Is Derived From</label>
         <rdfs:label>Resource Relation: Is Derived From</rdfs:label>
     </owl:NamedIndividual>
@@ -7945,6 +7784,12 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation"/>
+        <inverseRelationship rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_References"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References"/>
+        <description>Used as a source of information for the dataset</description>
+        <inverseDescription>A dataset that was used as a source of information.</inverseDescription>
         <label>Is Referenced By</label>
         <rdfs:label>Resource Relation: Is Referenced By</rdfs:label>
     </owl:NamedIndividual>
@@ -7963,6 +7808,7 @@
         <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo"/>
         <description>The dataset is related to another dataset.</description>
         <inverseDescription>The dataset is related to another dataset.</inverseDescription>
+        <inverseSymmetricalRelationship rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</inverseSymmetricalRelationship>
         <label>Is Related To</label>
         <rdfs:label>Resource Relation: Is Related To</rdfs:label>
     </owl:NamedIndividual>
@@ -7975,10 +7821,12 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
-        <inverseRelationship rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation"/>
+        <inverseRelationship rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementTo"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementTo"/>
         <description>Indicates datasets that are supplemental to this dataset.</description>
         <inverseDescription>Indicates datasets that are supplemented by this dataset.</inverseDescription>
-        <inverseSymmetricalRelationship rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</inverseSymmetricalRelationship>
         <label>Is Supplement To</label>
         <rdfs:label>Resource Relation: Is Supplement To</rdfs:label>
     </owl:NamedIndividual>
@@ -7991,6 +7839,12 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation"/>
+        <inverseRelationship rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy"/>
+        <description>Indicates datasets that are supplemental to this dataset.</description>
+        <inverseDescription>Indicates datasets that are supplemented by this dataset.</inverseDescription>
         <label>Is Supplemented By</label>
         <rdfs:label>Resource Relation: Is Supplemented By</rdfs:label>
     </owl:NamedIndividual>
@@ -8055,6 +7909,12 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_References">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
         <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetCitation"/>
+        <inverseRelationship rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsReferencedBy"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_References"/>
+        <matches rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_References"/>
+        <description>A dataset that was used as a source of information.</description>
+        <inverseDescription>Used as a source of information for the following dataset(s):</inverseDescription>
         <label>References</label>
         <rdfs:label>Resource Relation: References</rdfs:label>
     </owl:NamedIndividual>
