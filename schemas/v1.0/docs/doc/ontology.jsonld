@@ -116,34 +116,29 @@
 }, {
   "@id" : "_:genid120",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasContent"
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
   } ]
 }, {
   "@id" : "_:genid122",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotates"
-  } ]
-}, {
-  "@id" : "_:genid124",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/annotator"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
+  } ]
+}, {
+  "@id" : "_:genid124",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/annotates"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
   } ]
 }, {
   "@id" : "_:genid126",
@@ -185,118 +180,13 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
-    }, {
-      "@id" : "_:genid143"
-    }, {
-      "@id" : "_:genid137"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
       "@id" : "_:genid135"
     } ]
   } ]
 }, {
   "@id" : "_:genid135",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotator"
-  } ]
-}, {
-  "@id" : "_:genid137",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasContent"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid138"
-  } ]
-}, {
-  "@id" : "_:genid138",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
-    }, {
-      "@id" : "_:genid140"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid140",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/content"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "_:genid143",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotates"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid144"
-  } ]
-}, {
-  "@id" : "_:genid144",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
-    }, {
-      "@id" : "_:genid150"
-    }, {
-      "@id" : "_:genid148"
-    }, {
-      "@id" : "_:genid146"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid146",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/awardProducingData"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
-  } ]
-}, {
-  "@id" : "_:genid148",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Boolean_True"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-  } ]
-}, {
-  "@id" : "_:genid150",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
-  } ]
-}, {
-  "@id" : "_:genid153",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid155"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid155",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/inCollection"
@@ -305,23 +195,123 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Collection"
   } ]
 }, {
-  "@id" : "_:genid157",
+  "@id" : "_:genid137",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
     }, {
-      "@id" : "_:genid159"
+      "@id" : "_:genid139"
     } ]
   } ]
 }, {
-  "@id" : "_:genid159",
+  "@id" : "_:genid139",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/onPlatform"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Vessel"
+  } ]
+}, {
+  "@id" : "_:genid141",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+    }, {
+      "@id" : "_:genid143"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid143",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm"
+  } ]
+}, {
+  "@id" : "_:genid145",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/ArchivedDataset"
+    }, {
+      "@id" : "_:genid147"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid147",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifier"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "_:genid148"
+  } ]
+}, {
+  "@id" : "_:genid148",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ]
+}, {
+  "@id" : "_:genid150",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+    }, {
+      "@id" : "_:genid152"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid152",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ]
+}, {
+  "@id" : "_:genid154",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"
+    }, {
+      "@id" : "_:genid156"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid156",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid157"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/DOIDataset"
+  } ]
+}, {
+  "@id" : "_:genid157",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/status"
+  } ]
+}, {
+  "@id" : "_:genid159",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
+    }, {
+      "@id" : "_:genid161"
+    } ]
   } ]
 }, {
   "@id" : "_:genid16",
@@ -335,153 +325,156 @@
   } ]
 }, {
   "@id" : "_:genid161",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
-    }, {
-      "@id" : "_:genid163"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid163",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm"
-  } ]
-}, {
-  "@id" : "_:genid165",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/ArchivedDataset"
-    }, {
-      "@id" : "_:genid167"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid167",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifier"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid168"
-  } ]
-}, {
-  "@id" : "_:genid168",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
-  } ]
-}, {
-  "@id" : "_:genid170",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
-    }, {
-      "@id" : "_:genid172"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid172",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_DOI"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
-  } ]
-}, {
-  "@id" : "_:genid174",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"
-    }, {
-      "@id" : "_:genid176"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid176",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid177"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/DOIDataset"
-  } ]
-}, {
-  "@id" : "_:genid177",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/status"
-  } ]
-}, {
-  "@id" : "_:genid179",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
-    }, {
-      "@id" : "_:genid181"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid181",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid182"
+    "@id" : "_:genid162"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ]
 }, {
-  "@id" : "_:genid182",
+  "@id" : "_:genid162",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/dataFile"
   } ]
 }, {
-  "@id" : "_:genid184",
+  "@id" : "_:genid164",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
     }, {
-      "@id" : "_:genid186"
+      "@id" : "_:genid166"
     } ]
   } ]
 }, {
-  "@id" : "_:genid186",
+  "@id" : "_:genid166",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid187"
+    "@id" : "_:genid167"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/ResearchActivity"
   } ]
 }, {
-  "@id" : "_:genid187",
+  "@id" : "_:genid167",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/dataManagementPlan"
   } ]
 }, {
-  "@id" : "_:genid189",
+  "@id" : "_:genid169",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
-      "@id" : "_:genid193"
+      "@id" : "_:genid173"
+    }, {
+      "@id" : "_:genid171"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid171",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasAward"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
+  } ]
+}, {
+  "@id" : "_:genid173",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ]
+}, {
+  "@id" : "_:genid175",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
+    }, {
+      "@id" : "_:genid179"
+    }, {
+      "@id" : "_:genid177"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid177",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/fromDeployment"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
+  } ]
+}, {
+  "@id" : "_:genid179",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ]
+}, {
+  "@id" : "_:genid181",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
+    }, {
+      "@id" : "_:genid185"
+    }, {
+      "@id" : "_:genid183"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid183",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/fromDeployment"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
+  } ]
+}, {
+  "@id" : "_:genid185",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ]
+}, {
+  "@id" : "_:genid187",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
       "@id" : "_:genid191"
+    }, {
+      "@id" : "_:genid189"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid189",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Instrument"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid19",
@@ -499,49 +492,56 @@
   "@id" : "_:genid191",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasAward"
+    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
   } ]
 }, {
   "@id" : "_:genid193",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ]
-}, {
-  "@id" : "_:genid195",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Collection"
     }, {
-      "@id" : "_:genid199"
-    }, {
-      "@id" : "_:genid197"
+      "@id" : "_:genid195"
     } ]
   } ]
 }, {
-  "@id" : "_:genid197",
+  "@id" : "_:genid195",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/fromDeployment"
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "_:genid196"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasCollectionItem"
   } ]
 }, {
-  "@id" : "_:genid199",
+  "@id" : "_:genid196",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/CollectionItem"
+    }, {
+      "@id" : "_:genid198"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid198",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/collectionItem"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid201",
@@ -558,38 +558,8 @@
 }, {
   "@id" : "_:genid203",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/fromDeployment"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
-  } ]
-}, {
-  "@id" : "_:genid205",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ]
-}, {
-  "@id" : "_:genid207",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid211"
-    }, {
-      "@id" : "_:genid209"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid209",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Instrument"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Parameter"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
@@ -599,7 +569,52 @@
     "@value" : "1"
   } ]
 }, {
+  "@id" : "_:genid205",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid207",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
+    }, {
+      "@id" : "_:genid213"
+    }, {
+      "@id" : "_:genid211"
+    }, {
+      "@id" : "_:genid209"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid209",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/projectActedOnWork"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Action"
+  } ]
+}, {
   "@id" : "_:genid211",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasProject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
+  } ]
+}, {
+  "@id" : "_:genid213",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
@@ -608,105 +623,80 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
   } ]
 }, {
-  "@id" : "_:genid213",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Collection"
-    }, {
-      "@id" : "_:genid215"
-    } ]
-  } ]
-}, {
   "@id" : "_:genid215",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "_:genid216"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasCollectionItem"
-  } ]
-}, {
-  "@id" : "_:genid216",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/CollectionItem"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
     }, {
-      "@id" : "_:genid218"
+      "@id" : "_:genid217"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid217",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid218"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
   } ]
 }, {
   "@id" : "_:genid218",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/collectionItem"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/datasetType"
   } ]
 }, {
-  "@id" : "_:genid221",
+  "@id" : "_:genid220",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
-      "@id" : "_:genid231"
+      "@id" : "_:genid228"
     }, {
-      "@id" : "_:genid225"
+      "@id" : "_:genid226"
     }, {
-      "@id" : "_:genid223"
+      "@id" : "_:genid224"
+    }, {
+      "@id" : "_:genid222"
     } ]
   } ]
 }, {
-  "@id" : "_:genid223",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotator"
-  } ]
-}, {
-  "@id" : "_:genid225",
+  "@id" : "_:genid222",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasContent"
+    "@id" : "https://schema.bco-dmo.org/v1.0/disclaimer"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid226"
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid224",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/publisher"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
   } ]
 }, {
   "@id" : "_:genid226",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
-    }, {
-      "@id" : "_:genid228"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/projectExternalDatasetList"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetList"
   } ]
 }, {
   "@id" : "_:genid228",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/content"
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasProject"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
   } ]
 }, {
   "@id" : "_:genid23",
@@ -719,159 +709,167 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid231",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotates"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid232"
+  "@id" : "_:genid230",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
+    }, {
+      "@id" : "_:genid232"
+    } ]
   } ]
 }, {
   "@id" : "_:genid232",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid233"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetParameter"
+  } ]
+}, {
+  "@id" : "_:genid233",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/dataType"
+  } ]
+}, {
+  "@id" : "_:genid235",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
     }, {
-      "@id" : "_:genid238"
-    }, {
-      "@id" : "_:genid236"
-    }, {
-      "@id" : "_:genid234"
+      "@id" : "_:genid237"
     } ]
   } ]
 }, {
-  "@id" : "_:genid234",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
-  } ]
-}, {
-  "@id" : "_:genid236",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Boolean_True"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-  } ]
-}, {
-  "@id" : "_:genid238",
+  "@id" : "_:genid237",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary"
+  } ]
+}, {
+  "@id" : "_:genid239",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Event"
+    }, {
+      "@id" : "_:genid241"
+    } ]
   } ]
 }, {
   "@id" : "_:genid241",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
-    }, {
-      "@id" : "_:genid251"
-    }, {
-      "@id" : "_:genid245"
-    }, {
-      "@id" : "_:genid243"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/onPlatform"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
   } ]
 }, {
   "@id" : "_:genid243",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotator"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
+    }, {
+      "@id" : "_:genid245"
+    } ]
   } ]
 }, {
   "@id" : "_:genid245",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasContent"
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
   } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid246"
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/isDeprecated"
   } ]
 }, {
-  "@id" : "_:genid246",
+  "@id" : "_:genid247",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
     }, {
-      "@id" : "_:genid248"
+      "@id" : "_:genid253"
+    }, {
+      "@id" : "_:genid251"
+    }, {
+      "@id" : "_:genid249"
     } ]
   } ]
 }, {
-  "@id" : "_:genid248",
+  "@id" : "_:genid249",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/content"
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/target"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid251",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/annotates"
+    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid252"
+    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
   } ]
 }, {
-  "@id" : "_:genid252",
+  "@id" : "_:genid253",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/expirationDate"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
+  } ]
+}, {
+  "@id" : "_:genid255",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
     }, {
-      "@id" : "_:genid258"
+      "@id" : "_:genid261"
     }, {
-      "@id" : "_:genid256"
+      "@id" : "_:genid259"
     }, {
-      "@id" : "_:genid254"
+      "@id" : "_:genid257"
     } ]
   } ]
 }, {
-  "@id" : "_:genid254",
+  "@id" : "_:genid257",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired"
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
-  } ]
-}, {
-  "@id" : "_:genid256",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Boolean_True"
+    "@id" : "https://schema.bco-dmo.org/v1.0/target"
   } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid258",
+  "@id" : "_:genid259",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+    "@id" : "https://schema.bco-dmo.org/v1.0/releaseDate"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
   } ]
 }, {
   "@id" : "_:genid26",
@@ -889,267 +887,248 @@
   } ]
 }, {
   "@id" : "_:genid261",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
+  } ]
+}, {
+  "@id" : "_:genid263",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
-      "@id" : "_:genid265"
+      "@id" : "_:genid267"
     }, {
-      "@id" : "_:genid263"
+      "@id" : "_:genid265"
     } ]
-  } ]
-}, {
-  "@id" : "_:genid263",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Parameter"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid265",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
+    "@id" : "https://schema.bco-dmo.org/v1.0/matchesToEntity"
   } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
   } ]
 }, {
   "@id" : "_:genid267",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "_:genid269",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
-      "@id" : "_:genid273"
-    }, {
       "@id" : "_:genid271"
-    }, {
-      "@id" : "_:genid269"
     } ]
-  } ]
-}, {
-  "@id" : "_:genid269",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/projectActedOnWork"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Action"
   } ]
 }, {
   "@id" : "_:genid271",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasProject"
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasTime"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
+    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
   } ]
 }, {
   "@id" : "_:genid273",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forDataset"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+    }, {
+      "@id" : "_:genid275"
+    } ]
   } ]
 }, {
   "@id" : "_:genid275",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/File"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/describesFile"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid277",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Category"
     }, {
-      "@id" : "_:genid277"
+      "@id" : "_:genid279"
     } ]
   } ]
 }, {
-  "@id" : "_:genid277",
+  "@id" : "_:genid279",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid278"
+    "@id" : "_:genid280"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ]
-}, {
-  "@id" : "_:genid278",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/datasetType"
+    "@id" : "https://schema.bco-dmo.org/v1.0/File"
   } ]
 }, {
   "@id" : "_:genid280",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid288"
-    }, {
-      "@id" : "_:genid286"
-    }, {
-      "@id" : "_:genid284"
-    }, {
-      "@id" : "_:genid282"
-    } ]
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/fileType"
   } ]
 }, {
   "@id" : "_:genid282",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/disclaimer"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Organization"
+    }, {
+      "@id" : "_:genid284"
+    } ]
   } ]
 }, {
   "@id" : "_:genid284",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/publisher"
+    "@id" : "_:genid285"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
   } ]
 }, {
-  "@id" : "_:genid286",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/projectExternalDatasetList"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetList"
-  } ]
-}, {
-  "@id" : "_:genid288",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasProject"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
-  } ]
-}, {
-  "@id" : "_:genid290",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid292"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid292",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid293"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetParameter"
-  } ]
-}, {
-  "@id" : "_:genid293",
+  "@id" : "_:genid285",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/dataType"
+    "@id" : "https://schema.bco-dmo.org/v1.0/funder"
   } ]
 }, {
-  "@id" : "_:genid295",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid297"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid297",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary"
-  } ]
-}, {
-  "@id" : "_:genid299",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Event"
-    }, {
-      "@id" : "_:genid301"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid301",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/onPlatform"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
-  } ]
-}, {
-  "@id" : "_:genid303",
+  "@id" : "_:genid287",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
     }, {
-      "@id" : "_:genid305"
+      "@id" : "_:genid291"
+    }, {
+      "@id" : "_:genid289"
     } ]
   } ]
 }, {
-  "@id" : "_:genid305",
+  "@id" : "_:genid289",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/isDeprecated"
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierValue"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#token"
   } ]
 }, {
-  "@id" : "_:genid307",
+  "@id" : "_:genid291",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme"
+  } ]
+}, {
+  "@id" : "_:genid293",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
+      "@id" : "https://schema.bco-dmo.org/v1.0/File"
     }, {
-      "@id" : "_:genid313"
-    }, {
-      "@id" : "_:genid311"
-    }, {
-      "@id" : "_:genid309"
+      "@id" : "_:genid295"
     } ]
   } ]
 }, {
-  "@id" : "_:genid309",
+  "@id" : "_:genid295",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/fileType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ImageFileType"
+  } ]
+}, {
+  "@id" : "_:genid297",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid299"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid299",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid300"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetInstrument"
+  } ]
+}, {
+  "@id" : "_:genid300",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
+  } ]
+}, {
+  "@id" : "_:genid302",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid304"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid304",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Instruments"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/target"
+    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
+  } ]
+}, {
+  "@id" : "_:genid306",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+    }, {
+      "@id" : "_:genid308"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid308",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid309"
   } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+  } ]
+}, {
+  "@id" : "_:genid309",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/license"
   } ]
 }, {
   "@id" : "_:genid31",
@@ -1163,157 +1142,143 @@
   } ]
 }, {
   "@id" : "_:genid311",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
-  } ]
-}, {
-  "@id" : "_:genid313",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/expirationDate"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
-  } ]
-}, {
-  "@id" : "_:genid315",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
-    }, {
-      "@id" : "_:genid321"
-    }, {
-      "@id" : "_:genid319"
-    }, {
-      "@id" : "_:genid317"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid317",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/target"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid319",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/releaseDate"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
-  } ]
-}, {
-  "@id" : "_:genid321",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
-  } ]
-}, {
-  "@id" : "_:genid323",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid327"
-    }, {
-      "@id" : "_:genid325"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid325",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/matchesToEntity"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
-  } ]
-}, {
-  "@id" : "_:genid327",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
-  } ]
-}, {
-  "@id" : "_:genid329",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid331"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid331",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
-  } ]
-}, {
-  "@id" : "_:genid333",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
     }, {
-      "@id" : "_:genid335"
+      "@id" : "_:genid315"
+    }, {
+      "@id" : "_:genid313"
     } ]
   } ]
 }, {
-  "@id" : "_:genid335",
+  "@id" : "_:genid313",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/File"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/describesFile"
+    "@id" : "https://schema.bco-dmo.org/v1.0/categorizedBy"
   } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/MediaServiceType"
   } ]
 }, {
-  "@id" : "_:genid337",
+  "@id" : "_:genid315",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/actionType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
+  } ]
+}, {
+  "@id" : "_:genid317",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
+      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
     }, {
-      "@id" : "_:genid339"
+      "@id" : "_:genid319"
     } ]
   } ]
 }, {
-  "@id" : "_:genid339",
+  "@id" : "_:genid319",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid340"
+    "@id" : "_:genid320"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/File"
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+  } ]
+}, {
+  "@id" : "_:genid320",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/metadataFile"
+  } ]
+}, {
+  "@id" : "_:genid322",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid324"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid324",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid325"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ]
+}, {
+  "@id" : "_:genid325",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/nodcTopicCategory"
+  } ]
+}, {
+  "@id" : "_:genid327",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid329"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid329",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
+  } ]
+}, {
+  "@id" : "_:genid331",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+    }, {
+      "@id" : "_:genid333"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid333",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_ORCID"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ]
+}, {
+  "@id" : "_:genid335",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid337"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid337",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid338"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetParameter"
+  } ]
+}, {
+  "@id" : "_:genid338",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
   } ]
 }, {
   "@id" : "_:genid34",
@@ -1327,148 +1292,151 @@
   } ]
 }, {
   "@id" : "_:genid340",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/fileType"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid342"
+    } ]
   } ]
 }, {
   "@id" : "_:genid342",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Organization"
-    }, {
-      "@id" : "_:genid344"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid344",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid345"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
-  } ]
-}, {
-  "@id" : "_:genid345",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/funder"
-  } ]
-}, {
-  "@id" : "_:genid347",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
-    }, {
-      "@id" : "_:genid351"
-    }, {
-      "@id" : "_:genid349"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid349",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierValue"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#token"
-  } ]
-}, {
-  "@id" : "_:genid351",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme"
-  } ]
-}, {
-  "@id" : "_:genid353",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/File"
-    }, {
-      "@id" : "_:genid355"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid355",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/fileType"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ImageFileType"
-  } ]
-}, {
-  "@id" : "_:genid357",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
-    }, {
-      "@id" : "_:genid359"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid359",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid360"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetInstrument"
-  } ]
-}, {
-  "@id" : "_:genid360",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
-  } ]
-}, {
-  "@id" : "_:genid362",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
-    }, {
-      "@id" : "_:genid364"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid364",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Instruments"
+    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Parameters"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
   } ]
 }, {
-  "@id" : "_:genid366",
+  "@id" : "_:genid344",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
     }, {
-      "@id" : "_:genid368"
+      "@id" : "_:genid346"
     } ]
   } ]
 }, {
-  "@id" : "_:genid368",
+  "@id" : "_:genid346",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid369"
+    "@id" : "_:genid347"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
   } ]
 }, {
-  "@id" : "_:genid369",
+  "@id" : "_:genid347",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/license"
+    "@id" : "https://schema.bco-dmo.org/v1.0/platformTitle"
+  } ]
+}, {
+  "@id" : "_:genid349",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
+    }, {
+      "@id" : "_:genid351"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid351",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid352"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
+  } ]
+}, {
+  "@id" : "_:genid352",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/platformType"
+  } ]
+}, {
+  "@id" : "_:genid354",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid358"
+    }, {
+      "@id" : "_:genid356"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid356",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/target"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
+  } ]
+}, {
+  "@id" : "_:genid358",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
+  } ]
+}, {
+  "@id" : "_:genid359",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/ResearchActivity"
+    }, {
+      "@id" : "_:genid361"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid361",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid362"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
+  } ]
+}, {
+  "@id" : "_:genid362",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasParentProgram"
+  } ]
+}, {
+  "@id" : "_:genid364",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+    }, {
+      "@id" : "_:genid366"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid366",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_ROR"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+  } ]
+}, {
+  "@id" : "_:genid368",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
+    }, {
+      "@id" : "_:genid370"
+    } ]
   } ]
 }, {
   "@id" : "_:genid37",
@@ -1481,144 +1449,162 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid371",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-    }, {
-      "@id" : "_:genid375"
-    }, {
-      "@id" : "_:genid373"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid373",
+  "@id" : "_:genid370",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/categorizedBy"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/MediaServiceType"
-  } ]
-}, {
-  "@id" : "_:genid375",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/actionType"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
-  } ]
-}, {
-  "@id" : "_:genid377",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
-    }, {
-      "@id" : "_:genid379"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid379",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid380"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ]
-}, {
-  "@id" : "_:genid380",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/metadataFile"
-  } ]
-}, {
-  "@id" : "_:genid382",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
-    }, {
-      "@id" : "_:genid384"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid384",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid385"
+    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
   } ]
 }, {
-  "@id" : "_:genid385",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/nodcTopicCategory"
+  "@id" : "_:genid372",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
+    }, {
+      "@id" : "_:genid374"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid374",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Publication"
+  } ]
+}, {
+  "@id" : "_:genid376",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
+    }, {
+      "@id" : "_:genid382"
+    }, {
+      "@id" : "_:genid380"
+    }, {
+      "@id" : "_:genid378"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid378",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/relationship"
+  } ]
+}, {
+  "@id" : "_:genid380",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
+  } ]
+}, {
+  "@id" : "_:genid382",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forCreativeWork"
+  } ]
+}, {
+  "@id" : "_:genid384",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+    }, {
+      "@id" : "_:genid386"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid386",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid387"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "_:genid388"
   } ]
 }, {
   "@id" : "_:genid387",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/relationship"
+  } ]
+}, {
+  "@id" : "_:genid388",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
     }, {
-      "@id" : "_:genid389"
+      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
     } ]
   } ]
 }, {
-  "@id" : "_:genid389",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
-  } ]
-}, {
-  "@id" : "_:genid391",
+  "@id" : "_:genid392",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
     }, {
-      "@id" : "_:genid393"
+      "@id" : "_:genid394"
     } ]
   } ]
 }, {
-  "@id" : "_:genid393",
+  "@id" : "_:genid394",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_ORCID"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+    "@id" : "_:genid395"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation"
   } ]
 }, {
   "@id" : "_:genid395",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
-    }, {
-      "@id" : "_:genid397"
-    } ]
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/inGroup"
   } ]
 }, {
   "@id" : "_:genid397",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid398"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/DatasetParameter"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
+    }, {
+      "@id" : "_:genid399"
+    } ]
   } ]
 }, {
-  "@id" : "_:genid398",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/isDefinedAs"
+  "@id" : "_:genid399",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/roleWeight"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ]
 }, {
   "@id" : "_:genid40",
@@ -1631,106 +1617,98 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid400",
+  "@id" : "_:genid401",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
+      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
     }, {
-      "@id" : "_:genid402"
+      "@id" : "_:genid405"
+    }, {
+      "@id" : "_:genid403"
     } ]
   } ]
 }, {
-  "@id" : "_:genid402",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Parameters"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary"
-  } ]
-}, {
-  "@id" : "_:genid404",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid406"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid406",
+  "@id" : "_:genid403",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid407"
+    "@id" : "https://schema.bco-dmo.org/v1.0/implementsService"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
+    "@id" : "https://schema.bco-dmo.org/v1.0/MediaService"
+  } ]
+}, {
+  "@id" : "_:genid405",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/forCreativeWork"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ]
 }, {
   "@id" : "_:genid407",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/platformTitle"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
+    }, {
+      "@id" : "_:genid409"
+    } ]
   } ]
 }, {
   "@id" : "_:genid409",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid411"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid411",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid412"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
-  } ]
-}, {
-  "@id" : "_:genid412",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/platformType"
-  } ]
-}, {
-  "@id" : "_:genid414",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "_:genid418"
-    }, {
-      "@id" : "_:genid416"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid416",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/target"
+    "@id" : "https://schema.bco-dmo.org/v1.0/situationInvolves"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
   } ]
 }, {
-  "@id" : "_:genid418",
+  "@id" : "_:genid411",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
+    }, {
+      "@id" : "_:genid413"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid413",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/modifiesAction"
+    "@id" : "https://schema.bco-dmo.org/v1.0/provider"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ConsumeAction"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
+  } ]
+}, {
+  "@id" : "_:genid415",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/MediaService"
+    }, {
+      "@id" : "_:genid417"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid417",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/provider"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/SoftwareApplication"
   } ]
 }, {
   "@id" : "_:genid419",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/ResearchActivity"
+      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
     }, {
       "@id" : "_:genid421"
     } ]
@@ -1742,19 +1720,21 @@
     "@id" : "_:genid422"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Project"
+    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ]
 }, {
   "@id" : "_:genid422",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasParentProgram"
+    "@id" : "https://schema.bco-dmo.org/v1.0/supplementalDocument"
   } ]
 }, {
   "@id" : "_:genid424",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
+      "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
+    }, {
+      "@id" : "_:genid428"
     }, {
       "@id" : "_:genid426"
     } ]
@@ -1762,21 +1742,20 @@
 }, {
   "@id" : "_:genid426",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme_ROR"
-  } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/identifierScheme"
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasEnd"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalInstant"
   } ]
 }, {
   "@id" : "_:genid428",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
-    }, {
-      "@id" : "_:genid430"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasBeginning"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalInstant"
   } ]
 }, {
   "@id" : "_:genid43",
@@ -1790,161 +1769,34 @@
   } ]
 }, {
   "@id" : "_:genid430",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
+    }, {
+      "@id" : "_:genid432"
+    } ]
   } ]
 }, {
   "@id" : "_:genid432",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
-    }, {
-      "@id" : "_:genid434"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/PlatformType_Vessel"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/platformType"
   } ]
 }, {
   "@id" : "_:genid434",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Publication"
-  } ]
-}, {
-  "@id" : "_:genid436",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid442"
-    }, {
-      "@id" : "_:genid440"
-    }, {
-      "@id" : "_:genid438"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid438",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/relationship"
   } ]
 }, {
-  "@id" : "_:genid440",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+  "@id" : "_:genid435",
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/relations"
-  } ]
-}, {
-  "@id" : "_:genid442",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forCreativeWork"
-  } ]
-}, {
-  "@id" : "_:genid444",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
-    }, {
-      "@id" : "_:genid446"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid446",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid447"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid448"
-  } ]
-}, {
-  "@id" : "_:genid447",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/relationship"
-  } ]
-}, {
-  "@id" : "_:genid448",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-    }, {
-      "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid452",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid454"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid454",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid455"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation"
-  } ]
-}, {
-  "@id" : "_:genid455",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/inGroup"
-  } ]
-}, {
-  "@id" : "_:genid457",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Category"
-    }, {
-      "@id" : "_:genid459"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid459",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/roleWeight"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ]
 }, {
   "@id" : "_:genid46",
@@ -1957,178 +1809,6 @@
     }, {
       "@id" : "https://schema.bco-dmo.org/v1.0/ResearchActivity"
     } ]
-  } ]
-}, {
-  "@id" : "_:genid461",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
-    }, {
-      "@id" : "_:genid465"
-    }, {
-      "@id" : "_:genid463"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid463",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/implementsService"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/MediaService"
-  } ]
-}, {
-  "@id" : "_:genid465",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/forCreativeWork"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ]
-}, {
-  "@id" : "_:genid467",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
-    }, {
-      "@id" : "_:genid469"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid469",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/situationInvolves"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
-  } ]
-}, {
-  "@id" : "_:genid471",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
-    }, {
-      "@id" : "_:genid473"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid473",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/provider"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
-  } ]
-}, {
-  "@id" : "_:genid475",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/MediaService"
-    }, {
-      "@id" : "_:genid477"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid477",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/provider"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/SoftwareApplication"
-  } ]
-}, {
-  "@id" : "_:genid479",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
-    }, {
-      "@id" : "_:genid481"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid481",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid482"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ]
-}, {
-  "@id" : "_:genid482",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/supplementalDocument"
-  } ]
-}, {
-  "@id" : "_:genid484",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
-    }, {
-      "@id" : "_:genid488"
-    }, {
-      "@id" : "_:genid486"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid486",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasEnd"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalInstant"
-  } ]
-}, {
-  "@id" : "_:genid488",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/hasBeginning"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/TemporalInstant"
-  } ]
-}, {
-  "@id" : "_:genid490",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
-    }, {
-      "@id" : "_:genid492"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid492",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/PlatformType_Vessel"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/platformType"
-  } ]
-}, {
-  "@id" : "_:genid494",
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid495",
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid50",
@@ -2963,21 +2643,6 @@
     "@id" : "https://schema.org/Grant"
   } ]
 }, {
-  "@id" : "https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A reason why an award will not produce datasets"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "AwardNoDataAnnotation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid133"
-  } ]
-}, {
   "@id" : "https://schema.bco-dmo.org/v1.0/BCODMOIdentifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -3125,7 +2790,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid153"
+    "@id" : "_:genid133"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "https://schema.org/ListItem"
@@ -3354,7 +3019,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Deployment"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid157"
+    "@id" : "_:genid137"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/CryptographicHash",
@@ -3369,7 +3034,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid161"
+    "@id" : "_:genid141"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/CryptographicHashAlgorithm",
@@ -3531,7 +3196,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/ArchivedDataset"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid165"
+    "@id" : "_:genid145"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DOIIdentifier",
@@ -3546,7 +3211,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid170"
+    "@id" : "_:genid150"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DOIStatus",
@@ -3561,7 +3226,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWorkStatus"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid174"
+    "@id" : "_:genid154"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DOIStatus_Draft",
@@ -3648,7 +3313,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid179"
+    "@id" : "_:genid159"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/DataDownload"
@@ -3666,7 +3331,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid184"
+    "@id" : "_:genid164"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Dataset",
@@ -3696,7 +3361,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid189"
+    "@id" : "_:genid169"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetDeployment",
@@ -3710,10 +3375,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   }, {
-    "@id" : "_:genid201"
+    "@id" : "_:genid181"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid195"
+    "@id" : "_:genid175"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetInstrument",
@@ -3728,7 +3393,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid207"
+    "@id" : "_:genid187"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetList",
@@ -3743,37 +3408,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Collection"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid213"
-  } ]
-}, {
-  "@id" : "https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A reason as to why no instruments were used in the generation of this Dataset."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DatasetNoInstrumentsAnnotation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid221"
-  } ]
-}, {
-  "@id" : "https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A reason as to why a Dataset has no parameters defined."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DatasetNoParametersAnnotation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid241"
+    "@id" : "_:genid193"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetParameter",
@@ -3788,7 +3423,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid261"
+    "@id" : "_:genid201"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
@@ -3866,7 +3501,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid267"
+    "@id" : "_:genid207"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetType",
@@ -3881,7 +3516,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid275"
+    "@id" : "_:genid215"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/DatasetType_Code",
@@ -4016,7 +3651,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid280"
+    "@id" : "_:genid220"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Datatype",
@@ -4031,7 +3666,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid290"
+    "@id" : "_:genid230"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "https://schema.org/DataType"
@@ -4262,7 +3897,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid295"
+    "@id" : "_:genid235"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "https://schema.org/DefinedTerm"
@@ -4280,7 +3915,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Event"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid299"
+    "@id" : "_:genid239"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "http://www.w3.org/ns/ssn/Deployment"
@@ -4346,7 +3981,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid303"
+    "@id" : "_:genid243"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/EmailAddress",
@@ -4376,7 +4011,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid307"
+    "@id" : "_:genid247"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/EmbargoReleasePolicy",
@@ -4391,7 +4026,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Policy"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid315"
+    "@id" : "_:genid255"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Entity",
@@ -4415,7 +4050,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid323"
+    "@id" : "_:genid263"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/EntityPublishingStatus",
@@ -4502,7 +4137,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid329"
+    "@id" : "_:genid269"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/Event"
@@ -4535,7 +4170,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid333"
+    "@id" : "_:genid273"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/DigitalDocument"
@@ -4553,7 +4188,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid337"
+    "@id" : "_:genid277"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/FileType_BitmapImage",
@@ -4715,7 +4350,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Organization"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid342"
+    "@id" : "_:genid282"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "https://schema.org/FundingAgency"
@@ -4969,7 +4604,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid347"
+    "@id" : "_:genid287"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/IdentifierScheme",
@@ -5117,7 +4752,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/File"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid353"
+    "@id" : "_:genid293"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/ImageObject"
@@ -5147,9 +4782,9 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid357"
+    "@id" : "_:genid297"
   }, {
-    "@id" : "_:genid362"
+    "@id" : "_:genid302"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Sensor"
@@ -5209,7 +4844,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid366"
+    "@id" : "_:genid306"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Logo",
@@ -5236,7 +4871,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid371"
+    "@id" : "_:genid311"
   } ],
   "http://www.w3.org/2004/02/skos/core#relatedMatch" : [ {
     "@id" : "http://www.w3.org/ns/dcat#DataService"
@@ -5308,7 +4943,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid377"
+    "@id" : "_:genid317"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/DataDownload"
@@ -5353,9 +4988,9 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid382"
+    "@id" : "_:genid322"
   }, {
-    "@id" : "_:genid387"
+    "@id" : "_:genid327"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/NODCTopic_Biota",
@@ -5547,7 +5182,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid391"
+    "@id" : "_:genid331"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Organization",
@@ -5638,9 +5273,9 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid395"
+    "@id" : "_:genid335"
   }, {
-    "@id" : "_:genid400"
+    "@id" : "_:genid340"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Person",
@@ -5697,7 +5332,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid404"
+    "@id" : "_:genid344"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/PlatformType",
@@ -5712,7 +5347,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid409"
+    "@id" : "_:genid349"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/PlatformType_Aircraft",
@@ -5933,7 +5568,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
   }, {
-    "@id" : "_:genid414"
+    "@id" : "_:genid354"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/PostalAddress",
@@ -5966,7 +5601,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Project"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid419"
+    "@id" : "_:genid359"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Project",
@@ -6008,7 +5643,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Identifier"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid424"
+    "@id" : "_:genid364"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/RelatedDataset",
@@ -6023,7 +5658,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid428"
+    "@id" : "_:genid368"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/RelatedPublication",
@@ -6038,7 +5673,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid432"
+    "@id" : "_:genid372"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/RelatedWork",
@@ -6053,7 +5688,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid436"
+    "@id" : "_:genid376"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/ResearchActivity",
@@ -6083,7 +5718,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/DefinedTerm"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid444"
+    "@id" : "_:genid384"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup",
@@ -6098,7 +5733,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid452"
+    "@id" : "_:genid392"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetAggregation",
@@ -7240,7 +6875,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Category"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid457"
+    "@id" : "_:genid397"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Role_Analyst",
@@ -7591,7 +7226,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Situation"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid461"
+    "@id" : "_:genid401"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Situation",
@@ -7611,7 +7246,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid467"
+    "@id" : "_:genid407"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/SoftwareApplication",
@@ -7626,7 +7261,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Agent"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid471"
+    "@id" : "_:genid411"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "https://schema.org/SoftwareApplication"
@@ -7691,7 +7326,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/MediaService"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid475"
+    "@id" : "_:genid415"
   } ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://schema.org/EntryPoint"
@@ -7978,7 +7613,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/FileDescriptor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid479"
+    "@id" : "_:genid419"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/Synonym",
@@ -8071,7 +7706,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/TemporalEntity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid484"
+    "@id" : "_:genid424"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "http://www.w3.org/2006/time#Interval"
@@ -8140,7 +7775,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Platform"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid490"
+    "@id" : "_:genid430"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/WebPage",
@@ -8500,7 +8135,7 @@
     "@id" : "https://schema.bco-dmo.org/v1.0/Award"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "isAwardProducingData"
+    "@value" : "noAwardDataExpected"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/Boolean"
@@ -8867,34 +8502,10 @@
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Asserts that no instruments were used in the generation of this Dataset."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "datasetInstrumentsNotUsed"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Boolean"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "specifies whether parameters are not required or applicable for this dataset."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "datasetParametersNotRequired"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Boolean"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/datasetType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
@@ -9517,22 +9128,19 @@
     "@id" : "https://schema.org/item"
   } ]
 }, {
-  "@id" : "https://schema.bco-dmo.org/v1.0/hasContent",
+  "@id" : "https://schema.bco-dmo.org/v1.0/hasComment",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation."
+    "@value" : "A Comment explaining the reason for some scenario for an Entity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/Annotation"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasContent"
+    "@value" : "hasComment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.bco-dmo.org/v1.0/CreativeWork"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
-    "@id" : "https://schema.org/text"
+    "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/hasCoordinatedDeployment",
@@ -10526,6 +10134,21 @@
     "@id" : "https://schema.org/additionalName"
   } ]
 }, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noAwardDataExpected",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Is the award expected to produce data. This expectation typically comes from the funding agency or PI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noAwardDataExpected"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
   "@id" : "https://schema.bco-dmo.org/v1.0/noDataValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -10539,6 +10162,75 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#token"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Comment explaining why a Dataset has no Instruments."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noDatasetInstrumentsComment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Does the Dataset expect to have used instruments?"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noDatasetInstrumentsExpected"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetParametersComment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Comment explaining why a Dataset has no Parameters."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noDatasetParametersComment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Does the Dataset expect to have listed Parameters?"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noDatasetParametersExpected"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Comment explaining why an award is not expected to produce data."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Award"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "noDatasetsProducedFromAwardComment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/noAwardDataExpected"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/nodcTopicCategory",

@@ -323,20 +323,6 @@ bcodmo:dataType rdf:type owl:ObjectProperty ,
                 rdfs:label "dataType" .
 
 
-###  https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed
-bcodmo:datasetInstrumentsNotUsed rdf:type owl:ObjectProperty ,
-                                          owl:FunctionalProperty ;
-                                 rdfs:domain bcodmo:Dataset ;
-                                 rdfs:range bcodmo:Boolean .
-
-
-###  https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired
-bcodmo:datasetParametersNotRequired rdf:type owl:ObjectProperty ,
-                                             owl:FunctionalProperty ;
-                                    rdfs:domain bcodmo:Dataset ;
-                                    rdfs:range bcodmo:Boolean .
-
-
 ###  https://schema.bco-dmo.org/v1.0/datasetType
 bcodmo:datasetType rdf:type owl:ObjectProperty ;
                    rdfs:domain bcodmo:Dataset ;
@@ -566,13 +552,12 @@ bcodmo:hasCollectionItem rdf:type owl:ObjectProperty ;
                          skos:exactMatch <https://schema.org/item> .
 
 
-###  https://schema.bco-dmo.org/v1.0/hasContent
-bcodmo:hasContent rdf:type owl:ObjectProperty ;
-                  rdfs:domain bcodmo:Annotation ;
-                  rdfs:range bcodmo:CreativeWork ;
-                  rdfs:comment "The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation." ;
-                  rdfs:label "hasContent" ;
-                  skos:exactMatch <https://schema.org/text> .
+###  https://schema.bco-dmo.org/v1.0/hasComment
+bcodmo:hasComment rdf:type owl:ObjectProperty ;
+                  rdfs:domain bcodmo:Entity ;
+                  rdfs:range bcodmo:Comment ;
+                  rdfs:comment "A Comment explaining the reason for some scenario for an Entity." ;
+                  rdfs:label "hasComment" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/hasCoordinatedDeployment
@@ -931,6 +916,30 @@ bcodmo:modifiesAction rdf:type owl:ObjectProperty ;
                       rdfs:range bcodmo:Action ;
                       rdfs:comment "The action being modified by some Policy" ;
                       rdfs:label "modifiesAction" .
+
+
+###  https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment
+bcodmo:noDatasetInstrumentsComment rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf bcodmo:hasComment ;
+                                   rdfs:comment "A Comment explaining why a Dataset has no Instruments." ;
+                                   rdfs:label "noDatasetInstrumentsComment" .
+
+
+###  https://schema.bco-dmo.org/v1.0/noDatasetParametersComment
+bcodmo:noDatasetParametersComment rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf bcodmo:hasComment ;
+                                  rdfs:comment "A Comment explaining why a Dataset has no Parameters." ;
+                                  rdfs:label "noDatasetParametersComment" .
+
+
+###  https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment
+bcodmo:noDatasetsProducedFromAwardComment rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf bcodmo:hasComment ;
+                                          rdfs:domain bcodmo:Award ;
+                                          rdfs:range bcodmo:Comment ;
+                                          rdfs:comment "A Comment explaining why an award is not expected to produce data." ;
+                                          rdfs:label "noDatasetsProducedFromAwardComment" ;
+                                          rdfs:seeAlso bcodmo:noAwardDataExpected .
 
 
 ###  https://schema.bco-dmo.org/v1.0/nodcTopicCategory
@@ -1942,12 +1951,36 @@ bcodmo:nickname rdf:type owl:DatatypeProperty ;
                 skos:closeMatch <https://schema.org/additionalName> .
 
 
+###  https://schema.bco-dmo.org/v1.0/noAwardDataExpected
+bcodmo:noAwardDataExpected rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain bcodmo:Award ;
+                           rdfs:range xsd:boolean ;
+                           rdfs:comment "Is the award expected to produce data. This expectation typically comes from the funding agency or PI" ;
+                           rdfs:label "noAwardDataExpected" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/noDataValue
 bcodmo:noDataValue rdf:type owl:DatatypeProperty ;
                    rdfs:domain bcodmo:DatasetParameter ;
                    rdfs:range xsd:token ;
                    rdfs:comment "The value to expect in a DatasetParameter when there was no data for the given record." ;
                    rdfs:label "noDataValue" .
+
+
+###  https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected
+bcodmo:noDatasetInstrumentsExpected rdf:type owl:DatatypeProperty ,
+                                             owl:FunctionalProperty ;
+                                    rdfs:domain bcodmo:Dataset ;
+                                    rdfs:range xsd:boolean ;
+                                    rdfs:comment "Does the Dataset expect to have used instruments?" ;
+                                    rdfs:label "noDatasetInstrumentsExpected" .
+
+
+###  https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected
+bcodmo:noDatasetParametersExpected rdf:type owl:DatatypeProperty ;
+                                   rdfs:comment "Does the Dataset expect to have listed Parameters?" ;
+                                   rdfs:label "noDatasetParametersExpected" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/northBoundary
@@ -2306,17 +2339,16 @@ bcodmo:AgentRole rdf:type owl:Class ;
 bcodmo:Annotation rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( bcodmo:Situation
                                                              [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bcodmo:annotates ;
+                                                               owl:someValuesFrom bcodmo:Entity
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
                                                                owl:onProperty bcodmo:annotator ;
                                                                owl:someValuesFrom bcodmo:Agent
                                                              ]
                                                              [ rdf:type owl:Restriction ;
-                                                               owl:onProperty bcodmo:annotates ;
-                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty bcodmo:hasContent ;
-                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onClass bcodmo:CreativeWork
+                                                               owl:onProperty bcodmo:hasComment ;
+                                                               owl:someValuesFrom bcodmo:Comment
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -2381,52 +2413,6 @@ bcodmo:Award rdf:type owl:Class ;
              rdfs:comment "A funding award (grant) from a funder that supports data collection." ;
              rdfs:label "Award" ;
              skos:closeMatch <https://schema.org/Grant> .
-
-
-###  https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation
-bcodmo:AwardNoDataAnnotation rdf:type owl:Class ;
-                             owl:equivalentClass [ owl:intersectionOf ( bcodmo:Annotation
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty bcodmo:annotates ;
-                                                                          owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                      owl:onProperty rdf:subject ;
-                                                                                                                      owl:someValuesFrom bcodmo:Award
-                                                                                                                    ]
-                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                      owl:onProperty rdf:object ;
-                                                                                                                      owl:hasValue bcodmo:Boolean_True
-                                                                                                                    ]
-                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                      owl:onProperty rdf:predicate ;
-                                                                                                                      owl:hasValue bcodmo:awardProducingData
-                                                                                                                    ]
-                                                                                                                  ) ;
-                                                                                               rdf:type owl:Class
-                                                                                             ]
-                                                                        ]
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty bcodmo:hasContent ;
-                                                                          owl:someValuesFrom [ owl:intersectionOf ( bcodmo:Comment
-                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                      owl:onProperty bcodmo:content ;
-                                                                                                                      owl:someValuesFrom xsd:string
-                                                                                                                    ]
-                                                                                                                  ) ;
-                                                                                               rdf:type owl:Class
-                                                                                             ]
-                                                                        ]
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty bcodmo:annotator ;
-                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass bcodmo:Agent
-                                                                        ]
-                                                                      ) ;
-                                                   rdf:type owl:Class
-                                                 ] ;
-                             rdfs:subClassOf bcodmo:Annotation ;
-                             rdfs:comment "A reason why an award will not produce datasets" ;
-                             rdfs:label "AwardNoDataAnnotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/BCODMOIdentifier
@@ -2777,98 +2763,6 @@ bcodmo:DatasetList rdf:type owl:Class ;
                    rdfs:subClassOf bcodmo:Collection ;
                    rdfs:comment "A list of Datasets" ;
                    rdfs:label "DatasetList" .
-
-
-###  https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation
-bcodmo:DatasetNoInstrumentsAnnotation rdf:type owl:Class ;
-                                      owl:equivalentClass [ owl:intersectionOf ( bcodmo:Annotation
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty bcodmo:annotates ;
-                                                                                   owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                               owl:onProperty rdf:subject ;
-                                                                                                                               owl:someValuesFrom bcodmo:Dataset
-                                                                                                                             ]
-                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                               owl:onProperty rdf:object ;
-                                                                                                                               owl:hasValue bcodmo:Boolean_True
-                                                                                                                             ]
-                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                               owl:onProperty rdf:predicate ;
-                                                                                                                               owl:hasValue bcodmo:datasetInstrumentsNotUsed
-                                                                                                                             ]
-                                                                                                                           ) ;
-                                                                                                        rdf:type owl:Class
-                                                                                                      ]
-                                                                                 ]
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty bcodmo:hasContent ;
-                                                                                   owl:someValuesFrom [ owl:intersectionOf ( bcodmo:Comment
-                                                                                                                             [ rdf:type owl:Restriction ;
-                                                                                                                               owl:onProperty bcodmo:content ;
-                                                                                                                               owl:someValuesFrom xsd:string
-                                                                                                                             ]
-                                                                                                                           ) ;
-                                                                                                        rdf:type owl:Class
-                                                                                                      ]
-                                                                                 ]
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty bcodmo:annotator ;
-                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                   owl:onClass bcodmo:Agent
-                                                                                 ]
-                                                                               ) ;
-                                                            rdf:type owl:Class
-                                                          ] ;
-                                      rdfs:subClassOf bcodmo:Annotation ;
-                                      rdfs:comment "A reason as to why no instruments were used in the generation of this Dataset." ;
-                                      rdfs:label "DatasetNoInstrumentsAnnotation" .
-
-
-###  https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation
-bcodmo:DatasetNoParametersAnnotation rdf:type owl:Class ;
-                                     owl:equivalentClass [ owl:intersectionOf ( bcodmo:Annotation
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty bcodmo:annotates ;
-                                                                                  owl:someValuesFrom [ owl:intersectionOf ( rdf:Statement
-                                                                                                                            [ rdf:type owl:Restriction ;
-                                                                                                                              owl:onProperty rdf:subject ;
-                                                                                                                              owl:someValuesFrom bcodmo:Dataset
-                                                                                                                            ]
-                                                                                                                            [ rdf:type owl:Restriction ;
-                                                                                                                              owl:onProperty rdf:object ;
-                                                                                                                              owl:hasValue bcodmo:Boolean_True
-                                                                                                                            ]
-                                                                                                                            [ rdf:type owl:Restriction ;
-                                                                                                                              owl:onProperty rdf:predicate ;
-                                                                                                                              owl:hasValue bcodmo:datasetParametersNotRequired
-                                                                                                                            ]
-                                                                                                                          ) ;
-                                                                                                       rdf:type owl:Class
-                                                                                                     ]
-                                                                                ]
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty bcodmo:hasContent ;
-                                                                                  owl:someValuesFrom [ owl:intersectionOf ( bcodmo:Comment
-                                                                                                                            [ rdf:type owl:Restriction ;
-                                                                                                                              owl:onProperty bcodmo:content ;
-                                                                                                                              owl:someValuesFrom xsd:string
-                                                                                                                            ]
-                                                                                                                          ) ;
-                                                                                                       rdf:type owl:Class
-                                                                                                     ]
-                                                                                ]
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty bcodmo:annotator ;
-                                                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                  owl:onClass bcodmo:Agent
-                                                                                ]
-                                                                              ) ;
-                                                           rdf:type owl:Class
-                                                         ] ;
-                                     rdfs:subClassOf bcodmo:Annotation ;
-                                     rdfs:comment "A reason as to why a Dataset has no parameters defined." ;
-                                     rdfs:label "DatasetNoParametersAnnotation" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/DatasetParameter
@@ -5969,15 +5863,7 @@ bcodmo:datasetParametersNotRequired rdf:type owl:NamedIndividual .
 
 
 bcodmo:awardProducingData rdfs:comment "Is the award expected to produce data. This expectation typically comes from the funding agency or PI" ;
-                          rdfs:label "isAwardProducingData" .
-
-
-bcodmo:datasetInstrumentsNotUsed rdfs:comment "Asserts that no instruments were used in the generation of this Dataset." ;
-                                 rdfs:label "datasetInstrumentsNotUsed" .
-
-
-bcodmo:datasetParametersNotRequired rdfs:comment "specifies whether parameters are not required or applicable for this dataset." ;
-                                    rdfs:label "datasetParametersNotRequired" .
+                          rdfs:label "noAwardDataExpected" .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

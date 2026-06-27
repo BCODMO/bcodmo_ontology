@@ -495,28 +495,6 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed -->
-
-
-    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Boolean"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired -->
-
-
-    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Boolean"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://schema.bco-dmo.org/v1.0/datasetType -->
 
 
@@ -842,15 +820,14 @@
     
 
 
-    <!-- https://schema.bco-dmo.org/v1.0/hasContent -->
+    <!-- https://schema.bco-dmo.org/v1.0/hasComment -->
 
 
-    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/hasContent">
-        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
-        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
-        <rdfs:comment>The content or text of some Annotation. the annotation could be an image or publication, but it is the main idea of the annotation.</rdfs:comment>
-        <rdfs:label>hasContent</rdfs:label>
-        <skos:exactMatch rdf:resource="https://schema.org/text"/>
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/hasComment">
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Comment"/>
+        <rdfs:comment>A Comment explaining the reason for some scenario for an Entity.</rdfs:comment>
+        <rdfs:label>hasComment</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1361,6 +1338,42 @@
         <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Action"/>
         <rdfs:comment>The action being modified by some Policy</rdfs:comment>
         <rdfs:label>modifiesAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+        <rdfs:comment>A Comment explaining why a Dataset has no Instruments.</rdfs:comment>
+        <rdfs:label>noDatasetInstrumentsComment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/noDatasetParametersComment -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetParametersComment">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+        <rdfs:comment>A Comment explaining why a Dataset has no Parameters.</rdfs:comment>
+        <rdfs:label>noDatasetParametersComment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment">
+        <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Comment"/>
+        <rdfs:comment>A Comment explaining why an award is not expected to produce data.</rdfs:comment>
+        <rdfs:label>noDatasetsProducedFromAwardComment</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.bco-dmo.org/v1.0/noAwardDataExpected"/>
     </owl:ObjectProperty>
     
 
@@ -2831,6 +2844,19 @@
     
 
 
+    <!-- https://schema.bco-dmo.org/v1.0/noAwardDataExpected -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/noAwardDataExpected">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Is the award expected to produce data. This expectation typically comes from the funding agency or PI</rdfs:comment>
+        <rdfs:label>noAwardDataExpected</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.bco-dmo.org/v1.0/noDataValue -->
 
 
@@ -2839,6 +2865,29 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
         <rdfs:comment>The value to expect in a DatasetParameter when there was no data for the given record.</rdfs:comment>
         <rdfs:label>noDataValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Does the Dataset expect to have used instruments?</rdfs:comment>
+        <rdfs:label>noDatasetInstrumentsExpected</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected">
+        <rdfs:comment>Does the Dataset expect to have listed Parameters?</rdfs:comment>
+        <rdfs:label>noDatasetParametersExpected</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3372,17 +3421,16 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Situation"/>
                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotates"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Entity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
                         <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotator"/>
                         <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotates"/>
-                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasContent"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/CreativeWork"/>
+                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Comment"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -3473,65 +3521,6 @@
         <rdfs:comment>A funding award (grant) from a funder that supports data collection.</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
         <skos:closeMatch rdf:resource="https://schema.org/Grant"/>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/AwardNoDataAnnotation">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotates"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
-                                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Award"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/Boolean_True"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/awardProducingData"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasContent"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Comment"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/content"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotator"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
-        <rdfs:comment>A reason why an award will not produce datasets</rdfs:comment>
-        <rdfs:label>AwardNoDataAnnotation</rdfs:label>
     </owl:Class>
     
 
@@ -4043,124 +4032,6 @@
         <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Collection"/>
         <rdfs:comment>A list of Datasets</rdfs:comment>
         <rdfs:label>DatasetList</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetNoInstrumentsAnnotation">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotates"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
-                                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/Boolean_True"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasContent"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Comment"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/content"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotator"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
-        <rdfs:comment>A reason as to why no instruments were used in the generation of this Dataset.</rdfs:comment>
-        <rdfs:label>DatasetNoInstrumentsAnnotation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation -->
-
-
-    <owl:Class rdf:about="https://schema.bco-dmo.org/v1.0/DatasetNoParametersAnnotation">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Annotation"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotates"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
-                                        <owl:someValuesFrom rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/Boolean_True"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
-                                        <owl:hasValue rdf:resource="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/hasContent"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/Comment"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/content"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://schema.bco-dmo.org/v1.0/annotator"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="https://schema.bco-dmo.org/v1.0/Agent"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://schema.bco-dmo.org/v1.0/Annotation"/>
-        <rdfs:comment>A reason as to why a Dataset has no parameters defined.</rdfs:comment>
-        <rdfs:label>DatasetNoParametersAnnotation</rdfs:label>
     </owl:Class>
     
 
@@ -8810,15 +8681,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/awardProducingData">
         <rdfs:comment>Is the award expected to produce data. This expectation typically comes from the funding agency or PI</rdfs:comment>
-        <rdfs:label>isAwardProducingData</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed">
-        <rdfs:comment>Asserts that no instruments were used in the generation of this Dataset.</rdfs:comment>
-        <rdfs:label>datasetInstrumentsNotUsed</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired">
-        <rdfs:comment>specifies whether parameters are not required or applicable for this dataset.</rdfs:comment>
-        <rdfs:label>datasetParametersNotRequired</rdfs:label>
+        <rdfs:label>noAwardDataExpected</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
