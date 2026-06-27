@@ -30,7 +30,7 @@
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "https://orcid.org/0000-0003-2109-706X",
+        "value" : "https://orcid.org/0000-0003-3359-9120",
         "type" : "iri"
       }, {
         "identifier" : "contributor",
@@ -40,7 +40,7 @@
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "https://orcid.org/0000-0003-3359-9120",
+        "value" : "https://orcid.org/0000-0003-2109-706X",
         "type" : "iri"
       } ],
       "title" : [ {
@@ -89,7 +89,7 @@
     "id" : "57",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "66",
+    "id" : "64",
     "type" : "owl:Class"
   }, {
     "id" : "72",
@@ -107,7 +107,7 @@
     "id" : "90",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "65",
+    "id" : "67",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "95",
@@ -137,11 +137,11 @@
     "id" : "135",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "74",
-    "type" : "owl:Class"
-  }, {
     "id" : "138",
     "type" : "owl:intersectionOf"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
   }, {
     "id" : "147",
     "type" : "owl:Class"
@@ -344,10 +344,10 @@
     "id" : "195",
     "type" : "owl:unionOf"
   }, {
-    "id" : "106",
+    "id" : "146",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "146",
+    "id" : "106",
     "type" : "owl:intersectionOf"
   }, {
     "id" : "184",
@@ -530,7 +530,7 @@
     "id" : "449",
     "type" : "owl:Class"
   }, {
-    "id" : "360",
+    "id" : "359",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "181",
@@ -665,7 +665,7 @@
     "id" : "301",
     "type" : "owl:Class"
   }, {
-    "id" : "67",
+    "id" : "65",
     "type" : "owl:Class"
   }, {
     "id" : "228",
@@ -683,11 +683,11 @@
     "id" : "97",
     "type" : "owl:Class"
   }, {
-    "id" : "220",
-    "type" : "owl:Class"
-  }, {
     "id" : "62",
     "type" : "owl:intersectionOf"
+  }, {
+    "id" : "220",
+    "type" : "owl:Class"
   }, {
     "id" : "94",
     "type" : "owl:Class"
@@ -749,11 +749,11 @@
     "id" : "115",
     "type" : "owl:Class"
   }, {
-    "id" : "79",
-    "type" : "owl:Class"
-  }, {
     "id" : "260",
     "type" : "owl:intersectionOf"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -786,7 +786,7 @@
   }, {
     "instances" : 0,
     "union" : [ "6", "17" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "16"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
@@ -888,8 +888,8 @@
     "comment" : {
       "undefined" : "Programming languages such as Python, Go, Rust and Java."
     },
-    "id" : "66",
-    "superClasses" : [ "67" ]
+    "id" : "64",
+    "superClasses" : [ "65" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -900,12 +900,12 @@
   }, {
     "instances" : 0,
     "union" : [ "76", "77" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "75"
   }, {
     "instances" : 0,
     "union" : [ "58", "81" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "80"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -924,7 +924,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "65",
+    "id" : "67",
     "label" : {
       "IRI-based" : "boolean"
     }
@@ -1044,6 +1044,29 @@
     "id" : "135",
     "superClasses" : [ "115" ]
   }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/MetadataFile",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "instances" : 0,
+    "annotations" : {
+      "closeMatch" : [ {
+        "identifier" : "closeMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/DataDownload",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MetadataFile",
+      "undefined" : "Metadata File"
+    },
+    "intersection" : [ "135" ],
+    "comment" : {
+      "undefined" : "A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset."
+    },
+    "attributes" : [ "intersection" ],
+    "id" : "138",
+    "superClasses" : [ "135" ]
+  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/EntityPublishingStatus",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
@@ -1092,29 +1115,6 @@
     },
     "id" : "74",
     "superClasses" : [ "3" ]
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/MetadataFile",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "instances" : 0,
-    "annotations" : {
-      "closeMatch" : [ {
-        "identifier" : "closeMatch",
-        "language" : "undefined",
-        "value" : "https://schema.org/DataDownload",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MetadataFile",
-      "undefined" : "Metadata File"
-    },
-    "intersection" : [ "135" ],
-    "comment" : {
-      "undefined" : "A metadata file (e.g. ISO 19115-2 XML, dataset description PDF) describing a dataset."
-    },
-    "attributes" : [ "intersection" ],
-    "id" : "138",
-    "superClasses" : [ "135" ]
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/TemporalEntity",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -1196,18 +1196,18 @@
         "undefined" : "Role: Contact"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Scientist",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "Role_Scientist",
-        "undefined" : "Role: Scientist"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Role_Student",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "Role_Student",
         "undefined" : "Role: Student"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Scientist",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "Role_Scientist",
+        "undefined" : "Role: Scientist"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Role_Analyst",
@@ -1259,11 +1259,11 @@
         "undefined" : "Role: Captain"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Role_CoPrincipalInvestigator",
+      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Guest",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
-        "IRI-based" : "Role_CoPrincipalInvestigator",
-        "undefined" : "Role: Co-Principal Investigator"
+        "IRI-based" : "Role_Guest",
+        "undefined" : "Role: Guest"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Role_Contributor",
@@ -1273,18 +1273,11 @@
         "undefined" : "Role: Contributor"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Guest",
+      "iri" : "https://schema.bco-dmo.org/v1.0/Role_CoPrincipalInvestigator",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
-        "IRI-based" : "Role_Guest",
-        "undefined" : "Role: Guest"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Originator",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "Role_Originator",
-        "undefined" : "Role: Originator"
+        "IRI-based" : "Role_CoPrincipalInvestigator",
+        "undefined" : "Role: Co-Principal Investigator"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Role_LeadPrincipalInvestigator",
@@ -1299,6 +1292,13 @@
       "labels" : {
         "IRI-based" : "Role_Technician",
         "undefined" : "Role: Technician"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/Role_Originator",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "Role_Originator",
+        "undefined" : "Role: Originator"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Role_ProjectCoordinator",
@@ -1323,12 +1323,12 @@
       "exactMatch" : [ {
         "identifier" : "exactMatch",
         "language" : "undefined",
-        "value" : "https://www.w3.org/ns/prov#SoftwareAgent",
+        "value" : "https://schema.org/SoftwareApplication",
         "type" : "iri"
       }, {
         "identifier" : "exactMatch",
         "language" : "undefined",
-        "value" : "https://schema.org/SoftwareApplication",
+        "value" : "https://www.w3.org/ns/prov#SoftwareAgent",
         "type" : "iri"
       } ]
     },
@@ -1596,7 +1596,7 @@
     },
     "subClasses" : [ "252" ],
     "intersection" : [ "14" ],
-    "attributes" : [ "intersection", "external" ],
+    "attributes" : [ "external", "intersection" ],
     "id" : "251",
     "superClasses" : [ "14" ]
   }, {
@@ -1616,7 +1616,7 @@
   }, {
     "instances" : 0,
     "union" : [ "71", "127" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "263"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1790,7 +1790,7 @@
   }, {
     "instances" : 0,
     "union" : [ "177", "63" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "294"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML",
@@ -1830,7 +1830,7 @@
   }, {
     "instances" : 0,
     "union" : [ "175", "154", "177" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "311"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML",
@@ -1898,18 +1898,18 @@
       "undefined" : "ImageFileType"
     },
     "individuals" : [ {
-      "iri" : "https://schema.bco-dmo.org/v1.0/FileType_ScalarVectorGraphics",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "FileType_ScalarVectorGraphics",
-        "undefined" : "File Type: Scalar Vector Graphics"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/FileType_TaggedImageFileFormat",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "FileType_TaggedImageFileFormat",
         "undefined" : "File Type: Tagged Image File Format"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/FileType_ScalarVectorGraphics",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "FileType_ScalarVectorGraphics",
+        "undefined" : "File Type: Scalar Vector Graphics"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/FileType_JPEGImage",
@@ -2066,16 +2066,6 @@
         "undefined" : "Datatype: Boolean"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Datatype_Integer",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "comment" : {
-        "undefined" : "An integer."
-      },
-      "labels" : {
-        "IRI-based" : "Datatype_Integer",
-        "undefined" : "Datatype: Integer"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Datatype_EmailAddress",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "comment" : {
@@ -2084,6 +2074,16 @@
       "labels" : {
         "IRI-based" : "Datatype_EmailAddress",
         "undefined" : "Datatype: Email Address"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/Datatype_Integer",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "comment" : {
+        "undefined" : "An integer."
+      },
+      "labels" : {
+        "IRI-based" : "Datatype_Integer",
+        "undefined" : "Datatype: Integer"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Datatype_Identifier",
@@ -2157,22 +2157,22 @@
   }, {
     "instances" : 0,
     "union" : [ "81", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "381"
   }, {
     "instances" : 0,
     "union" : [ "86", "146" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "382"
   }, {
     "instances" : 0,
     "union" : [ "81", "177" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "383"
   }, {
     "instances" : 0,
     "union" : [ "154", "301", "177", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "390"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/File",
@@ -2199,38 +2199,61 @@
   }, {
     "instances" : 0,
     "union" : [ "121", "71" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "392"
   }, {
     "instances" : 0,
     "union" : [ "81", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "40"
   }, {
     "instances" : 0,
     "union" : [ "81", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "393"
   }, {
     "instances" : 0,
     "union" : [ "154", "301", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "394"
   }, {
     "instances" : 0,
     "union" : [ "395", "34" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "215"
   }, {
     "instances" : 0,
     "union" : [ "154", "301", "115" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "396"
   }, {
     "instances" : 0,
     "union" : [ "177", "158" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "195"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/TemporalInterval",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/2006/time#Interval",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "TemporalInterval",
+      "undefined" : "Temporal Interval"
+    },
+    "intersection" : [ "147" ],
+    "comment" : {
+      "undefined" : "A time period with a beginning and an end, used to describe dataset temporal coverage."
+    },
+    "attributes" : [ "intersection" ],
+    "id" : "146",
+    "superClasses" : [ "147" ]
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -2240,16 +2263,6 @@
       "undefined" : "Dataset Type"
     },
     "individuals" : [ {
-      "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_CruiseResults",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "comment" : {
-        "undefined" : "Results from a research cruise"
-      },
-      "labels" : {
-        "IRI-based" : "DatasetType_CruiseResults",
-        "undefined" : "Dataset Type: Cruise Results"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_Code",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "comment" : {
@@ -2260,14 +2273,14 @@
         "undefined" : "Dataset Type: Code"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_Synthesis",
+      "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_CruiseResults",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "comment" : {
-        "undefined" : "Results from synthesis of other works"
+        "undefined" : "Results from a research cruise"
       },
       "labels" : {
-        "IRI-based" : "DatasetType_Synthesis",
-        "undefined" : "Dataset Type: Synthesis"
+        "IRI-based" : "DatasetType_CruiseResults",
+        "undefined" : "Dataset Type: Cruise Results"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_Document",
@@ -2278,6 +2291,16 @@
       "labels" : {
         "IRI-based" : "DatasetType_Document",
         "undefined" : "Dataset Type: Document"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_Synthesis",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "comment" : {
+        "undefined" : "Results from synthesis of other works"
+      },
+      "labels" : {
+        "IRI-based" : "DatasetType_Synthesis",
+        "undefined" : "Dataset Type: Synthesis"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/DatasetType_OtherFieldResults",
@@ -2327,29 +2350,6 @@
     "attributes" : [ "intersection" ],
     "id" : "106",
     "superClasses" : [ "3" ]
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/TemporalInterval",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "instances" : 0,
-    "annotations" : {
-      "exactMatch" : [ {
-        "identifier" : "exactMatch",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/2006/time#Interval",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "TemporalInterval",
-      "undefined" : "Temporal Interval"
-    },
-    "intersection" : [ "147" ],
-    "comment" : {
-      "undefined" : "A time period with a beginning and an end, used to describe dataset temporal coverage."
-    },
-    "attributes" : [ "intersection" ],
-    "id" : "146",
-    "superClasses" : [ "147" ]
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/Collection",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -2595,7 +2595,7 @@
   }, {
     "instances" : 0,
     "union" : [ "175", "154", "177" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "432"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -2706,7 +2706,7 @@
   }, {
     "instances" : 0,
     "union" : [ "301", "142" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "442"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp",
@@ -2718,22 +2718,22 @@
   }, {
     "instances" : 0,
     "union" : [ "154", "301", "177", "127" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "366"
   }, {
     "instances" : 0,
     "union" : [ "154", "301", "177" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "186"
   }, {
     "instances" : 0,
     "union" : [ "63", "77" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "113"
   }, {
     "instances" : 0,
     "union" : [ "86", "146" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "443"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
@@ -2835,12 +2835,12 @@
       "closeMatch" : [ {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit",
+        "value" : "http://purl.obolibrary.org/obo/UO_0000000",
         "type" : "iri"
       }, {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "http://purl.obolibrary.org/obo/UO_0000000",
+        "value" : "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit",
         "type" : "iri"
       } ]
     },
@@ -2869,18 +2869,18 @@
         "undefined" : "Resource Relation Group: Dataset Citation"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_Publication",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ResourceRelationGroup_Publication",
-        "undefined" : "Resource Relation Group: Publication"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetVersion",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "ResourceRelationGroup_DatasetVersion",
         "undefined" : "Resource Relation Group: Dataset Version"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_Publication",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ResourceRelationGroup_Publication",
+        "undefined" : "Resource Relation Group: Publication"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetAggregation",
@@ -2976,18 +2976,18 @@
         "undefined" : "Platform Type: Dock"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/PlatformType_Glider",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "PlatformType_Glider",
-        "undefined" : "Platform Type: Glider"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/PlatformType_Mooring",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "PlatformType_Mooring",
         "undefined" : "Platform Type: Mooring"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/PlatformType_Glider",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "PlatformType_Glider",
+        "undefined" : "Platform Type: Glider"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/PlatformType_Vessel",
@@ -3165,12 +3165,12 @@
   }, {
     "instances" : 0,
     "union" : [ "175", "301", "177" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "464"
   }, {
     "instances" : 0,
     "union" : [ "407", "30" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "467"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -3262,16 +3262,16 @@
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
     "annotations" : {
-      "exactMatch" : [ {
-        "identifier" : "exactMatch",
-        "language" : "undefined",
-        "value" : "https://schema.org/URL",
-        "type" : "iri"
-      } ],
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
         "value" : "https://schema.bco-dmo.org/v1.0/Datatype_URL",
+        "type" : "iri"
+      } ],
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/URL",
         "type" : "iri"
       } ]
     },
@@ -3287,7 +3287,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "360",
+    "id" : "359",
     "label" : {
       "IRI-based" : "string"
     }
@@ -3613,18 +3613,18 @@
       "undefined" : "SoftwareService"
     },
     "individuals" : [ {
-      "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_ERDDAP_TSV",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "SoftwareService_BCODMO_ERDDAP_TSV",
-        "undefined" : "Software Service: BCO-DMO ERDDAP (TSV)"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_ERDDAP_CSV",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "SoftwareService_BCODMO_ERDDAP_CSV",
         "undefined" : "Software Service: BCO-DMO ERDDAP (CSV)"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_ERDDAP_TSV",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "SoftwareService_BCODMO_ERDDAP_TSV",
+        "undefined" : "Software Service: BCO-DMO ERDDAP (TSV)"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_ERDDAP_NetCDF",
@@ -3676,18 +3676,18 @@
         "undefined" : "Software Service: BCO-DMO ERDDAP (GeoJSON)"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_DataViewer_Dataset_ID",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "SoftwareService_BCODMO_DataViewer_Dataset_ID",
-        "undefined" : "Software Service: BCO-DMO Data Viewer (Dataset ID)"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_Dataset_ISO_1911502_NOAA_Profile",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "SoftwareService_BCODMO_Dataset_ISO_1911502_NOAA_Profile",
         "undefined" : "Software Service: BCO-DMO Dataset ISO 19115-2 (NOAA Profile)"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/SoftwareService_BCODMO_DataViewer_Dataset_ID",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "SoftwareService_BCODMO_DataViewer_Dataset_ID",
+        "undefined" : "Software Service: BCO-DMO Data Viewer (Dataset ID)"
       }
     } ],
     "intersection" : [ "225" ],
@@ -3805,7 +3805,7 @@
       "IRI-based" : "Category",
       "undefined" : "Category"
     },
-    "subClasses" : [ "92", "94", "97", "100", "67", "106", "69", "74", "79", "2", "6", "9", "12", "19", "26", "29", "198", "57", "331" ],
+    "subClasses" : [ "92", "94", "97", "100", "65", "106", "69", "74", "79", "2", "6", "9", "12", "19", "26", "29", "198", "57", "331" ],
     "comment" : {
       "undefined" : "A set of taxonomy"
     },
@@ -4074,13 +4074,6 @@
         "undefined" : "ResourceRelation: DataCite - HasPart"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ResourceRelation_IsSupplementTo",
-        "undefined" : "Resource Relation: Is Supplement To"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsDataBasisFor",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
@@ -4093,6 +4086,13 @@
       "labels" : {
         "IRI-based" : "ResourceRelation_DataCite_IsSupplementTo",
         "undefined" : "ResourceRelation: DataCite - IsSupplementTo"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementTo",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ResourceRelation_IsSupplementTo",
+        "undefined" : "Resource Relation: Is Supplement To"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsVersionOf",
@@ -4131,18 +4131,18 @@
         "undefined" : "ResourceRelation: Crossref - references"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsContinuedBy",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ResourceRelation_IsContinuedBy",
-        "undefined" : "Resource Relation: Is Continued By"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsSupplementedBy",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "ResourceRelation_Crossref_IsSupplementedBy",
         "undefined" : "ResourceRelation: Crossref - isSupplementedBy"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsContinuedBy",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ResourceRelation_IsContinuedBy",
+        "undefined" : "Resource Relation: Is Continued By"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy",
@@ -4166,18 +4166,18 @@
         "undefined" : "Resource Relation: Methods Publication"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Software",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ResourceRelation_Software",
-        "undefined" : "Resource Relation: Software"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsRelatedTo",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "ResourceRelation_IsRelatedTo",
         "undefined" : "Resource Relation: Is Related To"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Software",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ResourceRelation_Software",
+        "undefined" : "Resource Relation: Software"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_CollectionLevelDataDOI",
@@ -4237,18 +4237,18 @@
         "undefined" : "ResourceRelation: Crossref - hasPart"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ResourceRelation_DataCite_IsObsoletedBy",
-        "undefined" : "ResourceRelation: DataCite - IsObsoletedBy"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_Replaces",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "ResourceRelation_Crossref_Replaces",
         "undefined" : "ResourceRelation: Crossref - replaces"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsObsoletedBy",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ResourceRelation_DataCite_IsObsoletedBy",
+        "undefined" : "ResourceRelation: DataCite - IsObsoletedBy"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_NewVersion",
@@ -4342,7 +4342,7 @@
       "undefined" : "Natural languages such as Spanish, Tamil, Hindi, English, etc."
     },
     "id" : "318",
-    "superClasses" : [ "67" ]
+    "superClasses" : [ "65" ]
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/Event",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -4391,13 +4391,6 @@
         "undefined" : "Action: View"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Action_Use",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "Action_Use",
-        "undefined" : "Action: Use"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Action_Download",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "annotations" : {
@@ -4411,6 +4404,13 @@
       "labels" : {
         "IRI-based" : "Action_Download",
         "undefined" : "Action: Download"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/Action_Use",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "Action_Use",
+        "undefined" : "Action: Use"
       }
     } ],
     "comment" : {
@@ -4541,11 +4541,11 @@
       "IRI-based" : "Language",
       "undefined" : "Language"
     },
-    "subClasses" : [ "318", "66" ],
+    "subClasses" : [ "318", "64" ],
     "comment" : {
       "undefined" : "A natural language used in the dataset metadata."
     },
-    "id" : "67",
+    "id" : "65",
     "superClasses" : [ "3" ]
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/WebPage",
@@ -4628,69 +4628,6 @@
     "id" : "97",
     "superClasses" : [ "3" ]
   }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "ControlledVocabulary",
-      "undefined" : "ControlledVocabulary"
-    },
-    "individuals" : [ {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Instruments",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_BCODMO_Instruments",
-        "undefined" : "Controlled Vocabulary: BCO-DMO Instruments"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode",
-        "undefined" : "ControlledVocabulary: NODC ISO19115-2 MD_TopicCategoryCode"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Parameters",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_BCODMO_Parameters",
-        "undefined" : "Controlled Vocabulary: BCO-DMO Parameters"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_GCMDPlatformTypes",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_GCMDPlatformTypes",
-        "undefined" : "Controlled Vocabulary: GCMD Platform Types"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BODCParameterUsageVocabulary",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_BODCParameterUsageVocabulary",
-        "undefined" : "Controlled Vocabulary: BODC Parameter Usage Vocabulary"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary",
-        "undefined" : "Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetDeviceCategories",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "ControlledVocabulary_SeaDataNetDeviceCategories",
-        "undefined" : "Controlled Vocabulary: SeaDataNet device Categories"
-      }
-    } ],
-    "comment" : {
-      "undefined" : "A vocabulary of terms or phrases used to describe concepts in a specific domain"
-    },
-    "id" : "220",
-    "superClasses" : [ "115" ]
-  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/NODCTopic",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
@@ -4764,6 +4701,69 @@
     "id" : "62",
     "superClasses" : [ "57" ]
   }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ControlledVocabulary",
+      "undefined" : "ControlledVocabulary"
+    },
+    "individuals" : [ {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Instruments",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_BCODMO_Instruments",
+        "undefined" : "Controlled Vocabulary: BCO-DMO Instruments"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode",
+        "undefined" : "ControlledVocabulary: NODC ISO19115-2 MD_TopicCategoryCode"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BCODMO_Parameters",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_BCODMO_Parameters",
+        "undefined" : "Controlled Vocabulary: BCO-DMO Parameters"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_GCMDPlatformTypes",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_GCMDPlatformTypes",
+        "undefined" : "Controlled Vocabulary: GCMD Platform Types"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_BODCParameterUsageVocabulary",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_BODCParameterUsageVocabulary",
+        "undefined" : "Controlled Vocabulary: BODC Parameter Usage Vocabulary"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary",
+        "undefined" : "Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetDeviceCategories",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "ControlledVocabulary_SeaDataNetDeviceCategories",
+        "undefined" : "Controlled Vocabulary: SeaDataNet device Categories"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A vocabulary of terms or phrases used to describe concepts in a specific domain"
+    },
+    "id" : "220",
+    "superClasses" : [ "115" ]
+  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/Action",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
@@ -4831,18 +4831,18 @@
       "undefined" : "DeploymentActivity"
     },
     "individuals" : [ {
-      "iri" : "https://schema.bco-dmo.org/v1.0/DeploymentActivity_Turnaround",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "DeploymentActivity_Turnaround",
-        "undefined" : "Deployment Activity: Turnaround"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/DeploymentActivity_Deploy",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
         "IRI-based" : "DeploymentActivity_Deploy",
         "undefined" : "Deployment Activity: Deploy"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/DeploymentActivity_Turnaround",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "DeploymentActivity_Turnaround",
+        "undefined" : "Deployment Activity: Turnaround"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/DeploymentActivity_Recovery",
@@ -4926,13 +4926,6 @@
         "undefined" : "GCMD Platform Type: Models/Analyses"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_Aircraft",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "GCMDPlatformType_Aircraft",
-        "undefined" : "GCMD Platform Type: Aircraft"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_BalloonsAndRockets",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
@@ -4945,6 +4938,13 @@
       "labels" : {
         "IRI-based" : "GCMDPlatformType_SolarSpaceObservationSatellites",
         "undefined" : "GCMD Platform Type: Solar/Space Observation Satellites"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_Aircraft",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "GCMDPlatformType_Aircraft",
+        "undefined" : "GCMD Platform Type: Aircraft"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_EarthObservationSatellites",
@@ -4961,6 +4961,13 @@
         "undefined" : "GCMD Platform Type: Interplanetary Spacecraft"
       }
     }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_MapsChartsPhotographs",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "labels" : {
+        "IRI-based" : "GCMDPlatformType_MapsChartsPhotographs",
+        "undefined" : "GCMD Platform Type: Maps/Charts/Photographs"
+      }
+    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_InSituOceanBasedPlatforms",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "labels" : {
@@ -4973,13 +4980,6 @@
       "labels" : {
         "IRI-based" : "GCMDPlatformType_SpaceStationsMannedSpacecraft",
         "undefined" : "GCMD Platform Type: Space Stations/Manned Spacecraft"
-      }
-    }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_MapsChartsPhotographs",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "labels" : {
-        "IRI-based" : "GCMDPlatformType_MapsChartsPhotographs",
-        "undefined" : "GCMD Platform Type: Maps/Charts/Photographs"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/GCMDPlatformType_NavigationalPlatforms",
@@ -5007,17 +5007,17 @@
       }, {
         "identifier" : "relatedMatch",
         "language" : "undefined",
-        "value" : "https://schema.org/EntryPoint",
-        "type" : "iri"
-      }, {
-        "identifier" : "relatedMatch",
-        "language" : "undefined",
         "value" : "https://schema.org/DataDownload",
         "type" : "iri"
       }, {
         "identifier" : "relatedMatch",
         "language" : "undefined",
         "value" : "https://schema.org/WebAPI",
+        "type" : "iri"
+      }, {
+        "identifier" : "relatedMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/EntryPoint",
         "type" : "iri"
       } ]
     },
@@ -5081,16 +5081,16 @@
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
     "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://schema.bco-dmo.org/v1.0/Datatype_Boolean",
-        "type" : "iri"
-      } ],
       "exactMatch" : [ {
         "identifier" : "exactMatch",
         "language" : "undefined",
         "value" : "https://schema.org/Boolean",
+        "type" : "iri"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://schema.bco-dmo.org/v1.0/Datatype_Boolean",
         "type" : "iri"
       } ]
     },
@@ -5208,21 +5208,6 @@
         "undefined" : "Action: Question"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/Action_Assess",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "annotations" : {
-        "closeMatch" : [ {
-          "identifier" : "closeMatch",
-          "language" : "undefined",
-          "value" : "http://www.w3.org/ns/oa#assessing",
-          "type" : "iri"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "Action_Assess",
-        "undefined" : "Action: Assess"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/Action_Rationalize",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "annotations" : {
@@ -5236,6 +5221,21 @@
       "labels" : {
         "IRI-based" : "Action_Rationalize",
         "undefined" : "Action: Rationalize"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/Action_Assess",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://www.w3.org/ns/oa#assessing",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Action_Assess",
+        "undefined" : "Action: Assess"
       }
     } ],
     "comment" : {
@@ -5331,6 +5331,21 @@
     "id" : "115",
     "superClasses" : [ "34" ]
   }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/RelatedPublication",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RelatedPublication",
+      "undefined" : "RelatedPublication"
+    },
+    "intersection" : [ "81" ],
+    "comment" : {
+      "undefined" : "A Publication connected to another CreativeWork through some ResourceRelation"
+    },
+    "attributes" : [ "intersection" ],
+    "id" : "260",
+    "superClasses" : [ "81" ]
+  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "instances" : 0,
@@ -5349,16 +5364,6 @@
         "undefined" : "Current State: Dataset - Data Not Available"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-PreliminaryAndInProgress",
-      "baseIri" : "https://schema.bco-dmo.org/v1.0",
-      "comment" : {
-        "undefined" : "The Dataset is preliminary and in progress"
-      },
-      "labels" : {
-        "IRI-based" : "CurrentState_Dataset-PreliminaryAndInProgress",
-        "undefined" : "Current State: Dataset - Preliminary and in progress"
-      }
-    }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-FinalNoUpdatesExpected",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "comment" : {
@@ -5369,14 +5374,14 @@
         "undefined" : "Current State: Dataset - Final no updates expected"
       }
     }, {
-      "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-FinalWithUpdatesExpected",
+      "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-PreliminaryAndInProgress",
       "baseIri" : "https://schema.bco-dmo.org/v1.0",
       "comment" : {
-        "undefined" : "The Dataset is final with updates expected"
+        "undefined" : "The Dataset is preliminary and in progress"
       },
       "labels" : {
-        "IRI-based" : "CurrentState_Dataset-FinalWithUpdatesExpected",
-        "undefined" : "Current State: Dataset - Final with updates expected"
+        "IRI-based" : "CurrentState_Dataset-PreliminaryAndInProgress",
+        "undefined" : "Current State: Dataset - Preliminary and in progress"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-Deprecated",
@@ -5387,6 +5392,16 @@
       "labels" : {
         "IRI-based" : "CurrentState_Dataset-Deprecated",
         "undefined" : "Current State: Dataset - Deprecated"
+      }
+    }, {
+      "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-FinalWithUpdatesExpected",
+      "baseIri" : "https://schema.bco-dmo.org/v1.0",
+      "comment" : {
+        "undefined" : "The Dataset is final with updates expected"
+      },
+      "labels" : {
+        "IRI-based" : "CurrentState_Dataset-FinalWithUpdatesExpected",
+        "undefined" : "Current State: Dataset - Final with updates expected"
       }
     }, {
       "iri" : "https://schema.bco-dmo.org/v1.0/CurrentState_Dataset-UnderRevision",
@@ -5404,21 +5419,6 @@
     },
     "id" : "79",
     "superClasses" : [ "3" ]
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/RelatedPublication",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "RelatedPublication",
-      "undefined" : "RelatedPublication"
-    },
-    "intersection" : [ "81" ],
-    "comment" : {
-      "undefined" : "A Publication connected to another CreativeWork through some ResourceRelation"
-    },
-    "attributes" : [ "intersection" ],
-    "id" : "260",
-    "superClasses" : [ "81" ]
   } ],
   "property" : [ {
     "id" : "1",
@@ -5460,7 +5460,7 @@
     "id" : "49",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "64",
+    "id" : "66",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "68",
@@ -5511,10 +5511,10 @@
     "id" : "110",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "112",
+    "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "38",
+    "id" : "112",
     "type" : "owl:objectProperty"
   }, {
     "id" : "114",
@@ -5901,7 +5901,7 @@
     "id" : "358",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "359",
+    "id" : "360",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "361",
@@ -6075,11 +6075,11 @@
     "id" : "456",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "459",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "211",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "459",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "465",
     "type" : "owl:objectProperty"
@@ -6183,10 +6183,10 @@
     "id" : "504",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "409",
+    "id" : "335",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "335",
+    "id" : "409",
     "type" : "owl:objectProperty"
   }, {
     "id" : "505",
@@ -6216,11 +6216,11 @@
     "id" : "512",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "513",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "315",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "513",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "514",
     "type" : "owl:datatypeProperty"
@@ -6246,11 +6246,11 @@
     "id" : "521",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "522",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "427",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "522",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "53",
     "type" : "owl:objectProperty"
@@ -6450,19 +6450,19 @@
     "id" : "584",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "585",
+    "id" : "428",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "428",
+    "id" : "585",
     "type" : "owl:objectProperty"
   }, {
     "id" : "586",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "210",
+    "id" : "587",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "587",
+    "id" : "210",
     "type" : "owl:objectProperty"
   }, {
     "id" : "588",
@@ -6558,22 +6558,22 @@
   "propertyAttribute" : [ {
     "range" : "3",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "1"
   }, {
     "range" : "3",
     "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "5"
   }, {
     "range" : "3",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "8"
   }, {
     "range" : "3",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "11"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/asGeoJSON",
@@ -6595,12 +6595,12 @@
     "comment" : {
       "undefined" : "A description of a geometry as GeoJSON"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "13"
   }, {
     "range" : "3",
     "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "18"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/checksum",
@@ -6620,12 +6620,12 @@
   }, {
     "range" : "3",
     "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "25"
   }, {
     "range" : "3",
     "domain" : "29",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "28"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasComment",
@@ -6677,7 +6677,7 @@
     "comment" : {
       "undefined" : "A resolvable URL that dereferences the identifier."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "46"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -6688,12 +6688,12 @@
     },
     "domain" : "50",
     "subproperty" : [ "51", "52", "53", "54", "55", "56" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "49"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/inverseSymmetricalRelationship",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "65",
+    "range" : "67",
     "label" : {
       "IRI-based" : "inverseSymmetricalRelationship",
       "undefined" : "inverseSymmetricalRelationship"
@@ -6702,12 +6702,12 @@
     "comment" : {
       "undefined" : "Is the relationship symmetrical?"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "64"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "66"
   }, {
     "range" : "3",
     "domain" : "69",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "68"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/programManager",
@@ -6722,22 +6722,22 @@
     "comment" : {
       "undefined" : "The program manager at the funding agency responsible for this award."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "56"
   }, {
     "range" : "3",
     "domain" : "74",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "73"
   }, {
     "range" : "3",
     "domain" : "79",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "78"
   }, {
     "range" : "84",
     "domain" : "83",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "82"
   }, {
     "iri" : "http://www.w3.org/2006/time#inXSDgYearMonth",
@@ -6748,32 +6748,32 @@
       "undefined" : "time:inXSDgYearMonth"
     },
     "domain" : "86",
-    "attributes" : [ "functional", "external", "datatype" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "85"
   }, {
     "range" : "84",
     "domain" : "71",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "89"
   }, {
     "range" : "3",
     "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "91"
   }, {
     "range" : "3",
     "domain" : "94",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "93"
   }, {
     "range" : "3",
     "domain" : "97",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "96"
   }, {
     "range" : "3",
     "domain" : "100",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "99"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -6783,17 +6783,17 @@
       "IRI-based" : "subject"
     },
     "domain" : "50",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "101"
   }, {
     "range" : "3",
-    "domain" : "67",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "103"
   }, {
     "range" : "3",
     "domain" : "106",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "105"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/familyName",
@@ -6815,7 +6815,7 @@
     "comment" : {
       "undefined" : "The family (last) name of a person."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "108"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/label",
@@ -6838,30 +6838,8 @@
     "comment" : {
       "undefined" : "A human-readable label for any BCO-DMO resource."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "110"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/units",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "60",
-    "annotations" : {
-      "relatedMatch" : [ {
-        "identifier" : "relatedMatch",
-        "language" : "undefined",
-        "value" : "https://schema.org/unitCode",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "units",
-      "undefined" : "units"
-    },
-    "domain" : "113",
-    "comment" : {
-      "undefined" : "The unit of measure for a dataset parameter."
-    },
-    "attributes" : [ "functional", "object" ],
-    "id" : "112"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -6886,6 +6864,28 @@
     "attributes" : [ "object" ],
     "id" : "38"
   }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/units",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "60",
+    "annotations" : {
+      "relatedMatch" : [ {
+        "identifier" : "relatedMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/unitCode",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "units",
+      "undefined" : "units"
+    },
+    "domain" : "113",
+    "comment" : {
+      "undefined" : "The unit of measure for a dataset parameter."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "112"
+  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/provider",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "range" : "84",
@@ -6903,7 +6903,7 @@
     },
     "domain" : "115",
     "comment" : {
-      "undefined" : "The service provider that hosts/distributes the resource."
+      "undefined" : "The provider of some CreativeWork"
     },
     "attributes" : [ "object" ],
     "id" : "114"
@@ -6937,57 +6937,57 @@
   }, {
     "range" : "31",
     "domain" : "77",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "118"
   }, {
     "range" : "84",
     "domain" : "121",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "120"
   }, {
     "range" : "31",
     "domain" : "123",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "122"
   }, {
     "range" : "31",
     "domain" : "125",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "124"
   }, {
     "range" : "31",
     "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "126"
   }, {
     "range" : "31",
     "domain" : "129",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "128"
   }, {
     "range" : "31",
     "domain" : "132",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "131"
   }, {
     "range" : "31",
     "domain" : "134",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "133"
   }, {
     "range" : "31",
     "domain" : "81",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "140"
   }, {
     "range" : "31",
     "domain" : "142",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "141"
   }, {
     "range" : "31",
     "domain" : "144",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "143"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasEnd",
@@ -7009,7 +7009,7 @@
     "comment" : {
       "undefined" : "The end of a temporal interval."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "145"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/performedBy",
@@ -7025,7 +7025,7 @@
     "comment" : {
       "undefined" : "The person who performed or holds this role."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "149"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasDeployment",
@@ -7054,47 +7054,47 @@
     "comment" : {
       "undefined" : "Whether to allow a tabular file to be viewed in the table data viewer"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "155"
   }, {
     "range" : "31",
     "domain" : "158",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "157"
   }, {
     "range" : "14",
     "domain" : "160",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "159"
   }, {
     "range" : "14",
     "domain" : "43",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "161"
   }, {
     "range" : "164",
     "domain" : "163",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "162"
   }, {
     "range" : "164",
     "domain" : "166",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "165"
   }, {
     "range" : "6",
     "domain" : "168",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "167"
   }, {
     "range" : "6",
     "domain" : "116",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "169"
   }, {
     "range" : "6",
     "domain" : "171",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "170"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/creativeWorkStatus",
@@ -7122,7 +7122,7 @@
   }, {
     "range" : "31",
     "domain" : "175",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "174"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/forDataset",
@@ -7137,12 +7137,12 @@
     "comment" : {
       "undefined" : "Links to a dataset."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "176"
   }, {
     "range" : "31",
     "domain" : "76",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "179"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/bytesize",
@@ -7164,12 +7164,12 @@
     "comment" : {
       "undefined" : "The size of the file in bytes."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "180"
   }, {
     "range" : "31",
     "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "182"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/inCollection",
@@ -7184,7 +7184,7 @@
     "comment" : {
       "undefined" : "The collection to which this item belongs"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "183"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/spatialExtent",
@@ -7220,7 +7220,7 @@
     "comment" : {
       "undefined" : "Has the dataset been validated by the PI."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "188"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/describesFile",
@@ -7234,7 +7234,7 @@
     "comment" : {
       "undefined" : "Links a file record to the File object describing its physical properties."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "190"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/modifiesAction",
@@ -7258,7 +7258,7 @@
       "IRI-based" : "topDataProperty"
     },
     "domain" : "50",
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "192"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasProject",
@@ -7310,7 +7310,7 @@
     "comment" : {
       "undefined" : "The institutional affiliation at which the role was performed."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "199"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasAward",
@@ -7330,7 +7330,7 @@
   }, {
     "range" : "57",
     "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "201"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/obsoletes",
@@ -7346,22 +7346,22 @@
     "comment" : {
       "undefined" : "A previous version of this dataset that is superseded by the current one."
     },
-    "attributes" : [ "asymmetric", "object", "irreflexive" ],
+    "attributes" : [ "object", "asymmetric", "irreflexive" ],
     "id" : "51"
   }, {
     "range" : "57",
     "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "204"
   }, {
     "range" : "57",
     "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "205"
   }, {
     "range" : "57",
     "domain" : "63",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "206"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/identifier",
@@ -7407,7 +7407,7 @@
     "comment" : {
       "undefined" : "The current DOI lifecycle status of the dataset package."
     },
-    "attributes" : [ "deprecated", "object" ],
+    "attributes" : [ "object", "deprecated" ],
     "id" : "173"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isDefinedAs",
@@ -7437,7 +7437,7 @@
     "comment" : {
       "undefined" : "the publishing status of some BCO-DMO Entity"
     },
-    "attributes" : [ "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "irreflexive", "functional" ],
     "id" : "213"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/annotates",
@@ -7452,7 +7452,7 @@
     "comment" : {
       "undefined" : "The thing being annotated"
     },
-    "attributes" : [ "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "irreflexive", "functional" ],
     "id" : "214"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/supplementalDocument",
@@ -7493,32 +7493,32 @@
   }, {
     "range" : "115",
     "domain" : "220",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "219"
   }, {
     "range" : "115",
     "domain" : "222",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "221"
   }, {
     "range" : "115",
     "domain" : "225",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "224"
   }, {
     "range" : "115",
     "domain" : "228",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "227"
   }, {
     "range" : "43",
     "domain" : "44",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "229"
   }, {
     "range" : "57",
     "domain" : "58",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "230"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -7528,12 +7528,12 @@
       "IRI-based" : "object"
     },
     "domain" : "50",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "231"
   }, {
     "range" : "57",
     "domain" : "59",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "232"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/datasetType",
@@ -7552,12 +7552,12 @@
   }, {
     "range" : "115",
     "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "235"
   }, {
     "range" : "115",
     "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "237"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/asWKT",
@@ -7579,12 +7579,12 @@
     "comment" : {
       "undefined" : "A description of a geometry as WKT (Well-Known Text)"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "238"
   }, {
     "range" : "115",
     "domain" : "164",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "241"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/role",
@@ -7604,7 +7604,7 @@
   }, {
     "range" : "115",
     "domain" : "184",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "243"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/nickname",
@@ -7645,13 +7645,21 @@
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/noDatasetParametersComment",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "50",
+    "range" : "35",
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected",
+        "type" : "iri"
+      } ]
+    },
     "label" : {
       "IRI-based" : "noDatasetParametersComment",
       "undefined" : "noDatasetParametersComment"
     },
     "superproperty" : [ "33" ],
-    "domain" : "50",
+    "domain" : "177",
     "comment" : {
       "undefined" : "A Comment explaining why a Dataset has no Parameters."
     },
@@ -7675,47 +7683,47 @@
   }, {
     "range" : "81",
     "domain" : "257",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "256"
   }, {
     "range" : "81",
     "domain" : "260",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "259"
   }, {
     "range" : "115",
     "domain" : "130",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "262"
   }, {
     "range" : "115",
     "domain" : "41",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "264"
   }, {
     "range" : "115",
     "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "266"
   }, {
     "range" : "115",
     "domain" : "135",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "267"
   }, {
     "range" : "47",
     "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "269"
   }, {
     "range" : "47",
     "domain" : "271",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "270"
   }, {
     "range" : "47",
     "domain" : "212",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "273"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/orcidIdentifier",
@@ -7730,17 +7738,17 @@
     "comment" : {
       "undefined" : "The ORCID Identifier for some person"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "207"
   }, {
     "range" : "47",
     "domain" : "276",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "275"
   }, {
     "range" : "47",
     "domain" : "279",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "278"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/relatedAward",
@@ -7782,7 +7790,7 @@
     "comment" : {
       "undefined" : "The inverse relationship to another relationship type"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "284"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/publishedDate",
@@ -7804,7 +7812,7 @@
     "comment" : {
       "undefined" : "The date on which this dataset version was published."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "285"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/urlTemplate",
@@ -7826,37 +7834,37 @@
     "comment" : {
       "undefined" : "An url template (RFC6570) that will be used to construct the target of the execution of the action."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "287"
   }, {
-    "range" : "67",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "65",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "288"
   }, {
     "range" : "97",
     "domain" : "290",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "289"
   }, {
     "range" : "94",
     "domain" : "293",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "292"
   }, {
     "range" : "94",
     "domain" : "296",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "295"
   }, {
     "range" : "225",
     "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "298"
   }, {
     "range" : "132",
     "domain" : "301",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "300"
   }, {
     "iri" : "http://www.w3.org/2006/time#inXSDDateTimeStamp",
@@ -7867,27 +7875,27 @@
       "undefined" : "time:inXSDDateTimeStamp"
     },
     "domain" : "86",
-    "attributes" : [ "functional", "external", "datatype" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "302"
   }, {
     "range" : "132",
     "domain" : "153",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "305"
   }, {
     "range" : "187",
     "domain" : "308",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "307"
   }, {
     "range" : "301",
     "domain" : "196",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "310"
   }, {
     "range" : "301",
     "domain" : "313",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "312"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/boundingBox",
@@ -7905,9 +7913,9 @@
     "attributes" : [ "object" ],
     "id" : "314"
   }, {
-    "range" : "67",
+    "range" : "65",
     "domain" : "318",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "317"
   }, {
     "iri" : "http://www.w3.org/2006/time#inXSDDate",
@@ -7918,7 +7926,7 @@
       "undefined" : "time:inXSDDate"
     },
     "domain" : "86",
-    "attributes" : [ "functional", "external", "datatype" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "322"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasReportURL",
@@ -7932,27 +7940,27 @@
     "comment" : {
       "undefined" : "A URL linking to the cruise/deployment report."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "324"
   }, {
     "range" : "3",
     "domain" : "198",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "326"
   }, {
     "range" : "3",
     "domain" : "57",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "328"
   }, {
     "range" : "3",
     "domain" : "331",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "330"
   }, {
     "range" : "132",
     "domain" : "154",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "333"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/releaseDate",
@@ -7975,12 +7983,12 @@
     "comment" : {
       "undefined" : "The date on which an embargo releases and the dataset becomes publicly accessible."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "334"
   }, {
-    "range" : "249",
+    "range" : "147",
     "domain" : "47",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "336"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/currentState",
@@ -7994,7 +8002,7 @@
     "comment" : {
       "undefined" : "The editorial/curation state of the dataset."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "339"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/shortDescription",
@@ -8016,7 +8024,7 @@
     "comment" : {
       "undefined" : "A brief HTML description of the dataset or parameter"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "340"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/fundedByAward",
@@ -8041,54 +8049,54 @@
     "attributes" : [ "object" ],
     "id" : "341"
   }, {
-    "range" : "147",
+    "range" : "249",
     "domain" : "47",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "342"
   }, {
-    "range" : "245",
+    "range" : "31",
     "domain" : "47",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "343"
+  }, {
+    "range" : "47",
+    "domain" : "115",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "344"
   }, {
     "range" : "249",
     "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "344"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "345"
   }, {
     "range" : "245",
     "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "345"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "346"
+  }, {
+    "range" : "31",
+    "domain" : "115",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "347"
+  }, {
+    "range" : "147",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "348"
+  }, {
+    "range" : "115",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "349"
   }, {
     "range" : "147",
     "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "346"
-  }, {
-    "range" : "47",
-    "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "347"
-  }, {
-    "range" : "47",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "348"
-  }, {
-    "range" : "31",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "349"
-  }, {
-    "range" : "31",
-    "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "350"
   }, {
     "range" : "318",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "351"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/offeredBy",
@@ -8125,7 +8133,7 @@
     "comment" : {
       "undefined" : "Links a deployment and a dataset."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "353"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/inControlledVocabulary",
@@ -8162,8 +8170,30 @@
     "comment" : {
       "undefined" : "the spatial reference system for some representation of a Geographical Location"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "356"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/content",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "359",
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/text",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "content",
+      "undefined" : "content"
+    },
+    "domain" : "115",
+    "comment" : {
+      "undefined" : "The intellectual content for some CreativeWork"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "358"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/officialName",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -8184,30 +8214,8 @@
     "comment" : {
       "undefined" : "The official name for a master parameter."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "358"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/content",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "360",
-    "annotations" : {
-      "exactMatch" : [ {
-        "identifier" : "exactMatch",
-        "language" : "undefined",
-        "value" : "https://schema.org/text",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "content",
-      "undefined" : "content"
-    },
-    "domain" : "115",
-    "comment" : {
-      "undefined" : "The intellectual content for some CreativeWork"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "359"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "360"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasCollection",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -8235,7 +8243,7 @@
     "comment" : {
       "undefined" : "A description of data management and processing applied by BCO-DMO."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "363"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/temporalExtent",
@@ -8258,47 +8266,47 @@
     "comment" : {
       "undefined" : "The temporal coverage of an agent role, dataset, deployment or research activity."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "365"
   }, {
-    "range" : "147",
+    "range" : "249",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "367"
   }, {
-    "range" : "115",
+    "range" : "47",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "368"
   }, {
     "range" : "245",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "370"
   }, {
-    "range" : "147",
+    "range" : "115",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "371"
-  }, {
-    "range" : "3",
-    "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "372"
-  }, {
-    "range" : "249",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "373"
   }, {
     "range" : "31",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "372"
+  }, {
+    "range" : "31",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "373"
+  }, {
+    "range" : "3",
+    "domain" : "70",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "374"
   }, {
-    "range" : "245",
+    "range" : "249",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "375"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/awardProducingData",
@@ -8312,12 +8320,12 @@
     "comment" : {
       "undefined" : "Is the award expected to produce data. This expectation typically comes from the funding agency or PI"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "376"
   }, {
-    "range" : "249",
+    "range" : "47",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "377"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/problemDescription",
@@ -8331,12 +8339,12 @@
     "comment" : {
       "undefined" : "A description of known problems or caveats with the dataset."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "378"
   }, {
-    "range" : "47",
+    "range" : "147",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "379"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/version",
@@ -8358,7 +8366,7 @@
     "comment" : {
       "undefined" : "The version label of the dataset (numeric or numeric + single lowercase letter)."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "380"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/dataManagementPlan",
@@ -8395,7 +8403,7 @@
     "comment" : {
       "undefined" : "The set of ordered coordinates forming a geometry (usually MultiPoint) representing the path taken by a Cruise."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "385"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/modifiedDate",
@@ -8417,7 +8425,7 @@
     "comment" : {
       "undefined" : "The date an Entity was last modified"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "387"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/dataType",
@@ -8431,7 +8439,7 @@
     "comment" : {
       "undefined" : "The data type of a dataset parameter."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "388"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasParameterAttribute",
@@ -8495,12 +8503,12 @@
     "comment" : {
       "undefined" : "The eastern longitude boundary of a bounding box (decimal degrees)."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "398"
   }, {
     "range" : "147",
     "domain" : "249",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "400"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/title",
@@ -8525,9 +8533,9 @@
     "attributes" : [ "datatype" ],
     "id" : "401"
   }, {
-    "range" : "147",
+    "range" : "249",
     "domain" : "31",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "402"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/longitude",
@@ -8541,7 +8549,7 @@
     "comment" : {
       "undefined" : "Longitude is the angular measure of a point's position around the secondary axis of a CRS, relative to an arbitrarily defined reference meridian."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "403"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/noAwardDataExpected",
@@ -8555,7 +8563,7 @@
     "comment" : {
       "undefined" : "Is the award expected to produce data. This expectation typically comes from the funding agency or PI"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "404"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/expectingPublication",
@@ -8569,7 +8577,7 @@
     "comment" : {
       "undefined" : "Is the publication expecting publication?"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "405"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/requiresConversion",
@@ -8583,7 +8591,7 @@
     "comment" : {
       "undefined" : "The values in the dataset for this property need to be converted."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "408"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/logo",
@@ -8632,49 +8640,49 @@
     "attributes" : [ "datatype" ],
     "id" : "410"
   }, {
-    "range" : "249",
+    "range" : "147",
     "domain" : "31",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "412"
   }, {
     "range" : "147",
     "domain" : "245",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "413"
   }, {
     "range" : "249",
     "domain" : "245",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "414"
   }, {
     "range" : "196",
     "domain" : "313",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "415"
   }, {
     "range" : "31",
     "domain" : "245",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "416"
   }, {
     "range" : "71",
     "domain" : "121",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "417"
   }, {
-    "range" : "31",
+    "range" : "245",
     "domain" : "47",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "418"
   }, {
     "range" : "83",
     "domain" : "71",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "419"
   }, {
     "range" : "83",
     "domain" : "121",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "420"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/roleWeight",
@@ -8688,18 +8696,26 @@
     "comment" : {
       "undefined" : "Sort ordering of role types"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "421"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "50",
+    "range" : "35",
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected",
+        "type" : "iri"
+      } ]
+    },
     "label" : {
       "IRI-based" : "noDatasetInstrumentsComment",
       "undefined" : "noDatasetInstrumentsComment"
     },
     "superproperty" : [ "33" ],
-    "domain" : "50",
+    "domain" : "177",
     "comment" : {
       "undefined" : "A Comment explaining why a Dataset has no Instruments."
     },
@@ -8717,7 +8733,7 @@
     "comment" : {
       "undefined" : "The format string used to encode parameter values in the data file."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "425"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/actionType",
@@ -8762,7 +8778,7 @@
     "comment" : {
       "undefined" : "The award that preceded this Award for continuing some work"
     },
-    "attributes" : [ "asymmetric", "object", "irreflexive" ],
+    "attributes" : [ "object", "asymmetric", "irreflexive" ],
     "id" : "433"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/archives",
@@ -8777,7 +8793,7 @@
     "comment" : {
       "undefined" : "The Dataset that was archvied by a specific DOIDataset."
     },
-    "attributes" : [ "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "irreflexive", "functional" ],
     "id" : "438"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/platformTitle",
@@ -8791,7 +8807,7 @@
     "comment" : {
       "undefined" : "The official or common title of the platform."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "440"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/target",
@@ -8851,7 +8867,7 @@
     "comment" : {
       "undefined" : "The temporal resolution of a temporal extent (e.g. time:unitDay)."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "451"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/createdDate",
@@ -8873,7 +8889,7 @@
     "comment" : {
       "undefined" : "The date on which a creative work was created."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "453"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasProgram",
@@ -8923,22 +8939,8 @@
     "comment" : {
       "undefined" : "An HTML description of data acquisition methods."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "456"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/postalCode",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "306",
-    "label" : {
-      "IRI-based" : "postalCode",
-      "undefined" : "postalCode"
-    },
-    "domain" : "308",
-    "comment" : {
-      "undefined" : "The postal code"
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "459"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isTypeOf",
     "equivalent" : [ "209" ],
@@ -8952,23 +8954,22 @@
     "comment" : {
       "undefined" : "Categorizes some thing."
     },
-    "attributes" : [ "deprecated", "object" ],
+    "attributes" : [ "object", "deprecated" ],
     "id" : "211"
   }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/annotator",
+    "iri" : "https://schema.bco-dmo.org/v1.0/postalCode",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "84",
+    "range" : "306",
     "label" : {
-      "IRI-based" : "annotator",
-      "undefined" : "annotator"
+      "IRI-based" : "postalCode",
+      "undefined" : "postalCode"
     },
-    "superproperty" : [ "151" ],
-    "domain" : "134",
+    "domain" : "308",
     "comment" : {
-      "undefined" : "An agent that adds explanatory notes, metadata, or comments to enhance understanding of some thing."
+      "undefined" : "The postal code"
     },
-    "attributes" : [ "functional", "object" ],
-    "id" : "465"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "459"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/projectActedOnWork",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -8983,6 +8984,21 @@
       "undefined" : "Defines the relationship between a Project and a Dataset."
     },
     "attributes" : [ "object" ],
+    "id" : "465"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/annotator",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "annotator",
+      "undefined" : "annotator"
+    },
+    "superproperty" : [ "151" ],
+    "domain" : "134",
+    "comment" : {
+      "undefined" : "An agent that adds explanatory notes, metadata, or comments to enhance understanding of some thing."
+    },
+    "attributes" : [ "object", "functional" ],
     "id" : "466"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/resolution",
@@ -9005,7 +9021,7 @@
     "comment" : {
       "undefined" : "The temporal resolution of a temporal extent (e.g. time:unitDay)."
     },
-    "attributes" : [ "deprecated", "functional", "object" ],
+    "attributes" : [ "object", "deprecated", "functional" ],
     "id" : "452"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/addressRegion",
@@ -9019,7 +9035,7 @@
     "comment" : {
       "undefined" : "The region in which the locality is, and which is in the country. For the US, this would be the name of the state, the province in Italy, or region in Germany."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "470"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasSynonym",
@@ -9076,7 +9092,7 @@
     "comment" : {
       "undefined" : "Email address"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "473"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/collectionItem",
@@ -9091,7 +9107,7 @@
     "comment" : {
       "undefined" : "The actual item in the collection."
     },
-    "attributes" : [ "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "irreflexive", "functional" ],
     "id" : "474"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/middleNameSynonyms",
@@ -9120,7 +9136,7 @@
     "comment" : {
       "undefined" : "The DOIDataset from the past that this DOIDataset fixes errors."
     },
-    "attributes" : [ "asymmetric", "object", "irreflexive" ],
+    "attributes" : [ "object", "asymmetric", "irreflexive" ],
     "id" : "203"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/onPlatform",
@@ -9135,7 +9151,7 @@
     "comment" : {
       "undefined" : "The platform (vessel, buoy, etc.) on which a deployment took place."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "479"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/fileType",
@@ -9216,7 +9232,7 @@
     "comment" : {
       "undefined" : "The middle name or initial of a person."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "485"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/description",
@@ -9238,7 +9254,7 @@
     "comment" : {
       "undefined" : "A description of a resource."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "486"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/issuedDate",
@@ -9260,7 +9276,7 @@
     "comment" : {
       "undefined" : "The date on which the DOI was issued for this dataset."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "487"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasLeadAwardOf",
@@ -9274,7 +9290,7 @@
     "comment" : {
       "undefined" : "The lead award in a group of collaborative awards"
     },
-    "attributes" : [ "asymmetric", "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "asymmetric", "irreflexive", "functional" ],
     "id" : "488"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isPrimary",
@@ -9288,7 +9304,7 @@
     "comment" : {
       "undefined" : "In a multi-valued set of Things, this one is the primary"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "489"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/expirationDate",
@@ -9311,7 +9327,7 @@
     "comment" : {
       "undefined" : "The date on which an embargo expires and the dataset becomes publicly accessible."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "490"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/listPosition",
@@ -9333,7 +9349,7 @@
     "comment" : {
       "undefined" : "A integer representing a position of some Thing in a list of things. Can be used to rank, sort and order a list of things."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "491"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/honorificSuffix",
@@ -9355,7 +9371,7 @@
     "comment" : {
       "undefined" : "An honorific suffix following a Person's name such as M.D./PhD/MSCSW."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "493"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/commonFileExtension",
@@ -9421,7 +9437,7 @@
     "comment" : {
       "undefined" : "The primary name of the affiliated institution."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "497"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/conformsTo",
@@ -9477,12 +9493,12 @@
       "closeMatch" : [ {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "https://schema.org/variableMeasured",
+        "value" : "http://www.w3.org/ns/sosa/observedProperty",
         "type" : "iri"
       }, {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/observedProperty",
+        "value" : "https://schema.org/variableMeasured",
         "type" : "iri"
       } ]
     },
@@ -9508,7 +9524,7 @@
     "comment" : {
       "undefined" : "The Award that preceded this Award because the PI changed institutions."
     },
-    "attributes" : [ "asymmetric", "object", "irreflexive" ],
+    "attributes" : [ "object", "asymmetric", "irreflexive" ],
     "id" : "501"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/performedRole",
@@ -9567,21 +9583,6 @@
     "attributes" : [ "object", "irreflexive" ],
     "id" : "504"
   }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/browseGraphic",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "337",
-    "label" : {
-      "IRI-based" : "browseGraphic",
-      "undefined" : "browseGraphic"
-    },
-    "domain" : "34",
-    "subproperty" : [ "255" ],
-    "comment" : {
-      "undefined" : "An image that is representative of some thing. This could be a logo for a project or organization. It could also be an image that represents a creative work."
-    },
-    "attributes" : [ "functional", "object" ],
-    "id" : "409"
-  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasTime",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "range" : "147",
@@ -9604,6 +9605,21 @@
     },
     "attributes" : [ "object" ],
     "id" : "335"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/browseGraphic",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "337",
+    "label" : {
+      "IRI-based" : "browseGraphic",
+      "undefined" : "browseGraphic"
+    },
+    "domain" : "34",
+    "subproperty" : [ "255" ],
+    "comment" : {
+      "undefined" : "An image that is representative of some thing. This could be a logo for a project or organization. It could also be an image that represents a creative work."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "409"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/inGroup",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -9631,7 +9647,7 @@
     "comment" : {
       "undefined" : "A way to mark an Entity as deprecated from use."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "506"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/spatialCenter",
@@ -9648,6 +9664,20 @@
     },
     "attributes" : [ "object" ],
     "id" : "507"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/latitude",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "latitude",
+      "undefined" : "latitude"
+    },
+    "domain" : "251",
+    "comment" : {
+      "undefined" : "Latitude is the angular measure of a point's position along the primary axis of a CRS, perpendicular to the reference surface's axis of symmetry."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "508"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/identifierValue",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -9668,21 +9698,7 @@
     "comment" : {
       "undefined" : "The raw identifier string value (e.g. the DOI suffix, the ROR ID)."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "508"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/latitude",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "72",
-    "label" : {
-      "IRI-based" : "latitude",
-      "undefined" : "latitude"
-    },
-    "domain" : "251",
-    "comment" : {
-      "undefined" : "Latitude is the angular measure of a point's position along the primary axis of a CRS, perpendicular to the reference surface's axis of symmetry."
-    },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "509"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/westBoundary",
@@ -9696,7 +9712,7 @@
     "comment" : {
       "undefined" : "The western longitude boundary of a bounding box (decimal degrees)."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "510"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/projectExternalDatasetList",
@@ -9725,7 +9741,7 @@
     "comment" : {
       "undefined" : "The file name including extension."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "511"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/license",
@@ -9749,28 +9765,6 @@
     },
     "attributes" : [ "object" ],
     "id" : "512"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/streetAddress",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "274",
-    "annotations" : {
-      "closeMatch" : [ {
-        "identifier" : "closeMatch",
-        "language" : "undefined",
-        "value" : "https://schema.org/streetAddress",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "streetAddress",
-      "undefined" : "streetAddress"
-    },
-    "domain" : "308",
-    "comment" : {
-      "undefined" : "The street address. For example, 1600 Amphitheatre Pkwy. Can be multi-line to include APT or other street informaion. It typically comes after the addressee's name but before the addressLocality"
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "513"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/geometry",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -9801,6 +9795,28 @@
     "attributes" : [ "object", "irreflexive" ],
     "id" : "315"
   }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/streetAddress",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "274",
+    "annotations" : {
+      "closeMatch" : [ {
+        "identifier" : "closeMatch",
+        "language" : "undefined",
+        "value" : "https://schema.org/streetAddress",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "streetAddress",
+      "undefined" : "streetAddress"
+    },
+    "domain" : "308",
+    "comment" : {
+      "undefined" : "The street address. For example, 1600 Amphitheatre Pkwy. Can be multi-line to include APT or other street informaion. It typically comes after the addressee's name but before the addressLocality"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "513"
+  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/shortName",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "range" : "268",
@@ -9820,7 +9836,7 @@
     "comment" : {
       "undefined" : "A short name for a master parameter."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "514"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/entryPoint",
@@ -9830,12 +9846,12 @@
       "closeMatch" : [ {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "https://schema.org/target",
+        "value" : "https://schema.org/potentialAction",
         "type" : "iri"
       }, {
         "identifier" : "closeMatch",
         "language" : "undefined",
-        "value" : "https://schema.org/potentialAction",
+        "value" : "https://schema.org/target",
         "type" : "iri"
       } ]
     },
@@ -9861,7 +9877,7 @@
     "comment" : {
       "undefined" : "The scheme (authority) that defines the identifier."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "516"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasAgentWithRole",
@@ -9892,7 +9908,7 @@
     "comment" : {
       "undefined" : "The Program that enabled a Project's existence"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "519"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
@@ -9902,7 +9918,7 @@
       "IRI-based" : "value"
     },
     "domain" : "50",
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "520"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/storesValuesFor",
@@ -9942,20 +9958,6 @@
     "attributes" : [ "datatype" ],
     "id" : "521"
   }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "332",
-    "label" : {
-      "IRI-based" : "noDatasetInstrumentsExpected",
-      "undefined" : "noDatasetInstrumentsExpected"
-    },
-    "domain" : "177",
-    "comment" : {
-      "undefined" : "Does the Dataset expect to have used instruments?"
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "522"
-  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/producedWork",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "range" : "115",
@@ -9978,6 +9980,20 @@
     },
     "attributes" : [ "object" ],
     "id" : "427"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "332",
+    "label" : {
+      "IRI-based" : "noDatasetInstrumentsExpected",
+      "undefined" : "noDatasetInstrumentsExpected"
+    },
+    "domain" : "177",
+    "comment" : {
+      "undefined" : "Does the Dataset expect to have used instruments?"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "522"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/dataFile",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -10021,7 +10037,7 @@
     "comment" : {
       "undefined" : "Postal address of some Agent."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "523"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/matchesToEntity",
@@ -10036,7 +10052,7 @@
     "comment" : {
       "undefined" : "The entity to which this match belongs. The entity would be rdf:subject and the EntityMatch defines the rdf:predicate and rdf:object."
     },
-    "attributes" : [ "functional", "object", "irreflexive" ],
+    "attributes" : [ "object", "irreflexive", "functional" ],
     "id" : "524"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/publisher",
@@ -10063,62 +10079,62 @@
   }, {
     "range" : "321",
     "domain" : "448",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "526"
   }, {
     "range" : "321",
     "domain" : "449",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "527"
   }, {
     "range" : "121",
     "domain" : "461",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "528"
   }, {
     "range" : "121",
     "domain" : "462",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "529"
   }, {
     "range" : "337",
     "domain" : "254",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "530"
   }, {
     "range" : "154",
     "domain" : "386",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "531"
   }, {
     "range" : "14",
     "domain" : "45",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "532"
   }, {
     "range" : "14",
     "domain" : "251",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "533"
   }, {
     "range" : "14",
     "domain" : "338",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "534"
   }, {
     "range" : "14",
     "domain" : "482",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "535"
   }, {
     "range" : "177",
     "domain" : "281",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "536"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/language",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "67",
+    "range" : "65",
     "annotations" : {
       "closeMatch" : [ {
         "identifier" : "closeMatch",
@@ -10135,7 +10151,7 @@
     "comment" : {
       "undefined" : "The natural language used in the dataset metadata."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "537"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/implementsService",
@@ -10178,7 +10194,7 @@
     "comment" : {
       "undefined" : "The fax number."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "540"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/relationship",
@@ -10206,32 +10222,32 @@
     "comment" : {
       "undefined" : "The description of a bi-directional relationship (like a RelatedWork) to describe the relationship from object to subject direction. The `description` property describes the erlationship from subject to object."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "542"
   }, {
     "range" : "19",
     "domain" : "286",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "543"
   }, {
     "range" : "320",
     "domain" : "321",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "544"
   }, {
     "range" : "29",
     "domain" : "369",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "545"
   }, {
     "range" : "29",
     "domain" : "320",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "546"
   }, {
     "range" : "21",
     "domain" : "337",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "547"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/archiveComment",
@@ -10245,37 +10261,37 @@
     "comment" : {
       "undefined" : "An internal comment about this particular DOIDataset"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "548"
   }, {
     "range" : "184",
     "domain" : "407",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "549"
   }, {
     "range" : "249",
     "domain" : "187",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "550"
   }, {
     "range" : "249",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "551"
   }, {
     "range" : "249",
     "domain" : "357",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "552"
   }, {
     "range" : "251",
     "domain" : "252",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "553"
   }, {
     "range" : "281",
     "domain" : "202",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "554"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/addressCountry",
@@ -10297,7 +10313,7 @@
     "comment" : {
       "undefined" : "The country for some physical address."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "555"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/telephone",
@@ -10319,7 +10335,7 @@
     "comment" : {
       "undefined" : "The telephone number."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "556"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/bibliographicCitation",
@@ -10333,52 +10349,52 @@
     "comment" : {
       "undefined" : "The full bibliographic citation for a related publication or dataset."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "557"
   }, {
     "range" : "34",
     "domain" : "248",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "558"
   }, {
     "range" : "34",
     "domain" : "249",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "559"
   }, {
     "range" : "34",
     "domain" : "245",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "560"
   }, {
     "range" : "34",
     "domain" : "31",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "561"
   }, {
     "range" : "34",
     "domain" : "47",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "562"
   }, {
     "range" : "34",
     "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "563"
   }, {
     "range" : "34",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "564"
   }, {
     "range" : "34",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "565"
   }, {
     "range" : "245",
     "domain" : "246",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "566"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/fundedBy",
@@ -10405,12 +10421,12 @@
   }, {
     "range" : "34",
     "domain" : "147",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "568"
   }, {
     "range" : "34",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "569"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasBeginning",
@@ -10432,7 +10448,7 @@
     "comment" : {
       "undefined" : "The start of a temporal interval."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "570"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/funder",
@@ -10448,7 +10464,7 @@
     "comment" : {
       "undefined" : "THe Agent the provided the funding for some Award."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "54"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isArchivedBy",
@@ -10506,37 +10522,37 @@
     "comment" : {
       "undefined" : "A specific code value but not quite an Identifier."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "573"
   }, {
     "range" : "135",
     "domain" : "136",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "574"
   }, {
     "range" : "135",
     "domain" : "137",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "575"
   }, {
     "range" : "135",
     "domain" : "138",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "576"
   }, {
     "range" : "135",
     "domain" : "139",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "577"
   }, {
     "range" : "147",
     "domain" : "148",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "578"
   }, {
     "range" : "147",
     "domain" : "86",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "579"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/useFullMiddleNameInCitationText",
@@ -10550,12 +10566,12 @@
     "comment" : {
       "undefined" : "Whether the Person prefers to use their full middle name in citations. Can be overriden by using at teh AgentRole for authors and contributors."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "580"
   }, {
     "range" : "147",
     "domain" : "146",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "581"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/hasPart",
@@ -10571,7 +10587,7 @@
     "comment" : {
       "undefined" : "A related entity that is included either physically or logically in the described entity."
     },
-    "attributes" : [ "asymmetric", "object" ],
+    "attributes" : [ "object", "asymmetric" ],
     "id" : "484"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/honorific",
@@ -10593,7 +10609,7 @@
     "comment" : {
       "undefined" : "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "582"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/affiliationSubName",
@@ -10607,7 +10623,7 @@
     "comment" : {
       "undefined" : "A sub-unit or department name within an affiliated institution."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "583"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isPartOf",
@@ -10622,7 +10638,7 @@
     "comment" : {
       "undefined" : "A related entity in which the described entity is physically or logically included."
     },
-    "attributes" : [ "asymmetric", "object" ],
+    "attributes" : [ "object", "asymmetric" ],
     "id" : "355"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/processingDescription",
@@ -10636,22 +10652,8 @@
     "comment" : {
       "undefined" : "An HTML description of data processing steps."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "584"
-  }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/replacedBy",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "34",
-    "label" : {
-      "IRI-based" : "replacedBy",
-      "undefined" : "replacedBy"
-    },
-    "domain" : "248",
-    "comment" : {
-      "undefined" : "An entity that replaces a deprecated Entity."
-    },
-    "attributes" : [ "asymmetric", "object", "irreflexive" ],
-    "id" : "585"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/usedWork",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -10671,10 +10673,24 @@
     "superproperty" : [ "178" ],
     "domain" : "442",
     "comment" : {
-      "undefined" : "A CreativeWork that was used in some ResearchActivity"
+      "undefined" : "The CreativeWork was used in a ResearchActivity"
     },
     "attributes" : [ "object" ],
     "id" : "428"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/replacedBy",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "replacedBy",
+      "undefined" : "replacedBy"
+    },
+    "domain" : "248",
+    "comment" : {
+      "undefined" : "An entity that replaces a deprecated Entity."
+    },
+    "attributes" : [ "object", "asymmetric", "irreflexive" ],
+    "id" : "585"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/givenName",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -10695,8 +10711,22 @@
     "comment" : {
       "undefined" : "The given (first) name of a person."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "586"
+  }, {
+    "iri" : "https://schema.bco-dmo.org/v1.0/platformType",
+    "baseIri" : "https://schema.bco-dmo.org/v1.0",
+    "range" : "331",
+    "label" : {
+      "IRI-based" : "platformType",
+      "undefined" : "platformType"
+    },
+    "domain" : "245",
+    "comment" : {
+      "undefined" : "The type/category of the platform."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "587"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/categorizedBy",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
@@ -10721,20 +10751,6 @@
     "attributes" : [ "object", "irreflexive" ],
     "id" : "210"
   }, {
-    "iri" : "https://schema.bco-dmo.org/v1.0/platformType",
-    "baseIri" : "https://schema.bco-dmo.org/v1.0",
-    "range" : "331",
-    "label" : {
-      "IRI-based" : "platformType",
-      "undefined" : "platformType"
-    },
-    "domain" : "245",
-    "comment" : {
-      "undefined" : "The type/category of the platform."
-    },
-    "attributes" : [ "functional", "object" ],
-    "id" : "587"
-  }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/addressLocality",
     "baseIri" : "https://schema.bco-dmo.org/v1.0",
     "range" : "430",
@@ -10754,7 +10770,7 @@
     "comment" : {
       "undefined" : "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division such as the Province in Italy or Region in Germany."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "588"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/inverseLabel",
@@ -10768,7 +10784,7 @@
     "comment" : {
       "undefined" : "A label describing some relationship beween from the perspective of the object."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "589"
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
@@ -10778,7 +10794,7 @@
       "IRI-based" : "predicate"
     },
     "domain" : "50",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "590"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/conversionDescription",
@@ -10792,7 +10808,7 @@
     "comment" : {
       "undefined" : "Describes how the values can be converted."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "591"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/isRoleFor",
@@ -10810,19 +10826,19 @@
     "attributes" : [ "object" ],
     "id" : "518"
   }, {
-    "range" : "147",
+    "range" : "70",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "592"
   }, {
-    "range" : "47",
+    "range" : "147",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "593"
   }, {
-    "range" : "245",
+    "range" : "3",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "594"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/abstract",
@@ -10844,12 +10860,12 @@
     "comment" : {
       "undefined" : "A plain-text abstract describing the dataset."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "595"
   }, {
-    "range" : "70",
+    "range" : "47",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "596"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/nodcTopicCategory",
@@ -10867,9 +10883,9 @@
     "attributes" : [ "object" ],
     "id" : "55"
   }, {
-    "range" : "3",
+    "range" : "245",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "597"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/dataURL",
@@ -10894,29 +10910,29 @@
     "attributes" : [ "datatype" ],
     "id" : "598"
   }, {
-    "range" : "249",
-    "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "599"
-  }, {
     "range" : "31",
     "domain" : "84",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "599"
+  }, {
+    "range" : "249",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "600"
   }, {
-    "range" : "115",
+    "range" : "245",
     "domain" : "70",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "601"
-  }, {
-    "range" : "86",
-    "domain" : "148",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "602"
   }, {
     "range" : "146",
     "domain" : "148",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "602"
+  }, {
+    "range" : "86",
+    "domain" : "148",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "603"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/authority",
@@ -10941,7 +10957,7 @@
       "undefined" : "time:inXSDgYear"
     },
     "domain" : "86",
-    "attributes" : [ "functional", "external", "datatype" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "605"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/relatedDataset",
@@ -10997,7 +11013,7 @@
       "undefined" : "situationInvolves"
     },
     "domain" : "31",
-    "subproperty" : [ "200", "353", "465", "466", "518", "242", "538", "479", "183", "471", "149", "517", "214", "519", "524", "178", "194", "152", "474", "199" ],
+    "subproperty" : [ "200", "353", "466", "465", "518", "242", "538", "479", "183", "471", "149", "517", "214", "519", "524", "178", "194", "152", "474", "199" ],
     "comment" : {
       "undefined" : "Some thing involved in a situation or event. A super property for more specific relationships in some Event."
     },
@@ -11016,7 +11032,7 @@
     "comment" : {
       "undefined" : "The DOI that should be presented publicly for this resource. In most cases this is the most recent DOI, but the value is determined by curatorial judgment and must be asserted explicitly."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "208"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/matches",
@@ -11067,7 +11083,7 @@
     "comment" : {
       "undefined" : "A disclaimer statement"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "608"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/affiliation",
@@ -11103,7 +11119,7 @@
     "comment" : {
       "undefined" : "The northern latitude boundary of a bounding box (decimal degrees)."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "610"
   }, {
     "iri" : "https://schema.bco-dmo.org/v1.0/southBoundary",
@@ -11117,7 +11133,7 @@
     "comment" : {
       "undefined" : "The southern latitude boundary of a bounding box (decimal degrees)."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "611"
   } ]
 }

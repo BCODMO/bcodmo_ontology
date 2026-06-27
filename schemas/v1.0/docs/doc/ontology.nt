@@ -855,14 +855,20 @@ _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment
 <https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v1.0/hasComment> .
+<https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v1.0/Dataset> .
+<https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v1.0/Comment> .
 <https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#comment> "A Comment explaining why a Dataset has no Instruments." .
 <https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#label> "noDatasetInstrumentsComment" .
+<https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected> .
 # 
 # https://schema.bco-dmo.org/v1.0/noDatasetParametersComment
 <https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.bco-dmo.org/v1.0/hasComment> .
+<https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.bco-dmo.org/v1.0/Dataset> .
+<https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.bco-dmo.org/v1.0/Comment> .
 <https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#comment> "A Comment explaining why a Dataset has no Parameters." .
 <https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#label> "noDatasetParametersComment" .
+<https://schema.bco-dmo.org/v1.0/noDatasetParametersComment> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected> .
 # 
 # https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment
 <https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

@@ -1347,8 +1347,11 @@
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment">
         <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Comment"/>
         <rdfs:comment>A Comment explaining why a Dataset has no Instruments.</rdfs:comment>
         <rdfs:label>noDatasetInstrumentsComment</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected"/>
     </owl:ObjectProperty>
     
 
@@ -1358,8 +1361,11 @@
 
     <owl:ObjectProperty rdf:about="https://schema.bco-dmo.org/v1.0/noDatasetParametersComment">
         <rdfs:subPropertyOf rdf:resource="https://schema.bco-dmo.org/v1.0/hasComment"/>
+        <rdfs:domain rdf:resource="https://schema.bco-dmo.org/v1.0/Dataset"/>
+        <rdfs:range rdf:resource="https://schema.bco-dmo.org/v1.0/Comment"/>
         <rdfs:comment>A Comment explaining why a Dataset has no Parameters.</rdfs:comment>
         <rdfs:label>noDatasetParametersComment</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected"/>
     </owl:ObjectProperty>
     
 

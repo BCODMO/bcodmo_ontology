@@ -914,15 +914,21 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment
 :noDatasetInstrumentsComment rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf :hasComment ;
+                             rdfs:domain :Dataset ;
+                             rdfs:range :Comment ;
                              rdfs:comment "A Comment explaining why a Dataset has no Instruments." ;
-                             rdfs:label "noDatasetInstrumentsComment" .
+                             rdfs:label "noDatasetInstrumentsComment" ;
+                             rdfs:seeAlso :noDatasetInstrumentsExpected .
 
 
 ###  https://schema.bco-dmo.org/v1.0/noDatasetParametersComment
 :noDatasetParametersComment rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf :hasComment ;
+                            rdfs:domain :Dataset ;
+                            rdfs:range :Comment ;
                             rdfs:comment "A Comment explaining why a Dataset has no Parameters." ;
-                            rdfs:label "noDatasetParametersComment" .
+                            rdfs:label "noDatasetParametersComment" ;
+                            rdfs:seeAlso :noDatasetParametersExpected .
 
 
 ###  https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment

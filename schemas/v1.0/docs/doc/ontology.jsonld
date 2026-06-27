@@ -10169,8 +10169,17 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A Comment explaining why a Dataset has no Instruments."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "noDatasetInstrumentsComment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsExpected"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"
@@ -10196,8 +10205,17 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A Comment explaining why a Dataset has no Parameters."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Dataset"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "noDatasetParametersComment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Comment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/noDatasetParametersExpected"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://schema.bco-dmo.org/v1.0/hasComment"

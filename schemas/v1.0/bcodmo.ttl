@@ -921,15 +921,21 @@ bcodmo:modifiesAction rdf:type owl:ObjectProperty ;
 ###  https://schema.bco-dmo.org/v1.0/noDatasetInstrumentsComment
 bcodmo:noDatasetInstrumentsComment rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf bcodmo:hasComment ;
+                                   rdfs:domain bcodmo:Dataset ;
+                                   rdfs:range bcodmo:Comment ;
                                    rdfs:comment "A Comment explaining why a Dataset has no Instruments." ;
-                                   rdfs:label "noDatasetInstrumentsComment" .
+                                   rdfs:label "noDatasetInstrumentsComment" ;
+                                   rdfs:seeAlso bcodmo:noDatasetInstrumentsExpected .
 
 
 ###  https://schema.bco-dmo.org/v1.0/noDatasetParametersComment
 bcodmo:noDatasetParametersComment rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf bcodmo:hasComment ;
+                                  rdfs:domain bcodmo:Dataset ;
+                                  rdfs:range bcodmo:Comment ;
                                   rdfs:comment "A Comment explaining why a Dataset has no Parameters." ;
-                                  rdfs:label "noDatasetParametersComment" .
+                                  rdfs:label "noDatasetParametersComment" ;
+                                  rdfs:seeAlso bcodmo:noDatasetParametersExpected .
 
 
 ###  https://schema.bco-dmo.org/v1.0/noDatasetsProducedFromAwardComment
