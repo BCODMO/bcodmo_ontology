@@ -41,24 +41,59 @@
 owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+<http://www.w3.org/2004/02/skos/core#broadMatch> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:comment "Indicates that a concept in the target vocabulary is broader in meaning than the local concept." ;
+                                                 rdfs:label "skos:broadMatch" ;
+                                                 rdfs:seeAlso "https://www.w3.org/TR/skos-reference/#broadMatch"^^xsd:anyURI ;
+                                                 :isEntityMatchPredicate "true"^^xsd:boolean .
+
+
 ###  http://www.w3.org/2004/02/skos/core#broader
 <http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
-<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty .
+<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:comment "Used when two concepts are not exact synonyms but are close enough to be used interchangeably in broad information retrieval applications." ;
+                                                 rdfs:label "skos:closeMatch" ;
+                                                 rdfs:seeAlso "https://www.w3.org/TR/skos-reference/#closeMatch"^^xsd:anyURI ;
+                                                 :isEntityMatchPredicate "true"^^xsd:boolean .
 
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
-<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
+<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:comment "Indicates a high degree of confidence that two concepts are interchangeable across information retrieval applications. It is a symmetric and transitive property, and a sub-property of skos:closeMatch" ;
+                                                 rdfs:label "skos:exactMatch" ;
+                                                 rdfs:seeAlso "https://www.w3.org/TR/skos-reference/#exactMatch"^^xsd:anyURI ;
+                                                 :isEntityMatchPredicate "true"^^xsd:boolean .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+<http://www.w3.org/2004/02/skos/core#narrowMatch> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:comment "Indicates that a concept in the target vocabulary is narrower in meaning than the local concept." ;
+                                                  rdfs:label "skos:narrowMatch" ;
+                                                  rdfs:seeAlso "https://www.w3.org/TR/skos-reference/#narrowMatch"^^xsd:anyURI ;
+                                                  :isEntityMatchPredicate "true"^^xsd:boolean .
 
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
-<http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:AnnotationProperty .
+<http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:comment "Links to a concept in an external vocabulary that is associatively related to the local concept." ;
+                                                   rdfs:label "skos:relatedMatch" ;
+                                                   rdfs:seeAlso "https://www.w3.org/TR/skos-reference/#relatedMatch"^^xsd:anyURI ;
+                                                   :isEntityMatchPredicate "true"^^xsd:boolean .
 
 
 ###  http://xmlns.com/foaf/0.1/name
 <http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.bco-dmo.org/v1.0/isEntityMatchPredicate
+:isEntityMatchPredicate rdf:type owl:AnnotationProperty ;
+                        rdfs:comment "Whether a predicate can be used by an EntityMatch for mapping vocabulary terms" ;
+                        rdfs:label "isEntityMatchPredicate" ;
+                        rdfs:range xsd:boolean .
 
 
 #################################################################
@@ -115,6 +150,14 @@ rdf:subject rdf:type owl:ObjectProperty .
             rdfs:label "actionType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/affiliatedWithProgram
+:affiliatedWithProgram rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Program ;
+                       rdfs:range :Program ;
+                       rdfs:comment "Another Program that this Program is affiliated with." ;
+                       rdfs:label "affiliatedWithProgram" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/affiliation
 :affiliation rdf:type owl:ObjectProperty ;
              rdfs:domain :Person ;
@@ -130,12 +173,7 @@ rdf:subject rdf:type owl:ObjectProperty .
            rdf:type owl:FunctionalProperty ,
                     owl:IrreflexiveProperty ;
            rdfs:domain :Annotation ;
-           rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( rdf:Statement
-                                      owl:Thing
-                                      :Entity
-                                    )
-                      ] ;
+           rdfs:range owl:Thing ;
            rdfs:comment "The thing being annotated" ;
            rdfs:label "annotates" .
 
@@ -185,13 +223,6 @@ rdf:subject rdf:type owl:ObjectProperty .
            rdfs:range :Agent ;
            rdfs:comment "The authoritative source for some piece of information or some physical thing." ;
            rdfs:label "authority" .
-
-
-###  https://schema.bco-dmo.org/v1.0/awardProducingData
-:awardProducingData rdf:type owl:ObjectProperty ,
-                             owl:FunctionalProperty ;
-                    rdfs:domain :Award ;
-                    rdfs:range :Boolean .
 
 
 ###  https://schema.bco-dmo.org/v1.0/boundingBox
@@ -334,22 +365,23 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 
 ###  https://schema.bco-dmo.org/v1.0/describesFile
-:describesFile rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
+:describesFile rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :situationInvolves ;
+               rdf:type owl:FunctionalProperty ;
                rdfs:domain :FileDescriptor ;
                rdfs:range :File ;
                rdfs:comment "Links a file record to the File object describing its physical properties." ;
                rdfs:label "describesFile" .
 
 
-###  https://schema.bco-dmo.org/v1.0/entityPublishingStatus
-:entityPublishingStatus rdf:type owl:ObjectProperty ,
-                                 owl:FunctionalProperty ,
-                                 owl:IrreflexiveProperty ;
-                        rdfs:domain :Entity ;
-                        rdfs:range :EntityPublishingStatus ;
-                        rdfs:comment "the publishing status of some BCO-DMO Entity" ;
-                        rdfs:label "entityPublishingStatus" .
+###  https://schema.bco-dmo.org/v1.0/entityStatus
+:entityStatus rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Entity ;
+              rdfs:range :EntityStatus ;
+              rdfs:comment "the publishing status of some BCO-DMO Entity" ;
+              rdfs:label "entityStatus" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/entryPoint
@@ -367,7 +399,7 @@ rdf:subject rdf:type owl:ObjectProperty .
                 rdfs:subPropertyOf :hasTime ;
                 rdf:type owl:FunctionalProperty ;
                 rdfs:domain :EmbargoPolicy ;
-                rdfs:range :TemporalEntity ;
+                rdfs:range :TemporalValue ;
                 rdfs:comment "The date on which an embargo expires and the dataset becomes publicly accessible." ;
                 rdfs:label "expirationDate" ;
                 <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/expires> .
@@ -663,6 +695,7 @@ rdf:subject rdf:type owl:ObjectProperty .
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( :Dataset
                                         :DatasetProject
+                                        :DatasetsInOtherCatalog
                                       )
                         ] ;
             rdfs:range :Project ;
@@ -682,7 +715,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/hasTime
 :hasTime rdf:type owl:ObjectProperty ;
          rdfs:domain :Entity ;
-         rdfs:range :TemporalEntity ;
+         rdfs:range :TemporalValue ;
          rdfs:comment "Connects a temporal entity to some thing" ;
          rdfs:label "hasTime" ;
          <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/2006/time#hasTime> .
@@ -995,7 +1028,7 @@ rdf:subject rdf:type owl:ObjectProperty .
              rdfs:subPropertyOf :situationInvolves ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain :AgentRole ;
-             rdfs:range :Organization ;
+             rdfs:range :Affiliation ;
              rdfs:comment "The institutional affiliation at which the role was performed." ;
              rdfs:label "performedAt" .
 
@@ -1050,11 +1083,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/postalAddress
 :postalAddress rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :Organization
-                                           :Person
-                                         )
-                           ] ;
+               rdfs:domain :Party ;
                rdfs:range :PostalAddress ;
                rdfs:comment "Postal address of some Agent." ;
                rdfs:label "postalAddress" ;
@@ -1109,7 +1138,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/projectExternalDatasetList
 :projectExternalDatasetList rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf :hasCollection ;
-                            rdfs:domain :Project ;
+                            rdfs:domain :DatasetsInOtherCatalog ;
                             rdfs:range :DatasetList ;
                             rdfs:comment "a Collection of external Datasets related to a Project" ;
                             rdfs:label "projectExternalDatasetList" .
@@ -1118,7 +1147,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/provider
 :provider rdf:type owl:ObjectProperty ;
           rdfs:domain :CreativeWork ;
-          rdfs:range :Agent ;
+          rdfs:range :Party ;
           rdfs:comment "The provider of some CreativeWork" ,
                        "The service provider that hosts/distributes the resource." ;
           rdfs:label "provider" ;
@@ -1137,8 +1166,8 @@ rdf:subject rdf:type owl:ObjectProperty .
 
 ###  https://schema.bco-dmo.org/v1.0/publisher
 :publisher rdf:type owl:ObjectProperty ;
-           rdfs:domain :Entity ;
-           rdfs:range :Organization ;
+           rdfs:domain :CreativeWork ;
+           rdfs:range :Party ;
            rdfs:comment "The agent responsible for publishing a resource." ;
            rdfs:label "publisher" ;
            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/publisher> .
@@ -1212,7 +1241,7 @@ rdf:subject rdf:type owl:ObjectProperty .
              rdfs:subPropertyOf :hasTime ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain :EmbargoReleasePolicy ;
-             rdfs:range :TemporalEntity ;
+             rdfs:range :TemporalValue ;
              rdfs:comment "The date on which an embargo releases and the dataset becomes publicly accessible." ;
              rdfs:label "releaseDate" ;
              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/expires> .
@@ -1232,11 +1261,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 :resolution rdf:type owl:ObjectProperty ;
             owl:equivalentProperty :temporalResolution ;
             rdf:type owl:FunctionalProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :TemporalInstant
-                                        :TemporalInterval
-                                      )
-                        ] ;
+            rdfs:domain :TemporalValue ;
             rdfs:range <http://www.w3.org/2006/time#TemporalUnit> ;
             rdfs:comment "The temporal resolution of a temporal extent (e.g. time:unitDay)." ;
             rdfs:label "resolution" ;
@@ -1353,7 +1378,7 @@ rdf:subject rdf:type owl:ObjectProperty .
                                             :ResearchActivity
                                           )
                             ] ;
-                rdfs:range :TemporalEntity ;
+                rdfs:range :TemporalValue ;
                 rdfs:comment "The temporal coverage of an agent role, dataset, deployment or research activity." ;
                 rdfs:label "temporalExtent" ;
                 <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.w3.org/2006/time#hasTime> .
@@ -1362,11 +1387,7 @@ rdf:subject rdf:type owl:ObjectProperty .
 ###  https://schema.bco-dmo.org/v1.0/temporalResolution
 :temporalResolution rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( :TemporalInstant
-                                                :TemporalInterval
-                                              )
-                                ] ;
+                    rdfs:domain :TemporalValue ;
                     rdfs:range <http://www.w3.org/2006/time#TemporalUnit> ;
                     rdfs:comment "The temporal resolution of a temporal extent (e.g. time:unitDay)." ;
                     rdfs:label "temporalResolution" ;
@@ -1558,6 +1579,14 @@ rdf:value rdf:type owl:DatatypeProperty .
        <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/ont/geosparql#asWKT> .
 
 
+###  https://schema.bco-dmo.org/v1.0/awardNumber
+:awardNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Award ;
+             rdfs:range xsd:token ;
+             rdfs:comment "The Award Number or identifier assigned to the Award by the FundingAgency" ;
+             rdfs:label "awardNumber" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/bibliographicCitation
 :bibliographicCitation rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
@@ -1649,11 +1678,7 @@ rdf:value rdf:type owl:DatatypeProperty .
 ###  https://schema.bco-dmo.org/v1.0/disclaimer
 :disclaimer rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :DatasetList
-                                        :DatasetsInOtherCatalog
-                                      )
-                        ] ;
+            rdfs:domain :DatasetList ;
             rdfs:range xsd:string ;
             rdfs:comment "A disclaimer statement" ;
             rdfs:label "disclaimer" .
@@ -1671,7 +1696,7 @@ rdf:value rdf:type owl:DatatypeProperty .
 ###  https://schema.bco-dmo.org/v1.0/email
 :email rdf:type owl:DatatypeProperty ,
                 owl:FunctionalProperty ;
-       rdfs:domain :Agent ;
+       rdfs:domain :Party ;
        rdfs:range xsd:token ;
        rdfs:comment "Email address" ;
        rdfs:label "email" ;
@@ -1718,7 +1743,7 @@ rdf:value rdf:type owl:DatatypeProperty .
 ###  https://schema.bco-dmo.org/v1.0/faxNumber
 :faxNumber rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :Agent ;
+           rdfs:domain :Party ;
            rdfs:range xsd:token ;
            rdfs:comment "The fax number." ;
            rdfs:label "faxNumber" .
@@ -1875,6 +1900,16 @@ rdf:value rdf:type owl:DatatypeProperty .
           rdfs:range xsd:float ;
           rdfs:comment "Latitude is the angular measure of a point's position along the primary axis of a CRS, perpendicular to the reference surface's axis of symmetry." ;
           rdfs:label "latitude" .
+
+
+###  https://schema.bco-dmo.org/v1.0/leafletWKT
+:leafletWKT rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Geometry ;
+            rdfs:range <http://www.opengis.net/ont/geosparql#wktLiteral> ;
+            rdfs:comment "A Well-Known Text represntation that is specific to the way BCO-DMO wants a geometry to be represented in the Leaflet application" ;
+            rdfs:label "leafletWKT" ;
+            <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.opengis.net/ont/geosparql#asWKT> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/listPosition
@@ -2118,7 +2153,7 @@ rdf:value rdf:type owl:DatatypeProperty .
 ###  https://schema.bco-dmo.org/v1.0/telephone
 :telephone rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :Agent ;
+           rdfs:domain :Party ;
            rdfs:range xsd:token ;
            rdfs:comment "The telephone number." ;
            rdfs:label "telephone" ;
@@ -2259,7 +2294,8 @@ rdf:Statement rdf:type owl:Class .
 <http://www.w3.org/2006/time#TemporalUnit> rdf:type owl:Class ;
                                            rdfs:subClassOf :TemporalEntity ;
                                            owl:disjointWith :TemporalInstant ,
-                                                            :TemporalInterval .
+                                                            :TemporalInterval ,
+                                                            :TemporalValue .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Action
@@ -2374,6 +2410,7 @@ rdf:Statement rdf:type owl:Class .
 ###  https://schema.bco-dmo.org/v1.0/ArchivedDataset
 :ArchivedDataset rdf:type owl:Class ;
                  rdfs:subClassOf :Dataset ;
+                 owl:disjointWith :ExternalDataset ;
                  rdfs:comment "A specific version of a Dataset that has been stored  in an archive that typcially provides access" ;
                  rdfs:label "ArchivedDataset" .
 
@@ -2423,7 +2460,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Boolean
 :Boolean rdf:type owl:Class ;
-         rdfs:subClassOf :Datatype ;
+         rdfs:subClassOf :PrimitiveDatatype ;
          rdfs:comment "A boolean value like True or False, Yes or No, 1 or 0." ;
          rdfs:isDefinedBy :Datatype_Boolean ;
          rdfs:label "Boolean" ;
@@ -2664,6 +2701,22 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Dataset
 :Dataset rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :CreativeWork
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :datasetType ;
+                                                      owl:someValuesFrom :DatasetType
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :publisher ;
+                                                      owl:someValuesFrom :Agent
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :title ;
+                                                      owl:someValuesFrom xsd:string
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
          rdfs:subClassOf :CreativeWork ;
          rdfs:comment "A dataset which may be internal or external to BCO-DMO." ;
          rdfs:label "Dataset" ;
@@ -2841,15 +2894,14 @@ rdf:Statement rdf:type owl:Class .
                                                                    ]
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty :projectExternalDatasetList ;
-                                                                     owl:someValuesFrom :DatasetList
-                                                                   ]
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :publisher ;
-                                                                     owl:someValuesFrom :Agent
-                                                                   ]
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :disclaimer ;
-                                                                     owl:someValuesFrom xsd:string
+                                                                     owl:someValuesFrom [ owl:intersectionOf ( :DatasetList
+                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                 owl:onProperty :publisher ;
+                                                                                                                 owl:someValuesFrom :Agent
+                                                                                                               ]
+                                                                                                             ) ;
+                                                                                          rdf:type owl:Class
+                                                                                        ]
                                                                    ]
                                                                  ) ;
                                               rdf:type owl:Class
@@ -2930,14 +2982,6 @@ rdf:Statement rdf:type owl:Class .
                   rdfs:label "DeprecatedEntity" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EmailAddress
-:EmailAddress rdf:type owl:Class ;
-              rdfs:subClassOf :IdentifierString ;
-              rdfs:comment "An email address." ;
-              rdfs:isDefinedBy :Datatype_EmailAddress ;
-              rdfs:label "Email Address" .
-
-
 ###  https://schema.bco-dmo.org/v1.0/EmbargoPolicy
 :EmbargoPolicy rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :Policy
@@ -3011,11 +3055,11 @@ rdf:Statement rdf:type owl:Class .
              rdfs:label "EntityMatch" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus
-:EntityPublishingStatus rdf:type owl:Class ;
-                        rdfs:subClassOf :Category ;
-                        rdfs:comment "One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it's being contructed, in draft review for a submitter, published, deprecated or unpublished." ;
-                        rdfs:label "EntityPublishingStatus" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus
+:EntityStatus rdf:type owl:Class ;
+              rdfs:subClassOf :Category ;
+              rdfs:comment "One or more statuses of a BCO-DMO Entity. This is primarily used to determine where an entity appears - not at all while it's being contructed, in draft review for a submitter, published, deprecated or unpublished." ;
+              rdfs:label "EntityStatus" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Event
@@ -3034,6 +3078,23 @@ rdf:Statement rdf:type owl:Class .
        <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Event> .
 
 
+###  https://schema.bco-dmo.org/v1.0/ExternalDataset
+:ExternalDataset rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Dataset
+                                                            [ rdf:type owl:Class ;
+                                                              owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :publisher ;
+                                                                                 owl:hasValue :Organization_BCODMO
+                                                                               ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Dataset ;
+                 rdfs:comment "A Dataset not published by BCO-DMO" ;
+                 rdfs:label "ExternalDataset" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/File
 :File rdf:type owl:Class ;
       rdfs:subClassOf :CreativeWork ;
@@ -3044,7 +3105,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/FileDescriptor
 :FileDescriptor rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( :CreativeWork
+                owl:equivalentClass [ owl:intersectionOf ( :Situation
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty :describesFile ;
                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -3053,7 +3114,7 @@ rdf:Statement rdf:type owl:Class .
                                                          ) ;
                                       rdf:type owl:Class
                                     ] ;
-                rdfs:subClassOf :CreativeWork ;
+                rdfs:subClassOf :Situation ;
                 rdfs:comment "A context-specific description of a file. The context could be data, metadata or supplemental documentation." ;
                 rdfs:label "File Descriptor" ;
                 <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/DigitalDocument> .
@@ -3094,7 +3155,11 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/GCMDPlatformType
 :GCMDPlatformType rdf:type owl:Class ;
-                  rdfs:subClassOf :DefinedTerm ;
+                  rdfs:subClassOf :DefinedTerm ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :inControlledVocabulary ;
+                                    owl:hasValue :ControlledVocabulary_GCMDPlatformTypes
+                                  ] ;
                   rdfs:comment "A platform type defined by GCMD" ;
                   rdfs:isDefinedBy :ControlledVocabulary_GCMDPlatformTypes ;
                   rdfs:label "GCMDPlatformType" .
@@ -3103,6 +3168,8 @@ rdf:Statement rdf:type owl:Class .
 ###  https://schema.bco-dmo.org/v1.0/GeographicalLocation
 :GeographicalLocation rdf:type owl:Class ;
                       rdfs:subClassOf :SpatialEntity ;
+                      owl:disjointWith :Geometry ,
+                                       :SpatialReferenceSystem ;
                       rdfs:comment "A spatial extent or named location associated with a dataset, deployment, project, or program." ;
                       rdfs:label "Geographical Location" ;
                       <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/Place> ;
@@ -3112,6 +3179,7 @@ rdf:Statement rdf:type owl:Class .
 ###  https://schema.bco-dmo.org/v1.0/Geometry
 :Geometry rdf:type owl:Class ;
           rdfs:subClassOf :SpatialEntity ;
+          owl:disjointWith :SpatialReferenceSystem ;
           rdfs:comment "An abstract spatial geometry." ;
           rdfs:label "Geometry" ;
           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/GeospatialGeometry> ;
@@ -3189,16 +3257,12 @@ rdf:Statement rdf:type owl:Class .
                                                        ]
                                                      ) ;
                                   rdf:type owl:Class
-                                ] ,
-                                [ owl:intersectionOf ( :DefinedTerm
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :inControlledVocabulary ;
-                                                         owl:hasValue :ControlledVocabulary_BCODMO_Instruments
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
                                 ] ;
-            rdfs:subClassOf :DefinedTerm ;
+            rdfs:subClassOf :DefinedTerm ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :inControlledVocabulary ;
+                              owl:hasValue :ControlledVocabulary_BCODMO_Instruments
+                            ] ;
             rdfs:comment "A master (community-level) scientific instrument definition." ;
             rdfs:label "Instrument" ;
             <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.w3.org/ns/sosa/Sensor> ;
@@ -3306,16 +3370,12 @@ rdf:Statement rdf:type owl:Class .
                                                       ]
                                                     ) ;
                                  rdf:type owl:Class
-                               ] ,
-                               [ owl:intersectionOf ( :DefinedTerm
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :inControlledVocabulary ;
-                                                        owl:hasValue :ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
                                ] ;
-           rdfs:subClassOf :DefinedTerm ;
+           rdfs:subClassOf :DefinedTerm ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :inControlledVocabulary ;
+                             owl:hasValue :ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode
+                           ] ;
            rdfs:comment "A NODC topic category for Datases." ;
            rdfs:isDefinedBy :ControlledVocabulary_NODC_ISO19115-2_MD_TopicCategoryCode ;
            rdfs:label "NODCTopic" .
@@ -3327,6 +3387,13 @@ rdf:Statement rdf:type owl:Class .
                  rdfs:comment "Natural languages such as Spanish, Tamil, Hindi, English, etc." ;
                  rdfs:label "NaturalLanguage" ;
                  <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Language> .
+
+
+###  https://schema.bco-dmo.org/v1.0/Numeric
+:Numeric rdf:type owl:Class ;
+         rdfs:subClassOf :PrimitiveDatatype ;
+         rdfs:comment "A number." ;
+         rdfs:label "Numeric" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/ORCIDIdentifier
@@ -3346,7 +3413,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/Organization
 :Organization rdf:type owl:Class ;
-              rdfs:subClassOf :Agent ;
+              rdfs:subClassOf :Party ;
               owl:disjointWith :Person ,
                                :SoftwareApplication ;
               rdfs:comment "An organisational body such as a publisher, funder, or identifier authority." ;
@@ -3365,23 +3432,26 @@ rdf:Statement rdf:type owl:Class .
                                                       ]
                                                     ) ;
                                  rdf:type owl:Class
-                               ] ,
-                               [ owl:intersectionOf ( :DefinedTerm
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :inControlledVocabulary ;
-                                                        owl:hasValue :ControlledVocabulary_BCODMO_Parameters
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
                                ] ;
-           rdfs:subClassOf :DefinedTerm ;
+           rdfs:subClassOf :DefinedTerm ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :inControlledVocabulary ;
+                             owl:hasValue :ControlledVocabulary_BCODMO_Parameters
+                           ] ;
            rdfs:comment "A master (community-level) scientific parameter definition." ;
            rdfs:label "Parameter" .
 
 
+###  https://schema.bco-dmo.org/v1.0/Party
+:Party rdf:type owl:Class ;
+       rdfs:subClassOf :Agent ;
+       rdfs:comment "An Organization or Person with whom you can establish contact." ;
+       rdfs:label "Party" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Person
 :Person rdf:type owl:Class ;
-        rdfs:subClassOf :Agent ;
+        rdfs:subClassOf :Party ;
         owl:disjointWith :SoftwareApplication ;
         rdfs:comment "A human individual associated with some entity." ;
         rdfs:label "Person" ;
@@ -3456,6 +3526,13 @@ rdf:Statement rdf:type owl:Class .
                rdfs:comment "The mailing address." ;
                rdfs:label "PostalAddress" ;
                <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/PostalAddress> .
+
+
+###  https://schema.bco-dmo.org/v1.0/PrimitiveDatatype
+:PrimitiveDatatype rdf:type owl:Class ;
+                   rdfs:subClassOf :Datatype ;
+                   rdfs:comment "A simple format - string, numeric, boolean." ;
+                   rdfs:label "PrimitiveDatatype" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/Program
@@ -3707,11 +3784,18 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/String
 :String rdf:type owl:Class ;
-        rdfs:subClassOf :Datatype ;
+        rdfs:subClassOf :PrimitiveDatatype ;
         rdfs:comment "A string value" ;
         rdfs:isDefinedBy :Datatype_String ;
         rdfs:label "String"@en ;
         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Text> .
+
+
+###  https://schema.bco-dmo.org/v1.0/StructuredDatatype
+:StructuredDatatype rdf:type owl:Class ;
+                    rdfs:subClassOf :Datatype ;
+                    rdfs:comment "A consistent formatting of data following some pattern or convention like an array or an object." ;
+                    rdfs:label "StructuredDatatype" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/SupplementalDocument
@@ -3744,6 +3828,13 @@ rdf:Statement rdf:type owl:Class .
                  rdfs:label "TabularFileType" .
 
 
+###  https://schema.bco-dmo.org/v1.0/TemporalDatatype
+:TemporalDatatype rdf:type owl:Class ;
+                  rdfs:subClassOf :Datatype ;
+                  rdfs:comment "A temporal value like a date, time datetime or duration." ;
+                  rdfs:label "TemporalDatatype" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/TemporalEntity
 :TemporalEntity rdf:type owl:Class ;
                 rdfs:subClassOf :Entity ;
@@ -3754,7 +3845,30 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/TemporalInstant
 :TemporalInstant rdf:type owl:Class ;
-                 rdfs:subClassOf :TemporalEntity ;
+                 owl:equivalentClass [ owl:intersectionOf ( :TemporalValue
+                                                            [ rdf:type owl:Class ;
+                                                              owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.w3.org/2006/time#inXSDDate> ;
+                                                                              owl:someValuesFrom xsd:date
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.w3.org/2006/time#inXSDDateTimeStamp> ;
+                                                                              owl:someValuesFrom xsd:dateTimeStamp
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.w3.org/2006/time#inXSDgYear> ;
+                                                                              owl:someValuesFrom xsd:gYear
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.w3.org/2006/time#inXSDgYearMonth> ;
+                                                                              owl:someValuesFrom xsd:gYearMonth
+                                                                            ]
+                                                                          )
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :TemporalValue ;
                  rdfs:comment "A single point in time associated with a dataset extent or event date." ;
                  rdfs:label "Temporal Instant" ;
                  <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/2006/time#Instant> .
@@ -3762,7 +3876,7 @@ rdf:Statement rdf:type owl:Class .
 
 ###  https://schema.bco-dmo.org/v1.0/TemporalInterval
 :TemporalInterval rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( :TemporalEntity
+                  owl:equivalentClass [ owl:intersectionOf ( :TemporalValue
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty :hasBeginning ;
                                                                owl:someValuesFrom :TemporalInstant
@@ -3774,10 +3888,17 @@ rdf:Statement rdf:type owl:Class .
                                                            ) ;
                                         rdf:type owl:Class
                                       ] ;
-                  rdfs:subClassOf :TemporalEntity ;
+                  rdfs:subClassOf :TemporalValue ;
                   rdfs:comment "A time period with a beginning and an end, used to describe dataset temporal coverage." ;
                   rdfs:label "Temporal Interval" ;
                   <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/2006/time#Interval> .
+
+
+###  https://schema.bco-dmo.org/v1.0/TemporalValue
+:TemporalValue rdf:type owl:Class ;
+               rdfs:subClassOf :TemporalEntity ;
+               rdfs:comment "A value of time" ;
+               rdfs:label "TemporalValue" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/TimeSeries
@@ -3786,15 +3907,6 @@ rdf:Statement rdf:type owl:Class .
             rdfs:comment "an ordered collection of observations indexed by time, representing the temporal evolution of one or more properties of a feature, system, or phenomenon." ;
             rdfs:label "Time Series" ;
             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/EventSeries> .
-
-
-###  https://schema.bco-dmo.org/v1.0/URL
-:URL rdf:type owl:Class ;
-     rdfs:subClassOf :IdentifierString ;
-     rdfs:comment "A URL" ;
-     rdfs:isDefinedBy :Datatype_URL ;
-     rdfs:label "URL"@en ;
-     <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/URL> .
 
 
 ###  https://schema.bco-dmo.org/v1.0/UnitOfMeasure
@@ -3856,8 +3968,46 @@ rdf:Statement rdf:type owl:Class .
                                                rdfs:label "Spatial Reference System: CRS84" .
 
 
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#nil
-rdf:nil rdf:type owl:NamedIndividual .
+###  http://www.w3.org/2006/time#unitDay
+<http://www.w3.org/2006/time#unitDay> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/2006/time#TemporalUnit> ;
+                                      :label "Day" ;
+                                      rdfs:label "Temporal Unit: Day" .
+
+
+###  http://www.w3.org/2006/time#unitHour
+<http://www.w3.org/2006/time#unitHour> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2006/time#TemporalUnit> ;
+                                       :label "Hour" ;
+                                       rdfs:label "Temporal Unit: Hour" .
+
+
+###  http://www.w3.org/2006/time#unitMinute
+<http://www.w3.org/2006/time#unitMinute> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/2006/time#TemporalUnit> ;
+                                         :label "Minute" ;
+                                         rdfs:label "Temporal Unit: Minute" .
+
+
+###  http://www.w3.org/2006/time#unitMonth
+<http://www.w3.org/2006/time#unitMonth> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/2006/time#TemporalUnit> ;
+                                        :label "Month" ;
+                                        rdfs:label "Temporal Unit: Month" .
+
+
+###  http://www.w3.org/2006/time#unitSecond
+<http://www.w3.org/2006/time#unitSecond> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/2006/time#TemporalUnit> ;
+                                         :label "Second" ;
+                                         rdfs:label "Temporal Unit: Second" .
+
+
+###  http://www.w3.org/2006/time#unitYear
+<http://www.w3.org/2006/time#unitYear> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2006/time#TemporalUnit> ;
+                                       :label "Year" ;
+                                       rdfs:label "Temporal Unit: Year" .
 
 
 ###  http://www.wikidata.org/entity/Q5188229
@@ -4260,9 +4410,17 @@ rdf:nil rdf:type owl:NamedIndividual .
                        rdfs:label "Dataset Type: Synthesis" .
 
 
+###  https://schema.bco-dmo.org/v1.0/Datatype_Array
+:Datatype_Array rdf:type owl:NamedIndividual ,
+                         :StructuredDatatype ;
+                :label "Array" ;
+                rdfs:comment "An array of values" ;
+                rdfs:label "Datatype: Array" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Boolean
 :Datatype_Boolean rdf:type owl:NamedIndividual ,
-                           :Datatype ;
+                           :Boolean ;
                   :label "Boolean" ;
                   rdfs:comment "A boolean value." ;
                   rdfs:label "Datatype: Boolean" .
@@ -4270,7 +4428,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Date
 :Datatype_Date rdf:type owl:NamedIndividual ,
-                        :Datatype ;
+                        :Datatype ,
+                        :TemporalDatatype ;
                owl:sameAs <urn:bcodmo:taxonomy:datatype:1070> ;
                :label "Date" ;
                rdfs:comment "A date." ;
@@ -4281,7 +4440,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Datetime
 :Datatype_Datetime rdf:type owl:NamedIndividual ,
-                            :Datatype ;
+                            :Datatype ,
+                            :TemporalDatatype ;
                    owl:sameAs <urn:bcodmo:taxonomy:datatype:1071> ;
                    :label "Datetime" ;
                    rdfs:comment "A datetime." ;
@@ -4290,9 +4450,17 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  urn:bcodmo:taxonomy:datatype:1071
 
+###  https://schema.bco-dmo.org/v1.0/Datatype_Duration
+:Datatype_Duration rdf:type owl:NamedIndividual ,
+                            :TemporalDatatype ;
+                   :label "Duration" ;
+                   rdfs:comment "A duration of time." ;
+                   rdfs:label "Datatype: Duration" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Datatype_EmailAddress
 :Datatype_EmailAddress rdf:type owl:NamedIndividual ,
-                                :Datatype ;
+                                :IdentifierString ;
                        owl:sameAs <urn:bcodmo:taxonomy:datatype:1079> ;
                        :label "Email Address" ;
                        rdfs:comment "An email address." ;
@@ -4303,7 +4471,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Float
 :Datatype_Float rdf:type owl:NamedIndividual ,
-                         :Datatype ;
+                         :Datatype ,
+                         :Numeric ;
                 owl:sameAs <urn:bcodmo:taxonomy:datatype:1076> ;
                 :label "Float" ;
                 rdfs:comment "A floating point number." ;
@@ -4314,7 +4483,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Identifier
 :Datatype_Identifier rdf:type owl:NamedIndividual ,
-                              :Datatype ;
+                              :Datatype ,
+                              :IdentifierString ;
                      owl:sameAs <urn:bcodmo:taxonomy:datatype:1078> ;
                      :label "Identifier" ;
                      rdfs:comment "A string identifier." ;
@@ -4325,7 +4495,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Integer
 :Datatype_Integer rdf:type owl:NamedIndividual ,
-                           :Datatype ;
+                           :Datatype ,
+                           :Numeric ;
                   owl:sameAs <urn:bcodmo:taxonomy:datatype:1075> ;
                   :label "Integer" ;
                   rdfs:comment "An integer." ;
@@ -4334,9 +4505,18 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  urn:bcodmo:taxonomy:datatype:1075
 
+###  https://schema.bco-dmo.org/v1.0/Datatype_Object
+:Datatype_Object rdf:type owl:NamedIndividual ,
+                          :StructuredDatatype ;
+                 :label "Object" ;
+                 rdfs:comment "An object of some structure. Could be JSON string, YAML, etc." ;
+                 rdfs:label "Datatype: Object" .
+
+
 ###  https://schema.bco-dmo.org/v1.0/Datatype_String
 :Datatype_String rdf:type owl:NamedIndividual ,
-                          :Datatype ;
+                          :Datatype ,
+                          :String ;
                  owl:sameAs <urn:bcodmo:taxonomy:datatype:1077> ;
                  :label "String" ;
                  rdfs:comment "A string." ;
@@ -4347,7 +4527,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Time
 :Datatype_Time rdf:type owl:NamedIndividual ,
-                        :Datatype ;
+                        :Datatype ,
+                        :TemporalDatatype ;
                owl:sameAs <urn:bcodmo:taxonomy:datatype:1072> ;
                :label "Time" ;
                rdfs:comment "A time." ;
@@ -4358,7 +4539,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_URL
 :Datatype_URL rdf:type owl:NamedIndividual ,
-                       :Datatype ;
+                       :Datatype ,
+                       :IdentifierString ;
               owl:sameAs <urn:bcodmo:taxonomy:datatype:1080> ;
               :label "URL" ;
               rdfs:comment "A universal resource locator." ;
@@ -4369,7 +4551,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_Year
 :Datatype_Year rdf:type owl:NamedIndividual ,
-                        :Datatype ;
+                        :Datatype ,
+                        :TemporalDatatype ;
                owl:sameAs <urn:bcodmo:taxonomy:datatype:1073> ;
                :label "Year" ;
                rdfs:comment "A year." ;
@@ -4380,7 +4563,8 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 ###  https://schema.bco-dmo.org/v1.0/Datatype_YearMonth
 :Datatype_YearMonth rdf:type owl:NamedIndividual ,
-                             :Datatype ;
+                             :Datatype ,
+                             :TemporalDatatype ;
                     owl:sameAs <urn:bcodmo:taxonomy:datatype:1074> ;
                     :label "Year Month" ;
                     rdfs:comment "A year month." ;
@@ -4410,39 +4594,39 @@ rdf:nil rdf:type owl:NamedIndividual .
                                rdfs:label "Deployment Activity: Turnaround" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Deprecated
-:EntityPublishingStatus_Deprecated rdf:type owl:NamedIndividual ,
-                                            :EntityPublishingStatus ;
-                                   :label "Deprecated" ;
-                                   rdfs:label "Entity Status: Deprecated" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus_Deprecated
+:EntityStatus_Deprecated rdf:type owl:NamedIndividual ,
+                                  :EntityStatus ;
+                         :label "Deprecated" ;
+                         rdfs:label "Entity Status: Deprecated" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Draft
-:EntityPublishingStatus_Draft rdf:type owl:NamedIndividual ,
-                                       :EntityPublishingStatus ;
-                              :label "Draft" ;
-                              rdfs:label "Entity Status: Draft" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus_Draft
+:EntityStatus_Draft rdf:type owl:NamedIndividual ,
+                             :EntityStatus ;
+                    :label "Draft" ;
+                    rdfs:label "Entity Status: Draft" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_InReview
-:EntityPublishingStatus_InReview rdf:type owl:NamedIndividual ,
-                                          :EntityPublishingStatus ;
-                                 :label "In Review" ;
-                                 rdfs:label "Entity Status: In Review" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus_InReview
+:EntityStatus_InReview rdf:type owl:NamedIndividual ,
+                                :EntityStatus ;
+                       :label "In Review" ;
+                       rdfs:label "Entity Status: In Review" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Published
-:EntityPublishingStatus_Published rdf:type owl:NamedIndividual ,
-                                           :EntityPublishingStatus ;
-                                  :label "Published" ;
-                                  rdfs:label "Entity Status: Published" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus_Published
+:EntityStatus_Published rdf:type owl:NamedIndividual ,
+                                 :EntityStatus ;
+                        :label "Published" ;
+                        rdfs:label "Entity Status: Published" .
 
 
-###  https://schema.bco-dmo.org/v1.0/EntityPublishingStatus_Unpublished
-:EntityPublishingStatus_Unpublished rdf:type owl:NamedIndividual ,
-                                             :EntityPublishingStatus ;
-                                    :label "Unpublished" ;
-                                    rdfs:label "Entity Status: Unpublished" .
+###  https://schema.bco-dmo.org/v1.0/EntityStatus_Unpublished
+:EntityStatus_Unpublished rdf:type owl:NamedIndividual ,
+                                   :EntityStatus ;
+                          :label "Unpublished" ;
+                          rdfs:label "Entity Status: Unpublished" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/FileType_BitmapImage
@@ -5735,6 +5919,7 @@ rdf:nil rdf:type owl:NamedIndividual .
 :TemporalEntity_InPerpetuity rdf:type owl:NamedIndividual ,
                                       :TemporalEntity ;
                              :label "In Perpetuity" ;
+                             rdfs:comment "This manes from \"now\" (when it was assigned) onward" ;
                              rdfs:label "Temporal Entity: In Perpetuity" .
 
 
@@ -5743,18 +5928,6 @@ rdf:nil rdf:type owl:NamedIndividual .
                                  :TemporalEntity ;
                         :label "Unknown" ;
                         rdfs:label "Temporal Entity: Unknown" .
-
-
-###  https://schema.bco-dmo.org/v1.0/awardProducingData
-:awardProducingData rdf:type owl:NamedIndividual .
-
-
-###  https://schema.bco-dmo.org/v1.0/datasetInstrumentsNotUsed
-:datasetInstrumentsNotUsed rdf:type owl:NamedIndividual .
-
-
-###  https://schema.bco-dmo.org/v1.0/datasetParametersNotRequired
-:datasetParametersNotRequired rdf:type owl:NamedIndividual .
 
 
 ###  https://www.bco-dmo.org/
@@ -5859,10 +6032,6 @@ rdf:nil rdf:type owl:NamedIndividual .
 
 
 <https://orcid.org/0000-0003-4486-9448> <http://xmlns.com/foaf/0.1/name> "Adam Shepherd" .
-
-
-:awardProducingData rdfs:comment "Is the award expected to produce data. This expectation typically comes from the funding agency or PI" ;
-                    rdfs:label "noAwardDataExpected" .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
