@@ -4195,7 +4195,7 @@ rdf:Statement rdf:type owl:Class .
 :ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary rdf:type owl:NamedIndividual ,
                                                                       :ControlledVocabulary ;
                                                              :abbreviation "P02" ;
-                                                             :name "SeaDataNet Parameter Discovery Vocabulary" ;
+                                                             :label "SeaDataNet Parameter Discovery Vocabulary" ;
                                                              :url "https://vocab.nerc.ac.uk/collection/P02/current/"^^xsd:anyURI ;
                                                              rdfs:label "Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary" .
 
@@ -5502,6 +5502,19 @@ rdf:Statement rdf:type owl:Class .
                                    :inverseDescription "Indicates datasets that are supplemented by this dataset." ;
                                    :label "Is Supplemented By" ;
                                    rdfs:label "Resource Relation: Is Supplemented By" .
+
+
+###  https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy
+:ResourceRelation_IsValidatedBy rdf:type owl:NamedIndividual ,
+                                         :ResourceRelation ;
+                                :authority :Organization_BCODMO ;
+                                :categorizedBy :ResourceRelation_Crossref_IsRelatedMaterial ,
+                                               :ResourceRelation_DataCite_IsSupplementedBy ;
+                                :inGroup :ResourceRelationGroup_DatasetDerivation ;
+                                :description "This dataset is validated by another dataset" ;
+                                :inverseDescription "Another dataset was validated by this dataset." ;
+                                :label "Is Validated By" ;
+                                rdfs:label "Resource Relation: Is Validated By" .
 
 
 ###  https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication

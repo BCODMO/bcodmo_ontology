@@ -6152,7 +6152,7 @@
     <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary">
         <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ControlledVocabulary"/>
         <abbreviation>P02</abbreviation>
-        <name>SeaDataNet Parameter Discovery Vocabulary</name>
+        <label>SeaDataNet Parameter Discovery Vocabulary</label>
         <url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://vocab.nerc.ac.uk/collection/P02/current/</url>
         <rdfs:label>Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary</rdfs:label>
     </owl:NamedIndividual>
@@ -8139,6 +8139,23 @@
         <inverseDescription>Indicates datasets that are supplemented by this dataset.</inverseDescription>
         <label>Is Supplemented By</label>
         <rdfs:label>Resource Relation: Is Supplemented By</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy -->
+
+
+    <owl:NamedIndividual rdf:about="https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy">
+        <rdf:type rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation"/>
+        <authority rdf:resource="https://schema.bco-dmo.org/v1.0/Organization_BCODMO"/>
+        <categorizedBy rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial"/>
+        <categorizedBy rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy"/>
+        <inGroup rdf:resource="https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetDerivation"/>
+        <description>This dataset is validated by another dataset</description>
+        <inverseDescription>Another dataset was validated by this dataset.</inverseDescription>
+        <label>Is Validated By</label>
+        <rdfs:label>Resource Relation: Is Validated By</rdfs:label>
     </owl:NamedIndividual>
     
 

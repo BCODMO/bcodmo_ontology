@@ -4267,7 +4267,7 @@ _:genid435 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v1.0/ControlledVocabulary> .
 <https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <https://schema.bco-dmo.org/v1.0/abbreviation> "P02" .
-<https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <https://schema.bco-dmo.org/v1.0/name> "SeaDataNet Parameter Discovery Vocabulary" .
+<https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <https://schema.bco-dmo.org/v1.0/label> "SeaDataNet Parameter Discovery Vocabulary" .
 <https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <https://schema.bco-dmo.org/v1.0/url> "https://vocab.nerc.ac.uk/collection/P02/current/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <https://schema.bco-dmo.org/v1.0/ControlledVocabulary_SeaDataNetParameterDiscoveryVocabulary> <http://www.w3.org/2000/01/rdf-schema#label> "Controlled Vocabulary: SeaDataNet Parameter Discovery Vocabulary" .
 # 
@@ -5429,6 +5429,18 @@ _:genid435 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy> <https://schema.bco-dmo.org/v1.0/inverseDescription> "Indicates datasets that are supplemented by this dataset." .
 <https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy> <https://schema.bco-dmo.org/v1.0/label> "Is Supplemented By" .
 <https://schema.bco-dmo.org/v1.0/ResourceRelation_IsSupplementedBy> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation: Is Supplemented By" .
+# 
+# https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.bco-dmo.org/v1.0/ResourceRelation> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/authority> <https://schema.bco-dmo.org/v1.0/Organization_BCODMO> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/categorizedBy> <https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/categorizedBy> <https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/inGroup> <https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetDerivation> .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/description> "This dataset is validated by another dataset" .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/inverseDescription> "Another dataset was validated by this dataset." .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <https://schema.bco-dmo.org/v1.0/label> "Is Validated By" .
+<https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Relation: Is Validated By" .
 # 
 # https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication
 <https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

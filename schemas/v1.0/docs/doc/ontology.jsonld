@@ -3163,7 +3163,7 @@
   "https://schema.bco-dmo.org/v1.0/abbreviation" : [ {
     "@value" : "P02"
   } ],
-  "https://schema.bco-dmo.org/v1.0/name" : [ {
+  "https://schema.bco-dmo.org/v1.0/label" : [ {
     "@value" : "SeaDataNet Parameter Discovery Vocabulary"
   } ],
   "https://schema.bco-dmo.org/v1.0/url" : [ {
@@ -6907,6 +6907,35 @@
   } ],
   "https://schema.bco-dmo.org/v1.0/label" : [ {
     "@value" : "Is Supplemented By"
+  } ]
+}, {
+  "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_IsValidatedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Resource Relation: Is Validated By"
+  } ],
+  "https://schema.bco-dmo.org/v1.0/authority" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/Organization_BCODMO"
+  } ],
+  "https://schema.bco-dmo.org/v1.0/categorizedBy" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_Crossref_IsRelatedMaterial"
+  }, {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_DataCite_IsSupplementedBy"
+  } ],
+  "https://schema.bco-dmo.org/v1.0/description" : [ {
+    "@value" : "This dataset is validated by another dataset"
+  } ],
+  "https://schema.bco-dmo.org/v1.0/inGroup" : [ {
+    "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelationGroup_DatasetDerivation"
+  } ],
+  "https://schema.bco-dmo.org/v1.0/inverseDescription" : [ {
+    "@value" : "Another dataset was validated by this dataset."
+  } ],
+  "https://schema.bco-dmo.org/v1.0/label" : [ {
+    "@value" : "Is Validated By"
   } ]
 }, {
   "@id" : "https://schema.bco-dmo.org/v1.0/ResourceRelation_MethodsPublication",
